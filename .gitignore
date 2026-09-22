@@ -1,0 +1,23 @@
+# Build output
+build/
+NotchPrompter.app
+*.xcarchive
+xcuserdata/
+*.xcuserstate
+.DS_Store
+
+# Video project: large or generated media, and system fonts that can't be redistributed
+video/node_modules/
+video/source/
+video/renders/
+video/snapshots/
+video/capture/
+video/audio/
+video/assets/fonts/
+*.mov
+
+# Local tools
+.vercel/
+.claude/
+video/.transcode-cache/
+video/assets/presenter.webm

@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NotchPrompter – Teleprompter under your camera</title>
+  <meta name="description" content="A Mac teleprompter that hangs under your camera and follows your voice in any language, completely on your Mac, so you can read your script and keep eye contact.">
+  <meta property="og:title" content="NotchPrompter – Teleprompter under your camera">
+  <meta property="og:description" content="Read your script and keep eye contact. It follows your voice.">
+  <meta property="og:image" content="media/1-eye-contact.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="media/icon-256.png">
+  <link rel="apple-touch-icon" href="media/icon-256.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="media/icon-256.png" alt="">NotchPrompter</a>
+      <nav>
+        <a href="#video" class="hide-sm">Video</a>
+        <a href="#features">Features</a>
+        <a href="support.html">Support</a>
+        <a href="https://github.com/magnram/notchprompter">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="wrap">
+        <div class="notch" aria-hidden="true">
+          <div class="meter"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="reader">
+            <div class="script" id="demo-script">
+              <p>You know the feeling. You read your notes, and your eyes drift away from the people you are talking to.</p>
+              <p>(pause) With NotchPrompter, your script sits right under the camera.</p>
+              <p>It follows your voice as you speak. Go off script, and it keeps up.</p>
+              <p data-skip>This is the line you skip, and it jumps right past it.</p>
+              <p>See? (smile) And when you pause, it waits for you.</p>
+            </div>
+          </div>
+        </div>
+        <h1>Keep eye contact while you read</h1>
+        <p class="lede">NotchPrompter hangs your script right under the camera and follows your voice. In any language, even when you skip ahead, and completely on your Mac.</p>
+        <div class="cta" id="download">
+          <!-- Replace href with the App Store link once the app is live. -->
+          <a class="store-badge" href="https://apps.apple.com/app/notchprompter" aria-label="Download on the Mac App Store">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.51 1.25-2.58-.03-.01-2.4-.92-2.42-3.65zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.75-.96 2.79 1.02.08 2.05-.52 2.68-1.27z"/></svg>
+            <span><small>Download on the</small><strong>Mac App Store</strong></span>
+          </a>
+          <a class="link-btn" href="https://github.com/magnram/notchprompter">View on GitHub →</a>
+        </div>
+        <p class="req">Free and open source. For macOS 15 Sequoia or later. Works best on a MacBook with a notch, and on any Mac with a camera on top.</p>
+      </div>
+    </div>
+
+    <section id="video">
+      <div class="wrap center">
+        <h2>See it in action</h2>
+        <p class="sub">Read, pause, skip ahead. The prompter keeps up with you.</p>
+        <div class="video-frame">
+          <video src="media/promo.mp4" poster="media/promo-poster.png" controls playsinline preload="none"></video>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <h2>Everything you need. Nothing in the way.</h2>
+        <p class="sub">A small black panel under your camera, a few clear buttons, a little editor for your scripts, and a record button.</p>
+        <div class="features">
+          <div class="feature">
+            <div class="icon">🎙️</div>
+            <h3>Follows your voice</h3>
+            <p>Press the microphone and talk. The next words are always right under the camera. Words you've said fade out.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">🌍</div>
+            <h3>Any language, automatically</h3>
+            <p>NotchPrompter sees which language your script is in and listens for it. English, Norwegian, German, Spanish, Japanese and dozens more.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">⏭️</div>
+            <h3>Keeps up when you skip</h3>
+            <p>Skip a sentence, change a word, say "uh". It finds where you are and jumps ahead with you. Pause, and it waits.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">▶️</div>
+            <h3>Or press play</h3>
+            <p>Smooth scrolling with a 3-2-1 countdown. Hover to pause, and use the tortoise and the hare to set the speed.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">✏️</div>
+            <h3>Built-in editor</h3>
+            <p>Write and keep all your scripts in one place. Import Word, Markdown, RTF or text files. Saves automatically.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">🎥</div>
+            <h3>Record yourself</h3>
+            <p>Press record to film yourself with your camera and microphone while you read. Each take is saved as a movie in your Movies folder.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">🙈</div>
+            <h3>Invisible to your audience</h3>
+            <p>Hidden from screen sharing, screenshots and recordings. Only you can see it.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">🔒</div>
+            <h3>Runs completely on your Mac</h3>
+            <p>Speech is recognised on your Mac, not in the cloud. No account, no tracking. Your scripts and recordings never leave your Mac.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <div>
+          <h2>Your scripts, one click away</h2>
+          <p class="sub">Click the pencil in the prompter to open the editor. Pick a script, press the microphone, and start talking.</p>
+          <ol class="steps">
+            <li>Write or paste your script, or import a file.</li>
+            <li>Press <strong>Read with Voice</strong>.</li>
+            <li>Look at the camera and talk.</li>
+          </ol>
+        </div>
+        <img src="media/editor.png" alt="The NotchPrompter script editor with a list of scripts and the text of a product launch script." loading="lazy">
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="center">Made for the camera</h2>
+        <p class="sub center" style="margin-inline:auto">Video calls, YouTube, courses, webinars and pitches.</p>
+        <div class="shots">
+          <img src="media/2-voice.jpg" alt="The prompter under the notch, following a spoken script." loading="lazy">
+          <img src="media/4-play.jpg" alt="Play mode with speed buttons and the settings popover." loading="lazy">
+          <img src="media/3-editor.jpg" alt="The editor window below the prompter." loading="lazy">
+          <img src="media/5-private.jpg" alt="Settings with the option to hide the prompter from screen sharing." loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="wrap" style="max-width:780px">
+        <h2>Questions</h2>
+        <details>
+          <summary>Is it really free?</summary>
+          <p>Yes. NotchPrompter is free and open source under the MIT license. No ads, no subscription, no account. The <a href="https://github.com/magnram/notchprompter">source code is on GitHub</a>, where you can report bugs, suggest features or help build it.</p>
+        </details>
+        <details>
+          <summary>Does it work without a notch?</summary>
+          <p>Yes. On a Mac without a notch the prompter hangs from the top of the screen, under the menu bar, which is still close to the camera.</p>
+        </details>
+        <details>
+          <summary>Is it really free?</summary>
+          <p>Yes. NotchPrompter is free and open source under the MIT license. No ads, no subscription, no account. The <a href="https://github.com/magnram/notchprompter">source code is on GitHub</a>, where you can report bugs, suggest features or help build it.</p>
+        </details>
+        <details>
+          <summary>Which languages does voice-follow support?</summary>
+          <p>Dozens, including English, Norwegian, German, French, Spanish, Chinese and Japanese. NotchPrompter sees which language your script is in and listens for that language, so you don't have to set anything. You can pick another language in Settings.</p>
+        </details>
+        <details>
+          <summary>Is it really free?</summary>
+          <p>Yes. NotchPrompter is free and open source under the MIT license. No ads, no subscription, no account. The <a href="https://github.com/magnram/notchprompter">source code is on GitHub</a>, where you can report bugs, suggest features or help build it.</p>
+        </details>
+        <details>
+          <summary>Will people see the prompter when I share my screen?</summary>
+          <p>No. By default it is hidden from screen sharing, screenshots and recordings. You can turn this off in Settings if you want to show it.</p>
+        </details>
+        <details>
+          <summary>Is it really free?</summary>
+          <p>Yes. NotchPrompter is free and open source under the MIT license. No ads, no subscription, no account. The <a href="https://github.com/magnram/notchprompter">source code is on GitHub</a>, where you can report bugs, suggest features or help build it.</p>
+        </details>
+        <details>
+          <summary>Does anything go to the cloud?</summary>
+          <p>No. Speech is recognised on your Mac (with Dictation turned on in System Settings), and NotchPrompter has no servers. Voice-follow never saves audio. Only when you press record is a movie saved, in your own Movies folder. Read the <a href="privacy.html">privacy policy</a>.</p>
+        </details>
+        <details>
+          <summary>Is it really free?</summary>
+          <p>Yes. NotchPrompter is free and open source under the MIT license. No ads, no subscription, no account. The <a href="https://github.com/magnram/notchprompter">source code is on GitHub</a>, where you can report bugs, suggest features or help build it.</p>
+        </details>
+        <details>
+          <summary>What are the keyboard shortcuts?</summary>
+          <p>Click the prompter, then: <kbd>Space</kbd> play/pause, <kbd>V</kbd> voice, <kbd>C</kbd> record, <kbd>R</kbd> back to top, <kbd>↑</kbd> <kbd>↓</kbd> speed, <kbd>+</kbd> <kbd>−</kbd> text size, <kbd>E</kbd> editor, <kbd>Esc</kbd> stop.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Magnus Ramm · Free and open source (MIT)</span>
+      <nav>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="https://github.com/magnram/notchprompter">Source code</a>
+      </nav>
+    </div>
+  </footer>
+  <script>
+    // Hero demo: read the script word by word, like NotchPrompter following a voice.
+    (() => {
+      const script = document.getElementById("demo-script");
+      const notch = script.closest(".notch");
+      const words = [];
+      for (const p of script.querySelectorAll("p")) {
+        const parts = p.textContent.trim().split(/(\([^)]*\))|\s+/).filter(Boolean);
+        p.textContent = "";
+        for (const part of parts) {
+          const span = document.createElement("span");
+          span.textContent = part;
+          span.className = part.startsWith("(") ? "w cue" : "w";
+          span.dataset.skip = p.hasAttribute("data-skip") ? "1" : "";
+          p.append(span, " ");
+          words.push(span);
+        }
+      }
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        words.slice(0, 9).forEach(w => w.classList.add("said"));
+        return;
+      }
+      let i = 0, lineTop = 0;
+      const talking = on => notch.classList.toggle("talking", on);
+      function keepLineOnTop(word) {
+        const top = word.offsetTop - script.offsetTop;
+        if (top > lineTop + 4) { lineTop = top; script.style.transform = `translateY(${-top}px)`; }
+      }
+      function step() {
+        if (i >= words.length) {
+          talking(false);
+          setTimeout(() => {                       // start over
+            script.classList.add("fade");
+            setTimeout(() => {
+              words.forEach(w => w.classList.remove("said"));
+              i = 0; lineTop = 0; script.style.transform = "";
+              script.classList.remove("fade");
+              setTimeout(step, 900);
+            }, 500);
+          }, 2200);
+          return;
+        }
+        const w = words[i];
+        if (w.classList.contains("cue")) {        // a note to yourself: not spoken, just waited on
+          talking(false); w.classList.add("said"); i++;
+          return setTimeout(step, w.textContent === "(pause)" ? 1400 : 700);
+        }
+        if (w.dataset.skip) {                      // the skipped line: jumps past in one go
+          talking(false);
+          const skipped = [];
+          while (i < words.length && words[i].dataset.skip) skipped.push(words[i++]);
+          return setTimeout(() => {
+            skipped.forEach(s => s.classList.add("said"));
+            keepLineOnTop(words[i] || skipped[skipped.length - 1]);
+            setTimeout(step, 300);
+          }, 700);
+        }
+        talking(true);
+        keepLineOnTop(w);
+        w.classList.add("said");
+        i++;
+        const end = /[.?!]$/.test(w.textContent), comma = /,$/.test(w.textContent);
+        if (end || comma) talking(false);
+        setTimeout(step, end ? 650 : comma ? 380 : 170 + w.textContent.length * 22);
+      }
+      setTimeout(step, 1200);
+    })();
+  </script>
+</body>
+</html>

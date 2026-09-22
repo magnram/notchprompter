@@ -1,0 +1,45 @@
+{
+  "_readme": "Single timing source for the promo. All times in 'cues' and 'scenes' are VIDEO seconds (video t = camera t - source.voiceIn). Edit, then run: node retime.mjs. If you change 'source', rebuild the media first: sh prep.sh",
+  "source": {
+    "camera": "source/take-120941-camera.mov",
+    "screen": "source/take-120941-screen.mov",
+    "voiceIn": 1.75,
+    "voiceOut": 52.1,
+    "screenLead": 1,
+    "_screenLead": "screen-recording t = camera t + screenLead (checked on the REC timer ticks at 0:10, 0:29 and 0:30)",
+    "panelCrop": "662:342:1396:0"
+  },
+  "tail": 1.05,
+  "xfade": 0.5,
+  "scenes": {
+    "open": 0,
+    "hero": 6.95,
+    "play": 29.7,
+    "editor": 33.35,
+    "local": 38.8,
+    "end": 44.9
+  },
+  "cues": {
+    "feeling": 0.49,
+    "readNotes": 1.82,
+    "meet": 7.09,
+    "anyLanguage": 15.2,
+    "pauseStart": 18.12,
+    "whenYouPause": 19.18,
+    "offScript": 22.07,
+    "skippedLine": 24.3,
+    "jump": 25.14,
+    "see": 27.58,
+    "steady": 30.27,
+    "pressPlay": 31.87,
+    "write": 33.84,
+    "record": 36.49,
+    "local": 39.14,
+    "hidden": 41.45,
+    "name": 45.39,
+    "lookEye": 46.34,
+    "appStore": 48.25,
+    "voiceEnd": 50.18,
+    "_note": "speech cues are measured on audio/voiceover.wav (video seconds); skippedLine and jump are read from the screen footage"
+  }
+}

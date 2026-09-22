@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "SF Pro Display"; font-weight: 400; src: url("assets/fonts/SF-Pro-Display-Regular.otf") format("opentype"); }
+      @font-face { font-family: "SF Pro Display"; font-weight: 500; src: url("assets/fonts/SF-Pro-Display-Medium.otf") format("opentype"); }
+      @font-face { font-family: "SF Pro Display"; font-weight: 600; src: url("assets/fonts/SF-Pro-Display-Semibold.otf") format("opentype"); }
+      @font-face { font-family: "SF Pro Display"; font-weight: 700; src: url("assets/fonts/SF-Pro-Display-Bold.otf") format("opentype"); }
+      :root {
+        --ink: #ffffff;
+        --ink-2: rgba(255, 255, 255, 0.78);
+        --red: #fa4f4a;
+        --wp-a: #fc8c61;
+        --wp-b: #9e40d9;
+        --wp-c: #294ddb;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #000; }
+      #root {
+        position: relative; width: 100%; height: 100%; overflow: hidden;
+        font-family: "SF Pro Display", sans-serif; color: var(--ink);
+        -webkit-font-smoothing: antialiased; background: #09090d;
+      }
+      .clip { position: absolute; inset: 0; }
+      .wrap { position: absolute; inset: 0; }
+      .h1 { font-weight: 700; letter-spacing: -0.025em; line-height: 1.04; }
+      .sub { font-weight: 500; color: var(--ink-2); letter-spacing: -0.01em; line-height: 1.2; }
+      .label { font-weight: 600; font-size: 30px; color: var(--ink-2); letter-spacing: 0.01em; margin-bottom: 14px; }
+
+      /* ---------- wallpaper (full length) ---------- */
+      #layer-wallpaper { z-index: 0; overflow: hidden; }
+      #wp-img {
+        position: absolute; inset: -40px;
+        background:
+          radial-gradient(90% 80% at 8% 5%, rgba(252, 140, 97, 0.95) 0%, rgba(252, 140, 97, 0) 60%),
+          radial-gradient(80% 90% at 100% 100%, rgba(41, 77, 219, 1) 0%, rgba(41, 77, 219, 0) 62%),
+          linear-gradient(135deg, var(--wp-a) 0%, var(--wp-b) 50%, var(--wp-c) 100%);
+      }
+      #wp-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.08) 45%, rgba(0,0,0,0.3) 100%); }
+
+      /* ---------- real prompter footage (root level, under scenes) ---------- */
+      #live-wrap { position: absolute; left: 298px; top: 0; width: 1324px; height: 668px; z-index: 5; transform-origin: 50% 0; }
+      #live-clip {
+        position: absolute; left: 3px; top: 0; width: 1318px; height: 668px; overflow: hidden;
+        border-radius: 0 0 84px 84px; background: #000;
+        box-shadow: 0 30px 80px rgba(10, 0, 40, 0.45);
+      }
+      #live { position: absolute; left: -3px; top: 0; width: 1324px; height: 684px; }
+      #lens {
+        position: absolute; top: 14px; left: 653px; width: 18px; height: 18px; border-radius: 50%;
+        background: radial-gradient(circle at 35% 35%, #3c4a78 0%, #151a2c 45%, #05060a 100%);
+        box-shadow: 0 0 0 3px #0c0c10;
+      }
+      #skip-box {
+        position: absolute; left: 196px; top: 190px; width: 932px; height: 96px;
+        border: 4px solid var(--red); border-radius: 22px; opacity: 0;
+      }
+      #skip-tag {
+        position: absolute; right: -4px; top: -46px; padding: 6px 16px; border-radius: 14px;
+        background: var(--red); font-size: 26px; font-weight: 700;
+      }
+
+      /* ---------- presenter cut-out (root level, above scenes) ---------- */
+      #pres-wrap { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; z-index: 30; transform-origin: 0 0; }
+      #presenter { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; filter: drop-shadow(0 24px 40px rgba(20, 0, 60, 0.35)); }
+
+      /* ---------- "this take" card (root level) ---------- */
+      #take-wrap { position: absolute; left: 1170px; top: 300px; width: 640px; height: 460px; z-index: 31; opacity: 0; }
+      #take-frame {
+        position: absolute; left: 0; top: 0; width: 640px; height: 360px; border-radius: 24px; overflow: hidden;
+        background: #000; border: 3px solid rgba(255, 255, 255, 0.85); box-shadow: 0 30px 60px rgba(10, 0, 40, 0.5);
+      }
+      #take-video { position: absolute; left: 0; top: 0; width: 634px; height: 356px; }
+      #take-rec {
+        position: absolute; left: 18px; top: 16px; padding: 6px 16px 6px 12px; border-radius: 16px;
+        background: rgba(0, 0, 0, 0.6); font-size: 24px; font-weight: 700; color: #fff;
+        display: flex; align-items: center; gap: 10px;
+      }
+      #take-rec i { display: block; width: 14px; height: 14px; border-radius: 50%; background: var(--red); }
+      #take-cap { position: absolute; left: 0; top: 384px; width: 640px; text-align: center; font-size: 32px; }
+
+      /* ---------- scene: open ---------- */
+      #scene-open { z-index: 10; }
+      #open-copy { position: absolute; left: 90px; top: 560px; width: 400px; }
+      #open-copy .h1 { font-size: 62px; }
+
+      /* ---------- scene: hero (headlines under the live panel) ---------- */
+      #scene-hero { z-index: 11; }
+      .hl { position: absolute; left: 120px; top: 730px; width: 1250px; opacity: 0; }
+      .hl .h1 { font-size: 92px; }
+      .hl .sub { font-size: 42px; margin-top: 18px; }
+      #hl-name .label { display: flex; align-items: center; gap: 14px; }
+      #hl-name .label img { width: 44px; height: 44px; border-radius: 10px; }
+
+      /* ---------- scene: play ---------- */
+      #scene-play { z-index: 12; }
+      #play-shot { position: absolute; left: 298px; top: 0; width: 1324px; height: 427px; }
+      #play-copy { position: absolute; left: 120px; top: 730px; width: 1250px; }
+      #play-copy .h1 { font-size: 92px; }
+      #play-copy .sub { font-size: 42px; margin-top: 18px; }
+
+      /* ---------- scene: editor + record ---------- */
+      #scene-editor { z-index: 13; }
+      .ed-title { position: absolute; left: 110px; top: 96px; font-size: 80px; }
+      #ed-win { position: absolute; left: 110px; top: 236px; width: 1000px; height: 605px; filter: drop-shadow(0 30px 60px rgba(10, 0, 40, 0.55)); }
+      #ed-win img { width: 1000px; height: 605px; display: block; }
+      #ed-chips { position: absolute; left: 110px; top: 880px; width: 1000px; display: flex; justify-content: center; gap: 16px; }
+      .chip { padding: 10px 26px; border-radius: 30px; background: rgba(0, 0, 0, 0.32); font-size: 30px; font-weight: 600; }
+
+      /* ---------- scene: local + hidden ---------- */
+      #scene-local { z-index: 14; }
+      #local-bg { position: absolute; inset: 0; background: rgba(8, 4, 24, 0.35); }
+      #local-copy { position: absolute; left: 0; right: 0; top: 390px; text-align: center; }
+      #local-copy .h1 { font-size: 118px; }
+      #local-copy .sub { font-size: 48px; margin-top: 30px; }
+      #hidden-title { position: absolute; left: 0; right: 0; top: 104px; text-align: center; font-size: 96px; opacity: 0; }
+      .screen-col { position: absolute; top: 300px; width: 800px; height: 600px; opacity: 0; }
+      #col-mine { left: 120px; } #col-theirs { left: 1000px; }
+      .screen-label { position: absolute; left: 0; top: 0; width: 800px; text-align: center; font-size: 36px; font-weight: 600; color: var(--ink-2); }
+      .screen {
+        position: absolute; left: 0; top: 64px; width: 800px; height: 500px; border-radius: 24px; overflow: hidden;
+        border: 3px solid rgba(255, 255, 255, 0.55); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+        background:
+          radial-gradient(90% 80% at 8% 5%, rgba(252, 140, 97, 0.95) 0%, rgba(252, 140, 97, 0) 60%),
+          radial-gradient(80% 90% at 100% 100%, rgba(41, 77, 219, 1) 0%, rgba(41, 77, 219, 0) 62%),
+          linear-gradient(135deg, var(--wp-a) 0%, var(--wp-b) 50%, var(--wp-c) 100%);
+      }
+      .mini-bar { position: absolute; left: 0; right: 0; top: 0; height: 22px; background: rgba(20, 10, 40, 0.28); }
+      .mini-notch { position: absolute; top: 0; left: 352px; width: 96px; height: 22px; background: #000; border-radius: 0 0 9px 9px; }
+      .mini-panel { position: absolute; top: 0; left: 190px; width: 420px; height: 150px; background: #000; border-radius: 0 0 20px 20px; padding: 40px 36px 0; }
+      .tline { height: 14px; border-radius: 7px; background: #fff; margin: 0 auto 14px; }
+      .ghost { position: absolute; top: 0; left: 190px; width: 420px; height: 150px; border-radius: 0 0 20px 20px; border: 3px dashed rgba(255, 255, 255, 0.85); border-top: none; }
+      .mini-win { position: absolute; left: 150px; top: 200px; width: 500px; height: 250px; border-radius: 16px; background: rgba(255,255,255,0.18); }
+      .mini-win .t { position: absolute; left: 24px; top: 24px; width: 180px; height: 18px; border-radius: 9px; background: rgba(255,255,255,0.7); }
+      .mini-win .b { position: absolute; left: 24px; height: 12px; border-radius: 6px; background: rgba(255,255,255,0.45); }
+      #share-pill { position: absolute; right: 18px; top: 36px; padding: 6px 16px 6px 12px; border-radius: 18px; background: var(--red); font-size: 22px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+      #share-pill i { display: block; width: 12px; height: 12px; border-radius: 50%; background: #fff; }
+
+      /* ---------- scene: end card (presenter stands on the right) ---------- */
+      #scene-end { z-index: 15; }
+      #end-bg { position: absolute; inset: 0; background: radial-gradient(70% 80% at 30% 45%, #231a3d 0%, #0b0a12 62%, #050507 100%); }
+      #end-glow { position: absolute; inset: 0; background: radial-gradient(40% 60% at 72% 70%, rgba(158, 64, 217, 0.28) 0%, rgba(158, 64, 217, 0) 70%); }
+      #end-col { position: absolute; left: 60px; top: 0; width: 900px; height: 1080px; }
+      #end-icon { position: absolute; left: 340px; top: 170px; width: 220px; height: 220px; }
+      #end-icon img { width: 220px; height: 220px; display: block; filter: drop-shadow(0 24px 50px rgba(120, 60, 255, 0.45)); }
+      #end-name { position: absolute; left: 0; width: 900px; top: 430px; text-align: center; font-size: 112px; }
+      #end-tag { position: absolute; left: 0; width: 900px; top: 580px; text-align: center; font-size: 48px; }
+      #end-badge {
+        position: absolute; left: 200px; top: 690px; width: 500px; height: 116px; border-radius: 26px;
+        background: #000; border: 3px solid rgba(255, 255, 255, 0.85);
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+      }
+      #end-badge .s { font-size: 26px; font-weight: 500; color: rgba(255,255,255,0.85); }
+      #end-badge .b { font-size: 46px; font-weight: 600; letter-spacing: -0.01em; margin-top: 2px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="51.4" data-width="1920" data-height="1080" data-fps="30">
+      <!-- Wallpaper, full length -->
+      <div id="layer-wallpaper" class="clip" data-start="0" data-duration="51.4" data-track-index="0">
+        <div id="wp-img" data-layout-allow-overflow="true"></div>
+        <div id="wp-shade"></div>
+      </div>
+
+      <!-- Real prompter footage: crop of the take's screen recording (untimed wrapper, timed video) -->
+      <div id="live-wrap">
+        <div id="live-clip" data-layout-allow-overflow="true">
+          <video id="live" class="clip" src="assets/prompter-live.mp4" muted playsinline data-start="0" data-duration="30.2" data-media-start="0" data-track-index="8"></video>
+        </div>
+        <div id="lens"></div>
+        <div id="skip-box" data-layout-allow-overflow="true"><div id="skip-tag">Skipped</div></div>
+      </div>
+
+      <!-- Scene: open (VO "You know the feeling…") -->
+      <div id="scene-open" class="clip" data-start="0" data-duration="6.95" data-track-index="1">
+        <div class="wrap" id="open-wrap">
+          <div id="open-copy" data-layout-allow-occlusion="true">
+            <div class="label" id="open-label">Reading from notes?</div>
+            <div class="h1" id="open-h1">Your audience notices.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scene: hero, live footage (VO "Meet NotchPrompter…" to "See? It jumped ahead with me.") -->
+      <div id="scene-hero" class="clip" data-start="6.45" data-duration="23.25" data-track-index="2">
+        <div class="wrap" id="hero-wrap">
+          <div class="hl" id="hl-name">
+            <div class="label"><img src="assets/icon-1024.png" alt="" />NotchPrompter</div>
+            <div class="h1">Eye contact, built in.</div>
+          </div>
+          <div class="hl" id="hl-lang">
+            <div class="h1">Any language</div>
+            <div class="sub">Pick the language you speak.</div>
+          </div>
+          <div class="hl" id="hl-pause">
+            <div class="h1">Waits when you pause</div>
+            <div class="sub">Take a breath. Your place is kept.</div>
+          </div>
+          <div class="hl" id="hl-skip">
+            <div class="h1">Keeps up when you skip</div>
+            <div class="sub">Leave out a line. It follows along.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scene: play mode (VO "Prefer a steady pace? Just press play.") -->
+      <div id="scene-play" class="clip" data-start="29.2" data-duration="4.15" data-track-index="3">
+        <div class="wrap" id="play-wrap">
+          <img id="play-shot" src="assets/prompter-playing.png" alt="" />
+          <div id="play-copy">
+            <div class="h1">Play mode</div>
+            <div class="sub">Hands-free scrolling at your speed.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scene: editor + record (VO "Write your script… record yourself with one click.") -->
+      <div id="scene-editor" class="clip" data-start="32.85" data-duration="5.95" data-track-index="4">
+        <div class="wrap" id="editor-wrap">
+          <div class="h1 ed-title" id="ed-title-a">Built-in script editor</div>
+          <div class="h1 ed-title" id="ed-title-b" style="opacity: 0">Record yourself</div>
+          <div id="ed-win"><img src="assets/window-editor.png" alt="" /></div>
+          <div id="ed-chips"><div class="chip">Word</div><div class="chip">Markdown</div><div class="chip">RTF</div><div class="chip">Text</div></div>
+        </div>
+      </div>
+
+      <!-- Scene: local + hidden (VO "It all runs locally… when you share your screen.") -->
+      <div id="scene-local" class="clip" data-start="38.3" data-duration="6.6" data-track-index="5">
+        <div class="wrap" id="local-wrap">
+          <div id="local-bg"></div>
+          <div id="local-copy">
+            <div class="h1">Runs completely on your Mac</div>
+            <div class="sub">No account. No tracking.</div>
+          </div>
+          <div class="h1" id="hidden-title">Invisible to your audience</div>
+          <div class="screen-col" id="col-mine">
+            <div class="screen-label">On your Mac</div>
+            <div class="screen">
+              <div class="mini-bar"></div>
+              <div class="mini-win"><div class="t"></div><div class="b" style="top: 70px; width: 420px"></div><div class="b" style="top: 100px; width: 380px"></div><div class="b" style="top: 130px; width: 440px"></div></div>
+              <div class="mini-panel">
+                <div class="tline" style="width: 300px; background: rgba(255,255,255,0.3)"></div>
+                <div class="tline" style="width: 330px"></div>
+                <div class="tline" style="width: 260px"></div>
+              </div>
+              <div class="mini-notch"></div>
+            </div>
+          </div>
+          <div class="screen-col" id="col-theirs">
+            <div class="screen-label">What they see</div>
+            <div class="screen">
+              <div class="mini-bar"></div>
+              <div class="mini-win"><div class="t"></div><div class="b" style="top: 70px; width: 420px"></div><div class="b" style="top: 100px; width: 380px"></div><div class="b" style="top: 130px; width: 440px"></div></div>
+              <div class="ghost" id="theirs-ghost"></div>
+              <div class="mini-notch"></div>
+              <div id="share-pill"><i></i>Sharing</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scene: end card (VO "NotchPrompter. Look people in the eye. Now on the Mac App Store.") -->
+      <div id="scene-end" class="clip" data-start="44.4" data-duration="7" data-track-index="6">
+        <div class="wrap" id="end-wrap">
+          <div id="end-bg"></div>
+          <div id="end-glow"></div>
+          <div id="end-col" data-layout-allow-occlusion="true">
+            <div id="end-icon"><img src="assets/icon-1024.png" alt="" /></div>
+            <div class="h1" id="end-name">NotchPrompter</div>
+            <div class="sub" id="end-tag">Teleprompter under your camera</div>
+            <div id="end-badge"><div class="s">Download on the</div><div class="b">Mac App Store</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Presenter cut-out (Vision person matte, VP9 alpha), same clock as the voice -->
+      <div id="pres-wrap">
+        <video id="presenter" class="clip" src="assets/presenter.webm" muted playsinline data-start="0" data-duration="50.35" data-media-start="0" data-track-index="9"></video>
+      </div>
+
+      <!-- "This take" card: the unmatted camera take, shown at "record yourself" -->
+      <div id="take-wrap">
+        <div id="take-frame">
+          <video id="take-video" class="clip" src="source/cam-vt.mp4" muted playsinline data-start="36.04" data-duration="3.26" data-media-start="36.04" data-track-index="10"></video>
+          <div id="take-rec"><i></i>REC</div>
+        </div>
+        <div class="sub" id="take-cap">This take was filmed in NotchPrompter.</div>
+      </div>
+
+      <audio id="voiceover" src="audio/voiceover.wav" data-start="0" data-duration="50.35" data-track-index="20" data-volume="1"></audio>
+    </div>
+
+    <!-- TIMINGS:BEGIN (written by retime.mjs from timings.json — edit timings.json, then run: node retime.mjs) -->
+    <script>
+      window.NP_TIMINGS = {"total":51.4,"xfade":0.5,"voiceLen":50.35,"cues":{"feeling":0.49,"readNotes":1.82,"meet":7.09,"anyLanguage":15.2,"pauseStart":18.12,"whenYouPause":19.18,"offScript":22.07,"skippedLine":24.3,"jump":25.14,"see":27.58,"steady":30.27,"pressPlay":31.87,"write":33.84,"record":36.49,"local":39.14,"hidden":41.45,"name":45.39,"lookEye":46.34,"appStore":48.25,"voiceEnd":50.18,"_note":"speech cues are measured on audio/voiceover.wav (video seconds); skippedLine and jump are read from the screen footage"},"scenes":{"open":{"cut":0,"start":0,"end":6.95,"dur":6.95},"hero":{"cut":6.95,"start":6.45,"end":29.7,"dur":23.25},"play":{"cut":29.7,"start":29.2,"end":33.35,"dur":4.15},"editor":{"cut":33.35,"start":32.85,"end":38.8,"dur":5.95},"local":{"cut":38.8,"start":38.3,"end":44.9,"dur":6.6},"end":{"cut":44.9,"start":44.4,"end":51.4,"dur":7}}};
+    </script>
+    <!-- TIMINGS:END -->
+
+    <script>
+      (function () {
+        const NP = window.NP_TIMINGS;
+        const C = NP.cues;
+        const S = NP.scenes;
+        const XF = NP.xfade;
+        const E = { calm: "power2.out", glide: "power2.inOut", soft: "power3.out" };
+
+        // presenter placements (wrapper is 1920x1080, transform-origin 0 0)
+        const P = {
+          open: { x: 96, y: 252, scale: 0.9 },
+          corner: { x: 1267, y: 626, scale: 0.42 },
+          end: { x: 632, y: 216, scale: 0.8 },
+        };
+
+        function inHead(tl, sel, at, dur = 0.6) {
+          tl.fromTo(sel, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: dur, ease: E.soft }, at);
+        }
+        function outHead(tl, sel, at, dur = 0.35) {
+          tl.to(sel, { opacity: 0, y: -14, duration: dur, ease: "power2.in" }, at);
+        }
+        function sceneIn(tl, name) {
+          tl.fromTo(`#${name}-wrap`, { opacity: 0 }, { opacity: 1, duration: XF, ease: "none" }, S[name].start);
+        }
+        // outgoing scene fades while the next one fades in, so text never stacks
+        function sceneOut(tl, name, next) {
+          tl.to(`#${name}-wrap`, { opacity: 0, duration: XF * 0.8, ease: "none" }, S[next].start);
+        }
+
+        function build() {
+          const tl = gsap.timeline({ paused: true });
+
+          // ---- open: presenter big, real prompter small above him
+          tl.set("#pres-wrap", { ...P.open }, 0);
+          tl.set("#live-wrap", { scale: 0.5 }, 0);
+          tl.fromTo("#open-label", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: E.soft }, C.readNotes);
+          tl.fromTo("#open-h1", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.7, ease: E.soft }, C.readNotes + 1.9);
+          tl.to("#open-copy", { opacity: 0, x: -20, duration: 0.4, ease: "power2.in" }, S.hero.start);
+
+          // ---- hero: panel grows, presenter settles in the lower-right corner
+          tl.to("#live-wrap", { scale: 1, duration: 1.0, ease: E.glide }, S.hero.cut);
+          tl.to("#pres-wrap", { ...P.corner, duration: 1.0, ease: E.glide }, S.hero.cut);
+          inHead(tl, "#hl-name", S.hero.cut + 0.55);
+          outHead(tl, "#hl-name", C.anyLanguage - 0.4);
+          inHead(tl, "#hl-lang", C.anyLanguage);
+          outHead(tl, "#hl-lang", C.pauseStart - 0.25);
+          inHead(tl, "#hl-pause", C.pauseStart + 0.1);
+          outHead(tl, "#hl-pause", C.offScript - 0.4);
+          inHead(tl, "#hl-skip", C.offScript);
+
+          // skipped line: mark it, then follow the jump
+          tl.fromTo("#skip-box", { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E.soft }, C.skippedLine);
+          tl.to("#skip-box", { y: -30, opacity: 0, duration: 0.12, ease: "power1.in" }, C.jump);
+
+          // ---- play: static play-mode panel replaces the live footage
+          sceneIn(tl, "play");
+          tl.to("#live-wrap", { opacity: 0, duration: XF, ease: "none" }, S.play.start);
+          tl.fromTo("#play-copy", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.7, ease: E.soft }, S.play.cut);
+
+          // ---- editor: presenter hands over to the recorded take
+          sceneIn(tl, "editor");
+          tl.fromTo("#ed-win", { y: 40, scale: 0.97 }, { y: 0, scale: 1, duration: 0.9, ease: E.soft }, S.editor.start);
+          tl.to("#pres-wrap", { opacity: 0, duration: 0.4, ease: "none" }, C.record - 0.4);
+          tl.fromTo("#take-wrap", { opacity: 0, y: 30, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: E.soft }, C.record - 0.4);
+          tl.to("#ed-title-a", { opacity: 0, y: -14, duration: 0.3, ease: "power2.in" }, C.record - 0.35);
+          tl.fromTo("#ed-title-b", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: E.soft }, C.record - 0.05);
+          tl.to("#take-wrap", { opacity: 0, duration: XF, ease: "none" }, S.local.start);
+
+          // ---- local + hidden
+          sceneIn(tl, "local");
+          tl.fromTo("#local-copy", { y: 30 }, { y: 0, duration: 0.8, ease: E.soft }, S.local.start);
+          tl.to("#local-copy", { opacity: 0, y: -24, duration: 0.4, ease: "power2.in" }, C.hidden - 0.45);
+          tl.fromTo("#hidden-title", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: E.soft }, C.hidden - 0.1);
+          tl.fromTo("#col-mine", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: E.soft }, C.hidden + 0.1);
+          tl.fromTo("#col-theirs", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: E.soft }, C.hidden + 0.3);
+          tl.fromTo("#theirs-ghost", { opacity: 1 }, { opacity: 0.25, duration: 1.2, ease: "sine.inOut" }, C.hidden + 1.3);
+
+          // ---- end card: presenter returns on the right
+          sceneIn(tl, "end");
+          tl.set("#pres-wrap", { ...P.end, y: P.end.y + 40 }, S.end.start);
+          tl.to("#pres-wrap", { opacity: 1, y: P.end.y, duration: 0.8, ease: E.soft }, S.end.start + 0.1);
+          tl.fromTo("#end-icon", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.8, ease: E.soft }, S.end.cut);
+          tl.fromTo("#end-name", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.7, ease: E.soft }, C.name - 0.1);
+          tl.fromTo("#end-tag", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7, ease: E.soft }, C.lookEye);
+          tl.fromTo("#end-badge", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7, ease: E.soft }, C.appStore);
+          tl.to("#pres-wrap", { opacity: 0, duration: 0.14, ease: "none" }, C.voiceEnd + 0.01);
+
+          tl.to("#hl-skip", { opacity: 0, duration: 0.3, ease: "none" }, S.play.start - 0.1);
+          sceneOut(tl, "hero", "play");
+          sceneOut(tl, "play", "editor");
+          sceneOut(tl, "editor", "local");
+          sceneOut(tl, "local", "end");
+
+          tl.set({}, {}, NP.total);
+          window.__timelines["main"] = tl;
+        }
+
+        Promise.all([400, 500, 600, 700].map((w) => document.fonts.load(`${w} 40px "SF Pro Display"`))).then(build, build);
+      })();
+    </script>
+  </body>
+</html>

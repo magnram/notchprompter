@@ -1,0 +1,15 @@
+You know the feeling. You read your notes, and your eyes drift down, away from the people you are talking to.
+
+Meet NotchPrompter. Your script sits right under the camera, so you keep eye contact the whole time.
+
+It follows your voice, in any language. (pause) And when you pause, it waits for you.
+
+Go off script, and it keeps up. (skip the next line)
+This is the line I skip, and NotchPrompter jumps right past it.
+See? It jumped ahead with me.
+
+Prefer a steady pace? Just press play.
+
+Write your scripts in the built-in editor, and record yourself with one click. It all runs on your Mac, and the prompter stays hidden when you share your screen.
+
+NotchPrompter. Look people in the eye. Now on the Mac App Store.
