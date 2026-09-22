@@ -1,0 +1,1 @@
+teleprompter,prompter,script,autocue,speech,video,webcam,presentation,eye contact,notch,voice,record

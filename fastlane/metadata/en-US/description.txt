@@ -1,0 +1,33 @@
+Look people in the eye while you read your script.
+
+NotchPrompter puts your script in a small black panel that hangs from the top of your screen, right under the camera. On a MacBook with a notch it blends into the notch. To the people watching, it looks like you are talking straight to them.
+
+FOLLOWS YOUR VOICE, IN ANY LANGUAGE
+Press the microphone and just talk. NotchPrompter listens as you read and moves the text with you, so the next words are always right under the camera. Words you have said fade out. It sees which language your script is in and listens for it: English, Norwegian, German, Spanish, Japanese and dozens more. Nothing to set up.
+
+KEEPS UP WHEN YOU SKIP
+Skip a sentence, change a word, say "uh". NotchPrompter finds where you are and jumps ahead with you. Pause, take a breath: it waits. Lost your place? Click the word you are on.
+
+OR PRESS PLAY
+Prefer a steady pace? Press play for smooth scrolling with a 3-2-1 countdown. Hover over the text to pause. The tortoise and the hare change the speed.
+
+A LITTLE EDITOR FOR YOUR SCRIPTS
+Write and edit your scripts in the built-in editor, or import text, Markdown, Word, RTF and HTML files. Everything saves automatically. See the word count and about how long each script takes to read.
+
+RECORD YOURSELF
+Press record to film yourself with your camera and microphone while the script follows your voice. Each take is saved as a movie in Movies › NotchPrompter.
+
+INVISIBLE TO YOUR AUDIENCE
+The prompter is hidden from screen sharing, screenshots and recordings, so only you can see it.
+
+MADE FOR
+• Video calls and online meetings
+• YouTube, courses and screen recordings
+• Presentations, pitches and webinars
+• Anyone who wants to sound natural and look confident on camera
+
+FREE AND OPEN SOURCE
+No ads, no subscription, no account. The source code is on GitHub: github.com/magnram/notchprompter
+
+RUNS COMPLETELY ON YOUR MAC
+Speech is recognised on your Mac, not in the cloud. No account, no tracking, no ads. Your scripts and recordings never leave your Mac. Voice-follow never saves audio.

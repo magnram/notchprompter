@@ -1,0 +1,158 @@
+# Releasing NotchPrompter to the Mac App Store.
+#
+# Nothing here holds a secret. Every lane signs in with an App Store Connect
+# API key read from the environment (ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_PATH),
+# the same key the minigolf app uses. No lane submits for review on its own
+# except `submit_review`, which you run by hand.
+
+Encoding.default_external = Encoding::UTF_8
+Encoding.default_internal = Encoding::UTF_8
+ENV["LANG"] ||= "en_US.UTF-8"
+ENV["LC_ALL"] ||= "en_US.UTF-8"
+
+default_platform(:mac)
+
+ROOT = File.expand_path("..", __dir__)
+METADATA = "#{ROOT}/fastlane/metadata"
+SCREENSHOTS = "#{ROOT}/fastlane/screenshots"
+PKG = "#{ROOT}/fastlane/builds/NotchPrompter.pkg"
+
+platform :mac do
+  def connect
+    app_store_connect_api_key(
+      key_id: ENV.fetch("ASC_KEY_ID"),
+      issuer_id: ENV.fetch("ASC_ISSUER_ID"),
+      key_filepath: ENV.fetch("ASC_KEY_PATH"),
+      duration: 1200,
+      in_house: false
+    )
+  end
+
+  # xcodebuild signs in with the same key, so automatic signing can make the
+  # distribution certificates and profile without an Apple ID in Xcode.
+  def key_args
+    "-allowProvisioningUpdates " \
+      "-authenticationKeyPath #{File.expand_path(ENV.fetch('ASC_KEY_PATH'))} " \
+      "-authenticationKeyID #{ENV.fetch('ASC_KEY_ID')} " \
+      "-authenticationKeyIssuerID #{ENV.fetch('ASC_ISSUER_ID')}"
+  end
+
+  def review_information
+    UI.user_error!("Set APP_REVIEW_PHONE to a reachable reviewer contact number.") if ENV["APP_REVIEW_PHONE"].to_s.strip.empty?
+    {
+      first_name: "Magnus", last_name: "Ramm", email_address: "magnus.ramm@gmail.com",
+      phone_number: ENV["APP_REVIEW_PHONE"], demo_account_required: false,
+      notes: File.read("#{METADATA}/review_information/notes.txt")
+    }
+  end
+
+  desc "Archive and export a signed installer package for the Mac App Store"
+  lane :build do
+    build_mac_app(
+      project: "#{ROOT}/NotchPrompter.xcodeproj",
+      scheme: "NotchPrompter",
+      configuration: "Release",
+      export_method: "app-store",
+      export_options: { signingStyle: "automatic", teamID: "A7C4MM99VP" },
+      xcargs: key_args,
+      export_xcargs: key_args,
+      output_directory: File.dirname(PKG),
+      output_name: "NotchPrompter"
+    )
+  end
+
+  desc "Update the App Store text, screenshots and review notes, and pick a build. No submit."
+  lane :metadata do |options|
+    connect
+    review = ENV["APP_REVIEW_PHONE"].to_s.strip.empty? ? {} : { app_review_information: review_information }
+    upload_to_app_store(
+      platform: "osx",
+      metadata_path: METADATA,
+      screenshots_path: SCREENSHOTS,
+      overwrite_screenshots: true,
+      app_rating_config_path: "#{METADATA}/age_rating.json",
+      build_number: options[:build_number]&.to_s,
+      **review,
+      skip_binary_upload: true,
+      submit_for_review: false,
+      automatic_release: false,
+      precheck_include_in_app_purchases: false,
+      force: true
+    )
+    # Apple asks this before review; fastlane has no option for it. The app ships
+    # only its own MIT-licensed code and text.
+    Spaceship::ConnectAPI::App.find("com.magnusramm.NotchPrompter")
+      .update(attributes: { contentRightsDeclaration: "DOES_NOT_USE_THIRD_PARTY_CONTENT" })
+  end
+
+  desc "Build, then upload the package with its text and screenshots. Does not submit."
+  lane :release do
+    build
+    connect
+    upload_to_app_store(
+      platform: "osx",
+      pkg: PKG,
+      metadata_path: METADATA,
+      screenshots_path: SCREENSHOTS,
+      overwrite_screenshots: true,
+      app_rating_config_path: "#{METADATA}/age_rating.json",
+      app_review_information: review_information,
+      submit_for_review: false,
+      automatic_release: false,
+      precheck_include_in_app_purchases: false,
+      force: true
+    )
+    UI.success("Uploaded. Run `fastlane mac submit_review` when the build has processed.")
+  end
+
+  desc "Submit the version for review, with manual release"
+  lane :submit_review do
+    connect
+    upload_to_app_store(
+      platform: "osx",
+      skip_binary_upload: true,
+      skip_metadata: true,
+      skip_screenshots: true,
+      submit_for_review: true,
+      automatic_release: false,
+      submission_information: { add_id_info_uses_idfa: false, export_compliance_uses_encryption: false },
+      precheck_include_in_app_purchases: false,
+      force: true
+    )
+  end
+end
+
+platform :mac do
+  desc "Upload fastlane/builds/NotchPrompter.pkg only. No text, no submit."
+  lane :upload_pkg do
+    connect
+    upload_to_app_store(
+      platform: "osx",
+      pkg: PKG,
+      skip_metadata: true,
+      skip_screenshots: true,
+      submit_for_review: false,
+      precheck_include_in_app_purchases: false,
+      run_precheck_before_submit: false,
+      force: true
+    )
+  end
+end
+
+platform :mac do
+  desc "Attach an uploaded build to the editable App Store version, without submitting"
+  lane :select_build do |options|
+    connect
+    platform = Spaceship::ConnectAPI::Platform::MAC_OS
+    app = Spaceship::ConnectAPI::App.find("com.magnusramm.NotchPrompter")
+    version = app.get_edit_app_store_version(platform: platform)
+    UI.user_error!("No editable App Store version found") unless version
+    build = Spaceship::ConnectAPI::Build.all(
+      app_id: app.id, version: version.version_string,
+      build_number: options.fetch(:build_number).to_s, platform: platform
+    ).first
+    UI.user_error!("Build #{options[:build_number]} is not available yet") unless build
+    version.select_build(build_id: build.id)
+    UI.success("Selected build #{version.version_string} (#{build.version}) without submitting it for review")
+  end
+end

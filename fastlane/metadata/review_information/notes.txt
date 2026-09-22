@@ -1,0 +1,15 @@
+NotchPrompter is a teleprompter that sits at the top centre of the screen, under the camera.
+
+To test voice-follow:
+1. On first launch, a welcome guide opens. Click "Allow Microphone and Speech Recognition" and allow both.
+2. Click "Try It Now". The prompter appears at the top of the screen with a practice script.
+3. Read the practice script out loud. The text scrolls as you speak, and words you have said fade out.
+
+To test play mode, press the play button (or Space) in the prompter. Hover over the prompter to see the buttons.
+The pencil button opens the script editor. Scripts can also be imported from File → Import.
+
+The prompter window is hidden from screen sharing and screenshots on purpose (a setting in Settings → Privacy), so it will not show in screen recordings of the review session unless that setting is turned off.
+
+To test recording, press the record button (the circle) in the prompter, or Prompter → Record Video (⌥⌘R). Allow the camera and microphone. The prompter counts down, films you while it follows your voice, and saves the movie in ~/Movies/NotchPrompter when you press stop. Settings → Recording → "Also record the screen" adds a second movie of the screen (ScreenCaptureKit; macOS asks for screen recording access). Text in (parentheses) or [brackets] is a stage direction: shown, but not read out.
+
+The microphone is used for speech recognition while the microphone button is on, and for the sound of a recording while recording. Speech recognition runs on the Mac by default (Settings → Privacy). Audio is stored only in recordings the user starts, in their own Movies folder.
