@@ -93,7 +93,10 @@ What's new in 1.1 (English): "Now in 20 languages: the app, the practice script 
 4. `screenshots/appstore-4-play.png`
 5. `screenshots/appstore-5-private.png`
 
-Rebuild them with `Tools/render-screens.sh`.
+Rebuild them with `Tools/render-all-languages.sh`. It renders every app language and copies
+the shots to `fastlane/screenshots/<locale>/` (what fastlane uploads) and `website/media/<lang>/`.
+The texts on the shots and the demo scripts are in `NotchPrompter/ScreenshotContent.swift`.
+`Tools/render-screens.sh` renders one language (the system language) into this folder only.
 
 ## App Privacy (the nutrition label)
 

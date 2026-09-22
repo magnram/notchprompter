@@ -8,7 +8,14 @@ struct Script: Identifiable, Codable, Equatable {
     var text: String
     var modified = Date()
 
-    var wordCount: Int { text.split(whereSeparator: \.isWhitespace).count }
+    /// Counts words the way the language does, so Japanese and Chinese, with no spaces, count right too.
+    var wordCount: Int {
+        var count = 0
+        text.enumerateSubstrings(in: text.startIndex..., options: [.byWords, .substringNotRequired]) { _, _, _, _ in
+            count += 1
+        }
+        return count
+    }
 
     /// About how long the script takes to read aloud, at 150 words a minute, e.g. "1 min, 20 sec".
     var readingTime: String {

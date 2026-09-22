@@ -4,7 +4,8 @@ import SwiftUI
 
 /// Debug builds only: `NotchPrompter -renderScreens <folder>` captures the app's real windows and puts
 /// them on a desktop, for checking the layout and for the App Store screenshots (2880 × 1800).
-/// Build without the sandbox to write outside the container (see Tools/render-screens.sh).
+/// Build without the sandbox to write outside the container (see Tools/render-screens.sh and
+/// Tools/render-all-languages.sh). The texts in the pictures are in ScreenshotContent.swift.
 enum ScreenshotRenderer {
     static var outputFolder: URL? {
         let args = ProcessInfo.processInfo.arguments
@@ -63,21 +64,23 @@ enum ScreenshotRenderer {
     static func renderStoreShot<V: View>(_ view: V, _ name: String, to folder: URL) {
         let renderer = ImageRenderer(content: view.frame(width: 1440, height: 900))
         renderer.scale = 2
-        if let image = renderer.nsImage { write(image, name, to: folder) }
+        guard let cg = renderer.cgImage else { return }
+        // Opaque and 8 bits per channel: the same picture as with alpha (the desktop fills it), at a
+        // fraction of the file size, which matters with 20 languages. The renderer draws in extended
+        // sRGB, which an 8-bit context can't hold; Display P3 keeps the colours outside sRGB.
+        let space = CGColorSpace(name: CGColorSpace.displayP3)!
+        guard let ctx = CGContext(data: nil, width: cg.width, height: cg.height, bitsPerComponent: 8, bytesPerRow: 0,
+                                  space: space, bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue) else { return }
+        ctx.draw(cg, in: CGRect(x: 0, y: 0, width: cg.width, height: cg.height))
+        guard let flat = ctx.makeImage(),
+              let png = NSBitmapImageRep(cgImage: flat).representation(using: .png, properties: [:]) else { return }
+        try? png.write(to: folder.appendingPathComponent(name + ".png"))
     }
 
     // MARK: Screens
 
-    static let demoTitle = "Product launch"
-    static let demoText = """
-    Hi everyone, and thanks for joining.
-
-    Today I want to show you something we have been working on for a long time. It is small, but it changes how you show up on camera.
-
-    You know the feeling. You read your notes, and your eyes drift down and away from the people you are talking to. With NotchPrompter, your script sits right under the camera, so you can keep eye contact the whole time.
-
-    It follows your voice as you speak. Take a pause, go off script, and it simply waits for you to come back.
-    """
+    /// The demo scripts and the texts on the screenshots, in the app's language.
+    static let content = ScreenshotContent.current
 
     @MainActor
     static func run(prompter: Prompter, folder: URL) {
@@ -87,10 +90,14 @@ enum ScreenshotRenderer {
         settings.height = 200
         settings.fontSize = 22
         settings.speed = 40
+        // Only the practice script in this language, then the demo scripts.
+        if !library.scripts.contains(where: { $0.text == ScriptLibrary.welcomeText }) {
+            library.add(title: ScriptLibrary.welcomeTitle, text: ScriptLibrary.welcomeText)
+        }
         for script in library.scripts where script.text != ScriptLibrary.welcomeText { library.delete(script.id) }
-        library.add(title: "Weekly team update", text: "Good morning! Three things this week: the new onboarding, the pricing test, and our plans for the conference.")
-        library.add(title: "YouTube intro", text: "Hey, welcome back to the channel. Today we are building a tiny Mac app from scratch.")
-        let demo = library.add(title: demoTitle, text: demoText)
+        library.add(title: content.weeklyTitle, text: content.weeklyText)
+        library.add(title: content.youtubeTitle, text: content.youtubeText)
+        let demo = library.add(title: content.demoTitle, text: content.demoText)
         library.activeID = demo.id
         RunLoop.main.run(until: Date().addingTimeInterval(0.3))
 
@@ -101,21 +108,21 @@ enum ScreenshotRenderer {
 
         // The single windows, for checking the layout.
         // Like the real window: as tall as the onboarding needs, which varies with the language.
-        let welcomeWindow = window("Welcome", OnboardingView { _ in }, size: NSSize(width: 560, height: 420))
+        let welcomeWindow = window(ScriptLibrary.welcomeTitle, OnboardingView { _ in }, size: NSSize(width: 560, height: 420))
         if let fitting = welcomeWindow.contentViewController?.view.fittingSize { welcomeWindow.setContentSize(fitting) }
         let welcome = shoot(welcomeWindow)
         write(welcome, "window-welcome", to: folder)
-        let editorWindow = window("Scripts", EditorView(library: library, settings: settings, onRead: {}, onPlay: {}),
+        let editorWindow = window(String(localized: "Scripts", comment: "Title of the script editor window"), EditorView(library: library, settings: settings, onRead: {}, onPlay: {}),
                                   size: NSSize(width: 860, height: 520))
         let editor = shoot(editorWindow, wait: 1)
         write(editor, "window-editor", to: folder)
-        let settingsShot = shoot(window("Settings", SettingsView(settings: settings), size: NSSize(width: 460, height: 440)))
+        let settingsShot = shoot(window(String(localized: "Settings", comment: "Title of the Settings window"), SettingsView(settings: settings), size: NSSize(width: 460, height: 440)))
         write(settingsShot, "window-settings", to: folder)
         let popover = shoot(window("", SettingsView(settings: settings, compact: true), size: NSSize(width: 340, height: 300),
                                    titled: false, dark: true))
         write(popover, "window-popover", to: folder)
 
-        prompter.debugStage(.reading(word: 40))
+        prompter.debugStage(.reading(word: content.readingWord))
         let reading = shoot(prompter.panel, wait: 1)
         write(reading, "prompter-reading", to: folder)
         prompter.debugStage(.playing, hud: String(localized: "▶ Speed \(40)"))
@@ -128,34 +135,35 @@ enum ScreenshotRenderer {
         settings.width = 1000
         settings.height = 330
         settings.fontSize = 36
-        prompter.debugStage(.reading(word: 40))
+        prompter.debugStage(.reading(word: content.readingWord))
         let big = shoot(prompter.panel, wait: 1)
         write(big, "prompter-big", to: folder)
         prompter.hidePanel()
 
         // App Store screenshots.
-        renderStoreShot(StoreShot(headline: "Keep eye contact while you read",
-                                  detail: "Your script sits right under the camera.",
+        let shots = content.shots
+        renderStoreShot(StoreShot(headline: shots[0].headline,
+                                  detail: shots[0].detail,
                                   prompter: reading, wallpaper: 0) { CallWindow() },
                         "appstore-1-eye-contact", to: folder)
-        renderStoreShot(StoreShot(headline: "It follows your voice",
-                                  detail: "Talk at your own pace. Pause, and it waits for you.",
+        renderStoreShot(StoreShot(headline: shots[1].headline,
+                                  detail: shots[1].detail,
                                   prompter: big, wallpaper: 1) { EmptyView() },
                         "appstore-2-voice", to: folder)
-        renderStoreShot(StoreShot(headline: "Write your scripts right here",
-                                  detail: "A simple editor. Import Word, Markdown or text files.",
+        renderStoreShot(StoreShot(headline: shots[2].headline,
+                                  detail: shots[2].detail,
                                   prompter: idle, wallpaper: 2) {
                             Image(nsImage: editor).resizable().scaledToFit().frame(height: 480).shadowed()
                         },
                         "appstore-3-editor", to: folder)
-        renderStoreShot(StoreShot(headline: "Or press play",
-                                  detail: "Steady scrolling. Hover to pause. Tortoise and hare for speed.",
+        renderStoreShot(StoreShot(headline: shots[3].headline,
+                                  detail: shots[3].detail,
                                   prompter: playing, wallpaper: 3) {
                             Image(nsImage: popover).clipShape(RoundedRectangle(cornerRadius: 12)).shadowed()
                         },
                         "appstore-4-play", to: folder)
-        renderStoreShot(StoreShot(headline: "Invisible to your audience",
-                                  detail: "Hidden from screen sharing and recordings. Nothing leaves your Mac but speech for Apple’s recogniser.",
+        renderStoreShot(StoreShot(headline: shots[4].headline,
+                                  detail: shots[4].detail,
                                   prompter: reading, wallpaper: 4) {
                             Image(nsImage: settingsShot).resizable().scaledToFit().frame(height: 440).shadowed()
                         },
@@ -205,9 +213,15 @@ private struct StoreShot<Content: View>: View {
 
             VStack(spacing: 10) {
                 Spacer().frame(height: prompter.size.height * scale + 40)
+                // Long headlines (German, Finnish, Russian ...) may take two lines, and shrink if needed.
                 Text(headline)
                     .font(.system(size: 56, weight: .bold))
                     .foregroundStyle(.white)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.75)
+                    .frame(maxWidth: 1300)
+                    .fixedSize(horizontal: false, vertical: true)
                 Text(detail)
                     .font(.system(size: 24, weight: .medium))
                     .foregroundStyle(.white.opacity(0.85))
@@ -231,12 +245,15 @@ private struct MenuBar: View {
             HStack(spacing: 20) {
                 Image(systemName: "apple.logo").font(.system(size: 15, weight: .semibold))
                 Text(verbatim: "NotchPrompter").fontWeight(.bold)
-                ForEach(["File", "Edit", "Prompter", "Window", "Help"], id: \.self) { Text(verbatim: $0) }
+                // The app's real menu titles, in the words macOS uses for the language.
+                ForEach([StandardMenuTitle.file, StandardMenuTitle.edit,
+                         String(localized: "Prompter", comment: "Menu bar menu with the prompter commands"),
+                         StandardMenuTitle.window, StandardMenuTitle.help], id: \.self) { Text(verbatim: $0) }
                 Spacer()
                 Image(systemName: "text.aligncenter")
                 Image(systemName: "wifi")
                 Image(systemName: "battery.75percent")
-                Text(verbatim: "Tue 9:41")
+                Text(verbatim: ScreenshotRenderer.content.clock)
             }
             .font(.system(size: 14, weight: .medium))
             .foregroundStyle(.white)

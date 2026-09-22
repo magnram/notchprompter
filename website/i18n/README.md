@@ -16,7 +16,11 @@ uk, ja, ko, zh-Hans, zh-Hant. The list is `LANGS` in `build.py`.
   tags. The English text (with its HTML, whitespace made single) is the key.
 - `i18n/<lang>.json` maps each key to its translation:
   `{"ui": {...}, "strings": {"English text": "Translated text"}}`.
-- Translated pages use `../style.css` and `../media/...`. The promo video stays English.
+- Translated pages use `../style.css` and `../media/...`. When `media/<lang>/<file>` exists,
+  the page uses `../media/<lang>/<file>` instead, `og:image` too. The screenshots
+  (`1-eye-contact.jpg` to `5-private.jpg` and `editor.png`) have a copy per language, made by
+  `Tools/render-all-languages.sh`. Other files, such as the promo video and its poster, stay
+  English. After you render the screenshots again, run the build again.
 - The script also adds three marked blocks to every page, the English pages too:
   `<!-- i18n:alternates -->` (hreflang links), `<!-- i18n:picker -->` (language picker in
   the footer) and `<!-- i18n:script -->` (remembers the chosen language; on the English

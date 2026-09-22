@@ -298,6 +298,17 @@ def insert_blocks(text: str, code: str, page: str, ui: dict) -> str:
 ASSET_RE = re.compile(r'(\s(?:href|src|poster|content)=")((?:media/|style\.css)[^"]*")')
 
 
+def localize_asset(match: re.Match, code: str) -> str:
+    """Point an asset at ../, and a media file at ../media/<lang>/ when that language has its own copy
+    (the screenshots are rendered per language by Tools/render-all-languages.sh)."""
+    attr, path = match.group(1), match.group(2)
+    if path.startswith("media/"):
+        name = path[len("media/"):-1]  # without the closing quote
+        if "/" not in name and (SITE / "media" / code / name).is_file():
+            return f'{attr}../media/{code}/{name}"'
+    return f"{attr}../{path}"
+
+
 def translate(source: str, code: str, strings: dict, missing: set, used: set) -> str:
     out = []
     pos = 0
@@ -322,7 +333,7 @@ def build_page(code: str, page: str, data: dict, missing: set, used: set) -> str
         return insert_blocks(source, code, page, load("en")["ui"])
     text = translate(source, code, data["strings"], missing, used)
     text = text.replace('<html lang="en">', f'<html lang="{code}">', 1)
-    text = ASSET_RE.sub(r"\1../\2", text)
+    text = ASSET_RE.sub(lambda m: localize_asset(m, code), text)
     pause = data["ui"].get("pause_cue")
     if pause and 'id="demo-script"' in text:
         text = text.replace('id="demo-script"', f'id="demo-script" data-pause="{esc(pause)}"', 1)
