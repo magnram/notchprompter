@@ -9,12 +9,12 @@ struct SettingsView: View {
     var compact = false
 
     private static let locales: [(id: String, name: String)] = SFSpeechRecognizer.supportedLocales()
-        .map { ($0.identifier, Locale.current.localizedString(forIdentifier: $0.identifier) ?? $0.identifier) }
+        .map { ($0.identifier, Locale.interface.localizedString(forIdentifier: $0.identifier) ?? $0.identifier) }
         .sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
 
     private var automaticName: String {
         let id = VoiceListener.detectLocale(for: library.active?.text ?? "")
-        return Locale.current.localizedString(forIdentifier: id) ?? id
+        return Locale.interface.localizedString(forIdentifier: id) ?? id
     }
 
     /// Whole numbers, without the tick marks a stepped slider draws.
@@ -33,7 +33,7 @@ struct SettingsView: View {
                 LabeledContent("Text size") {
                     HStack {
                         Slider(value: rounded($settings.fontSize), in: AppSettings.fontSizeRange)
-                        Text("\(Int(settings.fontSize))").monospacedDigit().frame(width: 26, alignment: .trailing)
+                        Text(verbatim: "\(Int(settings.fontSize))").monospacedDigit().frame(width: 26, alignment: .trailing)
                     }
                 }
                 Picker("Voice language", selection: $settings.voiceLanguage) {
@@ -67,11 +67,15 @@ struct SettingsView: View {
                         Text("Also record the screen")
                         Text("Saves a second movie of your screen for each take. The prompter is left out while it's hidden from recordings.")
                     }
-                    LabeledContent("Takes are saved in Movies › NotchPrompter") {
+                    LabeledContent {
                         Button("Show in Finder") {
                             try? FileManager.default.createDirectory(at: Recorder.folder, withIntermediateDirectories: true)
                             NSWorkspace.shared.open(Recorder.folder)
                         }
+                        .fixedSize()
+                    } label: {
+                        Text("Takes are saved in Movies › NotchPrompter",
+                             comment: "Use the Finder name of the Movies folder in this language")
                     }
                 }
                 Section("Privacy") {

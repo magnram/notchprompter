@@ -1,0 +1,33 @@
+Mira a la gente a los ojos mientras lees tu guion.
+
+NotchPrompter muestra tu guion en un pequeño panel negro que cuelga de la parte superior de la pantalla, justo debajo de la cámara. En un MacBook con notch, se funde con él. Para quien te ve, parece que le hablas directamente.
+
+SIGUE TU VOZ, EN CUALQUIER IDIOMA
+Pulsa el micrófono y habla. NotchPrompter te escucha mientras lees y mueve el texto contigo, para que las siguientes palabras estén siempre justo debajo de la cámara. Las palabras que ya has dicho se desvanecen. Detecta en qué idioma está tu guion y lo escucha: español, inglés, noruego, alemán, japonés y decenas más. Sin configurar nada.
+
+NO SE PIERDE SI TE SALTAS ALGO
+Sáltate una frase, cambia una palabra, di «eh». NotchPrompter encuentra por dónde vas y avanza contigo. Haz una pausa, respira: te espera. ¿Te has perdido? Haz clic en la palabra por la que vas.
+
+O PULSA REPRODUCIR
+¿Prefieres un ritmo constante? Pulsa reproducir para un desplazamiento suave con cuenta atrás 3-2-1. Pasa el puntero por encima del texto para pausar. La tortuga y la liebre cambian la velocidad.
+
+UN PEQUEÑO EDITOR PARA TUS GUIONES
+Escribe y edita tus guiones en el editor integrado, o importa archivos de texto, Markdown, Word, RTF y HTML. Todo se guarda automáticamente. Ves el número de palabras y cuánto se tarda más o menos en leer cada guion.
+
+GRÁBATE
+Pulsa grabar para filmarte con tu cámara y tu micrófono mientras el guion sigue tu voz. Cada toma se guarda como película en Películas › NotchPrompter.
+
+INVISIBLE PARA TU PÚBLICO
+El prompter se oculta al compartir pantalla, en las capturas de pantalla y en las grabaciones, así que solo lo ves tú.
+
+PENSADO PARA
+• Videollamadas y reuniones online
+• YouTube, cursos y grabaciones de pantalla
+• Presentaciones, pitches y webinars
+• Cualquiera que quiera sonar natural y verse seguro frente a la cámara
+
+GRATIS Y DE CÓDIGO ABIERTO
+Sin anuncios, sin suscripción, sin cuenta. Código abierto con licencia MIT. El código fuente está en GitHub: github.com/magnram/notchprompter
+
+FUNCIONA POR COMPLETO EN TU MAC
+El habla se reconoce en tu Mac, no en la nube. Sin cuenta, sin rastreo, sin anuncios. Tus guiones y grabaciones nunca salen de tu Mac. El seguimiento por voz nunca guarda audio.

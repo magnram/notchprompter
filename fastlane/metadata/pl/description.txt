@@ -1,0 +1,33 @@
+Patrz ludziom w oczy, gdy czytasz swój tekst.
+
+NotchPrompter wyświetla Twój tekst w małym czarnym panelu, który zwisa z górnej krawędzi ekranu, tuż pod kamerą. Na MacBooku z notchem wtapia się w notch. Widzom wydaje się, że mówisz prosto do nich.
+
+PODĄŻA ZA TWOIM GŁOSEM, W KAŻDYM JĘZYKU
+Kliknij mikrofon i po prostu mów. NotchPrompter słucha, gdy czytasz, i przesuwa tekst razem z Tobą, więc kolejne słowa są zawsze tuż pod kamerą. Wypowiedziane słowa gasną. Aplikacja rozpoznaje, w jakim języku jest tekst, i słucha właśnie tego języka: polskiego, angielskiego, norweskiego, niemieckiego, hiszpańskiego, japońskiego i dziesiątek innych. Nic nie trzeba ustawiać.
+
+NADĄŻA, GDY COŚ POMINIESZ
+Pomiń zdanie, zmień słowo, powiedz „yyy”. NotchPrompter znajdzie miejsce, w którym jesteś, i przeskoczy razem z Tobą. Zrób pauzę, weź oddech: poczeka. Zgubiony wątek? Kliknij słowo, które właśnie czytasz.
+
+ALBO NACIŚNIJ PLAY
+Wolisz stałe tempo? Naciśnij play, a tekst będzie płynnie przewijany po odliczaniu 3-2-1. Najedź kursorem na tekst, aby wstrzymać. Żółw i zając zmieniają prędkość.
+
+MAŁY EDYTOR DO TWOICH TEKSTÓW
+Pisz i edytuj teksty we wbudowanym edytorze albo importuj pliki tekstowe, Markdown, Word, RTF i HTML. Wszystko zapisuje się automatycznie. Widzisz liczbę słów i mniej więcej, ile trwa przeczytanie każdego tekstu.
+
+NAGRYWAJ SIEBIE
+Naciśnij nagrywanie, aby sfilmować się kamerą i mikrofonem, podczas gdy tekst podąża za Twoim głosem. Każde ujęcie jest zapisywane jako film w folderze Filmy › NotchPrompter.
+
+NIEWIDOCZNY DLA WIDZÓW
+Prompter jest ukryty podczas udostępniania ekranu, na zrzutach ekranu i w nagraniach. Widzisz go tylko Ty.
+
+DLA KOGO I DO CZEGO
+• Rozmowy wideo i spotkania online
+• YouTube, kursy i nagrania ekranu
+• Prezentacje, pitche i webinary
+• Każdy, kto chce brzmieć naturalnie i wyglądać pewnie przed kamerą
+
+DARMOWY I OPEN SOURCE
+Bez reklam, bez subskrypcji, bez konta. Otwarte oprogramowanie na licencji MIT, a kod źródłowy jest na GitHubie: github.com/magnram/notchprompter
+
+DZIAŁA W CAŁOŚCI NA TWOIM MACU
+Mowa jest rozpoznawana na Twoim Macu, nie w chmurze. Bez konta, bez śledzenia, bez reklam. Twoje teksty i nagrania nigdy nie opuszczają Maca. Podążanie za głosem nigdy nie zapisuje dźwięku.

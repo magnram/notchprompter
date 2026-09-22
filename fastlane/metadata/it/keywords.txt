@@ -1,0 +1,1 @@
+gobbo,prompter,copione,testo,discorso,video,webcam,presentazione,notch,voce,registrare,autocue

@@ -1,0 +1,1 @@
+prompter,manus,autocue,tale,presentasjon,video,webkamera,notch,stemme,opptak,ta opp,kamera,foredrag

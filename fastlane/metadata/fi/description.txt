@@ -1,0 +1,33 @@
+Katso ihmisiä silmiin, kun luet käsikirjoitustasi.
+
+NotchPrompter näyttää käsikirjoituksesi pienessä mustassa paneelissa, joka roikkuu näytön yläreunasta aivan kameran alla. MacBookissa, jossa on lovi, paneeli sulautuu loveen. Katsojista näyttää siltä, että puhut suoraan heille.
+
+SEURAA ÄÄNTÄSI, KIELELLÄ KUIN KIELELLÄ
+Paina mikrofonia ja ala puhua. NotchPrompter kuuntelee, kun luet, ja siirtää tekstiä tahdissasi, joten seuraavat sanat ovat aina aivan kameran alla. Jo sanotut sanat himmenevät. Sovellus tunnistaa, millä kielellä käsikirjoitus on, ja kuuntelee sitä: suomi, englanti, norja, saksa, espanja, japani ja kymmeniä muita. Ei mitään asetettavaa.
+
+PYSYY MUKANA, KUN HYPPÄÄT YLI
+Hyppää lauseen yli, vaihda sana, sano ”öö”. NotchPrompter löytää kohdan, jossa olet, ja hyppää eteenpäin kanssasi. Pidä tauko, vedä henkeä: se odottaa. Kadotitko kohdan? Klikkaa sanaa, jossa olet.
+
+TAI PAINA TOISTOA
+Haluatko tasaisen tahdin? Paina toistoa, niin teksti vierii pehmeästi 3-2-1-lähtölaskennan jälkeen. Pysäytä viemällä osoitin tekstin päälle. Kilpikonna ja jänis säätävät nopeutta.
+
+PIENI EDITORI KÄSIKIRJOITUKSILLESI
+Kirjoita ja muokkaa käsikirjoituksiasi sisäänrakennetussa editorissa tai tuo teksti-, Markdown-, Word-, RTF- ja HTML-tiedostoja. Kaikki tallentuu automaattisesti. Näet sanamäärän ja suunnilleen, kuinka kauan kunkin käsikirjoituksen lukeminen kestää.
+
+KUVAA ITSESI
+Paina tallennusta, niin voit kuvata itsesi kameralla ja mikrofonilla, kun käsikirjoitus seuraa ääntäsi. Jokainen otto tallentuu elokuvana kansioon Elokuvat › NotchPrompter.
+
+NÄKYMÄTÖN YLEISÖLLE
+Prompteri on piilossa näytön jakamisessa, kuvakaappauksissa ja tallenteissa. Vain sinä näet sen.
+
+SOPII
+• Videopuheluihin ja verkkokokouksiin
+• YouTube-videoihin, kursseihin ja näyttötallenteisiin
+• Esityksiin, pitchauksiin ja webinaareihin
+• Kaikille, jotka haluavat kuulostaa luontevilta ja näyttää varmoilta kameran edessä
+
+ILMAINEN JA AVOINTA LÄHDEKOODIA
+Ei mainoksia, ei tilausta, ei tiliä. Avointa lähdekoodia MIT-lisenssillä, ja koodi on GitHubissa: github.com/magnram/notchprompter
+
+TOIMII KOKONAAN MACILLASI
+Puhe tunnistetaan Macillasi, ei pilvessä. Ei tiliä, ei seurantaa, ei mainoksia. Käsikirjoituksesi ja tallenteesi eivät koskaan lähde Macilta. Puheen seuraaminen ei koskaan tallenna ääntä.

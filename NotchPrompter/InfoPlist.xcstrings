@@ -1,0 +1,384 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "NSCameraUsageDescription" : {
+      "comment" : "Privacy - usage description shown by macOS when asking for permission",
+      "extractionState" : "manual",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter filmer dig kun, når du starter en optagelse. Filmen gemmes i mappen Film og forlader aldrig din Mac."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter filmt dich nur, wenn du eine Aufnahme startest. Das Video wird in deinem Ordner „Filme“ gesichert und verlässt deinen Mac nie."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter films you only when you press Record. The movie is saved in your Movies folder and never leaves your Mac."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter solo te graba cuando inicias una grabación. El vídeo se guarda en tu carpeta Vídeos y nunca sale de tu Mac."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter kuvaa sinua vain, kun aloitat tallennuksen. Video tallennetaan Elokuvat-kansioon, eikä se koskaan poistu Macistasi."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter ne vous filme que lorsque vous lancez un enregistrement. La vidéo est enregistrée dans votre dossier Vidéos et ne quitte jamais votre Mac."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter ti riprende solo quando avvii una registrazione. Il filmato viene salvato nella cartella Filmati e non lascia mai il tuo Mac."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompterがあなたを撮影するのは、収録を開始したときだけです。ムービーは“ムービー”フォルダに保存され、Macの外に出ることはありません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter는 녹화를 시작할 때만 사용자를 촬영합니다. 동영상은 동영상 폴더에 저장되며 Mac 밖으로 전송되지 않습니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter filmer deg bare når du starter et opptak. Filmen arkiveres i Filmer-mappen og forlater aldri Macen din."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter filmt je alleen als je een opname start. De video wordt in je map 'Films' bewaard en verlaat je Mac nooit."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter filmuje Cię tylko wtedy, gdy zaczniesz nagrywanie. Film jest zapisywany w folderze Filmy i nigdy nie opuszcza tego Maca."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O NotchPrompter só filma você quando você inicia uma gravação. O vídeo é salvo na sua pasta Filmes e nunca sai do seu Mac."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O NotchPrompter só o filma quando inicia uma gravação. O vídeo é guardado na pasta Filmes e nunca sai do Mac."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter снимает вас, только когда вы начинаете запись. Видео сохраняется в папке «Фильмы» и никогда не покидает ваш Mac."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter filmar dig bara när du startar en inspelning. Filmen sparas i mappen Filmer och lämnar aldrig din Mac."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter sizi yalnızca kayda başladığınızda çeker. Video, Filmler klasörünüze kaydedilir ve Mac’inizden asla çıkmaz."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter знімає вас, лише коли ви починаєте запис. Відео зберігається в папці «Відео» і ніколи не залишає ваш Mac."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter 仅在你开始录制时拍摄你。影片会存储在“影片”文件夹中，绝不会离开你的 Mac。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter 只會在你開始錄影時拍攝你。影片會儲存在「影片」檔案夾中，絕不會離開你的 Mac。"
+          }
+        }
+      }
+    },
+    "NSMicrophoneUsageDescription" : {
+      "comment" : "Privacy - usage description shown by macOS when asking for permission",
+      "extractionState" : "manual",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter lytter, så manuskriptet kan følge din stemme. Tale genkendes på din Mac. Lyd gemmes kun, mens du optager."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter hört zu, damit das Skript deiner Stimme folgen kann. Die Sprache wird auf deinem Mac erkannt. Ton wird nur gesichert, während du aufnimmst."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter listens so the script can follow your voice. Speech is recognised on your Mac. Audio is saved only when you press Record."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter te escucha para que el guion siga tu voz. El habla se reconoce en tu Mac. El audio solo se guarda mientras grabas."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter kuuntelee, jotta käsikirjoitus voi seurata ääntäsi. Puhe tunnistetaan Macillasi. Ääntä tallennetaan vain tallennuksen aikana."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter vous écoute pour que le script suive votre voix. La parole est reconnue sur votre Mac. Le son n’est enregistré que pendant un enregistrement."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter ascolta perché il copione possa seguire la tua voce. Il parlato viene riconosciuto sul tuo Mac. L’audio viene salvato solo mentre registri."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompterは、原稿があなたの声に合わせて進むように音声を聞き取ります。音声の認識はMac上で行われます。オーディオが保存されるのは収録中だけです。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter는 대본이 사용자의 목소리를 따라갈 수 있도록 소리를 듣습니다. 음성은 Mac에서 인식됩니다. 오디오는 녹화 중에만 저장됩니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter lytter slik at manuset kan følge stemmen din. Tale gjenkjennes på Macen. Lyd arkiveres bare mens du tar opp."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter luistert zodat het script je stem kan volgen. Spraak wordt op je Mac herkend. Audio wordt alleen bewaard terwijl je opneemt."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter słucha, aby tekst mógł podążać za Twoim głosem. Mowa jest rozpoznawana na tym Macu. Dźwięk jest zapisywany tylko podczas nagrywania."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O NotchPrompter escuta para que o roteiro acompanhe a sua voz. A fala é reconhecida no seu Mac. O áudio só é salvo enquanto você grava."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O NotchPrompter ouve para que o guião acompanhe a sua voz. A fala é reconhecida no Mac. O áudio só é guardado enquanto grava."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter слушает, чтобы текст следовал за вашим голосом. Речь распознаётся на вашем Mac. Звук сохраняется, только пока идёт запись."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter lyssnar så att manuset kan följa din röst. Talet känns igen på din Mac. Ljud sparas bara medan du spelar in."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter, metnin sesinizi takip edebilmesi için dinler. Konuşma Mac’inizde tanınır. Ses yalnızca kayıt sırasında kaydedilir."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter слухає, щоб текст рухався за вашим голосом. Мовлення розпізнається на вашому Mac. Звук зберігається, лише поки триває запис."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter 会聆听你的声音，让讲稿跟随你的朗读滚动。语音在你的 Mac 上识别。仅在录制时才会存储音频。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter 會聆聽你的聲音，讓講稿跟著你的朗讀捲動。語音會在你的 Mac 上辨識。只有在錄影時才會儲存音訊。"
+          }
+        }
+      }
+    },
+    "NSSpeechRecognitionUsageDescription" : {
+      "comment" : "Privacy - usage description shown by macOS when asking for permission",
+      "extractionState" : "manual",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter omsætter din tale til ord for at finde ud af, hvor du er i manuskriptet."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter wandelt deine Sprache in Wörter um, um deine Stelle im Skript zu finden."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter turns your speech into words to find your place in the script."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter convierte lo que dices en palabras para saber por dónde vas en el guion."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter muuttaa puheesi sanoiksi löytääkseen kohdan, jossa olet käsikirjoituksessa."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter transcrit votre voix en mots pour savoir où vous en êtes dans le script."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter trasforma la tua voce in parole per capire a che punto sei del copione."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompterは、原稿のどこを読んでいるかを見つけるために、話した言葉を文字に変換します。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter는 대본에서 현재 위치를 찾기 위해 사용자의 말을 텍스트로 변환합니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter gjør talen din om til ord for å finne ut hvor du er i manuset."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter zet je spraak om in woorden om te bepalen waar je in het script bent."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter zamienia Twoją mowę na słowa, aby odnaleźć miejsce, w którym jesteś w tekście."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O NotchPrompter transforma a sua fala em palavras para saber em que ponto do roteiro você está."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O NotchPrompter converte a sua fala em palavras para saber em que parte do guião está."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter преобразует вашу речь в слова, чтобы определить, где вы находитесь в тексте."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter omvandlar ditt tal till ord för att hitta var du är i manuset."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter, metinde nerede olduğunuzu bulmak için konuşmanızı sözcüklere dönüştürür."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter перетворює ваше мовлення на слова, щоб визначити, де ви зараз у тексті."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter 会将你的语音转换为文字，以找到你在讲稿中读到的位置。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter 會將你說的話轉換成文字，以找出你在講稿中讀到的位置。"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

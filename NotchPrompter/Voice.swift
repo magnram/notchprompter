@@ -64,12 +64,12 @@ final class VoiceListener {
         SFSpeechRecognizer.requestAuthorization { status in
             guard status == .authorized else {
                 return DispatchQueue.main.async {
-                    done(("NotchPrompter needs Speech Recognition to follow your voice. Turn it on for NotchPrompter in System Settings → Privacy & Security → Speech Recognition.", speechSettings))
+                    done((String(localized: "NotchPrompter needs Speech Recognition to follow your voice. Turn it on for NotchPrompter in System Settings → Privacy & Security → Speech Recognition."), speechSettings))
                 }
             }
             AVCaptureDevice.requestAccess(for: .audio) { granted in
                 DispatchQueue.main.async {
-                    done(granted ? nil : ("NotchPrompter needs the microphone to follow your voice. Turn it on for NotchPrompter in System Settings → Privacy & Security → Microphone.", microphoneSettings))
+                    done(granted ? nil : (String(localized: "NotchPrompter needs the microphone to follow your voice. Turn it on for NotchPrompter in System Settings → Privacy & Security → Microphone."), microphoneSettings))
                 }
             }
         }
@@ -90,11 +90,14 @@ final class VoiceListener {
     private func begin(_ locale: String) {
         self.locale = locale
         guard let r = SFSpeechRecognizer(locale: Locale(identifier: locale)), r.isAvailable else {
-            return fail("Speech recognition isn't available for \(locale) right now.")
+            let name = Locale.interface.localizedString(forIdentifier: locale) ?? locale
+            return fail(String(localized: "Speech recognition isn't available for \(name) right now.",
+                               comment: "The placeholder is a language name"))
         }
         if onDeviceOnly && !r.supportsOnDeviceRecognition {
-            let name = Locale.current.localizedString(forIdentifier: locale) ?? locale
-            return fail("\(name) can't be recognised on this Mac. Allow Apple's servers in Settings → Privacy, or use Play.")
+            let name = Locale.interface.localizedString(forIdentifier: locale) ?? locale
+            return fail(String(localized: "\(name) can't be recognised on this Mac. Allow Apple's servers in Settings → Privacy, or use Play.",
+                               comment: "The placeholder is a language name. “Settings → Privacy” is this app's Settings window."))
         }
         recognizer = r
         if useExternalAudio {
@@ -102,7 +105,7 @@ final class VoiceListener {
         } else {
             let input = engine.inputNode
             let format = input.outputFormat(forBus: 0)
-            guard format.channelCount > 0 else { return fail("No microphone found.") }
+            guard format.channelCount > 0 else { return fail(String(localized: "No microphone found.")) }
             input.removeTap(onBus: 0)
             input.installTap(onBus: 0, bufferSize: 1024, format: format) { [weak self] buffer, _ in
                 guard let self else { return }
@@ -111,7 +114,7 @@ final class VoiceListener {
                 req?.append(buffer)
             }
             engine.prepare()
-            do { try engine.start() } catch { return fail("Couldn't start the microphone.") }
+            do { try engine.start() } catch { return fail(String(localized: "Couldn't start the microphone.")) }
             running = true
             // Another app or a camera recording can change the input device's format, which stops the
             // engine. Start again on the new format.
@@ -125,14 +128,16 @@ final class VoiceListener {
         }
         onDevice = r.supportsOnDeviceRecognition
         quickErrors = 0
-        languageName = Locale.current.localizedString(forIdentifier: locale) ?? locale
+        languageName = Locale.interface.localizedString(forIdentifier: locale) ?? locale
         log.info("start: locale \(locale), on-device \(self.onDevice)")
         restartTask()
         announce()
     }
 
     private func announce() {
-        onStatus("🎙 \(languageName)" + (onDevice ? "" : " · via Apple"))
+        onStatus(onDevice ? "🎙 \(languageName)"
+                 : String(localized: "🎙 \(languageName) · via Apple",
+                          comment: "Status: listening in a language, recognised by Apple's servers"))
     }
 
     /// Start a fresh recognition task, so earlier words are forgotten.
@@ -167,7 +172,7 @@ final class VoiceListener {
                         return
                     }
                     if self.onDevice && self.onDeviceOnly && self.quickErrors >= 2 {
-                        return self.fail("On-device speech recognition isn't working. Turn on Dictation in System Settings → Keyboard, or allow Apple's servers in Settings → Privacy.")
+                        return self.fail(String(localized: "On-device speech recognition isn't working. Turn on Dictation in System Settings → Keyboard, or allow Apple's servers in Settings → Privacy."))
                     }
                     if self.onDevice && !self.onDeviceOnly {
                         // Usually "Siri and Dictation are disabled": use Apple's servers instead.
@@ -179,7 +184,8 @@ final class VoiceListener {
                     // An error right after starting means the recogniser is broken, not just idle.
                     self.quickErrors = CACurrentMediaTime() - started < 1.5 ? self.quickErrors + 1 : 0
                     if self.quickErrors >= 5 {
-                        return self.fail("Speech recognition keeps failing: \(e.localizedDescription)")
+                        return self.fail(String(localized: "Speech recognition keeps failing: \(e.localizedDescription)",
+                                                comment: "The placeholder is the system's error message"))
                     }
                     // Tasks end after a long pause or at a time limit; keep listening with a new one.
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
@@ -253,13 +259,30 @@ final class VoiceListener {
         let fallback = supported.contains(Locale.current) ? Locale.current.identifier : "en-US"
         let recognizer = NLLanguageRecognizer()
         recognizer.processString(String(text.prefix(3000)))
-        guard var code = recognizer.dominantLanguage?.rawValue else { return fallback }
+        guard let dominant = recognizer.dominantLanguage?.rawValue else { return fallback }
+        // "zh-Hans" and "zh-Hant" carry a script: keep the speech locales written in it.
+        let language = Locale.Language(identifier: dominant)
+        var code = language.languageCode?.identifier ?? dominant
         if code == "no" || code == "nn" { code = "nb" }   // speech recognition has Norwegian Bokmål
-        let matches = supported.filter { $0.language.languageCode?.identifier == code }
+        var matches = supported.filter { $0.language.languageCode?.identifier == code }
+        if let script = language.script {
+            let sameScript = matches.filter { $0.language.maximalIdentifier.contains("-\(script.identifier)-") }
+            if !sameScript.isEmpty { matches = sameScript }
+        }
+        // Prefer the user's region, then the region of the app's language (e.g. Portugal for
+        // Portuguese (Portugal)), then the language's main region (Germany for German).
+        let appRegion = Locale.Language(identifier: Bundle.main.preferredLocalizations.first ?? "").region
+        let mainRegion = Locale.Language(identifier: Locale.Language(identifier: dominant).maximalIdentifier).region
         let preferred = matches.first { $0.region == Locale.current.region }
-            ?? matches.first { $0.identifier == "en-US" } ?? matches.first
+            ?? matches.first { appRegion != nil && $0.language.region == appRegion }
+            ?? matches.first { mainRegion != nil && $0.language.region == mainRegion } ?? matches.first
         return preferred?.identifier ?? fallback
     }
+}
+
+extension Locale {
+    /// The language the app is shown in, for naming languages ("German", "Deutsch") in the same one.
+    static var interface: Locale { Locale(identifier: Bundle.main.preferredLocalizations.first ?? "en") }
 }
 
 /// Finds your place in the script from the words the recogniser heard.
@@ -272,11 +295,13 @@ struct VoiceMatcher {
     private var lastUsedSpoken = -1
     private var heardTask = 0
 
-    /// Stage directions like "(pause)" or "[smile]": shown, but not read out loud.
+    /// Stage directions like "(pause)" or "[smile]": shown, but not read out loud. Full-width
+    /// brackets, as Chinese and Japanese text uses them, count too: "（深呼吸）", "【笑顔】".
     private(set) var cues: [NSRange] = []
     private var length = 0
 
-    private static let cuePattern = try! NSRegularExpression(pattern: #"\([^()\n]*\)|\[[^\[\]\n]*\]"#)
+    private static let cuePattern = try! NSRegularExpression(
+        pattern: #"[(（][^()（）\n]*[)）]|[\[［【][^\[\]［］【】\n]*[\]］】]"#)
 
     mutating func setText(_ text: String) {
         let ns = text as NSString
@@ -299,7 +324,7 @@ struct VoiceMatcher {
         guard cursor > 0, !words.isEmpty else { return 0 }
         guard cursor < words.count else { return length }
         var end = words[cursor].range.location
-        let opening = CharacterSet(charactersIn: "\"'“‘«‹([{¿¡-–—")
+        let opening = CharacterSet(charactersIn: "\"'“‘«‹([{¿¡-–—（［【「『")
         func before(_ set: CharacterSet) -> Bool {
             end > 0 && UnicodeScalar(text.character(at: end - 1)).map(set.contains) == true
         }

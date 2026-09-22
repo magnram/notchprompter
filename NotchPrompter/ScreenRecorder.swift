@@ -42,7 +42,9 @@ final class ScreenRecorder: NSObject, SCStreamDelegate, SCRecordingOutputDelegat
                 await MainActor.run { self.stream = stream; ready(nil) }
             } catch {
                 log.error("screen recorder: \(error.localizedDescription)")
-                await MainActor.run { ready("Couldn't record the screen: \(error.localizedDescription)") }
+                let problem = String(localized: "Couldn't record the screen: \(error.localizedDescription)",
+                                     comment: "The placeholder is the system's error message")
+                await MainActor.run { ready(problem) }
             }
         }
     }
@@ -62,7 +64,10 @@ final class ScreenRecorder: NSObject, SCStreamDelegate, SCRecordingOutputDelegat
         // Adding the output can take a moment; don't hold up the prompter while it does.
         DispatchQueue.global(qos: .userInitiated).async {
             do { try stream.addRecordingOutput(recording) }
-            catch { self.finish(problem: "Couldn't record the screen: \(error.localizedDescription)") }
+            catch {
+                self.finish(problem: String(localized: "Couldn't record the screen: \(error.localizedDescription)",
+                                            comment: "The placeholder is the system's error message"))
+            }
         }
     }
 
@@ -74,7 +79,10 @@ final class ScreenRecorder: NSObject, SCStreamDelegate, SCRecordingOutputDelegat
             // Stop capturing only after the file is finished, or its last frames are lost.
             stopCompletion = { completion?(); Task { try? await stream.stopCapture() } }
             do { try stream.removeRecordingOutput(recording) }   // finishes the file, then calls the delegate
-            catch { finish(problem: "The screen recording couldn't be saved: \(error.localizedDescription)") }
+            catch {
+                finish(problem: String(localized: "The screen recording couldn't be saved: \(error.localizedDescription)",
+                                       comment: "The placeholder is the system's error message"))
+            }
         } else {
             completion?()
             Task { try? await stream.stopCapture() }
@@ -86,12 +94,16 @@ final class ScreenRecorder: NSObject, SCStreamDelegate, SCRecordingOutputDelegat
     }
 
     func recordingOutput(_ recordingOutput: SCRecordingOutput, didFailWithError error: Error) {
-        finish(problem: "The screen recording couldn't be saved: \(error.localizedDescription)")
+        finish(problem: String(localized: "The screen recording couldn't be saved: \(error.localizedDescription)",
+                               comment: "The placeholder is the system's error message"))
     }
 
     func stream(_ stream: SCStream, didStopWithError error: Error) {
         log.error("screen stream stopped: \(error.localizedDescription)")
-        if isRecording { finish(problem: "Screen recording stopped: \(error.localizedDescription)") }
+        if isRecording {
+            finish(problem: String(localized: "Screen recording stopped: \(error.localizedDescription)",
+                                   comment: "The placeholder is the system's error message"))
+        }
     }
 
     private func finish(problem: String?) {
@@ -107,6 +119,6 @@ final class ScreenRecorder: NSObject, SCStreamDelegate, SCRecordingOutputDelegat
 
     private enum ScreenError: LocalizedError {
         case noDisplay
-        var errorDescription: String? { "No screen found." }
+        var errorDescription: String? { String(localized: "No screen found.") }
     }
 }

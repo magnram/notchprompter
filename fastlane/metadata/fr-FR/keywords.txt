@@ -1,0 +1,1 @@
+prompteur,prompter,script,texte,discours,vidéo,webcam,présentation,notch,voix,enregistrer,autocue

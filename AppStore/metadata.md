@@ -67,6 +67,24 @@ Speech is recognised on your Mac, not in the cloud. No account, no tracking, no 
 
 First release.
 
+## Localized listings (version 1.1)
+
+From version 1.1 the listing is translated. **The source of truth for all listing text, including English, is `fastlane/metadata/<locale>/`.** This file shows the English 1.0 text only; do not copy translations here.
+
+Locales (App Store Connect codes): `en-US` (primary), `no`, `de-DE`, `fr-FR`, `es-ES`, `es-MX`, `it`, `pt-BR`, `pt-PT`, `nl-NL`, `sv`, `da`, `fi`, `pl`, `ja`, `ko`, `zh-Hans`, `zh-Hant`, `ru`, `uk`, `tr`.
+
+Each folder has `name`, `subtitle`, `promotional_text`, `keywords`, `description`, `release_notes` and the three URLs. The URLs are the same in every locale for now. Screenshots stay English only: the App Store shows the primary language screenshots for every locale.
+
+Check the limits before you upload:
+
+```sh
+python3 fastlane/check_metadata.py
+```
+
+It fails if a field is over its limit, a file is missing, keywords have spaces after commas, a URL differs from `en-US`, or the release notes do not say "20" languages. It warns when keywords repeat words from the name or subtitle.
+
+What's new in 1.1 (English): "Now in 20 languages: the app, the practice script and this App Store page. Plus small fixes and improvements."
+
 ## Screenshots (2880 × 1800, in this order)
 
 1. `screenshots/appstore-1-eye-contact.png`

@@ -1,0 +1,33 @@
+Olhe as pessoas nos olhos enquanto lê seu roteiro.
+
+O NotchPrompter mostra seu roteiro em um pequeno painel preto que desce do topo da tela, logo abaixo da câmera. Em um MacBook com notch, ele se integra ao notch. Para quem assiste, parece que você está falando diretamente com a pessoa.
+
+ACOMPANHA SUA VOZ, EM QUALQUER IDIOMA
+Clique no microfone e é só falar. O NotchPrompter ouve enquanto você lê e move o texto junto com você, para que as próximas palavras fiquem sempre logo abaixo da câmera. As palavras já ditas vão sumindo. Ele identifica o idioma do seu roteiro e escuta nesse idioma: português, inglês, norueguês, alemão, espanhol, japonês e dezenas de outros. Sem configurar nada.
+
+NÃO SE PERDE QUANDO VOCÊ PULA
+Pule uma frase, troque uma palavra, diga “hã”. O NotchPrompter descobre onde você está e avança junto. Faça uma pausa, respire: ele espera. Se perdeu? Clique na palavra em que você está.
+
+OU APERTE O PLAY
+Prefere um ritmo constante? Aperte o play para uma rolagem suave com contagem regressiva 3-2-1. Passe o cursor sobre o texto para pausar. A tartaruga e a lebre mudam a velocidade.
+
+UM PEQUENO EDITOR PARA SEUS ROTEIROS
+Escreva e edite seus roteiros no editor integrado ou importe arquivos de texto, Markdown, Word, RTF e HTML. Tudo é salvo automaticamente. Veja a contagem de palavras e quanto tempo, mais ou menos, leva para ler cada roteiro.
+
+GRAVE A SI MESMO
+Aperte gravar para se filmar com a câmera e o microfone enquanto o roteiro acompanha sua voz. Cada tomada é salva como filme em Filmes › NotchPrompter.
+
+INVISÍVEL PARA O SEU PÚBLICO
+O prompter fica oculto no compartilhamento de tela, em capturas de tela e em gravações. Só você o vê.
+
+FEITO PARA
+• Videochamadas e reuniões online
+• YouTube, cursos e gravações de tela
+• Apresentações, pitches e webinars
+• Quem quer soar natural e passar confiança na câmera
+
+GRATUITO E DE CÓDIGO ABERTO
+Sem anúncios, sem assinatura, sem conta. Código aberto sob a licença MIT, e o código-fonte está no GitHub: github.com/magnram/notchprompter
+
+FUNCIONA TOTALMENTE NO SEU MAC
+A fala é reconhecida no seu Mac, não na nuvem. Sem conta, sem rastreamento, sem anúncios. Seus roteiros e gravações nunca saem do seu Mac. O acompanhamento por voz nunca salva áudio.

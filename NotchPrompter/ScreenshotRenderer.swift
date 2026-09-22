@@ -87,7 +87,7 @@ enum ScreenshotRenderer {
         settings.height = 200
         settings.fontSize = 22
         settings.speed = 40
-        for script in library.scripts where script.title != "Welcome" { library.delete(script.id) }
+        for script in library.scripts where script.text != ScriptLibrary.welcomeText { library.delete(script.id) }
         library.add(title: "Weekly team update", text: "Good morning! Three things this week: the new onboarding, the pricing test, and our plans for the conference.")
         library.add(title: "YouTube intro", text: "Hey, welcome back to the channel. Today we are building a tiny Mac app from scratch.")
         let demo = library.add(title: demoTitle, text: demoText)
@@ -100,7 +100,10 @@ enum ScreenshotRenderer {
         prompter.showPanel()
 
         // The single windows, for checking the layout.
-        let welcome = shoot(window("Welcome", OnboardingView { _ in }, size: NSSize(width: 560, height: 420)))
+        // Like the real window: as tall as the onboarding needs, which varies with the language.
+        let welcomeWindow = window("Welcome", OnboardingView { _ in }, size: NSSize(width: 560, height: 420))
+        if let fitting = welcomeWindow.contentViewController?.view.fittingSize { welcomeWindow.setContentSize(fitting) }
+        let welcome = shoot(welcomeWindow)
         write(welcome, "window-welcome", to: folder)
         let editorWindow = window("Scripts", EditorView(library: library, settings: settings, onRead: {}, onPlay: {}),
                                   size: NSSize(width: 860, height: 520))
@@ -115,7 +118,7 @@ enum ScreenshotRenderer {
         prompter.debugStage(.reading(word: 40))
         let reading = shoot(prompter.panel, wait: 1)
         write(reading, "prompter-reading", to: folder)
-        prompter.debugStage(.playing, hud: "▶ Speed 40")
+        prompter.debugStage(.playing, hud: String(localized: "▶ Speed \(40)"))
         let playing = shoot(prompter.panel, wait: 1)
         write(playing, "prompter-playing", to: folder)
         prompter.debugStage(.idle)
@@ -227,13 +230,13 @@ private struct MenuBar: View {
             Rectangle().fill(.black.opacity(0.18))
             HStack(spacing: 20) {
                 Image(systemName: "apple.logo").font(.system(size: 15, weight: .semibold))
-                Text("NotchPrompter").fontWeight(.bold)
-                Text("File"); Text("Edit"); Text("Prompter"); Text("Window"); Text("Help")
+                Text(verbatim: "NotchPrompter").fontWeight(.bold)
+                ForEach(["File", "Edit", "Prompter", "Window", "Help"], id: \.self) { Text(verbatim: $0) }
                 Spacer()
                 Image(systemName: "text.aligncenter")
                 Image(systemName: "wifi")
                 Image(systemName: "battery.75percent")
-                Text("Tue 9:41")
+                Text(verbatim: "Tue 9:41")
             }
             .font(.system(size: 14, weight: .medium))
             .foregroundStyle(.white)
@@ -257,7 +260,7 @@ private struct CallWindow: View {
                             .foregroundStyle(.white.opacity(0.85))
                     }
                     .overlay(alignment: .bottomLeading) {
-                        Text(["Sara", "Jonas", "Priya"][i])
+                        Text(verbatim: ["Sara", "Jonas", "Priya"][i])
                             .font(.system(size: 15, weight: .semibold))
                             .foregroundStyle(.white)
                             .padding(.horizontal, 10).padding(.vertical, 5)

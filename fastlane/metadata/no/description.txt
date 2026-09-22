@@ -1,0 +1,33 @@
+Se folk i øynene mens du leser manuset ditt.
+
+NotchPrompter viser manuset ditt i et lite, svart panel som henger fra toppen av skjermen, rett under kameraet. På en MacBook med notch går det i ett med notchen. For dem som ser på, ser det ut som du snakker rett til dem.
+
+FØLGER STEMMEN DIN, PÅ ALLE SPRÅK
+Trykk på mikrofonen og bare snakk. NotchPrompter lytter mens du leser, og flytter teksten i takt med deg, så de neste ordene alltid står rett under kameraet. Ord du har sagt, tones ut. Appen ser hvilket språk manuset er skrevet på, og lytter etter det: norsk, engelsk, tysk, spansk, japansk og mange flere. Ingenting å stille inn.
+
+HENGER MED NÅR DU HOPPER OVER
+Hopp over en setning, bytt ut et ord, si «eh». NotchPrompter finner ut hvor du er, og hopper videre sammen med deg. Ta en pause, trekk pusten: den venter. Mistet tråden? Klikk på ordet du er på.
+
+ELLER TRYKK PÅ PLAY
+Liker du et jevnt tempo? Trykk på play for myk rulling med nedtelling 3-2-1. Hold pekeren over teksten for å ta pause. Skilpadden og haren endrer farten.
+
+EN LITEN EDITOR FOR MANUSENE DINE
+Skriv og rediger manusene dine i den innebygde editoren, eller importer tekst-, Markdown-, Word-, RTF- og HTML-filer. Alt lagres automatisk. Du ser antall ord og omtrent hvor lang tid hvert manus tar å lese.
+
+FILM DEG SELV
+Trykk på ta opp for å filme deg selv med kameraet og mikrofonen mens manuset følger stemmen din. Hvert opptak lagres som en film i Filmer › NotchPrompter.
+
+USYNLIG FOR PUBLIKUM
+Prompteren er skjult ved skjermdeling, i skjermbilder og i opptak. Bare du ser den.
+
+LAGET FOR
+• Videosamtaler og nettmøter
+• YouTube, kurs og skjermopptak
+• Presentasjoner, pitcher og webinarer
+• Alle som vil høres naturlige ut og virke trygge foran kameraet
+
+GRATIS OG ÅPEN KILDEKODE
+Ingen reklame, ikke noe abonnement, ingen konto. Åpen kildekode med MIT-lisens, og koden ligger på GitHub: github.com/magnram/notchprompter
+
+KJØRER HELT PÅ MACEN DIN
+Tale gjenkjennes på Macen din, ikke i skyen. Ingen konto, ingen sporing, ingen reklame. Manusene og opptakene dine forlater aldri Macen. Stemmefølging lagrer aldri lyd.

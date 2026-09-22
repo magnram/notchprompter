@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NotchPrompter – Teleprompteri kameran alla</title>
+  <meta name="description" content="Macin teleprompteri, joka roikkuu kameran alla ja seuraa ääntäsi millä tahansa kielellä, kokonaan Macillasi, joten voit lukea käsikirjoitusta ja pitää silti katsekontaktin.">
+  <meta property="og:title" content="NotchPrompter – Teleprompteri kameran alla">
+  <meta property="og:description" content="Lue käsikirjoitusta ja pidä katsekontakti. Se seuraa ääntäsi.">
+  <meta property="og:image" content="../media/1-eye-contact.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../media/icon-256.png">
+  <link rel="apple-touch-icon" href="../media/icon-256.png">
+  <link rel="stylesheet" href="../style.css">
+  <!-- i18n:alternates -->
+  <link rel="alternate" hreflang="da" href="https://magnram.github.io/notchprompter/da/">
+  <link rel="alternate" hreflang="de" href="https://magnram.github.io/notchprompter/de/">
+  <link rel="alternate" hreflang="en" href="https://magnram.github.io/notchprompter/">
+  <link rel="alternate" hreflang="es" href="https://magnram.github.io/notchprompter/es/">
+  <link rel="alternate" hreflang="fr" href="https://magnram.github.io/notchprompter/fr/">
+  <link rel="alternate" hreflang="it" href="https://magnram.github.io/notchprompter/it/">
+  <link rel="alternate" hreflang="nl" href="https://magnram.github.io/notchprompter/nl/">
+  <link rel="alternate" hreflang="nb" href="https://magnram.github.io/notchprompter/nb/">
+  <link rel="alternate" hreflang="pl" href="https://magnram.github.io/notchprompter/pl/">
+  <link rel="alternate" hreflang="pt-BR" href="https://magnram.github.io/notchprompter/pt-BR/">
+  <link rel="alternate" hreflang="pt-PT" href="https://magnram.github.io/notchprompter/pt-PT/">
+  <link rel="alternate" hreflang="fi" href="https://magnram.github.io/notchprompter/fi/">
+  <link rel="alternate" hreflang="sv" href="https://magnram.github.io/notchprompter/sv/">
+  <link rel="alternate" hreflang="tr" href="https://magnram.github.io/notchprompter/tr/">
+  <link rel="alternate" hreflang="ru" href="https://magnram.github.io/notchprompter/ru/">
+  <link rel="alternate" hreflang="uk" href="https://magnram.github.io/notchprompter/uk/">
+  <link rel="alternate" hreflang="ja" href="https://magnram.github.io/notchprompter/ja/">
+  <link rel="alternate" hreflang="ko" href="https://magnram.github.io/notchprompter/ko/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://magnram.github.io/notchprompter/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://magnram.github.io/notchprompter/zh-Hant/">
+  <link rel="alternate" hreflang="x-default" href="https://magnram.github.io/notchprompter/">
+  <!-- /i18n:alternates -->
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="../media/icon-256.png" alt="">NotchPrompter</a>
+      <nav>
+        <a href="#video" class="hide-sm">Video</a>
+        <a href="#features">Ominaisuudet</a>
+        <a href="support.html">Tuki</a>
+        <a href="https://github.com/magnram/notchprompter">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="wrap">
+        <div class="notch" aria-hidden="true">
+          <div class="meter"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="reader">
+            <div class="script" id="demo-script" data-pause="(tauko)">
+              <p>Tiedät tunteen. Luet muistiinpanojasi, ja katseesi karkaa pois ihmisistä, joille puhut.</p>
+              <p>(tauko) NotchPrompterin ansiosta käsikirjoitus on aivan kameran alla.</p>
+              <p>Se seuraa ääntäsi, kun puhut. Poikkea käsikirjoituksesta, ja se pysyy mukana.</p>
+              <p data-skip>Tämän rivin jätät väliin, ja se hyppää suoraan sen yli.</p>
+              <p>Näetkö? (hymy) Ja kun pidät tauon, se odottaa sinua.</p>
+            </div>
+          </div>
+        </div>
+        <h1>Pidä katsekontakti lukiessasi</h1>
+        <p class="lede">NotchPrompter tuo käsikirjoituksesi aivan kameran alle ja seuraa ääntäsi. Millä tahansa kielellä, myös kun hyppäät eteenpäin, ja kokonaan Macillasi.</p>
+        <div class="cta" id="download">
+          <!-- Replace href with the App Store link once the app is live. -->
+          <a class="store-badge" href="https://apps.apple.com/app/notchprompter" aria-label="Lataa Mac App Storesta">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.51 1.25-2.58-.03-.01-2.4-.92-2.42-3.65zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.75-.96 2.79 1.02.08 2.05-.52 2.68-1.27z"/></svg>
+            <span><small>Lataa</small><strong>Mac App Storesta</strong></span>
+          </a>
+          <a class="link-btn" href="https://github.com/magnram/notchprompter">Näytä GitHubissa →</a>
+        </div>
+        <p class="req">Ilmainen ja avointa lähdekoodia. macOS 15 Sequoia tai uudempi. Toimii parhaiten MacBookissa, jossa on lovi, ja missä tahansa Macissa, jonka kamera on näytön yläpuolella.</p>
+      </div>
+    </div>
+
+    <section id="video">
+      <div class="wrap center">
+        <h2>Katso se toiminnassa</h2>
+        <p class="sub">Lue, pidä tauko, hyppää eteenpäin. Prompteri pysyy mukana.</p>
+        <div class="video-frame">
+          <video src="../media/promo.mp4" poster="../media/promo-poster.png" controls playsinline preload="none"></video>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <h2>Kaikki mitä tarvitset. Ei mitään turhaa.</h2>
+        <p class="sub">Pieni musta paneeli kameran alla, muutama selkeä painike, pieni editori käsikirjoituksillesi ja tallennuspainike.</p>
+        <div class="features">
+          <div class="feature">
+            <div class="icon">🎙️</div>
+            <h3>Seuraa ääntäsi</h3>
+            <p>Paina mikrofonia ja puhu. Seuraavat sanat ovat aina aivan kameran alla. Jo sanomasi sanat himmenevät.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">🌍</div>
+            <h3>Mikä tahansa kieli, automaattisesti</h3>
+            <p>NotchPrompter tunnistaa, millä kielellä käsikirjoitus on, ja kuuntelee sitä. Englanti, norja, saksa, espanja, japani ja kymmeniä muita.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">⏭️</div>
+            <h3>Pysyy mukana, kun hyppäät yli</h3>
+            <p>Jätä lause väliin, vaihda sana, sano ”öö”. Se löytää kohdan, jossa olet, ja hyppää eteenpäin kanssasi. Pidä tauko, niin se odottaa.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">▶️</div>
+            <h3>Tai paina toistoa</h3>
+            <p>Tasainen vieritys ja 3-2-1-lähtölaskenta. Pysäytä viemällä osoitin päälle, ja säädä nopeutta kilpikonnalla ja jäniksellä.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">✏️</div>
+            <h3>Sisäänrakennettu editori</h3>
+            <p>Kirjoita ja säilytä kaikki käsikirjoituksesi yhdessä paikassa. Tuo Word-, Markdown-, RTF- tai tekstitiedostoja. Tallentuu automaattisesti.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">🎥</div>
+            <h3>Kuvaa itsesi</h3>
+            <p>Paina tallennusta, niin voit kuvata itsesi kameralla ja mikrofonilla lukiessasi. Jokainen otto tallennetaan elokuvana Elokuvat-kansioon.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">🙈</div>
+            <h3>Näkymätön yleisöllesi</h3>
+            <p>Piilossa näytön jakamisessa, kuvakaappauksissa ja tallenteissa. Vain sinä näet sen.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">🔒</div>
+            <h3>Toimii kokonaan Macillasi</h3>
+            <p>Puhe tunnistetaan Macillasi, ei pilvessä. Ei tiliä, ei seurantaa. Käsikirjoituksesi ja tallenteesi eivät koskaan poistu Macistasi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <div>
+          <h2>Käsikirjoituksesi yhden klikkauksen päässä</h2>
+          <p class="sub">Avaa editori klikkaamalla prompterin kynää. Valitse käsikirjoitus, paina mikrofonia ja ala puhua.</p>
+          <ol class="steps">
+            <li>Kirjoita tai liitä käsikirjoitus, tai tuo tiedosto.</li>
+            <li>Paina <strong>Lue äänellä</strong>.</li>
+            <li>Katso kameraan ja puhu.</li>
+          </ol>
+        </div>
+        <img src="../media/editor.png" alt="NotchPrompterin käsikirjoituseditori, jossa näkyy luettelo käsikirjoituksista ja tuotejulkistuksen käsikirjoituksen teksti." loading="lazy">
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="center">Tehty kameraa varten</h2>
+        <p class="sub center" style="margin-inline:auto">Videopuhelut, YouTube, kurssit, webinaarit ja myyntiesittelyt.</p>
+        <div class="shots">
+          <img src="../media/2-voice.jpg" alt="Prompteri loven alla seuraamassa ääneen luettua käsikirjoitusta." loading="lazy">
+          <img src="../media/4-play.jpg" alt="Toistotila nopeuspainikkeineen ja asetusikkuna." loading="lazy">
+          <img src="../media/3-editor.jpg" alt="Editori-ikkuna prompterin alla." loading="lazy">
+          <img src="../media/5-private.jpg" alt="Asetukset, joissa on valinta prompterin piilottamiseksi näytön jakamisessa." loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="wrap" style="max-width:780px">
+        <h2>Kysymyksiä</h2>
+        <details>
+          <summary>Onko se oikeasti ilmainen?</summary>
+          <p>Kyllä. NotchPrompter on ilmainen ja avointa lähdekoodia MIT-lisenssillä. Ei mainoksia, ei tilausta, ei tiliä. <a href="https://github.com/magnram/notchprompter">Lähdekoodi on GitHubissa</a>, jossa voit ilmoittaa virheistä, ehdottaa ominaisuuksia tai osallistua kehitykseen.</p>
+        </details>
+        <details>
+          <summary>Toimiiko se ilman lovea?</summary>
+          <p>Kyllä. Macissa, jossa ei ole lovea, prompteri roikkuu näytön yläreunasta valikkorivin alla, mikä on silti lähellä kameraa.</p>
+        </details>
+        <details>
+          <summary>Mitä kieliä puheohjaus tukee?</summary>
+          <p>Kymmeniä, muun muassa englantia, norjaa, saksaa, ranskaa, espanjaa, kiinaa ja japania. NotchPrompter tunnistaa, millä kielellä käsikirjoitus on, ja kuuntelee sitä kieltä, joten sinun ei tarvitse asettaa mitään. Voit valita toisen kielen Asetuksissa.</p>
+        </details>
+        <details>
+          <summary>Näkevätkö muut prompterin, kun jaan näyttöni?</summary>
+          <p>Eivät. Oletuksena se on piilossa näytön jakamisessa, kuvakaappauksissa ja tallenteissa. Voit poistaa tämän käytöstä Asetuksissa, jos haluat näyttää sen.</p>
+        </details>
+        <details>
+          <summary>Lähteekö mitään pilveen?</summary>
+          <p>Ei. Puhe tunnistetaan Macillasi (kun Sanelu on laitettu päälle Järjestelmäasetuksissa), eikä NotchPrompterilla ole palvelimia. Puheohjaus ei koskaan tallenna ääntä. Elokuva tallennetaan vain, kun painat tallennusta, ja silloin omaan Elokuvat-kansioosi. Lue <a href="privacy.html">tietosuojakäytäntö</a>.</p>
+        </details>
+        <details>
+          <summary>Mitkä ovat näppäinoikotiet?</summary>
+          <p>Klikkaa prompteria ja sitten: <kbd>Välilyönti</kbd> toisto/tauko, <kbd>V</kbd> ääni, <kbd>C</kbd> tallennus, <kbd>R</kbd> takaisin alkuun, <kbd>↑</kbd> <kbd>↓</kbd> nopeus, <kbd>+</kbd> <kbd>−</kbd> tekstin koko, <kbd>E</kbd> editori, <kbd>Esc</kbd> lopeta.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Magnus Ramm · Ilmainen ja avointa lähdekoodia (MIT)</span>
+      <nav>
+        <a href="support.html">Tuki</a>
+        <a href="privacy.html">Tietosuoja</a>
+        <a href="https://github.com/magnram/notchprompter">Lähdekoodi</a>
+      </nav>
+      <!-- i18n:picker -->
+      <details class="lang">
+        <summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span class="sr">Kieli: </span>Suomi</summary>
+        <ul aria-label="Kieli">
+          <li><a href="../da/" hreflang="da" lang="da">Dansk</a></li>
+          <li><a href="../de/" hreflang="de" lang="de">Deutsch</a></li>
+          <li><a href="../" hreflang="en" lang="en">English</a></li>
+          <li><a href="../es/" hreflang="es" lang="es">Español</a></li>
+          <li><a href="../fr/" hreflang="fr" lang="fr">Français</a></li>
+          <li><a href="../it/" hreflang="it" lang="it">Italiano</a></li>
+          <li><a href="../nl/" hreflang="nl" lang="nl">Nederlands</a></li>
+          <li><a href="../nb/" hreflang="nb" lang="nb">Norsk</a></li>
+          <li><a href="../pl/" hreflang="pl" lang="pl">Polski</a></li>
+          <li><a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+          <li><a href="../pt-PT/" hreflang="pt-PT" lang="pt-PT">Português (Portugal)</a></li>
+          <li><a href="../fi/" hreflang="fi" lang="fi" aria-current="page">Suomi</a></li>
+          <li><a href="../sv/" hreflang="sv" lang="sv">Svenska</a></li>
+          <li><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></li>
+          <li><a href="../ru/" hreflang="ru" lang="ru">Русский</a></li>
+          <li><a href="../uk/" hreflang="uk" lang="uk">Українська</a></li>
+          <li><a href="../ja/" hreflang="ja" lang="ja">日本語</a></li>
+          <li><a href="../ko/" hreflang="ko" lang="ko">한국어</a></li>
+          <li><a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li>
+          <li><a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
+        </ul>
+      </details>
+      <!-- /i18n:picker -->
+    </div>
+  </footer>
+  <script>
+    // Hero demo: read the script word by word, like NotchPrompter following a voice.
+    (() => {
+      const script = document.getElementById("demo-script");
+      const notch = script.closest(".notch");
+      const pauseCue = script.dataset.pause || "(pause)";
+      // Chinese and Japanese put no spaces between words. Split them into words with
+      // Intl.Segmenter, or into characters (and runs of Latin letters) where it is missing.
+      const lang = document.documentElement.lang;
+      const noSpaces = /^(ja|zh)\b/.test(lang);
+      const segmenter = noSpaces && window.Intl && Intl.Segmenter ? new Intl.Segmenter(lang, { granularity: "word" }) : null;
+      function wordsOf(text) {
+        if (!noSpaces) return text.split(/\s+/).filter(Boolean);
+        const pieces = segmenter
+          ? Array.from(segmenter.segment(text), s => s.segment)
+          : text.match(/[A-Za-z0-9]+|[^]/gu) || [];
+        const out = [];
+        let open = "";
+        for (const t of pieces) {
+          if (!t.trim()) { if (out.length) out[out.length - 1] += " "; continue; } // keep spaces around Latin words
+          if (/^[「『（(“‘《〈【]+$/.test(t)) open += t;            // opening marks go with the next word
+          else if (!/[\p{L}\p{N}]/u.test(t) && out.length) out[out.length - 1] += t; // punctuation with the last
+          else { out.push(open + t); open = ""; }
+        }
+        return out;
+      }
+      const words = [];
+      for (const p of script.querySelectorAll("p")) {
+        const parts = p.textContent.trim().split(/(\([^)]*\)|（[^）]*）)/)
+          .flatMap(s => /^[(（]/.test(s) ? [s] : wordsOf(s));
+        p.textContent = "";
+        for (const part of parts) {
+          const span = document.createElement("span");
+          span.textContent = part;
+          span.className = /^[(（]/.test(part) ? "w cue" : "w";
+          span.dataset.skip = p.hasAttribute("data-skip") ? "1" : "";
+          p.append(span, noSpaces ? "" : " ");
+          words.push(span);
+        }
+      }
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        words.slice(0, 9).forEach(w => w.classList.add("said"));
+        return;
+      }
+      let i = 0, lineTop = 0;
+      const talking = on => notch.classList.toggle("talking", on);
+      function keepLineOnTop(word) {
+        const top = word.offsetTop - script.offsetTop;
+        if (top > lineTop + 4) { lineTop = top; script.style.transform = `translateY(${-top}px)`; }
+      }
+      function step() {
+        if (i >= words.length) {
+          talking(false);
+          setTimeout(() => {                       // start over
+            script.classList.add("fade");
+            setTimeout(() => {
+              words.forEach(w => w.classList.remove("said"));
+              i = 0; lineTop = 0; script.style.transform = "";
+              script.classList.remove("fade");
+              setTimeout(step, 900);
+            }, 500);
+          }, 2200);
+          return;
+        }
+        const w = words[i];
+        if (w.classList.contains("cue")) {        // a note to yourself: not spoken, just waited on
+          talking(false); w.classList.add("said"); i++;
+          return setTimeout(step, w.textContent === pauseCue ? 1400 : 700);
+        }
+        if (w.dataset.skip) {                      // the skipped line: jumps past in one go
+          talking(false);
+          const skipped = [];
+          while (i < words.length && words[i].dataset.skip) skipped.push(words[i++]);
+          return setTimeout(() => {
+            skipped.forEach(s => s.classList.add("said"));
+            keepLineOnTop(words[i] || skipped[skipped.length - 1]);
+            setTimeout(step, 300);
+          }, 700);
+        }
+        talking(true);
+        keepLineOnTop(w);
+        w.classList.add("said");
+        i++;
+        const said = w.textContent.trim();
+        const end = /[.?!。？！][」』"”’)）]*$/.test(said), comma = /[,，、;；:：]$/.test(said);
+        if (end || comma) talking(false);
+        setTimeout(step, end ? 650 : comma ? 380 : noSpaces && !/^[A-Za-z]/.test(said) ? 120 + said.length * 110 : 170 + said.length * 22);
+      }
+      setTimeout(step, 1200);
+    })();
+  </script>
+  <!-- i18n:script -->
+  <script>
+    // Remember the language the visitor picks, so the English page stops suggesting another one.
+    for (const a of document.querySelectorAll("a[hreflang]")) {
+      a.addEventListener("click", () => { try { localStorage.setItem("np-lang", a.hreflang); } catch (e) {} });
+    }
+  </script>
+  <!-- /i18n:script -->
+</body>
+</html>

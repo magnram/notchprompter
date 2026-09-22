@@ -164,3 +164,61 @@ footer nav { margin: 0; }
   section { padding: 64px 0; }
   .notch { border-radius: 0 0 26px 26px; padding: 40px 18px 20px; }
 }
+
+/* Languages: fonts for scripts the default stack may not cover well */
+:lang(ja) body, body:lang(ja) { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Meiryo", "Noto Sans CJK JP", "Noto Sans JP", system-ui, sans-serif; }
+:lang(zh-Hans) body, body:lang(zh-Hans) { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", system-ui, sans-serif; }
+:lang(zh-Hant) body, body:lang(zh-Hant) { font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Noto Sans CJK TC", "Noto Sans TC", system-ui, sans-serif; }
+:lang(ko) body, body:lang(ko) { font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans CJK KR", "Noto Sans KR", system-ui, sans-serif; word-break: keep-all; }
+:lang(ru) body, :lang(uk) body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Noto Sans", system-ui, sans-serif; }
+:lang(ja) h1, :lang(ja) h2, :lang(zh) h1, :lang(zh) h2, :lang(ko) h1, :lang(ko) h2 { letter-spacing: 0; }
+:lang(ja) .hero h1, :lang(zh) .hero h1, :lang(ko) .hero h1 { max-width: 11em; line-height: 1.2; }
+:lang(ja) h1, :lang(ja) h2 { word-break: auto-phrase; }
+h1, h2, h3 { overflow-wrap: break-word; hyphens: auto; }
+
+/* Language picker (footer). Plain links inside <details>: works without JavaScript. */
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.lang { flex-basis: 100%; }
+.lang summary {
+  display: inline-flex; align-items: center; gap: 7px; cursor: pointer; list-style: none;
+  padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--text);
+}
+.lang summary::-webkit-details-marker { display: none; }
+.lang summary::after { content: "▾"; font-size: 11px; color: var(--muted); }
+.lang[open] summary::after { content: "▴"; }
+.lang summary:hover, .lang summary:focus-visible { border-color: var(--muted); }
+.lang ul {
+  list-style: none; margin: 14px 0 0; padding: 0;
+  display: grid; gap: 4px 18px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+.lang a { display: block; padding: 6px 0; text-decoration: none; color: var(--muted); }
+.lang a:hover, .lang a:focus-visible { color: var(--text); text-decoration: underline; }
+.lang a[aria-current] { color: var(--text); font-weight: 650; }
+:focus-visible { outline: 2px solid #fc8c61; outline-offset: 2px; border-radius: 4px; }
+
+/* "This page is available in ..." (English home page, first visit only) */
+.lang-banner {
+  position: fixed; z-index: 20; left: 16px; right: 16px; bottom: 16px;
+  max-width: 460px; margin-inline: auto;
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+  padding: 12px 12px 12px 18px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); font-size: 15px;
+}
+.lang-banner p { margin: 0; flex: 1 1 180px; }
+.lang-banner a {
+  background: var(--accent); color: #fff; font-weight: 650; text-decoration: none;
+  padding: 7px 14px; border-radius: 999px; white-space: nowrap;
+}
+.lang-banner button {
+  background: none; border: 0; color: var(--muted); font: inherit; font-size: 22px; line-height: 1;
+  width: 36px; height: 36px; border-radius: 50%; cursor: pointer;
+}
+.lang-banner button:hover { color: var(--text); background: #22222c; }
+
+/* Small phones: room for longer nav words in other languages (Поддержка, Assistance).
+   The GitHub link stays in the hero and the footer. */
+@media (max-width: 420px) {
+  .brand { flex: none; gap: 8px; }
+  .brand img { width: 26px; height: 26px; }
+  header.top nav a[href^="https://github.com"] { display: none; }
+}

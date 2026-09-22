@@ -13,17 +13,20 @@ struct OnboardingView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            Group {
-                switch page {
-                case 0: welcome
-                case 1: voice
-                case 2: play
-                default: scripts
+            // All pages are laid out on top of each other and only the current one shows, so the
+            // window is as tall as the longest page in the current language and never changes size.
+            ZStack {
+                ForEach(0..<pageCount, id: \.self) { i in
+                    pageView(i)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .opacity(i == page ? 1 : 0)
+                        .allowsHitTesting(i == page)
+                        .accessibilityHidden(i != page)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding(.horizontal, 40)
-            .transition(.opacity)
+            .padding(.top, 28)
 
             HStack {
                 HStack(spacing: 6) {
@@ -33,7 +36,7 @@ struct OnboardingView: View {
                     }
                 }
                 .accessibilityElement()
-                .accessibilityLabel("Page \(page + 1) of \(pageCount)")
+                .accessibilityLabel(Text("Page \(page + 1) of \(pageCount)", comment: "Onboarding page indicator"))
                 Spacer()
                 if page > 0 {
                     Button("Back") { withAnimation { page -= 1 } }
@@ -48,7 +51,17 @@ struct OnboardingView: View {
             }
             .padding(20)
         }
-        .frame(width: 560, height: 420)
+        .frame(width: 560)
+        .frame(minHeight: 420)
+    }
+
+    @ViewBuilder private func pageView(_ index: Int) -> some View {
+        switch index {
+        case 0: welcome
+        case 1: voice
+        case 2: play
+        default: scripts
+        }
     }
 
     private var welcome: some View {
@@ -56,6 +69,7 @@ struct OnboardingView: View {
             NotchIllustration()
                 .frame(width: 300, height: 120)
             Text("Welcome to NotchPrompter").font(.largeTitle.weight(.bold))
+                .multilineTextAlignment(.center)
             Text("Your script hangs right under the camera, so you can read it while you look people in the eye — in video calls, recordings and presentations.")
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.secondary)
@@ -69,6 +83,7 @@ struct OnboardingView: View {
                 .foregroundStyle(.red)
                 .frame(height: 70)
             Text("It follows your voice").font(.title.weight(.bold))
+                .multilineTextAlignment(.center)
             Text("Press the microphone and just talk, in any language. The text moves as you read, so the next words are always right under the camera. Skip a line and it jumps ahead; pause and it waits.")
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.secondary)
@@ -79,7 +94,7 @@ struct OnboardingView: View {
             if authorized {
                 Label("Microphone allowed", systemImage: "checkmark.circle.fill").foregroundStyle(.green)
             } else {
-                Button(asking ? "Waiting…" : "Allow Microphone and Speech Recognition") {
+                Button(asking ? LocalizedStringKey("Waiting…") : "Allow Microphone and Speech Recognition") {
                     asking = true
                     VoiceListener.requestPermissions { problem in
                         asking = false
@@ -99,6 +114,7 @@ struct OnboardingView: View {
     private var play: some View {
         VStack(spacing: 18) {
             Text("The controls").font(.title.weight(.bold))
+                .multilineTextAlignment(.center)
             VStack(alignment: .leading, spacing: 12) {
                 row("mic.fill", .red, "Follow my voice", "The main mode. Click a word if you want to jump there.")
                 row("record.circle", .red, "Record", "Film yourself while you read. Takes go to Movies › NotchPrompter.")
@@ -109,6 +125,7 @@ struct OnboardingView: View {
             }
             Text("Drag the edges or corners of the prompter to resize it.")
                 .font(.callout).foregroundStyle(.secondary)
+                .multilineTextAlignment(.center)
         }
     }
 
@@ -119,6 +136,7 @@ struct OnboardingView: View {
                 .foregroundStyle(.tint)
                 .frame(height: 70)
             Text("Your scripts").font(.title.weight(.bold))
+                .multilineTextAlignment(.center)
             Text("Write your scripts in the built-in editor, or import text, Markdown and Word files. Everything is saved on this Mac.")
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.secondary)
@@ -128,7 +146,7 @@ struct OnboardingView: View {
         }
     }
 
-    private func row(_ symbol: String, _ tint: Color, _ title: String, _ detail: String) -> some View {
+    private func row(_ symbol: String, _ tint: Color, _ title: LocalizedStringKey, _ detail: LocalizedStringKey) -> some View {
         HStack(spacing: 14) {
             Image(systemName: symbol)
                 .font(.system(size: 15, weight: .semibold))
@@ -139,6 +157,7 @@ struct OnboardingView: View {
                 Text(title).font(.headline)
                 Text(detail).font(.callout).foregroundStyle(.secondary)
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }
@@ -157,9 +176,12 @@ struct NotchIllustration: View {
                     .frame(width: w * 0.55, height: h * 0.72)
                     .overlay(alignment: .center) {
                         VStack(spacing: 4) {
-                            Text("look people in the eye").opacity(0.35)
-                            Text("while you read your script")
+                            Text("look people in the eye", comment: "Tiny text on the welcome illustration, lowercase").opacity(0.35)
+                            Text("while you read your script", comment: "Tiny text on the welcome illustration, lowercase")
                         }
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.6)
+                        .padding(.horizontal, 10)
                         .font(.system(size: 11, weight: .semibold))
                         .foregroundStyle(.white)
                         .padding(.top, 14)

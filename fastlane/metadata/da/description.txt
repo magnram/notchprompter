@@ -1,0 +1,33 @@
+Se folk i øjnene, mens du læser dit manuskript.
+
+NotchPrompter viser dit manuskript i et lille sort panel, der hænger fra toppen af skærmen, lige under kameraet. På en MacBook med notch smelter det sammen med notchen. For dem, der ser med, ser det ud, som om du taler direkte til dem.
+
+FØLGER DIN STEMME, PÅ ALLE SPROG
+Klik på mikrofonen, og begynd bare at tale. NotchPrompter lytter, mens du læser, og flytter teksten med dig, så de næste ord altid står lige under kameraet. Ord, du har sagt, toner ud. Appen kan se, hvilket sprog dit manuskript er på, og lytter efter det: dansk, engelsk, norsk, tysk, spansk, japansk og snesevis af andre. Intet at sætte op.
+
+FØLGER MED, NÅR DU SPRINGER OVER
+Spring en sætning over, skift et ord ud, sig »øh«. NotchPrompter finder ud af, hvor du er, og springer med. Hold en pause, træk vejret: den venter. Mistet tråden? Klik på det ord, du er nået til.
+
+ELLER TRYK PÅ PLAY
+Foretrækker du et jævnt tempo? Tryk på play for blød rulning med nedtælling 3-2-1. Hold markøren over teksten for at sætte på pause. Skildpadden og haren ændrer hastigheden.
+
+EN LILLE EDITOR TIL DINE MANUSKRIPTER
+Skriv og rediger dine manuskripter i den indbyggede editor, eller importer tekst-, Markdown-, Word-, RTF- og HTML-filer. Alt gemmes automatisk. Du kan se antal ord og cirka hvor lang tid hvert manuskript tager at læse.
+
+OPTAG DIG SELV
+Tryk på optag for at filme dig selv med kamera og mikrofon, mens manuskriptet følger din stemme. Hver optagelse gemmes som en film i Film › NotchPrompter.
+
+USYNLIG FOR DIT PUBLIKUM
+Prompteren er skjult ved skærmdeling, på skærmbilleder og i optagelser. Kun du kan se den.
+
+LAVET TIL
+• Videoopkald og onlinemøder
+• YouTube, kurser og skærmoptagelser
+• Præsentationer, pitches og webinarer
+• Alle, der vil lyde naturlige og se selvsikre ud foran kameraet
+
+GRATIS OG OPEN SOURCE
+Ingen reklamer, intet abonnement, ingen konto. Open source under MIT-licensen, og kildekoden ligger på GitHub: github.com/magnram/notchprompter
+
+KØRER HELT PÅ DIN MAC
+Tale genkendes på din Mac, ikke i skyen. Ingen konto, ingen sporing, ingen reklamer. Dine manuskripter og optagelser forlader aldrig din Mac. Stemmefølgning gemmer aldrig lyd.

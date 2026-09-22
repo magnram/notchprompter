@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NotchPrompter – 摄像头下方的提词器</title>
+  <meta name="description" content="一款悬挂在摄像头下方的 Mac 提词器，无论哪种语言都能跟随你的声音，而且完全在 Mac 上运行。读稿的同时，也能保持眼神交流。">
+  <meta property="og:title" content="NotchPrompter – 摄像头下方的提词器">
+  <meta property="og:description" content="边读讲稿，边保持眼神交流。它会跟随你的声音。">
+  <meta property="og:image" content="../media/1-eye-contact.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../media/icon-256.png">
+  <link rel="apple-touch-icon" href="../media/icon-256.png">
+  <link rel="stylesheet" href="../style.css">
+  <!-- i18n:alternates -->
+  <link rel="alternate" hreflang="da" href="https://magnram.github.io/notchprompter/da/">
+  <link rel="alternate" hreflang="de" href="https://magnram.github.io/notchprompter/de/">
+  <link rel="alternate" hreflang="en" href="https://magnram.github.io/notchprompter/">
+  <link rel="alternate" hreflang="es" href="https://magnram.github.io/notchprompter/es/">
+  <link rel="alternate" hreflang="fr" href="https://magnram.github.io/notchprompter/fr/">
+  <link rel="alternate" hreflang="it" href="https://magnram.github.io/notchprompter/it/">
+  <link rel="alternate" hreflang="nl" href="https://magnram.github.io/notchprompter/nl/">
+  <link rel="alternate" hreflang="nb" href="https://magnram.github.io/notchprompter/nb/">
+  <link rel="alternate" hreflang="pl" href="https://magnram.github.io/notchprompter/pl/">
+  <link rel="alternate" hreflang="pt-BR" href="https://magnram.github.io/notchprompter/pt-BR/">
+  <link rel="alternate" hreflang="pt-PT" href="https://magnram.github.io/notchprompter/pt-PT/">
+  <link rel="alternate" hreflang="fi" href="https://magnram.github.io/notchprompter/fi/">
+  <link rel="alternate" hreflang="sv" href="https://magnram.github.io/notchprompter/sv/">
+  <link rel="alternate" hreflang="tr" href="https://magnram.github.io/notchprompter/tr/">
+  <link rel="alternate" hreflang="ru" href="https://magnram.github.io/notchprompter/ru/">
+  <link rel="alternate" hreflang="uk" href="https://magnram.github.io/notchprompter/uk/">
+  <link rel="alternate" hreflang="ja" href="https://magnram.github.io/notchprompter/ja/">
+  <link rel="alternate" hreflang="ko" href="https://magnram.github.io/notchprompter/ko/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://magnram.github.io/notchprompter/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://magnram.github.io/notchprompter/zh-Hant/">
+  <link rel="alternate" hreflang="x-default" href="https://magnram.github.io/notchprompter/">
+  <!-- /i18n:alternates -->
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="../media/icon-256.png" alt="">NotchPrompter</a>
+      <nav>
+        <a href="#video" class="hide-sm">视频</a>
+        <a href="#features">功能</a>
+        <a href="support.html">支持</a>
+        <a href="https://github.com/magnram/notchprompter">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="wrap">
+        <div class="notch" aria-hidden="true">
+          <div class="meter"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="reader">
+            <div class="script" id="demo-script" data-pause="(停顿)">
+              <p>你一定有过这种感觉。低头看笔记时，目光就离开了正在听你说话的人。</p>
+              <p>(停顿) 有了 NotchPrompter，讲稿就在摄像头正下方。</p>
+              <p>你说话时，它会跟着你的声音走。即使脱稿，它也跟得上。</p>
+              <p data-skip>这一行你跳过了，它也直接跳了过去。</p>
+              <p>看到了吗？(微笑) 当你停下来，它也会等你。</p>
+            </div>
+          </div>
+        </div>
+        <h1>边读稿，边保持眼神交流</h1>
+        <p class="lede">NotchPrompter 把讲稿放在摄像头正下方，并跟随你的声音。任何语言都行，跳读也没问题，而且完全在 Mac 上运行。</p>
+        <div class="cta" id="download">
+          <!-- Replace href with the App Store link once the app is live. -->
+          <a class="store-badge" href="https://apps.apple.com/app/notchprompter" aria-label="从 Mac App Store 下载">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.51 1.25-2.58-.03-.01-2.4-.92-2.42-3.65zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.75-.96 2.79 1.02.08 2.05-.52 2.68-1.27z"/></svg>
+            <span><small>从 Mac App Store</small><strong>下载</strong></span>
+          </a>
+          <a class="link-btn" href="https://github.com/magnram/notchprompter">在 GitHub 上查看 →</a>
+        </div>
+        <p class="req">免费且开源。适用于 macOS 15 Sequoia 或更高版本。在带刘海的 MacBook 上效果最佳，顶部带摄像头的任何 Mac 也都能用。</p>
+      </div>
+    </div>
+
+    <section id="video">
+      <div class="wrap center">
+        <h2>看看实际效果</h2>
+        <p class="sub">朗读、停顿、跳读，提词器都跟得上你。</p>
+        <div class="video-frame">
+          <video src="../media/promo.mp4" poster="../media/promo-poster.png" controls playsinline preload="none"></video>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <h2>该有的都有，碍事的全无。</h2>
+        <p class="sub">摄像头下方的一块黑色小面板、几个清晰的按钮、一个用来写讲稿的小编辑器，还有一个录制按钮。</p>
+        <div class="features">
+          <div class="feature">
+            <div class="icon">🎙️</div>
+            <h3>跟随你的声音</h3>
+            <p>按下麦克风，开口说话。接下来的文字始终在摄像头正下方，说过的文字会逐渐淡出。</p>
+          </div>
+          <div class="feature">
+            <div class="icon">🌍</div>
+            <h3>任何语言，自动识别</h3>
+            <p>NotchPrompter 会识别讲稿所用的语言，并用这种语言来听。支持英语、挪威语、德语、西班牙语、日语等数十种语言。</p>
+          </div>
+          <div class="feature">
+            <div class="icon">⏭️</div>
+            <h3>跳读也能跟上</h3>
+            <p>跳过一句、换个词、说声“呃”都没关系。它会找到你读到了哪里，和你一起往前跳。你停下来，它就等着。</p>
+          </div>
+          <div class="feature">
+            <div class="icon">▶️</div>
+            <h3>或者按下播放</h3>
+            <p>3-2-1 倒计时后平滑滚动。指针悬停即可暂停，用乌龟和兔子按钮调整速度。</p>
+          </div>
+          <div class="feature">
+            <div class="icon">✏️</div>
+            <h3>内置编辑器</h3>
+            <p>在一个地方撰写并保存所有讲稿。可导入 Word、Markdown、RTF 或文本文件。自动保存。</p>
+          </div>
+          <div class="feature">
+            <div class="icon">🎥</div>
+            <h3>录制自己</h3>
+            <p>按下录制，即可在朗读时用摄像头和麦克风拍摄自己。每一条都会以影片形式存储在“影片”文件夹中。</p>
+          </div>
+          <div class="feature">
+            <div class="icon">🙈</div>
+            <h3>观众看不见</h3>
+            <p>在屏幕共享、截屏和录屏中都会隐藏。只有你自己看得到。</p>
+          </div>
+          <div class="feature">
+            <div class="icon">🔒</div>
+            <h3>完全在 Mac 上运行</h3>
+            <p>语音在你的 Mac 上识别，而不是在云端。无需账户，没有跟踪。你的讲稿和录制内容绝不会离开你的 Mac。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <div>
+          <h2>讲稿，一键即达</h2>
+          <p class="sub">点按提词器中的铅笔即可打开编辑器。选择一份讲稿，按下麦克风，开始说话。</p>
+          <ol class="steps">
+            <li>撰写或粘贴讲稿，或导入文件。</li>
+            <li>按下<strong>语音跟读</strong>。</li>
+            <li>看着摄像头说话。</li>
+          </ol>
+        </div>
+        <img src="../media/editor.png" alt="NotchPrompter 讲稿编辑器，显示讲稿列表和一份产品发布讲稿的内容。" loading="lazy">
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="center">为镜头而生</h2>
+        <p class="sub center" style="margin-inline:auto">视频通话、YouTube、课程、网络研讨会和路演。</p>
+        <div class="shots">
+          <img src="../media/2-voice.jpg" alt="刘海下方的提词器，正在跟随朗读的讲稿。" loading="lazy">
+          <img src="../media/4-play.jpg" alt="播放模式，带有速度按钮和设置弹出菜单。" loading="lazy">
+          <img src="../media/3-editor.jpg" alt="提词器下方的编辑器窗口。" loading="lazy">
+          <img src="../media/5-private.jpg" alt="设置，其中有在屏幕共享中隐藏提词器的选项。" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="wrap" style="max-width:780px">
+        <h2>常见问题</h2>
+        <details>
+          <summary>真的免费吗？</summary>
+          <p>是的。NotchPrompter 免费且开源，采用 MIT 许可证。没有广告，没有订阅，无需账户。<a href="https://github.com/magnram/notchprompter">源代码托管在 GitHub 上</a>，你可以在那里报告错误、建议功能或参与开发。</p>
+        </details>
+        <details>
+          <summary>没有刘海也能用吗？</summary>
+          <p>能。在没有刘海的 Mac 上，提词器会悬挂在屏幕顶部、菜单栏下方，依然离摄像头很近。</p>
+        </details>
+        <details>
+          <summary>语音跟随支持哪些语言？</summary>
+          <p>数十种，包括英语、挪威语、德语、法语、西班牙语、中文和日语。NotchPrompter 会识别讲稿所用的语言并用它来听，所以你无需进行任何设置。你也可以在设置中选择其他语言。</p>
+        </details>
+        <details>
+          <summary>共享屏幕时，别人会看到提词器吗？</summary>
+          <p>不会。默认情况下，它在屏幕共享、截屏和录屏中都是隐藏的。如果想显示它，可以在设置中关闭此选项。</p>
+        </details>
+        <details>
+          <summary>会有内容上传到云端吗？</summary>
+          <p>不会。语音在你的 Mac 上识别（需在系统设置中打开听写），NotchPrompter 也没有服务器。语音跟随绝不保存音频。只有在你按下录制时才会存储影片，而且存储在你自己的“影片”文件夹中。请阅读<a href="privacy.html">隐私政策</a>。</p>
+        </details>
+        <details>
+          <summary>有哪些键盘快捷键？</summary>
+          <p>先点按提词器，然后：<kbd>空格键</kbd> 播放/暂停，<kbd>V</kbd> 语音，<kbd>C</kbd> 录制，<kbd>R</kbd> 回到顶部，<kbd>↑</kbd> <kbd>↓</kbd> 速度，<kbd>+</kbd> <kbd>−</kbd> 文字大小，<kbd>E</kbd> 编辑器，<kbd>Esc</kbd> 停止。</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Magnus Ramm · 免费开源（MIT）</span>
+      <nav>
+        <a href="support.html">支持</a>
+        <a href="privacy.html">隐私</a>
+        <a href="https://github.com/magnram/notchprompter">源代码</a>
+      </nav>
+      <!-- i18n:picker -->
+      <details class="lang">
+        <summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span class="sr">语言: </span>简体中文</summary>
+        <ul aria-label="语言">
+          <li><a href="../da/" hreflang="da" lang="da">Dansk</a></li>
+          <li><a href="../de/" hreflang="de" lang="de">Deutsch</a></li>
+          <li><a href="../" hreflang="en" lang="en">English</a></li>
+          <li><a href="../es/" hreflang="es" lang="es">Español</a></li>
+          <li><a href="../fr/" hreflang="fr" lang="fr">Français</a></li>
+          <li><a href="../it/" hreflang="it" lang="it">Italiano</a></li>
+          <li><a href="../nl/" hreflang="nl" lang="nl">Nederlands</a></li>
+          <li><a href="../nb/" hreflang="nb" lang="nb">Norsk</a></li>
+          <li><a href="../pl/" hreflang="pl" lang="pl">Polski</a></li>
+          <li><a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+          <li><a href="../pt-PT/" hreflang="pt-PT" lang="pt-PT">Português (Portugal)</a></li>
+          <li><a href="../fi/" hreflang="fi" lang="fi">Suomi</a></li>
+          <li><a href="../sv/" hreflang="sv" lang="sv">Svenska</a></li>
+          <li><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></li>
+          <li><a href="../ru/" hreflang="ru" lang="ru">Русский</a></li>
+          <li><a href="../uk/" hreflang="uk" lang="uk">Українська</a></li>
+          <li><a href="../ja/" hreflang="ja" lang="ja">日本語</a></li>
+          <li><a href="../ko/" hreflang="ko" lang="ko">한국어</a></li>
+          <li><a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans" aria-current="page">简体中文</a></li>
+          <li><a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
+        </ul>
+      </details>
+      <!-- /i18n:picker -->
+    </div>
+  </footer>
+  <script>
+    // Hero demo: read the script word by word, like NotchPrompter following a voice.
+    (() => {
+      const script = document.getElementById("demo-script");
+      const notch = script.closest(".notch");
+      const pauseCue = script.dataset.pause || "(pause)";
+      // Chinese and Japanese put no spaces between words. Split them into words with
+      // Intl.Segmenter, or into characters (and runs of Latin letters) where it is missing.
+      const lang = document.documentElement.lang;
+      const noSpaces = /^(ja|zh)\b/.test(lang);
+      const segmenter = noSpaces && window.Intl && Intl.Segmenter ? new Intl.Segmenter(lang, { granularity: "word" }) : null;
+      function wordsOf(text) {
+        if (!noSpaces) return text.split(/\s+/).filter(Boolean);
+        const pieces = segmenter
+          ? Array.from(segmenter.segment(text), s => s.segment)
+          : text.match(/[A-Za-z0-9]+|[^]/gu) || [];
+        const out = [];
+        let open = "";
+        for (const t of pieces) {
+          if (!t.trim()) { if (out.length) out[out.length - 1] += " "; continue; } // keep spaces around Latin words
+          if (/^[「『（(“‘《〈【]+$/.test(t)) open += t;            // opening marks go with the next word
+          else if (!/[\p{L}\p{N}]/u.test(t) && out.length) out[out.length - 1] += t; // punctuation with the last
+          else { out.push(open + t); open = ""; }
+        }
+        return out;
+      }
+      const words = [];
+      for (const p of script.querySelectorAll("p")) {
+        const parts = p.textContent.trim().split(/(\([^)]*\)|（[^）]*）)/)
+          .flatMap(s => /^[(（]/.test(s) ? [s] : wordsOf(s));
+        p.textContent = "";
+        for (const part of parts) {
+          const span = document.createElement("span");
+          span.textContent = part;
+          span.className = /^[(（]/.test(part) ? "w cue" : "w";
+          span.dataset.skip = p.hasAttribute("data-skip") ? "1" : "";
+          p.append(span, noSpaces ? "" : " ");
+          words.push(span);
+        }
+      }
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        words.slice(0, 9).forEach(w => w.classList.add("said"));
+        return;
+      }
+      let i = 0, lineTop = 0;
+      const talking = on => notch.classList.toggle("talking", on);
+      function keepLineOnTop(word) {
+        const top = word.offsetTop - script.offsetTop;
+        if (top > lineTop + 4) { lineTop = top; script.style.transform = `translateY(${-top}px)`; }
+      }
+      function step() {
+        if (i >= words.length) {
+          talking(false);
+          setTimeout(() => {                       // start over
+            script.classList.add("fade");
+            setTimeout(() => {
+              words.forEach(w => w.classList.remove("said"));
+              i = 0; lineTop = 0; script.style.transform = "";
+              script.classList.remove("fade");
+              setTimeout(step, 900);
+            }, 500);
+          }, 2200);
+          return;
+        }
+        const w = words[i];
+        if (w.classList.contains("cue")) {        // a note to yourself: not spoken, just waited on
+          talking(false); w.classList.add("said"); i++;
+          return setTimeout(step, w.textContent === pauseCue ? 1400 : 700);
+        }
+        if (w.dataset.skip) {                      // the skipped line: jumps past in one go
+          talking(false);
+          const skipped = [];
+          while (i < words.length && words[i].dataset.skip) skipped.push(words[i++]);
+          return setTimeout(() => {
+            skipped.forEach(s => s.classList.add("said"));
+            keepLineOnTop(words[i] || skipped[skipped.length - 1]);
+            setTimeout(step, 300);
+          }, 700);
+        }
+        talking(true);
+        keepLineOnTop(w);
+        w.classList.add("said");
+        i++;
+        const said = w.textContent.trim();
+        const end = /[.?!。？！][」』"”’)）]*$/.test(said), comma = /[,，、;；:：]$/.test(said);
+        if (end || comma) talking(false);
+        setTimeout(step, end ? 650 : comma ? 380 : noSpaces && !/^[A-Za-z]/.test(said) ? 120 + said.length * 110 : 170 + said.length * 22);
+      }
+      setTimeout(step, 1200);
+    })();
+  </script>
+  <!-- i18n:script -->
+  <script>
+    // Remember the language the visitor picks, so the English page stops suggesting another one.
+    for (const a of document.querySelectorAll("a[hreflang]")) {
+      a.addEventListener("click", () => { try { localStorage.setItem("np-lang", a.hreflang); } catch (e) {} });
+    }
+  </script>
+  <!-- /i18n:script -->
+</body>
+</html>

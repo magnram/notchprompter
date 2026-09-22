@@ -1,0 +1,1 @@
+prompter,roteiro,script,texto,discurso,vídeo,webcam,apresentação,notch,voz,gravar,palestra,autocue

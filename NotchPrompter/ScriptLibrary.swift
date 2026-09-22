@@ -10,15 +10,17 @@ struct Script: Identifiable, Codable, Equatable {
 
     var wordCount: Int { text.split(whereSeparator: \.isWhitespace).count }
 
-    /// About how long the script takes to read aloud, at 150 words a minute.
+    /// About how long the script takes to read aloud, at 150 words a minute, e.g. "1 min, 20 sec".
     var readingTime: String {
         let seconds = Int((Double(wordCount) / 150 * 60).rounded())
-        if seconds < 60 { return "\(max(seconds, wordCount > 0 ? 1 : 0)) sec" }
-        let m = seconds / 60, s = seconds % 60
-        return s == 0 ? "\(m) min" : "\(m) min \(s) sec"
+        let shown = seconds < 60 ? max(seconds, wordCount > 0 ? 1 : 0) : seconds
+        return Duration.seconds(shown).formatted(.units(allowed: [.minutes, .seconds], width: .abbreviated))
     }
 
-    var displayTitle: String { title.trimmingCharacters(in: .whitespaces).isEmpty ? "Untitled" : title }
+    var displayTitle: String {
+        title.trimmingCharacters(in: .whitespaces).isEmpty
+            ? String(localized: "Untitled", comment: "Name of a script without a title") : title
+    }
 }
 
 /// All the user's scripts, stored as JSON in the app's Application Support folder.
@@ -49,7 +51,8 @@ final class ScriptLibrary: ObservableObject {
             activeID = stored.activeID
         }
         if scripts.isEmpty {
-            let welcome = Script(title: "Welcome", text: Self.welcomeText)
+            // First launch: the practice script, in the app's language. Saved scripts are never changed.
+            let welcome = Script(title: Self.welcomeTitle, text: Self.welcomeText)
             scripts = [welcome]
             activeID = welcome.id
         }
@@ -87,12 +90,13 @@ final class ScriptLibrary: ObservableObject {
     @discardableResult
     func duplicate(_ id: UUID) -> Script? {
         guard let original = script(id) else { return nil }
-        return add(title: original.displayTitle + " copy", text: original.text)
+        return add(title: String(localized: "\(original.displayTitle) copy", comment: "Title of a duplicated script"),
+                   text: original.text)
     }
 
     func delete(_ id: UUID) {
         scripts.removeAll { $0.id == id }
-        if scripts.isEmpty { add(title: "Untitled") }
+        if scripts.isEmpty { add() }
         if activeID == id { activeID = scripts.first?.id }
         scheduleSave()
     }
@@ -140,7 +144,12 @@ final class ScriptLibrary: ObservableObject {
         try? data.write(to: fileURL, options: .atomic)
     }
 
-    static let welcomeText = """
+    static let welcomeTitle = String(localized: "Welcome", comment: "Title of the built-in practice script")
+
+    /// The practice script shown on first launch. Voice-follow detects the language from the text,
+    /// so it is translated in full. Keep the stage direction in brackets: it shows that notes in
+    /// brackets aren't read out.
+    static let welcomeText = String(localized: "welcomeScript", defaultValue: """
     Welcome to NotchPrompter.
 
     Press the microphone below and read this out loud. The text follows your voice, so the next words are always right under your camera.
@@ -156,5 +165,5 @@ final class ScriptLibrary: ObservableObject {
     To write your own script, click the pencil. Your scripts are saved on this Mac.
 
     That is all. Have a great recording!
-    """
+    """, comment: "The built-in practice script. Keep the paragraphs and the note in brackets, translated.")
 }

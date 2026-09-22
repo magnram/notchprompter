@@ -1,0 +1,1 @@
+autocue,prompter,script,tekst,toespraak,presentatie,video,webcam,notch,stem,opnemen,camera,voorlezen

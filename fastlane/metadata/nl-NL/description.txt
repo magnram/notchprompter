@@ -1,0 +1,33 @@
+Kijk mensen in de ogen terwijl je je tekst voorleest.
+
+NotchPrompter zet je tekst in een klein zwart paneel dat bovenaan je scherm hangt, vlak onder de camera. Op een MacBook met een notch gaat het op in de notch. Voor wie kijkt, lijkt het alsof je recht tegen ze praat.
+
+VOLGT JE STEM, IN ELKE TAAL
+Klik op de microfoon en begin gewoon te praten. NotchPrompter luistert terwijl je leest en beweegt de tekst met je mee, zodat de volgende woorden altijd vlak onder de camera staan. Woorden die je al hebt gezegd, vervagen. De app herkent in welke taal je tekst is en luistert daarnaar: Nederlands, Engels, Noors, Duits, Spaans, Japans en tientallen andere. Niets in te stellen.
+
+HOUDT JE BIJ ALS JE IETS OVERSLAAT
+Sla een zin over, verander een woord, zeg ‘eh’. NotchPrompter vindt waar je bent en springt met je mee. Even pauzeren, adem halen: hij wacht. Kwijt waar je was? Klik op het woord waar je bent.
+
+OF DRUK OP PLAY
+Liever een vast tempo? Druk op play voor soepel scrollen na een 3-2-1-aftelling. Beweeg de aanwijzer over de tekst om te pauzeren. Met de schildpad en de haas pas je de snelheid aan.
+
+EEN KLEINE EDITOR VOOR JE TEKSTEN
+Schrijf en bewerk je teksten in de ingebouwde editor, of importeer tekst-, Markdown-, Word-, RTF- en HTML-bestanden. Alles wordt automatisch bewaard. Je ziet het aantal woorden en ongeveer hoe lang het voorlezen van elke tekst duurt.
+
+NEEM JEZELF OP
+Druk op opnemen om jezelf te filmen met je camera en microfoon terwijl de tekst je stem volgt. Elke take wordt als film bewaard in Films › NotchPrompter.
+
+ONZICHTBAAR VOOR JE PUBLIEK
+De prompter is verborgen bij schermdeling, in schermafbeeldingen en in opnames. Alleen jij ziet hem.
+
+GEMAAKT VOOR
+• Videogesprekken en online vergaderingen
+• YouTube, cursussen en schermopnames
+• Presentaties, pitches en webinars
+• Iedereen die natuurlijk wil klinken en zelfverzekerd voor de camera wil staan
+
+GRATIS EN OPEN SOURCE
+Geen advertenties, geen abonnement, geen account. Open source onder de MIT-licentie, en de broncode staat op GitHub: github.com/magnram/notchprompter
+
+DRAAIT VOLLEDIG OP JE MAC
+Spraak wordt op je Mac herkend, niet in de cloud. Geen account, geen tracking, geen advertenties. Je teksten en opnames verlaten je Mac nooit. Het volgen van je stem slaat nooit audio op.

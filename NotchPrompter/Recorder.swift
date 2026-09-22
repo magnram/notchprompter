@@ -36,12 +36,12 @@ final class Recorder: NSObject, AVCaptureFileOutputRecordingDelegate, AVCaptureA
         AVCaptureDevice.requestAccess(for: .video) { camera in
             guard camera else {
                 return DispatchQueue.main.async {
-                    done(("NotchPrompter needs the camera to record you. Turn it on for NotchPrompter in System Settings → Privacy & Security → Camera.", cameraSettings))
+                    done((String(localized: "NotchPrompter needs the camera to record you. Turn it on for NotchPrompter in System Settings → Privacy & Security → Camera."), cameraSettings))
                 }
             }
             AVCaptureDevice.requestAccess(for: .audio) { mic in
                 DispatchQueue.main.async {
-                    done(mic ? nil : ("NotchPrompter needs the microphone to record your voice. Turn it on for NotchPrompter in System Settings → Privacy & Security → Microphone.", VoiceListener.microphoneSettings))
+                    done(mic ? nil : (String(localized: "NotchPrompter needs the microphone to record your voice. Turn it on for NotchPrompter in System Settings → Privacy & Security → Microphone."), VoiceListener.microphoneSettings))
                 }
             }
         }
@@ -55,8 +55,8 @@ final class Recorder: NSObject, AVCaptureFileOutputRecordingDelegate, AVCaptureA
     func prepare(cameraID: String, ready: @escaping (String?) -> Void) {
         guard !isRecording else { return ready(nil) }
         let camera = Self.cameras.first { $0.uniqueID == cameraID } ?? AVCaptureDevice.default(for: .video)
-        guard let camera else { return ready("No camera found.") }
-        guard let mic = AVCaptureDevice.default(for: .audio) else { return ready("No microphone found.") }
+        guard let camera else { return ready(String(localized: "No camera found.")) }
+        guard let mic = AVCaptureDevice.default(for: .audio) else { return ready(String(localized: "No microphone found.")) }
 
         queue.async { [self] in
             do {
@@ -83,14 +83,17 @@ final class Recorder: NSObject, AVCaptureFileOutputRecordingDelegate, AVCaptureA
                 session.commitConfiguration()
                 session.stopRunning()
                 log.error("recorder: \(error.localizedDescription)")
-                DispatchQueue.main.async { ready("Couldn't start recording: \(error.localizedDescription)") }
+                DispatchQueue.main.async {
+                    ready(String(localized: "Couldn't start recording: \(error.localizedDescription)",
+                                 comment: "The placeholder is the system's error message"))
+                }
             }
         }
     }
 
     /// Start saving the take (after `prepare`). `started` runs when the first frames are written.
     func record(name: String, started: @escaping (String?) -> Void) {
-        guard prepared, !isRecording else { return started(prepared ? nil : "The camera isn't ready.") }
+        guard prepared, !isRecording else { return started(prepared ? nil : String(localized: "The camera isn't ready.")) }
         isRecording = true
         startedAt = Date()
         startedCallback = started
@@ -128,7 +131,8 @@ final class Recorder: NSObject, AVCaptureFileOutputRecordingDelegate, AVCaptureA
         queue.async { self.session.stopRunning() }
         DispatchQueue.main.async {
             self.isRecording = false
-            self.onFinished(ok ? url : nil, ok ? nil : "The recording couldn't be saved: \(error?.localizedDescription ?? "")")
+            self.onFinished(ok ? url : nil, ok ? nil : String(localized: "The recording couldn't be saved: \(error?.localizedDescription ?? "")",
+                                                              comment: "The placeholder is the system's error message"))
             self.stopCompletion?()
             self.stopCompletion = nil
         }
@@ -142,12 +146,17 @@ final class Recorder: NSObject, AVCaptureFileOutputRecordingDelegate, AVCaptureA
     /// "NotchPrompter 2026-09-23 at 11.28.26", shared by the camera and screen movies of one take.
     static func takeName() -> String {
         let f = DateFormatter()
-        f.dateFormat = "yyyy-MM-dd 'at' HH.mm.ss"
-        return "NotchPrompter \(f.string(from: Date()))"
+        f.locale = Locale(identifier: "en_US_POSIX")
+        f.dateFormat = "yyyy-MM-dd"
+        let date = f.string(from: Date())
+        f.dateFormat = "HH.mm.ss"
+        let time = f.string(from: Date())
+        return String(localized: "NotchPrompter \(date) at \(time)",
+                      comment: "File name of a recording, like macOS screenshots: “NotchPrompter 2026-09-23 at 11.28.26”. No / or :")
     }
 
     private enum RecorderError: LocalizedError {
         case setup
-        var errorDescription: String? { "The camera or microphone is busy." }
+        var errorDescription: String? { String(localized: "The camera or microphone is busy.") }
     }
 }

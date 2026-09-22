@@ -1,0 +1,33 @@
+Guarda le persone negli occhi mentre leggi il tuo testo.
+
+NotchPrompter mostra il tuo testo in un piccolo pannello nero che scende dal bordo superiore dello schermo, proprio sotto la fotocamera. Sui MacBook con notch si fonde con il notch. Chi ti guarda ha l’impressione che tu stia parlando direttamente a lui.
+
+SEGUE LA TUA VOCE, IN QUALSIASI LINGUA
+Premi il microfono e parla. NotchPrompter ti ascolta mentre leggi e fa scorrere il testo insieme a te, così le parole successive sono sempre proprio sotto la fotocamera. Le parole già dette sfumano. Riconosce la lingua del tuo testo e la ascolta: italiano, inglese, norvegese, tedesco, spagnolo, giapponese e decine di altre. Nessuna configurazione.
+
+TI STA DIETRO QUANDO SALTI
+Salta una frase, cambia una parola, di’ «ehm». NotchPrompter capisce dove sei e va avanti con te. Fai una pausa, prendi fiato: ti aspetta. Hai perso il segno? Fai clic sulla parola a cui sei arrivato.
+
+OPPURE PREMI PLAY
+Preferisci un ritmo costante? Premi play per uno scorrimento fluido con conto alla rovescia 3-2-1. Passa il puntatore sul testo per metterlo in pausa. La tartaruga e la lepre cambiano la velocità.
+
+UN PICCOLO EDITOR PER I TUOI TESTI
+Scrivi e modifica i tuoi testi nell’editor integrato, oppure importa file di testo, Markdown, Word, RTF e HTML. Tutto viene salvato automaticamente. Vedi il numero di parole e quanto tempo serve, più o meno, per leggere ogni testo.
+
+REGISTRATI
+Premi registra per riprenderti con fotocamera e microfono mentre il testo segue la tua voce. Ogni ripresa viene salvata come filmato in Filmati › NotchPrompter.
+
+INVISIBILE AL TUO PUBBLICO
+Il prompter è nascosto durante la condivisione dello schermo, negli screenshot e nelle registrazioni. Lo vedi solo tu.
+
+PENSATO PER
+• Videochiamate e riunioni online
+• YouTube, corsi e registrazioni dello schermo
+• Presentazioni, pitch e webinar
+• Chiunque voglia sembrare naturale e sicuro di sé davanti alla telecamera
+
+GRATIS E OPEN SOURCE
+Niente pubblicità, niente abbonamento, niente account. Open source con licenza MIT, il codice sorgente è su GitHub: github.com/magnram/notchprompter
+
+FUNZIONA INTERAMENTE SUL TUO MAC
+Il riconoscimento vocale avviene sul tuo Mac, non nel cloud. Niente account, niente tracciamento, niente pubblicità. I tuoi testi e le tue registrazioni non lasciano mai il Mac. La funzione che segue la voce non salva mai l’audio.

@@ -82,7 +82,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
                                       editorWindow?.miniaturize(nil)
                                       prompter.togglePlay()
                                   })
-            let window = makeWindow("Scripts", view,
+            let window = makeWindow(String(localized: "Scripts", comment: "Title of the script editor window"), view,
                                     style: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView])
             window.setContentSize(NSSize(width: 820, height: 540))
             window.setFrameAutosaveName("Editor")
@@ -97,7 +97,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
 
     @objc func showSettings() {
         if settingsWindow == nil {
-            let window = makeWindow("Settings", SettingsView(settings: settings), style: [.titled, .closable])
+            let window = makeWindow(String(localized: "Settings", comment: "Title of the Settings window"),
+                                    SettingsView(settings: settings), style: [.titled, .closable])
             window.center()
             settingsWindow = window
         }
@@ -113,7 +114,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
                 prompter.showPanel()
                 if startVoice { prompter.startVoice() }
             }
-            let window = makeWindow("Welcome to NotchPrompter", view, style: [.titled, .closable, .fullSizeContentView])
+            let window = makeWindow(String(localized: "Welcome to NotchPrompter"), view, style: [.titled, .closable, .fullSizeContentView])
             window.titlebarAppearsTransparent = true
             window.titleVisibility = .hidden
             window.center()
@@ -156,13 +157,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
     func validateMenuItem(_ item: NSMenuItem) -> Bool {
         switch item.action {
         case #selector(togglePrompter):
-            item.title = prompter.isVisible ? "Hide Prompter" : "Show Prompter"
+            item.title = prompter.isVisible ? String(localized: "Hide Prompter") : String(localized: "Show Prompter")
         case #selector(toggleVoice):
-            item.title = prompter.listening ? "Stop Following Voice" : "Follow My Voice"
+            item.title = prompter.listening ? String(localized: "Stop Following Voice") : String(localized: "Follow My Voice")
         case #selector(toggleRecording):
-            item.title = prompter.isRecording ? "Stop Recording" : "Record Video…"
+            item.title = prompter.isRecording ? String(localized: "Stop Recording") : String(localized: "Record Video…")
         case #selector(togglePlay):
-            item.title = prompter.playing ? "Pause" : "Play"
+            item.title = prompter.playing ? String(localized: "Pause") : String(localized: "Play")
         default: break
         }
         return true
@@ -170,7 +171,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
 
     // MARK: Menus
 
-    private func item(_ title: String, _ action: Selector, _ key: String = "",
+    private func item(_ title: String.LocalizationValue, _ action: Selector, _ key: String = "",
+                      _ modifiers: NSEvent.ModifierFlags = .command) -> NSMenuItem {
+        item(verbatim: String(localized: title), action, key, modifiers)
+    }
+
+    private func item(verbatim title: String, _ action: Selector, _ key: String = "",
                       _ modifiers: NSEvent.ModifierFlags = .command) -> NSMenuItem {
         let item = NSMenuItem(title: title, action: action, keyEquivalent: key)
         item.keyEquivalentModifierMask = modifiers
@@ -190,64 +196,68 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
         menu.addItem(item("Back to Top", #selector(restart)))
         menu.addItem(.separator())
         menu.addItem(item("Edit Scripts…", #selector(showEditor)))
-        menu.addItem(item("Settings…", #selector(showSettings)))
+        menu.addItem(item(verbatim: StandardMenuTitle.settings, #selector(showSettings)))
         menu.addItem(.separator())
-        menu.addItem(NSMenuItem(title: "Quit NotchPrompter", action: #selector(NSApplication.terminate(_:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: String(localized: "Quit NotchPrompter"), action: #selector(NSApplication.terminate(_:)),
+                                keyEquivalent: ""))
         statusItem.menu = menu
     }
 
     private func buildMainMenu() {
         let main = NSMenu()
+        typealias Std = StandardMenuTitle
 
         let app = NSMenu()
-        app.addItem(NSMenuItem(title: "About NotchPrompter",
+        app.addItem(NSMenuItem(title: String(localized: "About NotchPrompter"),
                                action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)), keyEquivalent: ""))
         app.addItem(.separator())
-        app.addItem(item("Settings…", #selector(showSettings), ","))
+        app.addItem(item(verbatim: Std.settings, #selector(showSettings), ","))
         app.addItem(item("Welcome Guide", #selector(showWelcome)))
         app.addItem(.separator())
-        let services = NSMenuItem(title: "Services", action: nil, keyEquivalent: "")
-        services.submenu = NSMenu()
+        let services = NSMenuItem(title: Std.services, action: nil, keyEquivalent: "")
+        services.submenu = NSMenu(title: Std.services)
         NSApp.servicesMenu = services.submenu
         app.addItem(services)
         app.addItem(.separator())
-        app.addItem(NSMenuItem(title: "Hide NotchPrompter", action: #selector(NSApplication.hide(_:)), keyEquivalent: "h"))
-        let others = NSMenuItem(title: "Hide Others", action: #selector(NSApplication.hideOtherApplications(_:)),
-                                keyEquivalent: "h")
+        app.addItem(NSMenuItem(title: String(localized: "Hide NotchPrompter"), action: #selector(NSApplication.hide(_:)),
+                               keyEquivalent: "h"))
+        let others = NSMenuItem(title: String(localized: "Hide Others"),
+                                action: #selector(NSApplication.hideOtherApplications(_:)), keyEquivalent: "h")
         others.keyEquivalentModifierMask = [.command, .option]
         app.addItem(others)
-        app.addItem(NSMenuItem(title: "Show All", action: #selector(NSApplication.unhideAllApplications(_:)),
+        app.addItem(NSMenuItem(title: Std.showAll, action: #selector(NSApplication.unhideAllApplications(_:)),
                                keyEquivalent: ""))
         app.addItem(.separator())
-        app.addItem(NSMenuItem(title: "Quit NotchPrompter", action: #selector(NSApplication.terminate(_:)),
+        app.addItem(NSMenuItem(title: String(localized: "Quit NotchPrompter"), action: #selector(NSApplication.terminate(_:)),
                                keyEquivalent: "q"))
         add(app, "NotchPrompter", to: main)
 
-        let file = NSMenu(title: "File")
+        let file = NSMenu()
         file.addItem(item("New Script", #selector(newScript), "n"))
         file.addItem(item("Import…", #selector(importScript), "o"))
         file.addItem(item("Edit Scripts", #selector(showEditor), "e"))
         file.addItem(.separator())
-        file.addItem(NSMenuItem(title: "Close Window", action: #selector(NSWindow.performClose(_:)), keyEquivalent: "w"))
-        add(file, "File", to: main)
+        file.addItem(NSMenuItem(title: Std.closeWindow, action: #selector(NSWindow.performClose(_:)), keyEquivalent: "w"))
+        add(file, Std.file, to: main)
 
-        let edit = NSMenu(title: "Edit")
-        edit.addItem(NSMenuItem(title: "Undo", action: Selector(("undo:")), keyEquivalent: "z"))
-        let redo = NSMenuItem(title: "Redo", action: Selector(("redo:")), keyEquivalent: "z")
+        let edit = NSMenu()
+        edit.addItem(NSMenuItem(title: String(localized: "Undo"), action: Selector(("undo:")), keyEquivalent: "z"))
+        let redo = NSMenuItem(title: String(localized: "Redo"), action: Selector(("redo:")), keyEquivalent: "z")
         redo.keyEquivalentModifierMask = [.command, .shift]
         edit.addItem(redo)
         edit.addItem(.separator())
-        edit.addItem(NSMenuItem(title: "Cut", action: #selector(NSText.cut(_:)), keyEquivalent: "x"))
-        edit.addItem(NSMenuItem(title: "Copy", action: #selector(NSText.copy(_:)), keyEquivalent: "c"))
-        edit.addItem(NSMenuItem(title: "Paste", action: #selector(NSText.paste(_:)), keyEquivalent: "v"))
-        edit.addItem(NSMenuItem(title: "Select All", action: #selector(NSText.selectAll(_:)), keyEquivalent: "a"))
+        edit.addItem(NSMenuItem(title: Std.cut, action: #selector(NSText.cut(_:)), keyEquivalent: "x"))
+        edit.addItem(NSMenuItem(title: Std.copy, action: #selector(NSText.copy(_:)), keyEquivalent: "c"))
+        edit.addItem(NSMenuItem(title: Std.paste, action: #selector(NSText.paste(_:)), keyEquivalent: "v"))
+        edit.addItem(NSMenuItem(title: Std.selectAll, action: #selector(NSText.selectAll(_:)), keyEquivalent: "a"))
         edit.addItem(.separator())
-        let find = NSMenuItem(title: "Find…", action: #selector(NSResponder.performTextFinderAction(_:)), keyEquivalent: "f")
+        let find = NSMenuItem(title: String(localized: "Find…"), action: #selector(NSResponder.performTextFinderAction(_:)),
+                              keyEquivalent: "f")
         find.tag = NSTextFinder.Action.showFindInterface.rawValue
         edit.addItem(find)
-        add(edit, "Edit", to: main)
+        add(edit, Std.edit, to: main)
 
-        let prompterMenu = NSMenu(title: "Prompter")
+        let prompterMenu = NSMenu()
         prompterMenu.addItem(item("Show Prompter", #selector(togglePrompter), "p", [.command, .shift]))
         prompterMenu.addItem(.separator())
         prompterMenu.addItem(item("Follow My Voice", #selector(toggleVoice), "v", [.command, .shift]))
@@ -259,18 +269,19 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
         prompterMenu.addItem(item("Smaller Text", #selector(smallerText), "-"))
         prompterMenu.addItem(item("Faster", #selector(faster), String(UnicodeScalar(NSUpArrowFunctionKey)!)))
         prompterMenu.addItem(item("Slower", #selector(slower), String(UnicodeScalar(NSDownArrowFunctionKey)!)))
-        add(prompterMenu, "Prompter", to: main)
+        add(prompterMenu, String(localized: "Prompter", comment: "Menu bar menu with the prompter commands"), to: main)
 
-        let window = NSMenu(title: "Window")
-        window.addItem(NSMenuItem(title: "Minimize", action: #selector(NSWindow.performMiniaturize(_:)), keyEquivalent: "m"))
-        window.addItem(NSMenuItem(title: "Zoom", action: #selector(NSWindow.performZoom(_:)), keyEquivalent: ""))
-        add(window, "Window", to: main)
+        let window = NSMenu()
+        window.addItem(NSMenuItem(title: Std.minimize, action: #selector(NSWindow.performMiniaturize(_:)), keyEquivalent: "m"))
+        window.addItem(NSMenuItem(title: String(localized: "Zoom", comment: "Window menu: zoom the window"),
+                                  action: #selector(NSWindow.performZoom(_:)), keyEquivalent: ""))
+        add(window, Std.window, to: main)
         NSApp.windowsMenu = window
 
-        let help = NSMenu(title: "Help")
+        let help = NSMenu()
         help.addItem(item("NotchPrompter Help", #selector(openHelp), "?"))
         help.addItem(item("NotchPrompter on GitHub", #selector(openGitHub)))
-        add(help, "Help", to: main)
+        add(help, Std.help, to: main)
         NSApp.helpMenu = help
 
         NSApp.mainMenu = main
@@ -281,5 +292,44 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
         menu.title = title
         holder.submenu = menu
         main.addItem(holder)
+    }
+}
+
+/// Titles of the standard menus and menu items, in the words macOS uses. They come from AppKit's
+/// own translations when AppKit shows the same language as the app (so a menu never mixes two
+/// languages), and from this app's string catalog otherwise.
+enum StandardMenuTitle {
+    static let file = appKit("File", fallback: String(localized: "File", comment: "Menu bar menu"))
+    static let edit = appKit("Edit", table: "InputManager", fallback: String(localized: "Edit", comment: "Menu bar menu"))
+    static let window = appKit("Window", fallback: String(localized: "Window", comment: "Menu bar menu"))
+    static let help = appKit("Help", fallback: String(localized: "Help", comment: "Menu bar menu"))
+    static let services = appKit("Services", table: "Services", fallback: String(localized: "Services"))
+    static let settings = appKit("Settings\\U2026", fallback: String(localized: "Settings…"))
+    static let showAll = appKit("Show All", table: "Common", fallback: String(localized: "Show All"))
+    static let closeWindow = appKit("Close Window", fallback: String(localized: "Close Window"))
+    static let cut = appKit("Cut", fallback: String(localized: "Cut"))
+    static let copy = appKit("Copy", fallback: String(localized: "Copy"))
+    static let paste = appKit("Paste", fallback: String(localized: "Paste"))
+    static let selectAll = appKit("Select All", fallback: String(localized: "Select All"))
+    static let minimize = appKit("Minimize", fallback: String(localized: "Minimize"))
+
+    private static let appKitBundle = Bundle(for: NSApplication.self)
+
+    /// AppKit and the app agree on the language (AppKit also has languages this app doesn't).
+    private static let sameLanguage: Bool = {
+        func id(_ localization: String?) -> String? {
+            guard let localization else { return nil }
+            let max = Locale.Language(identifier: localization).maximalIdentifier
+            return max.hasPrefix("no-") ? "nb-" + max.dropFirst(3) : max   // AppKit says "no" for Bokmål
+        }
+        guard let app = id(Bundle.main.preferredLocalizations.first) else { return false }
+        return app == id(appKitBundle.preferredLocalizations.first)
+    }()
+
+    private static func appKit(_ key: String, table: String = "MenuCommands", fallback: String) -> String {
+        guard sameLanguage else { return fallback }
+        let missing = "\u{0}"
+        let title = appKitBundle.localizedString(forKey: key, value: missing, table: table)
+        return title == missing || title.isEmpty ? fallback : title
     }
 }

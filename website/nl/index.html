@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NotchPrompter – Teleprompter onder je camera</title>
+  <meta name="description" content="Een teleprompter voor de Mac die onder je camera hangt en je stem volgt, in elke taal en helemaal op je Mac. Zo lees je je script en houd je oogcontact.">
+  <meta property="og:title" content="NotchPrompter – Teleprompter onder je camera">
+  <meta property="og:description" content="Lees je script en houd oogcontact. Hij volgt je stem.">
+  <meta property="og:image" content="../media/1-eye-contact.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../media/icon-256.png">
+  <link rel="apple-touch-icon" href="../media/icon-256.png">
+  <link rel="stylesheet" href="../style.css">
+  <!-- i18n:alternates -->
+  <link rel="alternate" hreflang="da" href="https://magnram.github.io/notchprompter/da/">
+  <link rel="alternate" hreflang="de" href="https://magnram.github.io/notchprompter/de/">
+  <link rel="alternate" hreflang="en" href="https://magnram.github.io/notchprompter/">
+  <link rel="alternate" hreflang="es" href="https://magnram.github.io/notchprompter/es/">
+  <link rel="alternate" hreflang="fr" href="https://magnram.github.io/notchprompter/fr/">
+  <link rel="alternate" hreflang="it" href="https://magnram.github.io/notchprompter/it/">
+  <link rel="alternate" hreflang="nl" href="https://magnram.github.io/notchprompter/nl/">
+  <link rel="alternate" hreflang="nb" href="https://magnram.github.io/notchprompter/nb/">
+  <link rel="alternate" hreflang="pl" href="https://magnram.github.io/notchprompter/pl/">
+  <link rel="alternate" hreflang="pt-BR" href="https://magnram.github.io/notchprompter/pt-BR/">
+  <link rel="alternate" hreflang="pt-PT" href="https://magnram.github.io/notchprompter/pt-PT/">
+  <link rel="alternate" hreflang="fi" href="https://magnram.github.io/notchprompter/fi/">
+  <link rel="alternate" hreflang="sv" href="https://magnram.github.io/notchprompter/sv/">
+  <link rel="alternate" hreflang="tr" href="https://magnram.github.io/notchprompter/tr/">
+  <link rel="alternate" hreflang="ru" href="https://magnram.github.io/notchprompter/ru/">
+  <link rel="alternate" hreflang="uk" href="https://magnram.github.io/notchprompter/uk/">
+  <link rel="alternate" hreflang="ja" href="https://magnram.github.io/notchprompter/ja/">
+  <link rel="alternate" hreflang="ko" href="https://magnram.github.io/notchprompter/ko/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://magnram.github.io/notchprompter/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://magnram.github.io/notchprompter/zh-Hant/">
+  <link rel="alternate" hreflang="x-default" href="https://magnram.github.io/notchprompter/">
+  <!-- /i18n:alternates -->
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="../media/icon-256.png" alt="">NotchPrompter</a>
+      <nav>
+        <a href="#video" class="hide-sm">Video</a>
+        <a href="#features">Functies</a>
+        <a href="support.html">Support</a>
+        <a href="https://github.com/magnram/notchprompter">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="wrap">
+        <div class="notch" aria-hidden="true">
+          <div class="meter"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="reader">
+            <div class="script" id="demo-script" data-pause="(pauze)">
+              <p>Je kent het wel. Je leest je aantekeningen, en je blik dwaalt af van de mensen met wie je praat.</p>
+              <p>(pauze) Met NotchPrompter staat je script vlak onder de camera.</p>
+              <p>Hij volgt je stem terwijl je praat. Wijk je af van je script, dan houdt hij je gewoon bij.</p>
+              <p data-skip>Dit is de regel die je overslaat, en hij springt er zo overheen.</p>
+              <p>Zie je? (glimlach) En als je pauzeert, wacht hij op je.</p>
+            </div>
+          </div>
+        </div>
+        <h1>Houd oogcontact terwijl je leest</h1>
+        <p class="lede">NotchPrompter hangt je script vlak onder de camera en volgt je stem. In elke taal, ook als je vooruitspringt, en helemaal op je Mac.</p>
+        <div class="cta" id="download">
+          <!-- Replace href with the App Store link once the app is live. -->
+          <a class="store-badge" href="https://apps.apple.com/app/notchprompter" aria-label="Download in de Mac App Store">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.51 1.25-2.58-.03-.01-2.4-.92-2.42-3.65zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.75-.96 2.79 1.02.08 2.05-.52 2.68-1.27z"/></svg>
+            <span><small>Download in de</small><strong>Mac App Store</strong></span>
+          </a>
+          <a class="link-btn" href="https://github.com/magnram/notchprompter">Bekijk op GitHub →</a>
+        </div>
+        <p class="req">Gratis en open source. Voor macOS 15 Sequoia of nieuwer. Werkt het best op een MacBook met notch, en op elke Mac met een camera bovenaan.</p>
+      </div>
+    </div>
+
+    <section id="video">
+      <div class="wrap center">
+        <h2>Zie het in actie</h2>
+        <p class="sub">Lees, pauzeer, spring vooruit. De prompter houdt je bij.</p>
+        <div class="video-frame">
+          <video src="../media/promo.mp4" poster="../media/promo-poster.png" controls playsinline preload="none"></video>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <h2>Alles wat je nodig hebt. Niets dat in de weg zit.</h2>
+        <p class="sub">Een klein zwart paneel onder je camera, een paar duidelijke knoppen, een kleine editor voor je scripts en een opnameknop.</p>
+        <div class="features">
+          <div class="feature">
+            <div class="icon">🎙️</div>
+            <h3>Volgt je stem</h3>
+            <p>Klik op de microfoon en begin te praten. De volgende woorden staan altijd vlak onder de camera. Woorden die je al hebt gezegd, vervagen.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">🌍</div>
+            <h3>Elke taal, automatisch</h3>
+            <p>NotchPrompter ziet in welke taal je script is en luistert daarnaar. Engels, Noors, Duits, Spaans, Japans en tientallen meer.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">⏭️</div>
+            <h3>Houdt je bij als je overslaat</h3>
+            <p>Sla een zin over, verander een woord, zeg 'eh'. Hij vindt waar je bent en springt met je mee. Pauzeer, en hij wacht.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">▶️</div>
+            <h3>Of druk op afspelen</h3>
+            <p>Soepel scrollen met een aftelling van 3-2-1. Beweeg de aanwijzer erover om te pauzeren, en stel met de schildpad en de haas de snelheid in.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">✏️</div>
+            <h3>Ingebouwde editor</h3>
+            <p>Schrijf en bewaar al je scripts op één plek. Importeer Word-, Markdown-, RTF- of tekstbestanden. Bewaart automatisch.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">🎥</div>
+            <h3>Neem jezelf op</h3>
+            <p>Klik op opnemen om jezelf met je camera en microfoon te filmen terwijl je leest. Elke opname wordt als film bewaard in je map Films.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">🙈</div>
+            <h3>Onzichtbaar voor je publiek</h3>
+            <p>Verborgen bij schermdeling, schermafbeeldingen en opnames. Alleen jij kunt hem zien.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">🔒</div>
+            <h3>Werkt helemaal op je Mac</h3>
+            <p>Spraak wordt herkend op je Mac, niet in de cloud. Geen account, geen tracking. Je scripts en opnames verlaten je Mac nooit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <div>
+          <h2>Je scripts, één klik verwijderd</h2>
+          <p class="sub">Klik op het potlood in de prompter om de editor te openen. Kies een script, klik op de microfoon en begin te praten.</p>
+          <ol class="steps">
+            <li>Schrijf of plak je script, of importeer een bestand.</li>
+            <li>Klik op <strong>Lees met stem</strong>.</li>
+            <li>Kijk in de camera en praat.</li>
+          </ol>
+        </div>
+        <img src="../media/editor.png" alt="De scripteditor van NotchPrompter met een lijst met scripts en de tekst van een script voor een productlancering." loading="lazy">
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="center">Gemaakt voor de camera</h2>
+        <p class="sub center" style="margin-inline:auto">Videogesprekken, YouTube, cursussen, webinars en pitches.</p>
+        <div class="shots">
+          <img src="../media/2-voice.jpg" alt="De prompter onder de notch volgt een gesproken script." loading="lazy">
+          <img src="../media/4-play.jpg" alt="De afspeelmodus met snelheidsknoppen en de instellingenpopover." loading="lazy">
+          <img src="../media/3-editor.jpg" alt="Het editorvenster onder de prompter." loading="lazy">
+          <img src="../media/5-private.jpg" alt="Instellingen met de optie om de prompter te verbergen bij schermdeling." loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="wrap" style="max-width:780px">
+        <h2>Vragen</h2>
+        <details>
+          <summary>Is het echt gratis?</summary>
+          <p>Ja. NotchPrompter is gratis en open source onder de MIT-licentie. Geen advertenties, geen abonnement, geen account. De <a href="https://github.com/magnram/notchprompter">broncode staat op GitHub</a>, waar je bugs kunt melden, functies kunt voorstellen of kunt meebouwen.</p>
+        </details>
+        <details>
+          <summary>Werkt het ook zonder notch?</summary>
+          <p>Ja. Op een Mac zonder notch hangt de prompter bovenaan het scherm, onder de menubalk, en dat is nog steeds dicht bij de camera.</p>
+        </details>
+        <details>
+          <summary>Welke talen ondersteunt stemvolgen?</summary>
+          <p>Tientallen, waaronder Engels, Noors, Duits, Frans, Spaans, Chinees en Japans. NotchPrompter ziet in welke taal je script is en luistert naar die taal, dus je hoeft niets in te stellen. In Instellingen kun je een andere taal kiezen.</p>
+        </details>
+        <details>
+          <summary>Zien anderen de prompter als ik mijn scherm deel?</summary>
+          <p>Nee. Standaard is hij verborgen bij schermdeling, schermafbeeldingen en opnames. Wil je hem laten zien, dan kun je dit uitschakelen in Instellingen.</p>
+        </details>
+        <details>
+          <summary>Gaat er iets naar de cloud?</summary>
+          <p>Nee. Spraak wordt herkend op je Mac (met Dicteren ingeschakeld in Systeeminstellingen), en NotchPrompter heeft geen servers. Stemvolgen bewaart nooit audio. Alleen als je op opnemen klikt, wordt er een film bewaard, in je eigen map Films. Lees het <a href="privacy.html">privacybeleid</a>.</p>
+        </details>
+        <details>
+          <summary>Wat zijn de toetscombinaties?</summary>
+          <p>Klik op de prompter en dan: <kbd>spatiebalk</kbd> afspelen/pauzeren, <kbd>V</kbd> stem, <kbd>C</kbd> opnemen, <kbd>R</kbd> terug naar boven, <kbd>↑</kbd> <kbd>↓</kbd> snelheid, <kbd>+</kbd> <kbd>−</kbd> tekstgrootte, <kbd>E</kbd> editor, <kbd>Esc</kbd> stoppen.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Magnus Ramm · Gratis en open source (MIT)</span>
+      <nav>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="https://github.com/magnram/notchprompter">Broncode</a>
+      </nav>
+      <!-- i18n:picker -->
+      <details class="lang">
+        <summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span class="sr">Taal: </span>Nederlands</summary>
+        <ul aria-label="Taal">
+          <li><a href="../da/" hreflang="da" lang="da">Dansk</a></li>
+          <li><a href="../de/" hreflang="de" lang="de">Deutsch</a></li>
+          <li><a href="../" hreflang="en" lang="en">English</a></li>
+          <li><a href="../es/" hreflang="es" lang="es">Español</a></li>
+          <li><a href="../fr/" hreflang="fr" lang="fr">Français</a></li>
+          <li><a href="../it/" hreflang="it" lang="it">Italiano</a></li>
+          <li><a href="../nl/" hreflang="nl" lang="nl" aria-current="page">Nederlands</a></li>
+          <li><a href="../nb/" hreflang="nb" lang="nb">Norsk</a></li>
+          <li><a href="../pl/" hreflang="pl" lang="pl">Polski</a></li>
+          <li><a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+          <li><a href="../pt-PT/" hreflang="pt-PT" lang="pt-PT">Português (Portugal)</a></li>
+          <li><a href="../fi/" hreflang="fi" lang="fi">Suomi</a></li>
+          <li><a href="../sv/" hreflang="sv" lang="sv">Svenska</a></li>
+          <li><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></li>
+          <li><a href="../ru/" hreflang="ru" lang="ru">Русский</a></li>
+          <li><a href="../uk/" hreflang="uk" lang="uk">Українська</a></li>
+          <li><a href="../ja/" hreflang="ja" lang="ja">日本語</a></li>
+          <li><a href="../ko/" hreflang="ko" lang="ko">한국어</a></li>
+          <li><a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li>
+          <li><a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
+        </ul>
+      </details>
+      <!-- /i18n:picker -->
+    </div>
+  </footer>
+  <script>
+    // Hero demo: read the script word by word, like NotchPrompter following a voice.
+    (() => {
+      const script = document.getElementById("demo-script");
+      const notch = script.closest(".notch");
+      const pauseCue = script.dataset.pause || "(pause)";
+      // Chinese and Japanese put no spaces between words. Split them into words with
+      // Intl.Segmenter, or into characters (and runs of Latin letters) where it is missing.
+      const lang = document.documentElement.lang;
+      const noSpaces = /^(ja|zh)\b/.test(lang);
+      const segmenter = noSpaces && window.Intl && Intl.Segmenter ? new Intl.Segmenter(lang, { granularity: "word" }) : null;
+      function wordsOf(text) {
+        if (!noSpaces) return text.split(/\s+/).filter(Boolean);
+        const pieces = segmenter
+          ? Array.from(segmenter.segment(text), s => s.segment)
+          : text.match(/[A-Za-z0-9]+|[^]/gu) || [];
+        const out = [];
+        let open = "";
+        for (const t of pieces) {
+          if (!t.trim()) { if (out.length) out[out.length - 1] += " "; continue; } // keep spaces around Latin words
+          if (/^[「『（(“‘《〈【]+$/.test(t)) open += t;            // opening marks go with the next word
+          else if (!/[\p{L}\p{N}]/u.test(t) && out.length) out[out.length - 1] += t; // punctuation with the last
+          else { out.push(open + t); open = ""; }
+        }
+        return out;
+      }
+      const words = [];
+      for (const p of script.querySelectorAll("p")) {
+        const parts = p.textContent.trim().split(/(\([^)]*\)|（[^）]*）)/)
+          .flatMap(s => /^[(（]/.test(s) ? [s] : wordsOf(s));
+        p.textContent = "";
+        for (const part of parts) {
+          const span = document.createElement("span");
+          span.textContent = part;
+          span.className = /^[(（]/.test(part) ? "w cue" : "w";
+          span.dataset.skip = p.hasAttribute("data-skip") ? "1" : "";
+          p.append(span, noSpaces ? "" : " ");
+          words.push(span);
+        }
+      }
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        words.slice(0, 9).forEach(w => w.classList.add("said"));
+        return;
+      }
+      let i = 0, lineTop = 0;
+      const talking = on => notch.classList.toggle("talking", on);
+      function keepLineOnTop(word) {
+        const top = word.offsetTop - script.offsetTop;
+        if (top > lineTop + 4) { lineTop = top; script.style.transform = `translateY(${-top}px)`; }
+      }
+      function step() {
+        if (i >= words.length) {
+          talking(false);
+          setTimeout(() => {                       // start over
+            script.classList.add("fade");
+            setTimeout(() => {
+              words.forEach(w => w.classList.remove("said"));
+              i = 0; lineTop = 0; script.style.transform = "";
+              script.classList.remove("fade");
+              setTimeout(step, 900);
+            }, 500);
+          }, 2200);
+          return;
+        }
+        const w = words[i];
+        if (w.classList.contains("cue")) {        // a note to yourself: not spoken, just waited on
+          talking(false); w.classList.add("said"); i++;
+          return setTimeout(step, w.textContent === pauseCue ? 1400 : 700);
+        }
+        if (w.dataset.skip) {                      // the skipped line: jumps past in one go
+          talking(false);
+          const skipped = [];
+          while (i < words.length && words[i].dataset.skip) skipped.push(words[i++]);
+          return setTimeout(() => {
+            skipped.forEach(s => s.classList.add("said"));
+            keepLineOnTop(words[i] || skipped[skipped.length - 1]);
+            setTimeout(step, 300);
+          }, 700);
+        }
+        talking(true);
+        keepLineOnTop(w);
+        w.classList.add("said");
+        i++;
+        const said = w.textContent.trim();
+        const end = /[.?!。？！][」』"”’)）]*$/.test(said), comma = /[,，、;；:：]$/.test(said);
+        if (end || comma) talking(false);
+        setTimeout(step, end ? 650 : comma ? 380 : noSpaces && !/^[A-Za-z]/.test(said) ? 120 + said.length * 110 : 170 + said.length * 22);
+      }
+      setTimeout(step, 1200);
+    })();
+  </script>
+  <!-- i18n:script -->
+  <script>
+    // Remember the language the visitor picks, so the English page stops suggesting another one.
+    for (const a of document.querySelectorAll("a[hreflang]")) {
+      a.addEventListener("click", () => { try { localStorage.setItem("np-lang", a.hreflang); } catch (e) {} });
+    }
+  </script>
+  <!-- /i18n:script -->
+</body>
+</html>

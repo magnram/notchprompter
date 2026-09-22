@@ -1,0 +1,1 @@
+prompter,manus,autocue,tal,presentation,video,webbkamera,notch,röst,spela in,inspelning,kamera

@@ -1,0 +1,33 @@
+Olhe as pessoas nos olhos enquanto lê o seu guião.
+
+O NotchPrompter mostra o seu guião num pequeno painel preto que pende do topo do ecrã, mesmo por baixo da câmara. Num MacBook com notch, funde-se com o notch. Para quem está do outro lado, parece que está a falar diretamente com ele.
+
+SEGUE A SUA VOZ, EM QUALQUER IDIOMA
+Clique no microfone e fale. O NotchPrompter ouve enquanto lê e move o texto consigo, para que as palavras seguintes fiquem sempre mesmo por baixo da câmara. As palavras já ditas desvanecem. A app deteta o idioma do guião e ouve nesse idioma: português, inglês, norueguês, alemão, espanhol, japonês e dezenas de outros. Sem nada para configurar.
+
+ACOMPANHA QUANDO SALTA UMA PARTE
+Salte uma frase, troque uma palavra, diga “hum”. O NotchPrompter encontra onde está e avança consigo. Faça uma pausa, respire: ele espera. Perdeu-se? Clique na palavra onde está.
+
+OU CARREGUE EM REPRODUZIR
+Prefere um ritmo constante? Carregue em reproduzir para um deslocamento suave com contagem decrescente 3-2-1. Passe o cursor por cima do texto para pausar. A tartaruga e a lebre alteram a velocidade.
+
+UM PEQUENO EDITOR PARA OS SEUS GUIÕES
+Escreva e edite os seus guiões no editor integrado ou importe ficheiros de texto, Markdown, Word, RTF e HTML. Tudo é guardado automaticamente. Veja o número de palavras e quanto tempo, mais ou menos, demora a ler cada guião.
+
+GRAVE-SE A SI PRÓPRIO
+Carregue em gravar para se filmar com a câmara e o microfone enquanto o guião segue a sua voz. Cada take é guardado como filme em Filmes › NotchPrompter.
+
+INVISÍVEL PARA O SEU PÚBLICO
+O prompter fica oculto na partilha de ecrã, nas capturas de ecrã e nas gravações. Mais ninguém o vê.
+
+PENSADO PARA
+• Videochamadas e reuniões online
+• YouTube, cursos e gravações de ecrã
+• Apresentações, pitches e webinars
+• Quem quer soar natural e mostrar confiança diante da câmara
+
+GRATUITO E DE CÓDIGO ABERTO
+Sem anúncios, sem subscrição, sem conta. Código aberto com licença MIT, e o código-fonte está no GitHub: github.com/magnram/notchprompter
+
+FUNCIONA TOTALMENTE NO SEU MAC
+A fala é reconhecida no seu Mac, não na nuvem. Sem conta, sem rastreio, sem anúncios. Os seus guiões e gravações nunca saem do seu Mac. O seguimento por voz nunca guarda áudio.

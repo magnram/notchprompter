@@ -1,0 +1,33 @@
+Metninizi okurken insanların gözünün içine bakın.
+
+NotchPrompter metninizi, ekranın üst kenarından kameranın hemen altına sarkan küçük siyah bir panelde gösterir. Çentikli bir MacBook'ta panel çentikle bütünleşir. İzleyenlere doğrudan onlarla konuşuyormuşsunuz gibi görünür.
+
+SESİNİZİ HER DİLDE TAKİP EDER
+Mikrofona tıklayın ve konuşmaya başlayın. NotchPrompter siz okurken dinler ve metni sizinle birlikte kaydırır; böylece sıradaki kelimeler hep kameranın hemen altında olur. Söylediğiniz kelimeler soluklaşır. Metninizin hangi dilde olduğunu anlar ve o dili dinler: Türkçe, İngilizce, Norveççe, Almanca, İspanyolca, Japonca ve onlarca dil daha. Hiçbir ayar gerekmez.
+
+ATLADIĞINIZDA DA YETİŞİR
+Bir cümleyi atlayın, bir kelimeyi değiştirin, "ııı" deyin. NotchPrompter nerede olduğunuzu bulur ve sizinle birlikte ileri atlar. Durun, nefes alın: sizi bekler. Yerinizi mi kaybettiniz? Kaldığınız kelimeye tıklayın.
+
+YA DA OYNAT'A BASIN
+Sabit bir tempo mu istiyorsunuz? 3-2-1 geri sayımın ardından akıcı kaydırma için Oynat'a basın. Duraklatmak için imleci metnin üzerine getirin. Kaplumbağa ve tavşan hızı değiştirir.
+
+METİNLERİNİZ İÇİN KÜÇÜK BİR DÜZENLEYİCİ
+Metinlerinizi yerleşik düzenleyicide yazın ve düzenleyin ya da metin, Markdown, Word, RTF ve HTML dosyalarını içe aktarın. Her şey otomatik olarak kaydedilir. Kelime sayısını ve her metnin yaklaşık okuma süresini görürsünüz.
+
+KENDİNİZİ KAYDEDİN
+Metin sesinizi takip ederken kendinizi kamera ve mikrofonla çekmek için kayıt düğmesine basın. Her çekim, Filmler › NotchPrompter klasörüne film olarak kaydedilir.
+
+İZLEYİCİLERE GÖRÜNMEZ
+Prompter ekran paylaşımında, ekran görüntülerinde ve kayıtlarda gizlenir. Onu yalnızca siz görürsünüz.
+
+ŞUNLAR İÇİN İDEAL
+• Görüntülü görüşmeler ve çevrim içi toplantılar
+• YouTube, kurslar ve ekran kayıtları
+• Sunumlar, pitch'ler ve web seminerleri
+• Kamera karşısında doğal konuşmak ve kendinden emin görünmek isteyen herkes
+
+ÜCRETSİZ VE AÇIK KAYNAK
+Reklam yok, abonelik yok, hesap yok. MIT lisansıyla açık kaynak; kaynak kodu GitHub'da: github.com/magnram/notchprompter
+
+TAMAMEN MAC'İNİZDE ÇALIŞIR
+Konuşma bulutta değil, Mac'inizde tanınır. Hesap yok, izleme yok, reklam yok. Metinleriniz ve kayıtlarınız Mac'inizden hiç çıkmaz. Ses takibi sırasında hiçbir ses kaydı tutulmaz.

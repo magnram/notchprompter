@@ -1,0 +1,1 @@
+teleponto,prompter,guião,script,texto,discurso,vídeo,webcam,apresentação,notch,voz,gravar,autocue

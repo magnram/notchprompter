@@ -63,6 +63,9 @@ platform :mac do
 
   desc "Update the App Store text, screenshots and review notes, and pick a build. No submit."
   lane :metadata do |options|
+    # Name the version on purpose, so text for the next version never lands in
+    # one that is already in review: fastlane mac metadata version:1.1
+    UI.user_error!("Pass the App Store version, e.g. version:1.1") unless options[:version]
     connect
     review = ENV["APP_REVIEW_PHONE"].to_s.strip.empty? ? {} : { app_review_information: review_information }
     upload_to_app_store(
@@ -71,6 +74,7 @@ platform :mac do
       screenshots_path: SCREENSHOTS,
       overwrite_screenshots: true,
       app_rating_config_path: "#{METADATA}/age_rating.json",
+      app_version: options[:version].to_s,
       build_number: options[:build_number]&.to_s,
       **review,
       skip_binary_upload: true,
@@ -86,11 +90,13 @@ platform :mac do
   end
 
   desc "Build, then upload the package with its text and screenshots. Does not submit."
-  lane :release do
+  lane :release do |options|
+    UI.user_error!("Pass the App Store version, e.g. version:1.1") unless options[:version]
     build
     connect
     upload_to_app_store(
       platform: "osx",
+      app_version: options[:version].to_s,
       pkg: PKG,
       metadata_path: METADATA,
       screenshots_path: SCREENSHOTS,

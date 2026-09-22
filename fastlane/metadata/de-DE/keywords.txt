@@ -1,0 +1,1 @@
+Prompter,Skript,Autocue,Rede,Vortrag,Präsentation,Webcam,Video,Notch,Stimme,Aufnahme,Kamera,Text

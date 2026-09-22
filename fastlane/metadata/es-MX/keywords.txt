@@ -1,0 +1,1 @@
+apuntador,prompter,guion,libreto,texto,discurso,video,webcam,presentación,notch,voz,grabar,cámara

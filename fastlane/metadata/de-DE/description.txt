@@ -1,0 +1,33 @@
+Schau den Leuten in die Augen, während du dein Skript liest.
+
+NotchPrompter zeigt dein Skript in einem kleinen schwarzen Feld, das oben am Bildschirm hängt, direkt unter der Kamera. Auf einem MacBook mit Notch verschmilzt es mit der Notch. Für alle, die zusehen, wirkt es, als würdest du direkt mit ihnen sprechen.
+
+FOLGT DEINER STIMME, IN JEDER SPRACHE
+Klick auf das Mikrofon und leg einfach los. NotchPrompter hört beim Lesen mit und bewegt den Text mit dir, sodass die nächsten Wörter immer direkt unter der Kamera stehen. Bereits gesagte Wörter verblassen. Die App erkennt, in welcher Sprache dein Skript geschrieben ist, und hört genau darauf: Deutsch, Englisch, Norwegisch, Spanisch, Japanisch und Dutzende weitere. Ganz ohne Einrichtung.
+
+HÄLT MIT, WENN DU SPRINGST
+Lass einen Satz aus, ändere ein Wort, sag „äh“. NotchPrompter findet die Stelle, an der du bist, und springt mit dir weiter. Du machst eine Pause und holst Luft? Die App wartet. Den Faden verloren? Klick einfach auf das Wort, bei dem du bist.
+
+ODER DRÜCK AUF PLAY
+Lieber ein gleichmäßiges Tempo? Drück auf Play für sanftes Scrollen mit 3-2-1-Countdown. Fahr mit der Maus über den Text, um anzuhalten. Mit Schildkröte und Hase stellst du das Tempo ein.
+
+EIN KLEINER EDITOR FÜR DEINE SKRIPTE
+Schreib und bearbeite deine Skripte im integrierten Editor oder importiere Text-, Markdown-, Word-, RTF- und HTML-Dateien. Alles wird automatisch gesichert. Du siehst die Wortzahl und ungefähr, wie lange das Vorlesen jedes Skripts dauert.
+
+NIMM DICH SELBST AUF
+Drück auf Aufnehmen, um dich mit Kamera und Mikrofon zu filmen, während das Skript deiner Stimme folgt. Jeder Take wird als Film unter Filme › NotchPrompter gesichert.
+
+UNSICHTBAR FÜR DEIN PUBLIKUM
+Der Prompter ist bei Bildschirmfreigabe, auf Bildschirmfotos und in Aufnahmen verborgen. Nur du siehst ihn.
+
+GEMACHT FÜR
+• Videocalls und Online-Meetings
+• YouTube, Onlinekurse und Bildschirmaufnahmen
+• Präsentationen, Pitches und Webinare
+• Alle, die vor der Kamera natürlich klingen und souverän wirken wollen
+
+KOSTENLOS UND OPEN SOURCE
+Keine Werbung, kein Abo, kein Account. Open Source unter der MIT-Lizenz, der Quellcode liegt auf GitHub: github.com/magnram/notchprompter
+
+LÄUFT KOMPLETT AUF DEINEM MAC
+Die Spracherkennung läuft auf deinem Mac, nicht in der Cloud. Kein Account, kein Tracking, keine Werbung. Deine Skripte und Aufnahmen verlassen deinen Mac nie. Das Mitlesen per Stimme speichert nie Audio.

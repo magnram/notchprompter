@@ -248,7 +248,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
         panel.hasShadow = false
         panel.hidesOnDeactivate = false
         panel.isReleasedWhenClosed = false
-        panel.setAccessibilityLabel("Teleprompter")
+        panel.setAccessibilityLabel(String(localized: "Teleprompter"))
 
         root.controller = self
         root.wantsLayer = true
@@ -305,16 +305,16 @@ final class Prompter: NSObject, NSPopoverDelegate {
         voice.onStopped = { [unowned self] in listening = false }
         voice.onPermissionProblem = { [unowned self] message, url in
             if recorder.isRecording { stopRecording() }
-            showPermissionAlert("Allow access to follow your voice",
-                                message + "\n\nYou can still use Play to scroll at a steady speed.", url)
+            showPermissionAlert(String(localized: "Allow access to follow your voice"),
+                                message + "\n\n" + String(localized: "You can still use Play to scroll at a steady speed."), url)
         }
         voice.onNeedsDictation = { [unowned self] in
             let alert = NSAlert()
-            alert.messageText = "Turn on Dictation to follow your voice on this Mac"
-            alert.informativeText = "NotchPrompter recognises speech on your Mac, so your voice never leaves it. macOS only allows this when Dictation is on.\n\nTurn on Dictation in System Settings → Keyboard, then press the microphone again. Or let Apple's servers recognise your speech instead."
-            alert.addButton(withTitle: "Open Keyboard Settings")
-            alert.addButton(withTitle: "Use Apple's Servers")
-            alert.addButton(withTitle: "Cancel")
+            alert.messageText = String(localized: "Turn on Dictation to follow your voice on this Mac")
+            alert.informativeText = String(localized: "NotchPrompter recognises speech on your Mac, so your voice never leaves it. macOS only allows this when Dictation is on.\n\nTurn on Dictation in System Settings → Keyboard, then press the microphone again. Or let Apple's servers recognise your speech instead.")
+            alert.addButton(withTitle: String(localized: "Open Keyboard Settings"))
+            alert.addButton(withTitle: String(localized: "Use Apple's Servers"))
+            alert.addButton(withTitle: String(localized: "Cancel"))
             NSApp.activate()
             switch alert.runModal() {
             case .alertFirstButtonReturn: NSWorkspace.shared.open(VoiceListener.dictationSettings)
@@ -338,7 +338,8 @@ final class Prompter: NSObject, NSPopoverDelegate {
                 UserDefaults.standard.set(true, forKey: key)
                 NSWorkspace.shared.activateFileViewerSelecting([url])
             }
-            showHUD("Saved in Movies › NotchPrompter", for: 4)
+            showHUD(String(localized: "Saved in Movies › NotchPrompter",
+                           comment: "Use the Finder name of the Movies folder in this language"), for: 4)
         }
 
         recLabel.font = .monospacedDigitSystemFont(ofSize: 11, weight: .semibold)
@@ -401,8 +402,8 @@ final class Prompter: NSObject, NSPopoverDelegate {
         let alert = NSAlert()
         alert.messageText = title
         alert.informativeText = message
-        alert.addButton(withTitle: "Open System Settings")
-        alert.addButton(withTitle: "Not Now")
+        alert.addButton(withTitle: String(localized: "Open System Settings"))
+        alert.addButton(withTitle: String(localized: "Not Now"))
         NSApp.activate()
         if alert.runModal() == .alertFirstButtonReturn { NSWorkspace.shared.open(url) }
     }
@@ -487,23 +488,28 @@ final class Prompter: NSObject, NSPopoverDelegate {
     // MARK: Button bar
 
     private func buildBar() {
-        let restartButton = ControlButton("backward.end.fill", "Back to the top (R)") { [unowned self] in restart() }
-        micButton = ControlButton("mic.fill", "Follow my voice (V)", size: 14, width: 30) { [unowned self] in
+        // Tooltips name the key that does the same; the keys are the same in every language.
+        let restartButton = ControlButton("backward.end.fill", String(localized: "Back to the top (R)")) { [unowned self] in
+            restart()
+        }
+        micButton = ControlButton("mic.fill", Self.micTip, size: 14, width: 30) { [unowned self] in
             toggleVoice()
         }
-        recordButton = ControlButton("record.circle", "Record video of yourself (C)", size: 13) { [unowned self] in
+        recordButton = ControlButton("record.circle", Self.recordTip, size: 13) { [unowned self] in
             toggleRecording()
         }
-        playButton = ControlButton("play.fill", "Scroll at a steady speed (Space)") { [unowned self] in togglePlay() }
-        speedButtons = [
-            ControlButton("tortoise.fill", "Slower (↓)") { [unowned self] in changeSpeed(-5) },
-            ControlButton("hare.fill", "Faster (↑)") { [unowned self] in changeSpeed(5) },
-        ]
-        let edit = ControlButton("pencil", "Edit scripts (E)") { [unowned self] in onOpenEditor() }
-        settingsButton = ControlButton("slider.horizontal.3", "Text size, speed and voice (⌘,)") { [unowned self] in
-            toggleSettings()
+        playButton = ControlButton("play.fill", String(localized: "Scroll at a steady speed (Space)")) { [unowned self] in
+            togglePlay()
         }
-        let hide = ControlButton("xmark", "Hide the prompter (⇧⌘P)", size: 10, width: 20) { [unowned self] in
+        speedButtons = [
+            ControlButton("tortoise.fill", String(localized: "Slower (↓)")) { [unowned self] in changeSpeed(-5) },
+            ControlButton("hare.fill", String(localized: "Faster (↑)")) { [unowned self] in changeSpeed(5) },
+        ]
+        let edit = ControlButton("pencil", String(localized: "Edit scripts (E)")) { [unowned self] in onOpenEditor() }
+        settingsButton = ControlButton("slider.horizontal.3", String(localized: "Text size, speed and voice (⌘,)")) {
+            [unowned self] in toggleSettings()
+        }
+        let hide = ControlButton("xmark", String(localized: "Hide the prompter (⇧⌘P)"), size: 10, width: 20) { [unowned self] in
             hidePanel()
             showHideTipOnce()
         }
@@ -535,10 +541,12 @@ final class Prompter: NSObject, NSPopoverDelegate {
         micButton.layer?.cornerRadius = 9
         micButton.layer?.backgroundColor = listening ? NSColor.systemRed.cgColor : NSColor.clear.cgColor
         micButton.contentTintColor = listening ? .white : NSColor(calibratedRed: 1, green: 0.38, blue: 0.36, alpha: 1)
-        micButton.toolTip = listening ? "Stop following my voice (V)" : "Follow my voice (V)"
+        micButton.toolTip = listening ? String(localized: "Stop following my voice (V)") : Self.micTip
+        micButton.setAccessibilityLabel(micButton.toolTip)
         recordButton.setSymbol(recorder.isRecording ? "stop.circle.fill" : "record.circle")
         recordButton.contentTintColor = recorder.isRecording ? .systemRed : ControlButton.normalTint
-        recordButton.toolTip = recorder.isRecording ? "Stop recording (C)" : "Record video of yourself (C)"
+        recordButton.toolTip = recorder.isRecording ? String(localized: "Stop recording (C)") : Self.recordTip
+        recordButton.setAccessibilityLabel(recordButton.toolTip)
         // Speed only matters while scrolling at a steady speed.
         let showSpeed = playing || countingDown
         if speedButtons.first?.isHidden == showSpeed {
@@ -556,6 +564,8 @@ final class Prompter: NSObject, NSPopoverDelegate {
     }
 
     private var barVisible = true
+    private static let micTip = String(localized: "Follow my voice (V)")
+    private static let recordTip = String(localized: "Record video of yourself (C)")
 
     /// Fade the text out above the bar while it shows, so the bar never covers a line you need.
     /// The mask's gradient runs from the top (0) to the bottom (1).
@@ -571,8 +581,8 @@ final class Prompter: NSObject, NSPopoverDelegate {
         guard !UserDefaults.standard.bool(forKey: key) else { return }
         UserDefaults.standard.set(true, forKey: key)
         let alert = NSAlert()
-        alert.messageText = "The prompter is hidden"
-        alert.informativeText = "To bring it back, click the NotchPrompter icon in the menu bar, click the app in the Dock, or press ⇧⌘P."
+        alert.messageText = String(localized: "The prompter is hidden")
+        alert.informativeText = String(localized: "To bring it back, click the NotchPrompter icon in the menu bar, click the app in the Dock, or press ⇧⌘P.")
         NSApp.activate()
         alert.runModal()
     }
@@ -588,7 +598,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
 
     // MARK: Text
 
-    private static let emptyHint = "This script is empty.\nClick the pencil below to write it."
+    private static let emptyHint = String(localized: "This script is empty.\nClick the pencil below to write it.")
 
     private func show(_ script: Script?) {
         let newScript = script?.id != shownScriptID
@@ -666,7 +676,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
             // Talking for a while without the text moving: explain how to get back on track.
             if !lostHintShown, now - lastAdvance > 6, now - quietSince > 2.5 {
                 lostHintShown = true
-                showHUD("Lost? Click the word you're on", for: 4)
+                showHUD(String(localized: "Lost? Click the word you're on"), for: 4)
             }
             // Glide quickly to put the next word to say on the top line.
             let target = lineOffset(forWord: matcher.cursor)
@@ -677,7 +687,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
 
         let maxY = max(0, text.frame.height - clip.bounds.height)
         scrollTo(min(maxY, offset + CGFloat(settings.speed) * dt))
-        if offset >= maxY { playing = false; showHUD("■ The end") }
+        if offset >= maxY { playing = false; showHUD(String(localized: "■ The end")) }
     }
     private var quietSince = CACurrentMediaTime()
     #if DEBUG
@@ -710,7 +720,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
         if listening {
             voice.stop()
             listening = false
-            showHUD("Voice off")
+            showHUD(String(localized: "Voice off"))
         } else {
             startVoice()
         }
@@ -748,7 +758,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
             voice.restartTask()
             lastAdvance = CACurrentMediaTime()
             updateProgress()
-            showHUD("From here")
+            showHUD(String(localized: "From here", comment: "After clicking a word: voice-follow continues from here"))
         } else {
             scrollTo(lineOffset(forWord: word))
         }
@@ -757,7 +767,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
     // MARK: Play mode
 
     func togglePlay() {
-        if playing || countingDown { cancelCountdown(); playing = false; showHUD("❚❚ Paused"); return }
+        if playing || countingDown { cancelCountdown(); playing = false; showHUD(String(localized: "❚❚ Paused")); return }
         guard !isEmpty else { onOpenEditor(); return }
         if listening { voice.stop(); listening = false }
         showPanel()
@@ -768,8 +778,8 @@ final class Prompter: NSObject, NSPopoverDelegate {
 
     private func startPlaying() {
         playing = true
-        if settings.pauseOnHover && hovering { showHUD("▶ Starts when the mouse leaves", for: 2) }
-        else { showHUD("▶ Speed \(Int(settings.speed))") }
+        if settings.pauseOnHover && hovering { showHUD(String(localized: "▶ Starts when the mouse leaves"), for: 2) }
+        else { showHUD(String(localized: "▶ Speed \(Int(settings.speed))")) }
     }
 
     private func startCountdown(then action: @escaping () -> Void = {}) {
@@ -807,11 +817,13 @@ final class Prompter: NSObject, NSPopoverDelegate {
         guard !isEmpty else { onOpenEditor(); return }
         Recorder.requestAccess { [weak self] problem in
             guard let self else { return }
-            if let problem { return showPermissionAlert("Allow access to record", problem.message, problem.url) }
+            if let problem {
+                return showPermissionAlert(String(localized: "Allow access to record"), problem.message, problem.url)
+            }
             let withScreen = settings.recordScreen
             if withScreen && !ScreenRecorder.requestAccess() {
-                return showPermissionAlert("Allow screen recording",
-                    "Turn on NotchPrompter in System Settings → Privacy & Security → Screen & System Audio Recording, then reopen NotchPrompter. Or turn off \"Also record the screen\" in Settings.",
+                return showPermissionAlert(String(localized: "Allow screen recording"),
+                    String(localized: "Turn on NotchPrompter in System Settings → Privacy & Security → Screen & System Audio Recording, then reopen NotchPrompter. Or turn off “Also record the screen” in Settings."),
                     ScreenRecorder.settingsURL)
             }
             cancelCountdown()
@@ -822,7 +834,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
             if listening { voice.stop(); listening = false }
             recorder.onAudio = { [weak voice] in voice?.append($0) }
             // Wake the camera first, so filming starts exactly when the countdown ends.
-            showHUD("Starting camera…")
+            showHUD(String(localized: "Starting camera…"))
             let hidden = settings.hideFromScreenSharing ? panel.windowNumber : nil
             prepareAll(screen: withScreen, hidden: hidden) { [weak self] problem in
                 guard let self else { return }
@@ -841,7 +853,10 @@ final class Prompter: NSObject, NSPopoverDelegate {
                 let startFiles = { [weak self] in
                     guard let self, pendingRecording, !recorder.isRecording else { return }
                     let name = Recorder.takeName()
-                    if withScreen { screenRecorder.record(name: name + " Screen") }
+                    if withScreen {
+                        screenRecorder.record(name: String(localized: "\(name) Screen",
+                                                           comment: "File name of the screen movie that goes with a take"))
+                    }
                     recorder.record(name: name) { [weak self] problem in
                         guard let self else { return }
                         if let problem { showHUD(problem, for: 5) }
@@ -900,7 +915,9 @@ final class Prompter: NSObject, NSPopoverDelegate {
         guard recorder.isRecording else { return }
         let t = Int(Date().timeIntervalSince(recorder.startedAt))
         let dot = t % 2 == 0 ? "●" : "○"
-        let text = String(format: "%@ REC %d:%02d", dot, t / 60, t % 60)
+        let time = String(format: "%d:%02d", t / 60, t % 60)
+        let text = String(localized: "\(dot) REC \(time)",
+                          comment: "Recording indicator beside the notch: a blinking dot, REC and the time. Keep it short.")
         if recLabel.stringValue != text {
             recLabel.stringValue = text
             layoutViews()
@@ -912,22 +929,22 @@ final class Prompter: NSObject, NSPopoverDelegate {
         updateProgress()
         scrollTo(0)
         if listening { matcher.resetHeard(); voice.restartTask(); lastAdvance = CACurrentMediaTime() }
-        showHUD("⟲ Top")
+        showHUD(String(localized: "⟲ Top", comment: "Back at the top of the script"))
     }
 
     func changeSpeed(_ d: Double) {
         settings.speed = (settings.speed + d).clamped(to: AppSettings.speedRange)
-        showHUD("Speed \(Int(settings.speed))")
+        showHUD(String(localized: "Speed \(Int(settings.speed))"))
     }
 
     func changeFontSize(_ d: Double) {
         settings.fontSize = (settings.fontSize + d).clamped(to: AppSettings.fontSizeRange)
-        showHUD("Text size \(Int(settings.fontSize))")
+        showHUD(String(localized: "Text size \(Int(settings.fontSize))"))
     }
 
     @discardableResult
     func importAndShow(_ url: URL) -> Bool {
-        guard let script = try? library.importFile(at: url) else { showHUD("Can't read that file"); return false }
+        guard let script = try? library.importFile(at: url) else { showHUD(String(localized: "Can't read that file")); return false }
         library.activeID = script.id
         showHUD(script.displayTitle)
         return true
@@ -968,7 +985,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
             case "e": onOpenEditor()
             case "h":
                 settings.pauseOnHover.toggle()
-                showHUD(settings.pauseOnHover ? "Hover pauses: on" : "Hover pauses: off")
+                showHUD(settings.pauseOnHover ? String(localized: "Hover pauses: on") : String(localized: "Hover pauses: off"))
             case "=", "+": changeFontSize(2)
             case "-": changeFontSize(-2)
             default: return false

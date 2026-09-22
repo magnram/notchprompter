@@ -77,12 +77,13 @@ struct EditorView: View {
             do {
                 for url in try result.get() { selection = try library.importFile(at: url).id }
             } catch {
-                problem = "That file couldn't be read. Try saving it as plain text or Word first."
+                problem = String(localized: "That file couldn't be read. Try saving it as plain text or Word first.")
             }
         }
         .fileExporter(isPresented: $exporting, document: PlainTextDocument(text: selectedScript?.text ?? ""),
-                      contentType: .plainText, defaultFilename: selectedScript?.displayTitle ?? "Script") { result in
-            if case .failure = result { problem = "The script couldn't be saved there." }
+                      contentType: .plainText, defaultFilename: selectedScript?.displayTitle
+                          ?? String(localized: "Script", comment: "Default file name when exporting a script")) { result in
+            if case .failure = result { problem = String(localized: "The script couldn't be saved there.") }
         }
         .confirmationDialog("Delete “\(confirmDelete.flatMap(library.script)?.displayTitle ?? "")”?",
                             isPresented: Binding(get: { confirmDelete != nil }, set: { if !$0 { confirmDelete = nil } })) {
@@ -118,7 +119,8 @@ private struct ScriptRow: View {
         HStack(alignment: .firstTextBaseline) {
             VStack(alignment: .leading, spacing: 2) {
                 Text(script.displayTitle).font(.headline).lineLimit(1)
-                Text(script.text.isEmpty ? "Empty" : script.text.replacingOccurrences(of: "\n", with: " "))
+                Text(script.text.isEmpty ? String(localized: "Empty", comment: "Preview of a script without text")
+                                          : script.text.replacingOccurrences(of: "\n", with: " "))
                     .font(.caption).foregroundStyle(.secondary).lineLimit(1)
             }
             Spacer(minLength: 4)
@@ -168,9 +170,15 @@ private struct ScriptEditor: View {
             .padding(.vertical, 10)
             Divider()
             HStack {
-                Text("\(script.wordCount) words · about \(script.readingTime) to read")
-                Spacer()
-                Text("Saved automatically")
+                HStack(spacing: 5) {
+                    Text("\(script.wordCount) words", comment: "Word count below the script editor")
+                    Text(verbatim: "·")
+                    Text("about \(script.readingTime) to read",
+                         comment: "Below the script editor; the time is formatted by the system, e.g. “1 min, 20 sec”")
+                }
+                .lineLimit(1)
+                Spacer(minLength: 12)
+                Text("Saved automatically").lineLimit(1)
             }
             .font(.caption)
             .foregroundStyle(.secondary)

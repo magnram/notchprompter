@@ -1,0 +1,33 @@
+Se folk i ögonen medan du läser ditt manus.
+
+NotchPrompter visar ditt manus i en liten svart panel som hänger från skärmens överkant, precis under kameran. På en MacBook med notch smälter den ihop med notchen. För dem som tittar ser det ut som att du pratar direkt till dem.
+
+FÖLJER DIN RÖST, PÅ ALLA SPRÅK
+Klicka på mikrofonen och börja prata. NotchPrompter lyssnar medan du läser och flyttar texten i takt med dig, så att nästa ord alltid står precis under kameran. Ord du redan har sagt tonas ut. Appen känner av vilket språk ditt manus är skrivet på och lyssnar efter det: svenska, engelska, norska, tyska, spanska, japanska och dussintals till. Inget att ställa in.
+
+HÄNGER MED NÄR DU HOPPAR ÖVER
+Hoppa över en mening, byt ett ord, säg ”öh”. NotchPrompter hittar var du är och hoppar fram med dig. Gör en paus, andas: den väntar. Tappat bort dig? Klicka på ordet du är på.
+
+ELLER TRYCK PÅ PLAY
+Vill du ha ett jämnt tempo? Tryck på play för mjuk rullning med nedräkning 3-2-1. Håll pekaren över texten för att pausa. Sköldpaddan och haren ändrar hastigheten.
+
+EN LITEN EDITOR FÖR DINA MANUS
+Skriv och redigera dina manus i den inbyggda editorn, eller importera text-, Markdown-, Word-, RTF- och HTML-filer. Allt sparas automatiskt. Du ser antal ord och ungefär hur lång tid varje manus tar att läsa.
+
+SPELA IN DIG SJÄLV
+Tryck på spela in för att filma dig själv med kameran och mikrofonen medan manuset följer din röst. Varje tagning sparas som en film i Filmer › NotchPrompter.
+
+OSYNLIG FÖR DIN PUBLIK
+Promptern döljs vid skärmdelning, i skärmavbilder och i inspelningar. Bara du ser den.
+
+GJORD FÖR
+• Videosamtal och onlinemöten
+• YouTube, kurser och skärminspelningar
+• Presentationer, pitchar och webbinarier
+• Alla som vill låta naturliga och se självsäkra ut i kameran
+
+GRATIS OCH ÖPPEN KÄLLKOD
+Ingen reklam, ingen prenumeration, inget konto. Öppen källkod under MIT-licensen, och källkoden finns på GitHub: github.com/magnram/notchprompter
+
+KÖRS HELT PÅ DIN MAC
+Tal känns igen på din Mac, inte i molnet. Inget konto, ingen spårning, ingen reklam. Dina manus och inspelningar lämnar aldrig din Mac. Röstföljningen sparar aldrig ljud.

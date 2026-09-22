@@ -1,0 +1,33 @@
+Regardez votre public dans les yeux pendant que vous lisez votre texte.
+
+NotchPrompter affiche votre texte dans un petit panneau noir suspendu en haut de l’écran, juste sous la caméra. Sur un MacBook avec encoche, il se fond dans l’encoche. Pour ceux qui vous regardent, vous leur parlez droit dans les yeux.
+
+SUIT VOTRE VOIX, DANS TOUTES LES LANGUES
+Cliquez sur le micro et parlez, tout simplement. NotchPrompter vous écoute pendant que vous lisez et fait avancer le texte avec vous : les mots suivants sont toujours juste sous la caméra. Les mots déjà prononcés s’estompent. L’app reconnaît la langue de votre texte et l’écoute : français, anglais, norvégien, allemand, espagnol, japonais et des dizaines d’autres. Aucun réglage nécessaire.
+
+GARDE LE RYTHME QUAND VOUS SAUTEZ UN PASSAGE
+Sautez une phrase, changez un mot, dites « euh ». NotchPrompter retrouve où vous en êtes et avance avec vous. Une pause, une respiration : il attend. Perdu le fil ? Cliquez sur le mot où vous en êtes.
+
+OU APPUYEZ SUR LECTURE
+Vous préférez un rythme régulier ? Appuyez sur Lecture pour un défilement fluide après un compte à rebours 3-2-1. Survolez le texte pour mettre en pause. La tortue et le lièvre règlent la vitesse.
+
+UN PETIT ÉDITEUR POUR VOS TEXTES
+Écrivez et modifiez vos textes dans l’éditeur intégré, ou importez des fichiers texte, Markdown, Word, RTF et HTML. Tout est enregistré automatiquement. Vous voyez le nombre de mots et le temps de lecture approximatif de chaque texte.
+
+FILMEZ-VOUS
+Appuyez sur Enregistrer pour vous filmer avec votre caméra et votre micro pendant que le texte suit votre voix. Chaque prise est enregistrée comme vidéo dans Films › NotchPrompter.
+
+INVISIBLE POUR VOTRE PUBLIC
+Le prompteur est masqué lors du partage d’écran, dans les captures d’écran et dans les enregistrements. Vous seul le voyez.
+
+CONÇU POUR
+• Les appels vidéo et les réunions en ligne
+• YouTube, les cours et les enregistrements d’écran
+• Les présentations, les pitchs et les webinaires
+• Tous ceux qui veulent paraître naturels et sûrs d’eux face à la caméra
+
+GRATUIT ET OPEN SOURCE
+Sans publicité, sans abonnement, sans compte. Open source sous licence MIT, le code source est sur GitHub : github.com/magnram/notchprompter
+
+FONCTIONNE ENTIÈREMENT SUR VOTRE MAC
+La reconnaissance vocale se fait sur votre Mac, pas dans le cloud. Pas de compte, pas de pistage, pas de publicité. Vos textes et vos enregistrements ne quittent jamais votre Mac. Le suivi de la voix n’enregistre jamais l’audio.
