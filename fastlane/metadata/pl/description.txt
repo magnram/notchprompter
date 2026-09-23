@@ -15,7 +15,7 @@ MAŁY EDYTOR DO TWOICH TEKSTÓW
 Pisz i edytuj teksty we wbudowanym edytorze albo importuj pliki tekstowe, Markdown, Word, RTF i HTML. Wszystko zapisuje się automatycznie. Widzisz liczbę słów i mniej więcej, ile trwa przeczytanie każdego tekstu.
 
 NAGRYWAJ SIEBIE
-Naciśnij nagrywanie, aby sfilmować się kamerą i mikrofonem, podczas gdy tekst podąża za Twoim głosem. Każde ujęcie jest zapisywane jako film w folderze Filmy › NotchPrompter.
+Naciśnij nagrywanie, aby sfilmować się kamerą i mikrofonem, podczas gdy tekst podąża za Twoim głosem. Możesz też nagrywać ekran albo ekran i kamerę jednocześnie. Każde ujęcie jest zapisywane jako film w folderze Filmy › NotchPrompter.
 
 NIEWIDOCZNY DLA WIDZÓW
 Prompter jest ukryty podczas udostępniania ekranu, na zrzutach ekranu i w nagraniach. Widzisz go tylko Ty.

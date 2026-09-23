@@ -1,3 +1,6 @@
 Désormais en 20 langues : l’app, le texte d’entraînement et cette page de l’App Store.
 
-Et quelques corrections et améliorations.
+• Enregistrez votre caméra, votre écran, ou les deux à la fois.
+• Un petit aperçu de la caméra vous montre de quoi vous avez l’air pendant l’enregistrement.
+• Le suivi à la voix garde mieux votre place et ne saute plus en avant quand vous répétez une phrase.
+• Le micro et la caméra ne sont allumés que lorsque vous les utilisez.

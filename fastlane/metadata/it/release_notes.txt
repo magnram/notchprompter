@@ -1,3 +1,6 @@
 Ora in 20 lingue: l’app, il testo di prova e questa pagina dell’App Store.
 
-Inoltre, piccole correzioni e miglioramenti.
+• Registra la fotocamera, lo schermo o entrambi insieme.
+• Una piccola anteprima della fotocamera ti mostra come appari mentre registri.
+• Il testo che segue la voce tiene meglio il punto e non salta più avanti quando ripeti una frase.
+• Microfono e fotocamera sono accesi solo mentre li usi.

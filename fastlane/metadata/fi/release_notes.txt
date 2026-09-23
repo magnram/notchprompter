@@ -1,3 +1,6 @@
 Nyt 20 kielellä: sovellus, harjoituskäsikirjoitus ja tämä App Store -sivu.
 
-Lisäksi pieniä korjauksia ja parannuksia.
+• Tallenna kamera, näyttö tai molemmat yhtä aikaa.
+• Pieni kameran esikatselu näyttää, miltä näytät tallentaessasi.
+• Äänellä seuraaminen pysyy paremmin kohdassa eikä enää hyppää eteenpäin, kun sanot lauseen uudelleen.
+• Mikrofoni ja kamera ovat päällä vain, kun käytät niitä.

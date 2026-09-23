@@ -15,7 +15,7 @@ UN PEQUEÑO EDITOR PARA TUS GUIONES
 Escribe y edita tus guiones en el editor integrado, o importa archivos de texto, Markdown, Word, RTF y HTML. Todo se guarda automáticamente. Ves el número de palabras y cuánto se tarda más o menos en leer cada guion.
 
 GRÁBATE
-Presiona grabar para filmarte con tu cámara y tu micrófono mientras el guion sigue tu voz. Cada toma se guarda como video en Películas › NotchPrompter.
+Presiona grabar para filmarte con tu cámara y tu micrófono mientras el guion sigue tu voz. También puedes grabar la pantalla, o la pantalla y la cámara al mismo tiempo. Cada toma se guarda como video en Películas › NotchPrompter.
 
 INVISIBLE PARA TU PÚBLICO
 El prompter se oculta al compartir pantalla, en las capturas de pantalla y en las grabaciones, así que solo lo ves tú.

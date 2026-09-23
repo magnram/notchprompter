@@ -1,3 +1,6 @@
 Agora em 20 idiomas: o app, o roteiro de treino e esta página da App Store.
 
-Além de pequenas correções e melhorias.
+• Grave a câmera, a tela ou as duas ao mesmo tempo.
+• Uma pequena prévia da câmera mostra como você está enquanto grava.
+• O acompanhamento por voz mantém melhor o lugar e não pula mais para a frente quando você repete uma frase.
+• O microfone e a câmera só ficam ligados enquanto você os usa.

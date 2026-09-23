@@ -15,7 +15,7 @@ EEN KLEINE EDITOR VOOR JE TEKSTEN
 Schrijf en bewerk je teksten in de ingebouwde editor, of importeer tekst-, Markdown-, Word-, RTF- en HTML-bestanden. Alles wordt automatisch bewaard. Je ziet het aantal woorden en ongeveer hoe lang het voorlezen van elke tekst duurt.
 
 NEEM JEZELF OP
-Druk op opnemen om jezelf te filmen met je camera en microfoon terwijl de tekst je stem volgt. Elke take wordt als film bewaard in Films › NotchPrompter.
+Druk op opnemen om jezelf te filmen met je camera en microfoon terwijl de tekst je stem volgt. Je kunt ook je scherm opnemen, of je scherm en camera samen. Elke take wordt als film bewaard in Films › NotchPrompter.
 
 ONZICHTBAAR VOOR JE PUBLIEK
 De prompter is verborgen bij schermdeling, in schermafbeeldingen en in opnames. Alleen jij ziet hem.

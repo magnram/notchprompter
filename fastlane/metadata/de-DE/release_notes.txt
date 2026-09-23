@@ -1,3 +1,6 @@
 Jetzt in 20 Sprachen: die App, das Übungsskript und diese App-Store-Seite.
 
-Dazu kleine Fehlerbehebungen und Verbesserungen.
+• Nimm deine Kamera, deinen Bildschirm oder beides gleichzeitig auf.
+• Eine kleine Kameravorschau zeigt, wie du beim Aufnehmen aussiehst.
+• Die Sprachsteuerung bleibt besser an der richtigen Stelle und springt nicht mehr vor, wenn du einen Satz wiederholst.
+• Mikrofon und Kamera sind nur an, während du sie benutzt.

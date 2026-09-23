@@ -15,7 +15,7 @@ METİNLERİNİZ İÇİN KÜÇÜK BİR DÜZENLEYİCİ
 Metinlerinizi yerleşik düzenleyicide yazın ve düzenleyin ya da metin, Markdown, Word, RTF ve HTML dosyalarını içe aktarın. Her şey otomatik olarak kaydedilir. Kelime sayısını ve her metnin yaklaşık okuma süresini görürsünüz.
 
 KENDİNİZİ KAYDEDİN
-Metin sesinizi takip ederken kendinizi kamera ve mikrofonla çekmek için kayıt düğmesine basın. Her çekim, Filmler › NotchPrompter klasörüne film olarak kaydedilir.
+Metin sesinizi takip ederken kendinizi kamera ve mikrofonla çekmek için kayıt düğmesine basın. Ekranınızı ya da ekranınızı ve kameranızı birlikte de kaydedebilirsiniz. Her çekim, Filmler › NotchPrompter klasörüne film olarak kaydedilir.
 
 İZLEYİCİLERE GÖRÜNMEZ
 Prompter ekran paylaşımında, ekran görüntülerinde ve kayıtlarda gizlenir. Onu yalnızca siz görürsünüz.

@@ -1,3 +1,6 @@
 Agora em 20 idiomas: a app, o guião de treino e esta página da App Store.
 
-E ainda pequenas correções e melhorias.
+• Grave a câmara, o ecrã ou ambos em simultâneo.
+• Uma pequena pré-visualização da câmara mostra o seu aspeto enquanto grava.
+• O acompanhamento por voz mantém melhor o lugar e já não salta para a frente quando repete uma frase.
+• O microfone e a câmara só estão ligados enquanto os usa.

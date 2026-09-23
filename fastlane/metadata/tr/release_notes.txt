@@ -1,3 +1,6 @@
 Artık 20 dilde: uygulama, alıştırma metni ve bu App Store sayfası.
 
-Ayrıca küçük düzeltmeler ve iyileştirmeler.
+• Kameranızı, ekranınızı ya da ikisini birden kaydedin.
+• Küçük bir kamera önizlemesi, kayıt sırasında nasıl göründüğünüzü gösterir.
+• Sesle takip yerini daha iyi koruyor ve bir cümleyi tekrar söylediğinizde artık ileri atlamıyor.
+• Mikrofon ve kamera yalnızca siz kullanırken açık.

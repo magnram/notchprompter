@@ -1,3 +1,6 @@
 Nu på 20 språk: appen, övningsmanuset och den här sidan i App Store.
 
-Dessutom små rättningar och förbättringar.
+• Spela in kameran, skärmen eller båda samtidigt.
+• En liten kameraförhandsvisning visar hur du ser ut medan du spelar in.
+• Röststyrningen håller bättre koll på var du är och hoppar inte längre framåt när du säger en mening igen.
+• Mikrofonen och kameran är bara på medan du använder dem.

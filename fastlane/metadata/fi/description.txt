@@ -15,7 +15,7 @@ PIENI EDITORI KÄSIKIRJOITUKSILLESI
 Kirjoita ja muokkaa käsikirjoituksiasi sisäänrakennetussa editorissa tai tuo teksti-, Markdown-, Word-, RTF- ja HTML-tiedostoja. Kaikki tallentuu automaattisesti. Näet sanamäärän ja suunnilleen, kuinka kauan kunkin käsikirjoituksen lukeminen kestää.
 
 KUVAA ITSESI
-Paina tallennusta, niin voit kuvata itsesi kameralla ja mikrofonilla, kun käsikirjoitus seuraa ääntäsi. Jokainen otto tallentuu elokuvana kansioon Elokuvat › NotchPrompter.
+Paina tallennusta, niin voit kuvata itsesi kameralla ja mikrofonilla, kun käsikirjoitus seuraa ääntäsi. Voit myös tallentaa näytön, tai näytön ja kameran yhtä aikaa. Jokainen otto tallentuu elokuvana kansioon Elokuvat › NotchPrompter.
 
 NÄKYMÄTÖN YLEISÖLLE
 Prompteri on piilossa näytön jakamisessa, kuvakaappauksissa ja tallenteissa. Vain sinä näet sen.

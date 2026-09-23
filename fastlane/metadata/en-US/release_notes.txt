@@ -1,3 +1,6 @@
 Now in 20 languages: the app, the practice script and this App Store page.
 
-Plus small fixes and improvements.
+• Record your camera, your screen, or both at once.
+• A small camera preview shows how you look while you record.
+• Voice-follow keeps its place better and no longer jumps ahead when you say a sentence again.
+• The microphone and camera are only on while you use them.

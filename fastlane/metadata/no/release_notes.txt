@@ -1,3 +1,6 @@
 Nå på 20 språk: appen, øvingsmanuset og denne siden i App Store.
 
-Pluss små rettelser og forbedringer.
+• Ta opp kameraet, skjermen eller begge deler samtidig.
+• En liten forhåndsvisning av kameraet viser hvordan du ser ut mens du tar opp.
+• Stemmestyringen holder bedre følge og hopper ikke lenger fremover når du sier en setning på nytt.
+• Mikrofonen og kameraet er bare på mens du bruker dem.

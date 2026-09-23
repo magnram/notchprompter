@@ -1,3 +1,6 @@
 Teraz w 20 językach: aplikacja, tekst do ćwiczeń i ta strona w App Store.
 
-Do tego drobne poprawki i ulepszenia.
+• Nagrywaj kamerę, ekran albo oba naraz.
+• Mały podgląd z kamery pokazuje, jak wyglądasz podczas nagrywania.
+• Podążanie za głosem lepiej trzyma miejsce i nie przeskakuje już do przodu, gdy powtarzasz zdanie.
+• Mikrofon i kamera są włączone tylko wtedy, gdy ich używasz.

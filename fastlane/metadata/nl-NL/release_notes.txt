@@ -1,3 +1,6 @@
 Nu in 20 talen: de app, de oefentekst en deze App Store-pagina.
 
-Plus kleine verbeteringen en oplossingen.
+• Neem je camera, je scherm of allebei tegelijk op.
+• Een klein cameravoorbeeld laat zien hoe je eruitziet terwijl je opneemt.
+• Het volgen op stem houdt je plek beter vast en springt niet meer vooruit als je een zin opnieuw zegt.
+• De microfoon en camera staan alleen aan terwijl je ze gebruikt.

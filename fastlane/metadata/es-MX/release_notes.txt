@@ -1,3 +1,6 @@
 Ahora en 20 idiomas: la app, el guion de práctica y esta página del App Store.
 
-Además, pequeñas correcciones y mejoras.
+• Graba la cámara, la pantalla o ambas al mismo tiempo.
+• Una pequeña vista previa de la cámara te muestra cómo te ves mientras grabas.
+• El seguimiento por voz no pierde tu lugar y ya no se adelanta cuando repites una frase.
+• El micrófono y la cámara solo están encendidos mientras los usas.

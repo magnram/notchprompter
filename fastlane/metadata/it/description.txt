@@ -15,7 +15,7 @@ UN PICCOLO EDITOR PER I TUOI TESTI
 Scrivi e modifica i tuoi testi nell’editor integrato, oppure importa file di testo, Markdown, Word, RTF e HTML. Tutto viene salvato automaticamente. Vedi il numero di parole e quanto tempo serve, più o meno, per leggere ogni testo.
 
 REGISTRATI
-Premi registra per riprenderti con fotocamera e microfono mentre il testo segue la tua voce. Ogni ripresa viene salvata come filmato in Filmati › NotchPrompter.
+Premi registra per riprenderti con fotocamera e microfono mentre il testo segue la tua voce. Puoi anche registrare lo schermo, oppure schermo e fotocamera insieme. Ogni ripresa viene salvata come filmato in Filmati › NotchPrompter.
 
 INVISIBILE AL TUO PUBBLICO
 Il prompter è nascosto durante la condivisione dello schermo, negli screenshot e nelle registrazioni. Lo vedi solo tu.

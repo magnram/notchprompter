@@ -15,7 +15,7 @@ EIN KLEINER EDITOR FÜR DEINE SKRIPTE
 Schreib und bearbeite deine Skripte im integrierten Editor oder importiere Text-, Markdown-, Word-, RTF- und HTML-Dateien. Alles wird automatisch gesichert. Du siehst die Wortzahl und ungefähr, wie lange das Vorlesen jedes Skripts dauert.
 
 NIMM DICH SELBST AUF
-Drück auf Aufnehmen, um dich mit Kamera und Mikrofon zu filmen, während das Skript deiner Stimme folgt. Jeder Take wird als Film unter Filme › NotchPrompter gesichert.
+Drück auf Aufnehmen, um dich mit Kamera und Mikrofon zu filmen, während das Skript deiner Stimme folgt. Du kannst auch deinen Bildschirm aufnehmen, oder Bildschirm und Kamera zusammen. Jeder Take wird als Film unter Filme › NotchPrompter gesichert.
 
 UNSICHTBAR FÜR DEIN PUBLIKUM
 Der Prompter ist bei Bildschirmfreigabe, auf Bildschirmfotos und in Aufnahmen verborgen. Nur du siehst ihn.

@@ -15,7 +15,7 @@ UM PEQUENO EDITOR PARA OS SEUS GUIÕES
 Escreva e edite os seus guiões no editor integrado ou importe ficheiros de texto, Markdown, Word, RTF e HTML. Tudo é guardado automaticamente. Veja o número de palavras e quanto tempo, mais ou menos, demora a ler cada guião.
 
 GRAVE-SE A SI PRÓPRIO
-Carregue em gravar para se filmar com a câmara e o microfone enquanto o guião segue a sua voz. Cada take é guardado como filme em Filmes › NotchPrompter.
+Carregue em gravar para se filmar com a câmara e o microfone enquanto o guião segue a sua voz. Também pode gravar o ecrã, ou o ecrã e a câmara em simultâneo. Cada take é guardado como filme em Filmes › NotchPrompter.
 
 INVISÍVEL PARA O SEU PÚBLICO
 O prompter fica oculto na partilha de ecrã, nas capturas de ecrã e nas gravações. Mais ninguém o vê.

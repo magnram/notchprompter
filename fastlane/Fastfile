@@ -48,14 +48,16 @@ platform :mac do
 
   desc "Archive and export a signed installer package for the Mac App Store"
   lane :build do
+    # A failed export must not leave the last package behind for an upload to pick up.
+    FileUtils.rm_f(PKG)
     build_mac_app(
       project: "#{ROOT}/NotchPrompter.xcodeproj",
       scheme: "NotchPrompter",
       configuration: "Release",
       export_method: "app-store",
       export_options: { signingStyle: "automatic", teamID: "A7C4MM99VP" },
+      # Newer fastlane passes xcargs to the export too; giving them twice fails.
       xcargs: key_args,
-      export_xcargs: key_args,
       output_directory: File.dirname(PKG),
       output_name: "NotchPrompter"
     )
@@ -135,6 +137,9 @@ platform :mac do
     upload_to_app_store(
       platform: "osx",
       pkg: PKG,
+      # Only upload. Without this, deliver renames the version in App Store Connect
+      # after the package, even one that is waiting for review.
+      skip_app_version_update: true,
       skip_metadata: true,
       skip_screenshots: true,
       submit_for_review: false,
@@ -160,5 +165,19 @@ platform :mac do
     UI.user_error!("Build #{options[:build_number]} is not available yet") unless build
     version.select_build(build_id: build.id)
     UI.success("Selected build #{version.version_string} (#{build.version}) without submitting it for review")
+  end
+end
+
+platform :mac do
+  desc "Show the App Store versions and uploaded builds. Changes nothing."
+  lane :status do
+    connect
+    app = Spaceship::ConnectAPI::App.find("com.magnusramm.NotchPrompter")
+    app.get_app_store_versions(includes: "build").each do |v|
+      UI.message("version #{v.version_string}: #{v.app_store_state}, build #{v.build&.version || '-'}")
+    end
+    Spaceship::ConnectAPI::Build.all(app_id: app.id).each do |b|
+      UI.message("build #{b.app_version} (#{b.version}): #{b.processing_state}")
+    end
   end
 end

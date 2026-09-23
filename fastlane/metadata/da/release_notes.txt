@@ -1,3 +1,6 @@
 Nu på 20 sprog: appen, øvemanuskriptet og denne side i App Store.
 
-Desuden små rettelser og forbedringer.
+• Optag kameraet, skærmen eller begge dele på én gang.
+• Et lille kameravindue viser, hvordan du ser ud, mens du optager.
+• Stemmestyringen holder bedre fast i, hvor du er, og springer ikke længere frem, når du siger en sætning igen.
+• Mikrofonen og kameraet er kun tændt, mens du bruger dem.

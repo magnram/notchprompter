@@ -15,7 +15,7 @@ UM PEQUENO EDITOR PARA SEUS ROTEIROS
 Escreva e edite seus roteiros no editor integrado ou importe arquivos de texto, Markdown, Word, RTF e HTML. Tudo é salvo automaticamente. Veja a contagem de palavras e quanto tempo, mais ou menos, leva para ler cada roteiro.
 
 GRAVE A SI MESMO
-Aperte gravar para se filmar com a câmera e o microfone enquanto o roteiro acompanha sua voz. Cada tomada é salva como filme em Filmes › NotchPrompter.
+Aperte gravar para se filmar com a câmera e o microfone enquanto o roteiro acompanha sua voz. Você também pode gravar a tela, ou a tela e a câmera juntas. Cada tomada é salva como filme em Filmes › NotchPrompter.
 
 INVISÍVEL PARA O SEU PÚBLICO
 O prompter fica oculto no compartilhamento de tela, em capturas de tela e em gravações. Só você o vê.

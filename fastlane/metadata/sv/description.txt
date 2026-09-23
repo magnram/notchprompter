@@ -15,7 +15,7 @@ EN LITEN EDITOR FÖR DINA MANUS
 Skriv och redigera dina manus i den inbyggda editorn, eller importera text-, Markdown-, Word-, RTF- och HTML-filer. Allt sparas automatiskt. Du ser antal ord och ungefär hur lång tid varje manus tar att läsa.
 
 SPELA IN DIG SJÄLV
-Tryck på spela in för att filma dig själv med kameran och mikrofonen medan manuset följer din röst. Varje tagning sparas som en film i Filmer › NotchPrompter.
+Tryck på spela in för att filma dig själv med kameran och mikrofonen medan manuset följer din röst. Du kan också spela in skärmen, eller skärmen och kameran samtidigt. Varje tagning sparas som en film i Filmer › NotchPrompter.
 
 OSYNLIG FÖR DIN PUBLIK
 Promptern döljs vid skärmdelning, i skärmavbilder och i inspelningar. Bara du ser den.

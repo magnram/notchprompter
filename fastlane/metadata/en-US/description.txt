@@ -15,7 +15,7 @@ A LITTLE EDITOR FOR YOUR SCRIPTS
 Write and edit your scripts in the built-in editor, or import text, Markdown, Word, RTF and HTML files. Everything saves automatically. See the word count and about how long each script takes to read.
 
 RECORD YOURSELF
-Press record to film yourself with your camera and microphone while the script follows your voice. Each take is saved as a movie in Movies › NotchPrompter.
+Press record to film yourself with your camera and microphone while the script follows your voice. You can also record your screen, or your screen and camera together. Each take is saved as a movie in Movies › NotchPrompter.
 
 INVISIBLE TO YOUR AUDIENCE
 The prompter is hidden from screen sharing, screenshots and recordings, so only you can see it.

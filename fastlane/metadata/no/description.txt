@@ -15,7 +15,7 @@ EN LITEN EDITOR FOR MANUSENE DINE
 Skriv og rediger manusene dine i den innebygde editoren, eller importer tekst-, Markdown-, Word-, RTF- og HTML-filer. Alt lagres automatisk. Du ser antall ord og omtrent hvor lang tid hvert manus tar å lese.
 
 FILM DEG SELV
-Trykk på ta opp for å filme deg selv med kameraet og mikrofonen mens manuset følger stemmen din. Hvert opptak lagres som en film i Filmer › NotchPrompter.
+Trykk på ta opp for å filme deg selv med kameraet og mikrofonen mens manuset følger stemmen din. Du kan også ta opp skjermen, eller skjermen og kameraet sammen. Hvert opptak lagres som en film i Filmer › NotchPrompter.
 
 USYNLIG FOR PUBLIKUM
 Prompteren er skjult ved skjermdeling, i skjermbilder og i opptak. Bare du ser den.

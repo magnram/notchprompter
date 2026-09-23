@@ -15,7 +15,7 @@ EN LILLE EDITOR TIL DINE MANUSKRIPTER
 Skriv og rediger dine manuskripter i den indbyggede editor, eller importer tekst-, Markdown-, Word-, RTF- og HTML-filer. Alt gemmes automatisk. Du kan se antal ord og cirka hvor lang tid hvert manuskript tager at læse.
 
 OPTAG DIG SELV
-Tryk på optag for at filme dig selv med kamera og mikrofon, mens manuskriptet følger din stemme. Hver optagelse gemmes som en film i Film › NotchPrompter.
+Tryk på optag for at filme dig selv med kamera og mikrofon, mens manuskriptet følger din stemme. Du kan også optage skærmen, eller skærmen og kameraet sammen. Hver optagelse gemmes som en film i Film › NotchPrompter.
 
 USYNLIG FOR DIT PUBLIKUM
 Prompteren er skjult ved skærmdeling, på skærmbilleder og i optagelser. Kun du kan se den.

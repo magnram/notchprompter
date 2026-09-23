@@ -15,7 +15,7 @@ UN PETIT ÉDITEUR POUR VOS TEXTES
 Écrivez et modifiez vos textes dans l’éditeur intégré, ou importez des fichiers texte, Markdown, Word, RTF et HTML. Tout est enregistré automatiquement. Vous voyez le nombre de mots et le temps de lecture approximatif de chaque texte.
 
 FILMEZ-VOUS
-Appuyez sur Enregistrer pour vous filmer avec votre caméra et votre micro pendant que le texte suit votre voix. Chaque prise est enregistrée comme vidéo dans Films › NotchPrompter.
+Appuyez sur Enregistrer pour vous filmer avec votre caméra et votre micro pendant que le texte suit votre voix. Vous pouvez aussi enregistrer votre écran, ou l’écran et la caméra ensemble. Chaque prise est enregistrée comme vidéo dans Films › NotchPrompter.
 
 INVISIBLE POUR VOTRE PUBLIC
 Le prompteur est masqué lors du partage d’écran, dans les captures d’écran et dans les enregistrements. Vous seul le voyez.
