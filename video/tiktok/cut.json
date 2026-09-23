@@ -1,0 +1,33 @@
+{
+  "_readme": "Vertical (TikTok) cut. 'segments' and 'cues' are SOURCE seconds on the landscape video timeline (the clock of ../audio/voiceover.wav, assets/presenter.webm and assets/prompter-live.mp4; see ../RETIME.md). Segments are snapped to whole frames and played back to back. Edit, then run: node build.mjs",
+  "fps": 30,
+  "tail": 2.3,
+  "segments": [
+    { "id": "a", "from": 1.7, "to": 29.5, "_": "You read your notes ... See? It jumped ahead with me." },
+    { "id": "b", "from": 33.7, "to": 38.7, "_": "Write your script ... record yourself with one click." },
+    { "id": "c", "from": 39.0667, "to": 44.3667, "_": "It all runs locally ... when you share your screen." },
+    { "id": "d", "from": 45.2667, "to": 50.3333, "_": "NotchPrompter. Look people in the eye. Now on the Mac App Store." }
+  ],
+  "cues": {
+    "readNotes": 1.83,
+    "meet": 7.65,
+    "free": 12.3,
+    "follows": 15.6,
+    "pauseStart": 18.11,
+    "whenYouPause": 19.19,
+    "offScript": 22.08,
+    "skippedLine": 24.3,
+    "jump": 25.14,
+    "see": 27.6,
+    "write": 33.85,
+    "record": 36.5,
+    "local": 39.15,
+    "hidden": 41.45,
+    "name": 45.4,
+    "lookEye": 46.6,
+    "appStore": 48.3,
+    "voiceEnd": 50.16,
+    "_note": "skippedLine and jump are read from the screen footage (same as ../timings.json); speech cues from silencedetect on ../audio/voiceover.wav"
+  },
+  "captionFixes": { "Promptor": "Prompter", "See,": "See?" }
+}

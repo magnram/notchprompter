@@ -1,0 +1,26 @@
+{
+  "_readme": "Subtitle cues for both promo videos. Times are seconds on the landscape video timeline (the clock of audio/voiceover.wav). The landscape video shows every cue; the TikTok cut maps them through its segments (tiktok/cut.json) and drops cues that fall outside. Words come from tiktok/audio/whisper-dtw.json (node tiktok/build.mjs --words). The text of each cue is in l10n/<lang>.json under 'subs'.",
+  "cues": [
+    { "id": "feeling",  "from": 0.49,  "to": 1.75,  "en": "You know the feeling." },
+    { "id": "notes",    "from": 1.88,  "to": 4.2,   "en": "You read your notes, and your eyes drift down," },
+    { "id": "away",     "from": 4.3,   "to": 6.9,   "en": "away from the people you're talking to." },
+    { "id": "meet",     "from": 7.66,  "to": 9.15,  "en": "Meet NotchPrompter." },
+    { "id": "sits",     "from": 9.27,  "to": 11.58, "en": "Your script sits right under the camera," },
+    { "id": "contact",  "from": 11.64, "to": 14.6,  "en": "so you keep eye contact the whole time." },
+    { "id": "follows",  "from": 15.61, "to": 18.3,  "en": "It follows your voice, in any language." },
+    { "id": "pause",    "from": 19.19, "to": 21.6,  "en": "And when you pause, it waits for you." },
+    { "id": "offscript","from": 22.08, "to": 24.2,  "en": "Go off script, and it keeps up." },
+    { "id": "jumps",    "from": 24.89, "to": 27.45, "en": "NotchPrompter jumps right past it." },
+    { "id": "see",      "from": 27.62, "to": 29.5,  "en": "See? It jumped ahead with me." },
+    { "id": "steady",   "from": 30.27, "to": 31.8,  "en": "Prefer a steady pace?" },
+    { "id": "play",     "from": 31.9,  "to": 33.3,  "en": "Just press play." },
+    { "id": "editor",   "from": 33.84, "to": 36.3,  "en": "Write your script in the built-in editor," },
+    { "id": "record",   "from": 36.38, "to": 38.7,  "en": "and record yourself with one click." },
+    { "id": "local",    "from": 39.15, "to": 41.38, "en": "It all runs locally on your Mac," },
+    { "id": "hidden",   "from": 41.46, "to": 42.72, "en": "and the prompter stays hidden" },
+    { "id": "share",    "from": 42.76, "to": 44.3,  "en": "when you share your screen." },
+    { "id": "name",     "from": 45.48, "to": 46.55, "en": "NotchPrompter." },
+    { "id": "eye",      "from": 46.68, "to": 48.1,  "en": "Look people in the eye." },
+    { "id": "store",    "from": 48.26, "to": 50.3,  "en": "Now on the Mac App Store." }
+  ]
+}

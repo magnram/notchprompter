@@ -21,6 +21,14 @@ video/assets/fonts/
 .claude/
 video/.transcode-cache/
 video/assets/presenter.webm
+# The TikTok cut: same rules as the main video project
+video/tiktok/node_modules/
+video/tiktok/renders/
+video/tiktok/snapshots/
+video/tiktok/audio/
+video/tiktok/assets/fonts/
+video/tiktok/assets/presenter.webm
+video/tiktok/.transcode-cache/
 fastlane/builds/
 fastlane/report.xml
 fastlane/README.md

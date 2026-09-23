@@ -1,7 +1,8 @@
 #!/bin/zsh
 # Renders the screenshots in every app language and copies them to where they are used:
 #   fastlane/screenshots/<App Store locale>/1-eye-contact.jpg ... 5-private.jpg  (2880 × 1800, JPEG quality 92)
-#   website/media/<lang>/1-eye-contact.jpg ... 5-private.jpg (1600 × 1000, JPEG quality 80) and editor.png
+#   website/media/<lang>/2-voice.webp ... 5-private.webp (1600 × 1000, WebP quality 82), editor.webp (lossless)
+#   and 1-eye-contact.jpg (the link preview, JPEG quality 80)
 #   English: AppStore/screenshots/ (all captures), fastlane/screenshots/en-US/ and website/media/ itself.
 #
 #   Tools/render-all-languages.sh            # all languages
@@ -48,15 +49,23 @@ for lang in $LANGS; do
     rm -rf fastlane/screenshots/$loc && mkdir -p fastlane/screenshots/$loc
     for s in $SHOTS; do
       sips -s format jpeg -s formatOptions 92 "$out/appstore-$s.png" --out "fastlane/screenshots/$loc/$s.jpg" >/dev/null
+      jpegtran -copy none -optimize -progressive -outfile "fastlane/screenshots/$loc/$s.jpg" "fastlane/screenshots/$loc/$s.jpg"
     done
   done
 
   if [[ $lang == en ]]; then media=website/media; else media=website/media/$lang; fi
   mkdir -p $media
-  for s in $SHOTS; do
-    sips -s format jpeg -s formatOptions 80 -Z 1600 "$out/appstore-$s.png" --out "$media/$s.jpg" >/dev/null
+  # WebP for the page images: under half the size of JPEG at the same quality.
+  # The first shot is only the link preview (og:image), and some sites can't show WebP, so it stays JPEG.
+  sips -Z 1600 "$out/appstore-1-eye-contact.png" --out "$RAW/.og.png" >/dev/null
+  sips -s format jpeg -s formatOptions 80 "$RAW/.og.png" --out "$media/1-eye-contact.jpg" >/dev/null
+  jpegtran -copy none -optimize -progressive -outfile "$media/1-eye-contact.jpg" "$media/1-eye-contact.jpg"
+  for s in ${SHOTS:1}; do
+    sips -Z 1600 "$out/appstore-$s.png" --out "$RAW/.page.png" >/dev/null
+    cwebp -quiet -q 82 -m 6 "$RAW/.page.png" -o "$media/$s.webp"
   done
-  cp "$out/window-editor.png" "$media/editor.png"
+  rm -f "$RAW/.og.png" "$RAW/.page.png"
+  cwebp -quiet -lossless -z 9 "$out/window-editor.png" -o "$media/editor.webp"
 
   if [[ $lang == en ]]; then
     rm -rf AppStore/screenshots && cp -R "$out" AppStore/screenshots

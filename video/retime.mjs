@@ -52,6 +52,7 @@ const setAttr = (id, attr, val) => {
 };
 setAttr("root", "data-duration", total);
 setAttr("layer-wallpaper", "data-duration", total);
+setAttr("layer-subs", "data-duration", total);
 for (const n of names) {
   setAttr(`scene-${n}`, "data-start", scenes[n].start);
   setAttr(`scene-${n}`, "data-duration", scenes[n].dur);
