@@ -1,0 +1,1873 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@ can't be recognised on this Mac. Allow Apple's servers in Settings → Privacy, or use Play." : {
+      "comment" : "The placeholder is a language name. “Settings → Privacy” is this app's Settings window.",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ kan ikke genkendes på denne Mac. Tillad Apples servere i Indstillinger → Anonymitet, eller brug Afspil."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ kann auf diesem Mac nicht erkannt werden. Erlaube die Server von Apple in Einstellungen → Datenschutz oder verwende „Abspielen“."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se puede reconocer %@ en este Mac. Permite los servidores de Apple en Ajustes → Privacidad o usa Reproducir."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tätä kieltä (%@) ei voi tunnistaa tällä Macilla. Salli Applen palvelimet kohdassa Asetukset → Tietosuoja tai käytä toistoa."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La parole en %@ ne peut pas être reconnue sur ce Mac. Autorisez les serveurs d’Apple dans Réglages → Confidentialité, ou utilisez Lecture."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il riconoscimento vocale in %@ non è disponibile su questo Mac. Consenti i server di Apple in Impostazioni → Privacy, oppure usa Riproduci."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このMacでは%@を認識できません。「設定」→「プライバシー」でAppleのサーバを許可するか、「再生」を使用してください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 Mac에서는 %@을(를) 인식할 수 없습니다. 설정 → 개인정보 보호에서 Apple 서버를 허용하거나 재생을 사용하세요."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ kan ikke gjenkjennes på denne Macen. Tillat Apples servere i Innstillinger → Personvern, eller bruk Spill av."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ kan niet op deze Mac worden herkend. Sta de servers van Apple toe in Instellingen → Privacy, of gebruik ‘Speel af’."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tego języka (%@) nie można rozpoznać na tym Macu. Zezwól na serwery Apple w Ustawieniach → Prywatność albo użyj odtwarzania."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não é possível reconhecer %@ neste Mac. Permita os servidores da Apple em Ajustes → Privacidade ou use Reproduzir."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não é possível reconhecer %@ neste Mac. Permite os servidores da Apple em Definições → Privacidade ou usa Reproduzir."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Речь не распознаётся на этом Mac (язык: %@). Разрешите серверы Apple в разделе «Настройки» → «Конфиденциальность» или нажмите «Воспроизвести»."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ kan inte kännas igen på den här Macen. Tillåt Apples servrar i Inställningar → Integritet, eller använd Spela upp."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ bu Mac’te tanınamıyor. Ayarlar → Gizlilik bölümünde Apple sunucularına izin verin ya da Oynat’ı kullanın."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мовлення не розпізнається на цьому Mac (мова: %@). Дозвольте сервери Apple у Параметрах → Приватність або натисніть «Відтворити»."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法在这台 Mac 上识别%@。请在“设置”→“隐私”中允许使用 Apple 服务器，或者使用“播放”。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法在這部 Mac 上辨識%@。請在「設定」→「隱私權」中允許使用 Apple 伺服器，或使用「播放」。"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ can't be recognised on this Mac. Allow Apple's servers in Settings → Privacy, or use Play."
+          }
+        }
+      }
+    },
+    "%@ can't be recognised on this iPhone. Allow Apple's servers in the app's settings, or use Scroll." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ can't be recognised on this iPhone. Allow Apple's servers in the app's settings, or use Scroll."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ kan ikke genkendes på denne iPhone. Tillad Apples servere i appens indstillinger, eller brug Rul."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ kann auf diesem iPhone nicht erkannt werden. Erlaube die Server von Apple in den Einstellungen der App oder verwende „Scrollen“."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se puede reconocer %@ en este iPhone. Permite los servidores de Apple en los ajustes de la app o usa Desplazar."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tätä kieltä (%@) ei voi tunnistaa tässä iPhonessa. Salli Applen palvelimet apin asetuksissa tai käytä Vieritystä."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La parole en %@ ne peut pas être reconnue sur cet iPhone. Autorisez les serveurs d’Apple dans les réglages de l’app, ou utilisez Défilement."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il riconoscimento vocale in %@ non è disponibile su questo iPhone. Consenti i server di Apple nelle impostazioni dell’app, oppure usa Scorrimento."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このiPhoneでは%@を認識できません。アプリの設定でAppleのサーバを許可するか、スクロールを使ってください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 iPhone에서는 %@을(를) 인식할 수 없습니다. 앱 설정에서 Apple 서버를 허용하거나 스크롤을 사용하세요."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ kan ikke gjenkjennes på denne iPhonen. Tillat Apples servere i innstillingene til appen, eller bruk Rulling."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ kan niet op deze iPhone worden herkend. Sta de servers van Apple toe in de instellingen van de app, of gebruik Scrollen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tego języka (%@) nie można rozpoznać na tym iPhonie. Zezwól na serwery Apple w ustawieniach aplikacji albo użyj trybu Przewijanie."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não é possível reconhecer o idioma %@ neste iPhone. Permita os servidores da Apple nos ajustes do app ou use o modo Rolagem."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não é possível reconhecer o idioma %@ neste iPhone. Permita os servidores da Apple nas definições da app ou use o modo Deslocar."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Язык «%@» не распознаётся на этом iPhone. Разрешите серверы Apple в настройках приложения или используйте «Прокрутку»."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ kan inte kännas igen på den här iPhonen. Tillåt Apples servrar i appens inställningar, eller använd Rullning."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ bu iPhone’da tanınamıyor. Uygulama ayarlarında Apple sunucularına izin ver ya da Kaydırma’yı kullan."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мова «%@» не розпізнається на цьому iPhone. Дозвольте сервери Apple у параметрах програми або скористайтеся «Прокруткою»."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "这台 iPhone 无法识别%@。请在 App 的设置中允许使用 Apple 服务器，或使用“滚动”。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "這部 iPhone 無法辨識%@。請在 App 的設定中允許使用 Apple 伺服器，或使用「捲動」。"
+          }
+        }
+      },
+      "comment" : "The placeholder is a language name. “the app's settings” is the gear in NotchPrompter. Scroll is a mode name."
+    },
+    "%@ copy" : {
+      "comment" : "Title of a duplicated script",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ kopi"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Kopie"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ copia"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ kopio"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ copie"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ copia"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@のコピー"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 복사본"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ kopi"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ kopie"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ – kopia"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ cópia"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ cópia"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ копия"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ kopia"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ kopyası"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ копія"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 副本"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 拷貝"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ copy"
+          }
+        }
+      }
+    },
+    "Couldn't start the microphone." : {
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mikrofonen kunne ikke startes."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Mikrofon konnte nicht gestartet werden."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se ha podido activar el micrófono."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mikrofonia ei voitu käynnistää."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de démarrer le micro."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossibile avviare il microfono."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マイクを起動できませんでした。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "마이크를 시작할 수 없습니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kunne ikke starte mikrofonen."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kan de microfoon niet starten."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie można uruchomić mikrofonu."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível iniciar o microfone."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível iniciar o microfone."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не удалось запустить микрофон."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Det gick inte att starta mikrofonen."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mikrofon başlatılamadı."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не вдалося запустити мікрофон."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法启动麦克风。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法啟動麥克風。"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couldn't start the microphone."
+          }
+        }
+      }
+    },
+    "No microphone found." : {
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen mikrofon fundet."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kein Mikrofon gefunden."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se ha encontrado ningún micrófono."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mikrofonia ei löytynyt."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun micro trouvé."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessun microfono trovato."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マイクが見つかりません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "마이크를 찾을 수 없습니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fant ingen mikrofon."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen microfoon gevonden."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie znaleziono mikrofonu."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhum microfone encontrado."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhum microfone encontrado."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Микрофон не найден."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen mikrofon hittades."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mikrofon bulunamadı."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мікрофон не знайдено."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未找到麦克风。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "找不到麥克風。"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No microphone found."
+          }
+        }
+      }
+    },
+    "NotchPrompter needs Speech Recognition to follow your voice. Turn it on for NotchPrompter in System Settings → Privacy & Security → Speech Recognition." : {
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter skal bruge talegenkendelse for at følge din stemme. Slå den til for NotchPrompter i Systemindstillinger → Anonymitet & sikkerhed → Talegenkendelse."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter braucht die Spracherkennung, um deiner Stimme zu folgen. Erlaube NotchPrompter den Zugriff in Systemeinstellungen → Datenschutz & Sicherheit → Spracherkennung."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter necesita el reconocimiento de voz para seguir tu voz. Actívalo para NotchPrompter en Ajustes del Sistema → Privacidad y seguridad → Reconocimiento de voz."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter tarvitsee puheentunnistusta seuratakseen ääntäsi. Laita se päälle NotchPrompterille kohdassa Järjestelmäasetukset → Tietosuoja ja suojaus → Puheentunnistus."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter a besoin de la reconnaissance vocale pour suivre votre voix. Activez-la pour NotchPrompter dans Réglages Système → Confidentialité et sécurité → Reconnaissance vocale."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter ha bisogno del riconoscimento vocale per seguire la tua voce. Attivalo per NotchPrompter in Impostazioni di Sistema → Privacy e sicurezza → Riconoscimento vocale."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "声に合わせるには音声認識が必要です。「システム設定」→「プライバシーとセキュリティ」→「音声認識」でNotchPrompterをオンにしてください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter가 음성을 따라가려면 음성 인식이 필요합니다. 시스템 설정 → 개인정보 보호 및 보안 → 음성 인식에서 NotchPrompter를 켜세요."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter trenger talegjenkjenning for å følge stemmen din. Slå den på for NotchPrompter i Systeminnstillinger → Personvern og sikkerhet → Talegjenkjenning."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter heeft spraakherkenning nodig om je stem te volgen. Zet deze aan voor NotchPrompter in Systeeminstellingen → Privacy en beveiliging → Spraakherkenning."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter potrzebuje rozpoznawania mowy, aby podążać za twoim głosem. Włącz je dla NotchPromptera w Ustawieniach systemowych → Prywatność i ochrona → Rozpoznawanie mowy."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O NotchPrompter precisa do Reconhecimento de Fala para seguir sua voz. Ative-o para o NotchPrompter em Ajustes do Sistema → Privacidade e Segurança → Reconhecimento de Fala."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O NotchPrompter precisa do reconhecimento da fala para seguir a tua voz. Ativa-o para o NotchPrompter em Definições do Sistema → Privacidade e segurança → Reconhecimento da fala."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter нужно распознавание речи, чтобы следовать за голосом. Включите его для NotchPrompter в разделе «Системные настройки» → «Конфиденциальность и безопасность» → «Распознавание речи»."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter behöver röstigenkänning för att följa din röst. Slå på den för NotchPrompter i Systeminställningar → Integritet och säkerhet → Röstigenkänning."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter’ın sesinizi takip etmek için Konuşma Tanıma’ya ihtiyacı var. Sistem Ayarları → Gizlilik ve Güvenlik → Konuşma Tanıma bölümünde NotchPrompter için açın."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter потрібне розпізнавання мовлення, щоб стежити за голосом. Увімкніть його для NotchPrompter у Системних параметрах → Приватність і безпека → Розпізнавання мовлення."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter 需要使用语音识别来跟随你的声音。请在“系统设置”→“隐私与安全性”→“语音识别”中为 NotchPrompter 打开此权限。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter 需要使用語音辨識來跟隨你的聲音。請在「系統設定」→「隱私權與安全性」→「語音辨識」中為 NotchPrompter 開啟此權限。"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter needs Speech Recognition to follow your voice. Turn it on for NotchPrompter in System Settings → Privacy & Security → Speech Recognition."
+          }
+        }
+      }
+    },
+    "NotchPrompter needs Speech Recognition to follow your voice. Turn it on in Settings → Apps → NotchPrompter." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter needs Speech Recognition to follow your voice. Turn it on in Settings → Apps → NotchPrompter."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter skal bruge talegenkendelse for at følge din stemme. Slå den til i Indstillinger → Apps → NotchPrompter."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter braucht die Spracherkennung, um deiner Stimme zu folgen. Aktiviere sie in Einstellungen → Apps → NotchPrompter."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter necesita el reconocimiento de voz para seguir tu voz. Actívalo en Ajustes → Apps → NotchPrompter."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter tarvitsee puheentunnistusta seuratakseen ääntäsi. Laita se päälle kohdassa Asetukset → Apit → NotchPrompter."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter a besoin de la reconnaissance vocale pour suivre votre voix. Activez-la dans Réglages → Apps → NotchPrompter."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter ha bisogno del riconoscimento vocale per seguire la tua voce. Attivalo in Impostazioni → App → NotchPrompter."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompterが声に合わせるには音声認識が必要です。「設定」→「アプリ」→「NotchPrompter」でオンにしてください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter가 목소리를 따라가려면 음성 인식이 필요합니다. 설정 → 앱 → NotchPrompter에서 켜세요."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter trenger talegjenkjenning for å følge stemmen din. Slå det på i Innstillinger → Apper → NotchPrompter."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter heeft spraakherkenning nodig om je stem te volgen. Zet deze aan in Instellingen → Apps → NotchPrompter."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter potrzebuje rozpoznawania mowy, aby podążać za twoim głosem. Włącz je w Ustawieniach → Aplikacje → NotchPrompter."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O NotchPrompter precisa do Reconhecimento de Fala para seguir a sua voz. Ative-o em Ajustes → Apps → NotchPrompter."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O NotchPrompter precisa do reconhecimento da fala para seguir a sua voz. Ative-o em Definições → Apps → NotchPrompter."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter нужно распознавание речи, чтобы следовать за голосом. Включите его в Настройки → Приложения → NotchPrompter."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter behöver taligenkänning för att följa din röst. Slå på den i Inställningar → Appar → NotchPrompter."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter’ın sesini takip edebilmesi için Konuşma Tanıma gerekir. Ayarlar → Uygulamalar → NotchPrompter’dan aç."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter потрібне розпізнавання мовлення, щоб стежити за голосом. Увімкніть його в Параметри → Програми → NotchPrompter."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter 需要使用语音识别来跟随你的声音。请在“设置”→“App”→“NotchPrompter”中打开此权限。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter 需要使用語音辨識來跟隨你的聲音。請在「設定」→「App」→「NotchPrompter」中開啟此權限。"
+          }
+        }
+      }
+    },
+    "NotchPrompter needs the microphone to follow your voice. Turn it on for NotchPrompter in System Settings → Privacy & Security → Microphone." : {
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter skal bruge mikrofonen for at følge din stemme. Slå den til for NotchPrompter i Systemindstillinger → Anonymitet & sikkerhed → Mikrofon."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter braucht das Mikrofon, um deiner Stimme zu folgen. Erlaube NotchPrompter den Zugriff in Systemeinstellungen → Datenschutz & Sicherheit → Mikrofon."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter necesita el micrófono para seguir tu voz. Actívalo para NotchPrompter en Ajustes del Sistema → Privacidad y seguridad → Micrófono."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter tarvitsee mikrofonia seuratakseen ääntäsi. Laita se päälle NotchPrompterille kohdassa Järjestelmäasetukset → Tietosuoja ja suojaus → Mikrofoni."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter a besoin du micro pour suivre votre voix. Activez-le pour NotchPrompter dans Réglages Système → Confidentialité et sécurité → Micro."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter ha bisogno del microfono per seguire la tua voce. Attivalo per NotchPrompter in Impostazioni di Sistema → Privacy e sicurezza → Microfono."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "声に合わせるにはマイクが必要です。「システム設定」→「プライバシーとセキュリティ」→「マイク」でNotchPrompterをオンにしてください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter가 음성을 따라가려면 마이크가 필요합니다. 시스템 설정 → 개인정보 보호 및 보안 → 마이크에서 NotchPrompter를 켜세요."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter trenger mikrofonen for å følge stemmen din. Slå den på for NotchPrompter i Systeminnstillinger → Personvern og sikkerhet → Mikrofon."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter heeft de microfoon nodig om je stem te volgen. Zet deze aan voor NotchPrompter in Systeeminstellingen → Privacy en beveiliging → Microfoon."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter potrzebuje mikrofonu, aby podążać za twoim głosem. Włącz go dla NotchPromptera w Ustawieniach systemowych → Prywatność i ochrona → Mikrofon."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O NotchPrompter precisa do microfone para seguir sua voz. Ative-o para o NotchPrompter em Ajustes do Sistema → Privacidade e Segurança → Microfone."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O NotchPrompter precisa do microfone para seguir a tua voz. Ativa-o para o NotchPrompter em Definições do Sistema → Privacidade e segurança → Microfone."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter нужен микрофон, чтобы следовать за голосом. Включите его для NotchPrompter в разделе «Системные настройки» → «Конфиденциальность и безопасность» → «Микрофон»."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter behöver mikrofonen för att följa din röst. Slå på den för NotchPrompter i Systeminställningar → Integritet och säkerhet → Mikrofon."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter’ın sesinizi takip etmek için mikrofona ihtiyacı var. Sistem Ayarları → Gizlilik ve Güvenlik → Mikrofon bölümünde NotchPrompter için açın."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter потрібен мікрофон, щоб стежити за голосом. Увімкніть його для NotchPrompter у Системних параметрах → Приватність і безпека → Мікрофон."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter 需要使用麦克风来跟随你的声音。请在“系统设置”→“隐私与安全性”→“麦克风”中为 NotchPrompter 打开此权限。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter 需要使用麥克風來跟隨你的聲音。請在「系統設定」→「隱私權與安全性」→「麥克風」中為 NotchPrompter 開啟此權限。"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter needs the microphone to follow your voice. Turn it on for NotchPrompter in System Settings → Privacy & Security → Microphone."
+          }
+        }
+      }
+    },
+    "NotchPrompter needs the microphone to follow your voice. Turn it on in Settings → Apps → NotchPrompter." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter needs the microphone to follow your voice. Turn it on in Settings → Apps → NotchPrompter."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter skal bruge mikrofonen for at følge din stemme. Slå den til i Indstillinger → Apps → NotchPrompter."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter braucht das Mikrofon, um deiner Stimme zu folgen. Aktiviere es in Einstellungen → Apps → NotchPrompter."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter necesita el micrófono para seguir tu voz. Actívalo en Ajustes → Apps → NotchPrompter."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter tarvitsee mikrofonia seuratakseen ääntäsi. Laita se päälle kohdassa Asetukset → Apit → NotchPrompter."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter a besoin du micro pour suivre votre voix. Activez-le dans Réglages → Apps → NotchPrompter."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter ha bisogno del microfono per seguire la tua voce. Attivalo in Impostazioni → App → NotchPrompter."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompterが声に合わせるにはマイクが必要です。「設定」→「アプリ」→「NotchPrompter」でオンにしてください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter가 목소리를 따라가려면 마이크가 필요합니다. 설정 → 앱 → NotchPrompter에서 켜세요."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter trenger mikrofonen for å følge stemmen din. Slå den på i Innstillinger → Apper → NotchPrompter."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter heeft de microfoon nodig om je stem te volgen. Zet deze aan in Instellingen → Apps → NotchPrompter."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter potrzebuje mikrofonu, aby podążać za twoim głosem. Włącz go w Ustawieniach → Aplikacje → NotchPrompter."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O NotchPrompter precisa do microfone para seguir a sua voz. Ative-o em Ajustes → Apps → NotchPrompter."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O NotchPrompter precisa do microfone para seguir a sua voz. Ative-o em Definições → Apps → NotchPrompter."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter нужен микрофон, чтобы следовать за голосом. Включите его в Настройки → Приложения → NotchPrompter."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter behöver mikrofonen för att följa din röst. Slå på den i Inställningar → Appar → NotchPrompter."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter’ın sesini takip edebilmesi için mikrofon gerekir. Ayarlar → Uygulamalar → NotchPrompter’dan aç."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter потрібен мікрофон, щоб стежити за голосом. Увімкніть його в Параметри → Програми → NotchPrompter."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter 需要使用麦克风来跟随你的声音。请在“设置”→“App”→“NotchPrompter”中打开此权限。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter 需要使用麥克風來跟隨你的聲音。請在「設定」→「App」→「NotchPrompter」中開啟此權限。"
+          }
+        }
+      }
+    },
+    "On-device speech recognition isn't working. Turn on Dictation in Settings → General → Keyboard, or allow Apple's servers in the app's settings." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On-device speech recognition isn't working. Turn on Dictation in Settings → General → Keyboard, or allow Apple's servers in the app's settings."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Talegenkendelse på enheden virker ikke. Slå Diktering til i Indstillinger → Generelt → Tastatur, eller tillad Apples servere i appens indstillinger."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Spracherkennung auf dem Gerät funktioniert nicht. Aktiviere die Diktierfunktion in Einstellungen → Allgemein → Tastatur oder erlaube die Server von Apple in den Einstellungen der App."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El reconocimiento de voz en el dispositivo no funciona. Activa Dictado en Ajustes → General → Teclado o permite los servidores de Apple en los ajustes de la app."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laitteen oma puheentunnistus ei toimi. Laita Sanelu päälle kohdassa Asetukset → Yleiset → Näppäimistö tai salli Applen palvelimet apin asetuksissa."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La reconnaissance vocale sur l’appareil ne fonctionne pas. Activez la dictée dans Réglages → Général → Clavier, ou autorisez les serveurs d’Apple dans les réglages de l’app."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il riconoscimento vocale sul dispositivo non funziona. Attiva la dettatura in Impostazioni → Generali → Tastiera, oppure consenti i server di Apple nelle impostazioni dell’app."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デバイス上の音声認識が機能していません。「設定」→「一般」→「キーボード」で音声入力をオンにするか、アプリの設定でAppleのサーバを許可してください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "기기 내 음성 인식이 작동하지 않습니다. 설정 → 일반 → 키보드에서 받아쓰기를 켜거나, 앱 설정에서 Apple 서버를 허용하세요."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Talegjenkjenning på enheten fungerer ikke. Slå på Diktering i Innstillinger → Generelt → Tastatur, eller tillat Apples servere i innstillingene til appen."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spraakherkenning op het apparaat werkt niet. Zet Dicteren aan in Instellingen → Algemeen → Toetsenbord, of sta de servers van Apple toe in de instellingen van de app."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozpoznawanie mowy na urządzeniu nie działa. Włącz Dyktowanie w Ustawieniach → Ogólne → Klawiatura albo zezwól na serwery Apple w ustawieniach aplikacji."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O reconhecimento de fala no dispositivo não está funcionando. Ative o Ditado em Ajustes → Geral → Teclado ou permita os servidores da Apple nos ajustes do app."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O reconhecimento da fala no dispositivo não está a funcionar. Ative o Ditado em Definições → Geral → Teclado ou permita os servidores da Apple nas definições da app."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Распознавание речи на устройстве не работает. Включите диктовку в Настройки → Основные → Клавиатура или разрешите серверы Apple в настройках приложения."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taligenkänningen på enheten fungerar inte. Slå på Diktering i Inställningar → Allmänt → Tangentbord, eller tillåt Apples servrar i appens inställningar."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aygıt üzerinde konuşma tanıma çalışmıyor. Ayarlar → Genel → Klavye’den Dikte’yi aç ya da uygulama ayarlarında Apple sunucularına izin ver."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Розпізнавання мовлення на пристрої не працює. Увімкніть диктування в Параметри → Загальні → Клавіатура або дозвольте сервери Apple у параметрах програми."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设备端语音识别无法正常工作。请在“设置”→“通用”→“键盘”中打开听写，或在 App 的设置中允许使用 Apple 服务器。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "裝置端語音辨識無法正常運作。請在「設定」→「一般」→「鍵盤」中開啟聽寫，或在 App 的設定中允許使用 Apple 伺服器。"
+          }
+        }
+      }
+    },
+    "On-device speech recognition isn't working. Turn on Dictation in System Settings → Keyboard, or allow Apple's servers in Settings → Privacy." : {
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Talegenkendelse på enheden virker ikke. Slå Diktering til i Systemindstillinger → Tastatur, eller tillad Apples servere i Indstillinger → Anonymitet."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Spracherkennung auf dem Gerät funktioniert nicht. Aktiviere die Diktierfunktion in Systemeinstellungen → Tastatur oder erlaube die Server von Apple in Einstellungen → Datenschutz."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El reconocimiento de voz en el dispositivo no funciona. Activa Dictado en Ajustes del Sistema → Teclado o permite los servidores de Apple en Ajustes → Privacidad."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laitteen oma puheentunnistus ei toimi. Laita Sanelu päälle kohdassa Järjestelmäasetukset → Näppäimistö tai salli Applen palvelimet kohdassa Asetukset → Tietosuoja."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La reconnaissance vocale sur l’appareil ne fonctionne pas. Activez la dictée dans Réglages Système → Clavier, ou autorisez les serveurs d’Apple dans Réglages → Confidentialité."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il riconoscimento vocale sul dispositivo non funziona. Attiva la dettatura in Impostazioni di Sistema → Tastiera oppure consenti i server di Apple in Impostazioni → Privacy."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デバイス上の音声認識が機能していません。「システム設定」→「キーボード」で音声入力をオンにするか、「設定」→「プライバシー」でAppleのサーバを許可してください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "기기 내 음성 인식이 작동하지 않습니다. 시스템 설정 → 키보드에서 받아쓰기를 켜거나, 설정 → 개인정보 보호에서 Apple 서버를 허용하세요."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Talegjenkjenning på enheten fungerer ikke. Slå på Diktering i Systeminnstillinger → Tastatur, eller tillat Apples servere i Innstillinger → Personvern."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spraakherkenning op het apparaat werkt niet. Zet de dicteerfunctie aan in Systeeminstellingen → Toetsenbord, of sta de servers van Apple toe in Instellingen → Privacy."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozpoznawanie mowy na urządzeniu nie działa. Włącz Dyktowanie w Ustawieniach systemowych → Klawiatura albo zezwól na serwery Apple w Ustawieniach → Prywatność."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O reconhecimento de fala no dispositivo não está funcionando. Ative o Ditado em Ajustes do Sistema → Teclado ou permita os servidores da Apple em Ajustes → Privacidade."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O reconhecimento da fala no dispositivo não está a funcionar. Ativa o Ditado em Definições do Sistema → Teclado ou permite os servidores da Apple em Definições → Privacidade."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Распознавание речи на устройстве не работает. Включите диктовку в разделе «Системные настройки» → «Клавиатура» или разрешите серверы Apple в разделе «Настройки» → «Конфиденциальность»."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Röstigenkänningen på enheten fungerar inte. Slå på Diktering i Systeminställningar → Tangentbord, eller tillåt Apples servrar i Inställningar → Integritet."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aygıtta konuşma tanıma çalışmıyor. Sistem Ayarları → Klavye bölümünde Dikte’yi açın ya da Ayarlar → Gizlilik bölümünde Apple sunucularına izin verin."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Розпізнавання мовлення на пристрої не працює. Увімкніть диктування в Системних параметрах → Клавіатура або дозвольте сервери Apple у Параметрах → Приватність."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设备端语音识别无法正常工作。请在“系统设置”→“键盘”中打开听写，或者在“设置”→“隐私”中允许使用 Apple 服务器。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "裝置端語音辨識無法正常運作。請在「系統設定」→「鍵盤」中開啟聽寫，或在「設定」→「隱私權」中允許使用 Apple 伺服器。"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On-device speech recognition isn't working. Turn on Dictation in System Settings → Keyboard, or allow Apple's servers in Settings → Privacy."
+          }
+        }
+      }
+    },
+    "Speech recognition isn't available for %@ right now." : {
+      "comment" : "The placeholder is a language name",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Talegenkendelse er ikke tilgængelig for %@ lige nu."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Spracherkennung ist für %@ gerade nicht verfügbar."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El reconocimiento de voz no está disponible para %@ en este momento."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puheentunnistus ei ole juuri nyt käytettävissä (%@)."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La reconnaissance vocale n’est pas disponible en %@ pour le moment."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il riconoscimento vocale in %@ al momento non è disponibile."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "現在、%@の音声認識は利用できません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "현재 %@에 대한 음성 인식을 사용할 수 없습니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Talegjenkjenning er ikke tilgjengelig for %@ akkurat nå."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spraakherkenning is momenteel niet beschikbaar voor %@."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozpoznawanie mowy w tym języku (%@) jest teraz niedostępne."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O reconhecimento de fala não está disponível para %@ no momento."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O reconhecimento da fala não está disponível para %@ neste momento."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Распознавание речи сейчас недоступно (язык: %@)."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Röstigenkänning är inte tillgänglig för %@ just nu."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konuşma tanıma şu anda bu dil için kullanılamıyor: %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Розпізнавання мовлення зараз недоступне (мова: %@)."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@目前无法使用语音识别。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@目前無法使用語音辨識。"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speech recognition isn't available for %@ right now."
+          }
+        }
+      }
+    },
+    "Speech recognition keeps failing: %@" : {
+      "comment" : "The placeholder is the system's error message",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Talegenkendelsen fejler hele tiden: %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Spracherkennung schlägt wiederholt fehl: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El reconocimiento de voz sigue fallando: %@"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puheentunnistus epäonnistuu toistuvasti: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La reconnaissance vocale échoue sans cesse : %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il riconoscimento vocale continua a non funzionare: %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "音声認識の失敗が続いています：%@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "음성 인식이 계속 실패함: %@"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Talegjenkjenningen feiler hele tiden: %@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spraakherkenning blijft mislukken: %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozpoznawanie mowy ciągle zawodzi: %@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O reconhecimento de fala continua falhando: %@"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O reconhecimento da fala continua a falhar: %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Распознавание речи постоянно даёт сбой: %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Röstigenkänningen misslyckas hela tiden: %@"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konuşma tanıma sürekli başarısız oluyor: %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Розпізнавання мовлення постійно дає збій: %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "语音识别屡次失败：%@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "語音辨識一再失敗：%@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speech recognition keeps failing: %@"
+          }
+        }
+      }
+    },
+    "Untitled" : {
+      "comment" : "Name of a script without a title",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uden navn"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ohne Titel"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin título"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nimetön"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sans titre"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Senza titolo"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名称未設定"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "제목 없음"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uten navn"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naamloos"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bez tytułu"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem Título"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem título"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Без названия"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Namnlöst"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adsız"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Без назви"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未命名"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未命名"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Untitled"
+          }
+        }
+      }
+    },
+    "🎙 %@ · via Apple" : {
+      "comment" : "Status: listening in a language, recognised by Apple's servers",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎙 %@ · via Apple"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎙 %@ · über Apple"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎙 %@ · vía Apple"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎙 %@ · Applen kautta"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎙 %@ · via Apple"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎙 %@ · via Apple"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎙 %@ · Apple経由"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎙 %@ · Apple 경유"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎙 %@ · via Apple"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎙 %@ · via Apple"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎙 %@ · przez Apple"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎙 %@ · via Apple"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎙 %@ · via Apple"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎙 %@ · через Apple"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎙 %@ · via Apple"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎙 %@ · Apple üzerinden"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎙 %@ · через Apple"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎙 %@ · 经由 Apple"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎙 %@ · 透過 Apple"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎙 %@ · via Apple"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

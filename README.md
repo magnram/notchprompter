@@ -57,6 +57,19 @@ Press the microphone and talk: the text follows you, so the next words are alway
 NotchPrompter needs macOS 15 Sequoia or later. It works best on a MacBook with a notch,
 and on any Mac with a camera on top of the screen.
 
+## On iPhone
+
+There is also **NotchPrompter for iPhone**. It puts your script right under the front camera,
+follows your voice and films you, and every take goes to your Photos.
+
+It is free to try: Scroll mode, the editor and the practice script are free, and you get 3 free takes
+with voice-follow and recording. After that, a one-time purchase unlocks everything
+(49 kr in Norway, or the same in your currency). No subscription.
+
+The iPhone app is **not open source**. It uses the same voice engine as the Mac app,
+[NotchPrompterKit](NotchPrompterKit), which is in this repository under the MIT license.
+It is coming soon to the App Store.
+
 ## Keyboard shortcuts
 
 When the prompter has focus (click it first):
@@ -118,7 +131,7 @@ and that Dictation is on (System Settings → Keyboard). The microphone button i
 <summary><b>How does voice-follow work?</b></summary>
 <br>
 Apple's speech recogniser streams the words it hears. <code>VoiceMatcher</code> (in
-<a href="NotchPrompter/Voice.swift"><code>Voice.swift</code></a>) lines up the last few heard words with the script.
+<a href="NotchPrompterKit/Sources/NotchPrompterKit/VoiceMatcher.swift"><code>VoiceMatcher.swift</code></a>) lines up the last few heard words with the script.
 A word or two ahead is easy to reach. A bigger jump needs several words in a row that fit, and words that come up
 all over the script count less than rare ones. It never jumps back on its own, and it stays put when you say
 a part again. The tests are in <code>Tools/MatcherTests</code> (run <code>Tools/test-matcher.sh</code>).
@@ -145,7 +158,7 @@ Native speakers have not checked the translations yet. If a word is wrong in you
 
 | What | Where | How to update |
 |---|---|---|
-| App text | `NotchPrompter/Localizable.xcstrings`, `InfoPlist.xcstrings` | Edit in Xcode's string catalog editor |
+| App text | `NotchPrompter/Localizable.xcstrings`, `InfoPlist.xcstrings`, and the voice engine's messages in `NotchPrompterKit/Sources/NotchPrompterKit/Localizable.xcstrings` | Edit in Xcode's string catalog editor |
 | Website | `website/i18n/<lang>.json` | Run `python3 website/i18n/build.py`, then commit the pages it writes. See [website/i18n/README.md](website/i18n/README.md) |
 | App Store text | `fastlane/metadata/<locale>/` | Check the length limits with `python3 fastlane/check_metadata.py` |
 | Screenshots | `NotchPrompter/ScreenshotContent.swift` | Run `Tools/render-all-languages.sh` (or give it languages, e.g. `de ja`) |
@@ -172,6 +185,7 @@ The version is required, so text for a new version never lands in one that is al
 | Folder | What's in it |
 |---|---|
 | `NotchPrompter/` | The app (AppKit + SwiftUI) |
+| `NotchPrompterKit/` | Swift package for macOS and iOS: the voice engine (`VoiceMatcher`, `VoiceListener`), stage directions, script storage and settings. The Mac app and the iPhone app both use it |
 | `Config/` | Entitlements and Info.plist |
 | `Tools/` | Icon generator, screenshot rendering and matcher tests (`Tools/test-matcher.sh`) |
 | `website/` | The website, published to GitHub Pages by `.github/workflows/pages.yml` |

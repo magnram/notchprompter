@@ -125,6 +125,8 @@ section .sub { color: var(--muted); font-size: 19px; max-width: 52ch; margin: 0 
 
 .split { display: grid; gap: 48px; align-items: center; grid-template-columns: 1fr 1.3fr; }
 .split img { border-radius: 14px; box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
+/* The iPhone screenshot is tall: keep it phone-sized, centred in its column. */
+.split img.phone { width: 100%; max-width: 300px; justify-self: center; border: 10px solid #050507; border-radius: 52px; box-shadow: 0 30px 80px rgba(0,0,0,.45); }
 @media (max-width: 820px) { .split { grid-template-columns: 1fr; } }
 
 .shots { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }

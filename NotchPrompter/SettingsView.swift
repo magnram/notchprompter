@@ -1,6 +1,7 @@
 import AVFoundation
 import Speech
 import SwiftUI
+import NotchPrompterKit
 
 /// Prompter settings. `compact` is the popover under the gear button; otherwise the Settings window.
 struct SettingsView: View {

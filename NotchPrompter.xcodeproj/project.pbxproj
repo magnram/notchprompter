@@ -6,9 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		NP00000000000000000000K3 /* NotchPrompterKit in Frameworks */ = {isa = PBXBuildFile; productRef = NP00000000000000000000K2 /* NotchPrompterKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		NP00000000000000000000A1 /* NotchPrompter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotchPrompter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		NP00000000000000000000A2 /* NotchPrompter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotchPrompter.entitlements; sourceTree = "<group>"; };
+		NP00000000000000000000A3 /* NotchPrompterKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NotchPrompterKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -24,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				NP00000000000000000000K3 /* NotchPrompterKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,6 +40,7 @@
 			isa = PBXGroup;
 			children = (
 				NP00000000000000000000B1 /* NotchPrompter */,
+				NP00000000000000000000A3 /* NotchPrompterKit */,
 				NP00000000000000000000D3 /* Config */,
 				NP00000000000000000000D2 /* Products */,
 			);
@@ -75,6 +82,7 @@
 			);
 			name = NotchPrompter;
 			packageProductDependencies = (
+				NP00000000000000000000K2 /* NotchPrompterKit */,
 			);
 			productName = NotchPrompter;
 			productReference = NP00000000000000000000A1 /* NotchPrompter.app */;
@@ -123,6 +131,9 @@
 			);
 			mainGroup = NP00000000000000000000D1;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				NP00000000000000000000K1 /* XCLocalSwiftPackageReference "NotchPrompterKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = NP00000000000000000000D2 /* Products */;
 			projectDirPath = "";
@@ -265,6 +276,20 @@
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		NP00000000000000000000K1 /* XCLocalSwiftPackageReference "NotchPrompterKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = NotchPrompterKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		NP00000000000000000000K2 /* NotchPrompterKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NotchPrompterKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCConfigurationList section */
 		NP00000000000000000000F1 /* Build configuration list for PBXProject "NotchPrompter" */ = {

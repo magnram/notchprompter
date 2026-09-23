@@ -1,5 +1,6 @@
 import SwiftUI
 import UniformTypeIdentifiers
+import NotchPrompterKit
 
 /// A small editor for the script library: a list of scripts on the left, the text on the right.
 struct EditorView: View {

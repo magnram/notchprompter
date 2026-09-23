@@ -1,4 +1,5 @@
 import SwiftUI
+import NotchPrompterKit
 
 /// First-launch welcome: what the app does, the microphone permission, and where the controls are.
 struct OnboardingView: View {

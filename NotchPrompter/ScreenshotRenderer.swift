@@ -1,6 +1,7 @@
 #if DEBUG
 import AppKit
 import SwiftUI
+import NotchPrompterKit
 
 /// Debug builds only: `NotchPrompter -renderScreens <folder>` captures the app's real windows and puts
 /// them on a desktop, for checking the layout and for the App Store screenshots (2880 × 1800).

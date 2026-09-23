@@ -2,6 +2,7 @@ import AppKit
 import Combine
 import QuartzCore
 import SwiftUI
+import NotchPrompterKit
 
 final class PrompterPanel: NSPanel {
     weak var controller: Prompter?

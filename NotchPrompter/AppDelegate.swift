@@ -1,5 +1,6 @@
 import AppKit
 import SwiftUI
+import NotchPrompterKit
 
 final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
     private let settings = AppSettings.shared

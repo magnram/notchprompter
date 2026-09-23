@@ -1,5 +1,9 @@
 import AVFoundation
 import AppKit
+import NotchPrompterKit
+import os
+
+let log = Logger(subsystem: "com.magnusramm.NotchPrompter", category: "voice")
 
 /// Films the camera and microphone into a movie file in Movies › NotchPrompter.
 final class Recorder: NSObject, AVCaptureFileOutputRecordingDelegate, AVCaptureAudioDataOutputSampleBufferDelegate {
