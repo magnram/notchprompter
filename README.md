@@ -1,32 +1,130 @@
-<p align="center"><img src="AppStore/icon-1024.png" width="128" alt=""></p>
+<div align="center">
+  <img src="AppStore/icon-1024.png" width="128" alt="NotchPrompter icon">
+  <h1>NotchPrompter</h1>
+  <p><b>A free teleprompter for the Mac that sits right under your camera and follows your voice.</b><br>
+  Read your script and keep eye contact.</p>
 
-# NotchPrompter
+  <a href="https://apps.apple.com/app/notchprompter/id6815206814"><img src="https://img.shields.io/badge/Mac_App_Store-Download-0D96F6?style=for-the-badge&logo=apple&logoColor=white" alt="Download on the Mac App Store"></a>
+  <a href="https://magnram.github.io/notchprompter/"><img src="https://img.shields.io/badge/Website-magnram.github.io-6E40C9?style=for-the-badge" alt="Website"></a>
+  <br>
+  <img src="https://img.shields.io/badge/macOS-15%2B-555?style=flat-square&logo=apple" alt="macOS 15 or later">
+  <img src="https://img.shields.io/badge/Swift-AppKit_%2B_SwiftUI-F05138?style=flat-square&logo=swift&logoColor=white" alt="Swift">
+  <img src="https://img.shields.io/badge/languages-20-2EA44F?style=flat-square" alt="20 languages">
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/magnram/notchprompter?style=flat-square" alt="MIT license"></a>
+</div>
 
-A free, open-source teleprompter for the Mac that hangs right under your camera and follows your voice.
-Read your script and keep eye contact.
+<br>
 
-**Website:** https://magnram.github.io/notchprompter/
-**Mac App Store:** https://apps.apple.com/app/id6815206814
+<p align="center">
+  <a href="https://magnram.github.io/notchprompter/media/promo.mp4"><img src=".github/readme/demo.gif" width="800" alt="The script hangs under the camera and the words fade as they are said"></a>
+  <br>
+  <sub><a href="https://magnram.github.io/notchprompter/media/promo.mp4">▶ Watch the full video with sound (51 s)</a></sub>
+</p>
 
-![NotchPrompter following a script under the camera](AppStore/screenshots/appstore-2-voice.png)
+When you read from notes, your eyes drift down, away from the people you talk to.
+NotchPrompter puts your script in a small black panel that hangs from the top of your screen,
+right under the camera. On a MacBook with a notch, it blends into the notch.
+Press the microphone and talk: the text follows you, so the next words are always where you look.
 
 ## Features
 
-- **Follows your voice.** Press the microphone and talk. The text moves as you read, so the next words are always under the camera.
-- **Any language.** It sees which language your script is in and listens for it.
-- **Keeps up when you skip.** Skip a sentence or say "uh", and it finds your place. Pause, and it waits.
-- **Or press play.** Smooth scrolling with a 3-2-1 countdown and speed controls.
-- **Built-in script editor.** Import Word, Markdown, RTF, HTML or text. Notes in (parentheses) or [brackets] are shown but not read out.
-- **Record yourself.** Film your camera and microphone while you read, and optionally the screen too. Takes go to Movies › NotchPrompter.
-- **Invisible to your audience.** Hidden from screen sharing, screenshots and recordings.
-- **Runs completely on your Mac.** Speech is recognised on-device (with Dictation turned on). No account, no tracking.
-- **In 20 languages.** The app, the website and the App Store listing.
+- 🎙️ **Follows your voice.** The text moves as you read. Words you have said fade out.
+- 🌍 **Any language.** It sees which language your script is in and listens for it.
+- ⏭️ **Keeps up when you go off script.** Skip a sentence and it finds your place. Say "uh", or a sentence again, and it stays put. Pause, and it waits.
+- ▶️ **Or press play.** Smooth scrolling with a 3-2-1 countdown and speed controls.
+- ✍️ **Built-in script editor.** Import Word, Markdown, RTF, HTML or text. Notes in (parentheses) or [brackets] are shown, but not read out.
+- 🎬 **Record yourself.** Film your camera, your screen, or both, while the script follows your voice. A small preview shows how you look. Takes go to Movies › NotchPrompter.
+- 🙈 **Invisible to your audience.** Hidden from screen sharing, screenshots and recordings.
+- 🔒 **Runs on your Mac.** Speech is recognised on the Mac. No account, no tracking. The microphone and camera are only on while you use them.
 
-## Requirements
+<table>
+  <tr>
+    <td width="50%"><img src="website/media/3-editor.webp" alt="The script editor"></td>
+    <td width="50%"><img src="website/media/4-play.webp" alt="Play mode with a countdown"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Write or import your script</sub></td>
+    <td align="center"><sub>Or scroll at a steady pace</sub></td>
+  </tr>
+</table>
 
-macOS 15 Sequoia or later. Works best on a MacBook with a notch.
+## Get started
 
-## Build
+1. Get NotchPrompter from the [Mac App Store](https://apps.apple.com/app/notchprompter/id6815206814), or [build it yourself](#build-from-source).
+2. Open it and allow the microphone and speech recognition. The welcome guide shows you how.
+3. Click **Try It Now** and read the practice script out loud.
+
+NotchPrompter needs macOS 15 Sequoia or later. It works best on a MacBook with a notch,
+and on any Mac with a camera on top of the screen.
+
+## Keyboard shortcuts
+
+When the prompter has focus (click it first):
+
+| Key | Action |
+|---|---|
+| <kbd>V</kbd> | Follow my voice, on or off |
+| <kbd>Space</kbd> | Play or pause |
+| <kbd>C</kbd> | Record, or stop recording |
+| <kbd>R</kbd> | Back to the top |
+| <kbd>E</kbd> | Open the script editor |
+| <kbd>↑</kbd> <kbd>↓</kbd> | Faster, slower |
+| <kbd>⌘</kbd> <kbd>+</kbd> / <kbd>⌘</kbd> <kbd>−</kbd> | Bigger, smaller text |
+| <kbd>←</kbd> <kbd>→</kbd> | Narrower, wider prompter |
+| <kbd>⇧</kbd> <kbd>↑</kbd> <kbd>↓</kbd> | Shorter, taller prompter |
+| <kbd>H</kbd> | Pause when the mouse is over the prompter, on or off |
+| <kbd>Esc</kbd> | Stop |
+
+In the Prompter menu: <kbd>⇧</kbd><kbd>⌘</kbd><kbd>P</kbd> shows the prompter, <kbd>⇧</kbd><kbd>⌘</kbd><kbd>V</kbd> follows your voice
+and <kbd>⌥</kbd><kbd>⌘</kbd><kbd>R</kbd> records. Click a word in the prompter to continue from there.
+
+## Privacy
+
+- Speech recognition runs on your Mac. It needs Dictation turned on in System Settings.
+  You can allow Apple's servers in Settings → Privacy for languages the Mac can't do by itself.
+- Scripts and recordings stay on your Mac. There is no account, no analytics and no network code of our own.
+- The prompter is hidden from screen sharing, screenshots and screen recordings. You can turn this off in Settings → Privacy.
+
+## FAQ
+
+<details>
+<summary><b>Do I need a MacBook with a notch?</b></summary>
+<br>
+No. On a Mac without a notch, the prompter hangs from the top of the screen, under the camera, in the same way.
+</details>
+
+<details>
+<summary><b>Which languages does voice-follow understand?</b></summary>
+<br>
+Every language that Apple's speech recognition supports on your Mac: English, Norwegian, German, Spanish,
+Japanese and dozens more. NotchPrompter picks the language from your script. You can also choose it in Settings.
+</details>
+
+<details>
+<summary><b>Why can't the people in my call see the prompter?</b></summary>
+<br>
+That's on purpose: the prompter window is left out of screen sharing, screenshots and recordings.
+Turn it off in Settings → Privacy if you want to show it.
+</details>
+
+<details>
+<summary><b>The text doesn't move when I talk.</b></summary>
+<br>
+Check that NotchPrompter can use the microphone and speech recognition in System Settings → Privacy &amp; Security,
+and that Dictation is on (System Settings → Keyboard). The microphone button in the prompter must be on.
+</details>
+
+<details>
+<summary><b>How does voice-follow work?</b></summary>
+<br>
+Apple's speech recogniser streams the words it hears. <code>VoiceMatcher</code> (in
+<a href="NotchPrompter/Voice.swift"><code>Voice.swift</code></a>) lines up the last few heard words with the script.
+A word or two ahead is easy to reach. A bigger jump needs several words in a row that fit, and words that come up
+all over the script count less than rare ones. It never jumps back on its own, and it stays put when you say
+a part again. The tests are in <code>Tools/MatcherTests</code> (run <code>Tools/test-matcher.sh</code>).
+</details>
+
+## Build from source
 
 Open `NotchPrompter.xcodeproj` in Xcode 16 or later and run, or from the terminal:
 
@@ -36,12 +134,11 @@ Open `NotchPrompter.xcodeproj` in Xcode 16 or later and run, or from the termina
 
 To sign with your own team, change `DEVELOPMENT_TEAM` in the project settings.
 
-## Languages
+## Translations
 
-English, Norwegian, German, French, Spanish, Italian, Portuguese (Brazil and Portugal), Dutch, Swedish,
-Danish, Finnish, Polish, Japanese, Korean, Chinese (Simplified and Traditional), Russian, Ukrainian and Turkish.
-
-Voice-follow works in many more languages: every language that Apple's speech recognition supports.
+The app, the website and the App Store page are in 20 languages: English, Norwegian, German, French, Spanish,
+Italian, Portuguese (Brazil and Portugal), Dutch, Swedish, Danish, Finnish, Polish, Japanese, Korean,
+Chinese (Simplified and Traditional), Russian, Ukrainian and Turkish.
 
 Native speakers have not checked the translations yet. If a word is wrong in your language, please
 [open an issue](https://github.com/magnram/notchprompter/issues) or send a pull request.
@@ -53,12 +150,16 @@ Native speakers have not checked the translations yet. If a word is wrong in you
 | App Store text | `fastlane/metadata/<locale>/` | Check the length limits with `python3 fastlane/check_metadata.py` |
 | Screenshots | `NotchPrompter/ScreenshotContent.swift` | Run `Tools/render-all-languages.sh` (or give it languages, e.g. `de ja`) |
 
-## Release
+<details>
+<summary><b>Release and project layout</b> (for maintainers)</summary>
+
+### Release
 
 The App Store release uses [fastlane](https://fastlane.tools) with an App Store Connect API key
 (`ASC_KEY_ID`, `ASC_ISSUER_ID` and `ASC_KEY_PATH` in the environment).
 
 ```sh
+fastlane mac status                   # show the versions and builds; changes nothing
 fastlane mac release version:1.1      # build, upload the package, text and screenshots
 fastlane mac metadata version:1.1     # only the text and screenshots
 fastlane mac submit_review            # submit for review, with manual release
@@ -66,7 +167,7 @@ fastlane mac submit_review            # submit for review, with manual release
 
 The version is required, so text for a new version never lands in one that is already in review.
 
-## Project layout
+### Project layout
 
 | Folder | What's in it |
 |---|---|
@@ -77,6 +178,8 @@ The version is required, so text for a new version never lands in one that is al
 | `AppStore/` | App Store listing notes, English screenshots and the submission checklist |
 | `fastlane/` | Release lanes, and the App Store text and screenshots for every language |
 | `video/` | The promo videos (landscape and TikTok), made with HyperFrames |
+
+</details>
 
 ## Contributing
 
