@@ -75,8 +75,15 @@ final class VoiceListener {
         }
     }
 
+    /// Changes on every start and stop, so a start that is still waiting for permission is
+    /// dropped when `stop` comes first. Otherwise the microphone would turn on after all.
+    private var generation = 0
+
     func start(locale: String) {
+        generation += 1
+        let started = generation
         VoiceListener.requestPermissionsWithSettings { problem in
+            guard started == self.generation else { return }
             if let problem {
                 self.stop()
                 self.onStopped()
@@ -100,38 +107,43 @@ final class VoiceListener {
                                comment: "The placeholder is a language name. “Settings → Privacy” is this app's Settings window."))
         }
         recognizer = r
-        if useExternalAudio {
-            running = true
-        } else {
-            let input = engine.inputNode
-            let format = input.outputFormat(forBus: 0)
-            guard format.channelCount > 0 else { return fail(String(localized: "No microphone found.")) }
-            input.removeTap(onBus: 0)
-            input.installTap(onBus: 0, bufferSize: 1024, format: format) { [weak self] buffer, _ in
-                guard let self else { return }
-                let level = VoiceListener.level(of: buffer)
-                self.lock.lock(); let req = self.request; self._level = level; self.lock.unlock()
-                req?.append(buffer)
-            }
-            engine.prepare()
-            do { try engine.start() } catch { return fail(String(localized: "Couldn't start the microphone.")) }
-            running = true
+        if !useExternalAudio {
+            guard startMicrophone() else { return }
             // Another app or a camera recording can change the input device's format, which stops the
-            // engine. Start again on the new format.
+            // engine. Start the microphone again on the new format; the recognition task goes on,
+            // since a new one would need a few seconds before it hears again.
             configObserver = configObserver ?? NotificationCenter.default.addObserver(
                 forName: .AVAudioEngineConfigurationChange, object: engine, queue: .main) { [weak self] _ in
                 guard let self, self.running, !self.useExternalAudio else { return }
-                log.info("audio configuration changed, restarting")
-                self.stop()
-                self.begin(self.locale)
+                log.notice("audio configuration changed, restarting the microphone")
+                self.engine.stop()
+                _ = self.startMicrophone()   // on failure it has stopped listening and said why
             }
         }
+        running = true
         onDevice = r.supportsOnDeviceRecognition
         quickErrors = 0
         languageName = Locale.interface.localizedString(forIdentifier: locale) ?? locale
         log.info("start: locale \(locale), on-device \(self.onDevice)")
         restartTask()
         announce()
+    }
+
+    /// Feed the microphone to the recogniser. False (after telling the user) when it can't start.
+    private func startMicrophone() -> Bool {
+        let input = engine.inputNode
+        let format = input.outputFormat(forBus: 0)
+        guard format.channelCount > 0 else { fail(String(localized: "No microphone found.")); return false }
+        input.removeTap(onBus: 0)
+        input.installTap(onBus: 0, bufferSize: 1024, format: format) { [weak self] buffer, _ in
+            guard let self else { return }
+            let level = VoiceListener.level(of: buffer)
+            self.lock.lock(); let req = self.request; self._level = level; self.lock.unlock()
+            req?.append(buffer)
+        }
+        engine.prepare()
+        do { try engine.start() } catch { fail(String(localized: "Couldn't start the microphone.")); return false }
+        return true
     }
 
     private func announce() {
@@ -163,7 +175,7 @@ final class VoiceListener {
                 }
                 if let error {
                     let e = error as NSError
-                    log.info("task \(number) error \(e.domain) \(e.code): \(e.localizedDescription)")
+                    log.notice("task \(number) error \(e.domain) \(e.code): \(e.localizedDescription)")
                     // "Siri and Dictation are disabled": the Mac's own speech models are switched off.
                     if self.onDevice && self.onDeviceOnly && e.domain == "kLSRErrorDomain" && e.code == 201 {
                         self.stop()
@@ -187,11 +199,13 @@ final class VoiceListener {
                         return self.fail(String(localized: "Speech recognition keeps failing: \(e.localizedDescription)",
                                                 comment: "The placeholder is the system's error message"))
                     }
-                    // Tasks end after a long pause or at a time limit; keep listening with a new one.
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    // Tasks end after a long pause or at a time limit; keep listening with a new one
+                    // straight away, so no words are lost. Wait a little only when it keeps failing.
+                    DispatchQueue.main.asyncAfter(deadline: .now() + (self.quickErrors > 0 ? 0.3 : 0)) {
                         if self.currentRequest === req { self.restartTask() }
                     }
                 } else if result?.isFinal == true {
+                    log.notice("task \(number) finished, starting a new one")
                     self.restartTask()
                 }
             }
@@ -204,6 +218,7 @@ final class VoiceListener {
     }
 
     func stop() {
+        generation += 1
         guard running else { return }
         running = false
         // Don't touch inputNode in recorder mode: creating it opens the microphone.
@@ -294,6 +309,10 @@ struct VoiceMatcher {
     /// The last heard word (index in the current recognition task) that moved the cursor.
     private var lastUsedSpoken = -1
     private var heardTask = 0
+    /// How many words the current recognition task has heard so far.
+    private var heardCount = 0
+    /// How often each word comes up in the script: frequent words say little about where the speaker is.
+    private var counts: [String: Int] = [:]
 
     /// Stage directions like "(pause)" or "[smile]": shown, but not read out loud. Full-width
     /// brackets, as Chinese and Japanese text uses them, count too: "（深呼吸）", "【笑顔】".
@@ -314,6 +333,7 @@ struct VoiceMatcher {
             found.append((VoiceMatcher.normalise(w), range))
         }
         words = found
+        counts = Dictionary(found.map { ($0.norm, 1) }, uniquingKeysWith: +)
         cursor = min(cursor, words.count)
     }
 
@@ -333,8 +353,9 @@ struct VoiceMatcher {
         return max(end, NSMaxRange(words[cursor - 1].range))
     }
 
-    /// Forget what was heard so far, e.g. after the cursor was moved by hand.
-    mutating func resetHeard() { lastUsedSpoken = -1 }
+    /// Ignore the words heard so far, e.g. after the cursor was moved by hand. The recognition
+    /// task keeps running: a new one would need a few seconds to hear again.
+    mutating func resetHeard() { lastUsedSpoken = heardCount - 1 }
 
     /// Index of the word at a character position.
     func wordIndex(atCharacter index: Int) -> Int? {
@@ -372,33 +393,66 @@ struct VoiceMatcher {
             .filter { !$0.isEmpty }
         // A new recognition task counts heard words from zero again.
         if task != heardTask { heardTask = task; lastUsedSpoken = -1 }
+        heardCount = heard.count
         // The recogniser sometimes revises its guess into fewer words; let the newest one count again.
         if heard.count - 1 < lastUsedSpoken { lastUsedSpoken = heard.count - 2 }
         // Each heard word may move the cursor once; later partial results repeat the same words.
-        guard heard.count - 1 > lastUsedSpoken, let last = heard.last, !words.isEmpty else { return false }
-        let tail = heard.suffix(5).dropLast()
-
-        let lo = max(0, cursor - 1), hi = min(words.count - 1, cursor + 40)
-        guard lo <= hi else { return false }
-        var best = -1, bestScore = 0.0
-        for p in lo...hi where Self.similar(last, words[p].norm) {
-            // Count how many of the words heard just before also line up, allowing a
-            // skipped script word or an extra spoken word ("uh").
-            var matches = 1, i = p - 1
-            for w in tail.reversed() where i >= 0 {
-                if Self.similar(w, words[i].norm) { matches += 1; i -= 1 }
-                else if i >= 1 && Self.similar(w, words[i - 1].norm) { matches += 1; i -= 2 }
+        guard heard.count - 1 > lastUsedSpoken, !words.isEmpty else { return false }
+        // Try the newest word first. If it was misheard, one of the other new words may still fit,
+        // so a burst of words ending in a wrong guess still moves the text.
+        for end in stride(from: heard.count - 1, through: max(lastUsedSpoken + 1, heard.count - 4), by: -1) {
+            if let p = place(heard[end], after: heard[max(0, end - 4)..<end]) {
+                cursor = p + 1
+                lastUsedSpoken = end
+                return true
             }
-            // Jumping further ahead needs more evidence.
-            let distance = p - cursor
-            let needed = distance <= 2 ? 1 : distance <= 8 ? 2 : 3
-            guard matches >= needed else { continue }
-            let score = Double(matches) - Double(abs(distance)) * 0.02
-            if score > bestScore { bestScore = score; best = p }
         }
-        guard best >= 0, best + 1 > cursor else { return false }
-        cursor = best + 1
-        lastUsedSpoken = heard.count - 1
-        return true
+        return false
+    }
+
+    /// The script word that a heard word is, judged by the words heard just before it; nil if none fits.
+    private func place(_ last: String, after tail: ArraySlice<String>) -> Int? {
+        let lo = max(0, cursor - 1), hi = min(words.count - 1, cursor + 40)
+        guard lo <= hi else { return nil }
+        var best = -1, bestScore = 0.0, bestEvidence = (count: 0, weight: 0.0)
+        for p in lo...hi where Self.similar(last, words[p].norm) {
+            // Moving on a word or two needs little; jumping further ahead needs words that
+            // don't come up all over the script.
+            let distance = p - cursor
+            let (count, weight) = evidence(p, last, tail)
+            let enough = distance <= 1 ? count >= 1 : distance <= 3 ? count >= 2
+                : distance <= 10 ? weight >= 1.5 : weight >= 3
+            guard enough else { continue }
+            let score = weight + Double(count) * 0.1 - Double(abs(distance)) * 0.02
+            if score > bestScore { bestScore = score; best = p; bestEvidence = (count, weight) }
+        }
+        guard best >= 0, best + 1 > cursor else { return nil }
+        // Going back to say a part again repeats words that may also come later in the script
+        // ("de fleste bare" twice). If the words fit the part just said as well, stay. A move of
+        // a word or two needs more words to fit behind, since saying the script also repeats
+        // small words.
+        for q in max(0, cursor - 60)..<cursor where Self.similar(last, words[q].norm) {
+            let behind = evidence(q, last, tail)
+            if best > cursor + 1 ? behind.weight >= bestEvidence.weight : behind.count > bestEvidence.count + 1 { return nil }
+        }
+        return best
+    }
+
+    /// How well the heard words line up with the script, ending at script word `p`. Words that
+    /// come up all over the script ("and", "the", "du") count less than rare ones. The match allows
+    /// a skipped script word or an extra spoken word ("uh"), and stops at two misses in a row.
+    private func evidence(_ p: Int, _ last: String, _ tail: ArraySlice<String>) -> (count: Int, weight: Double) {
+        func weight(_ w: String) -> Double {
+            let n = counts[w, default: 1]
+            let rare = n <= 1 ? 1 : n == 2 ? 0.75 : n <= 4 ? 0.5 : 0.25
+            return w.count >= 3 || w.first?.isNumber == true ? rare : min(rare, 0.5)
+        }
+        var count = 1, found = weight(words[p].norm), i = p - 1, misses = 0
+        for w in tail.reversed() where i >= 0 {
+            if Self.similar(w, words[i].norm) { count += 1; found += weight(words[i].norm); i -= 1; misses = 0 }
+            else if i >= 1 && Self.similar(w, words[i - 1].norm) { count += 1; found += weight(words[i - 1].norm); i -= 2; misses = 0 }
+            else { misses += 1; if misses == 2 { break } }
+        }
+        return (count, found)
     }
 }

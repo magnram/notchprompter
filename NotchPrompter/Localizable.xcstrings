@@ -884,6 +884,125 @@
         }
       }
     },
+    "A small preview beside the prompter. Drag it anywhere. It is never in screen recordings." : {
+      "comment" : "Settings toggle subtitle",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En lille forhåndsvisning ved siden af prompteren. Træk den hvorhen du vil. Den er aldrig med i skærmoptagelser."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eine kleine Vorschau neben dem Prompter. Zieh sie an eine beliebige Stelle. Sie ist nie in Bildschirmaufnahmen zu sehen."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Una pequeña vista previa junto al teleprompter. Arrástrala a donde quieras. Nunca aparece en las grabaciones de pantalla."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pieni esikatselu prompterin vieressä. Vedä se mihin haluat. Se ei koskaan näy näytön tallenteissa."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un petit aperçu à côté du prompteur. Faites-le glisser où vous voulez. Il n’apparaît jamais dans les enregistrements de l’écran."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Una piccola anteprima accanto al prompter. Trascinala dove vuoi. Non compare mai nelle registrazioni dello schermo."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プロンプターの横に小さなプレビューを表示します。好きな場所にドラッグできます。画面収録には映りません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "프롬프터 옆에 작은 미리보기가 나타납니다. 원하는 곳으로 드래그할 수 있습니다. 화면 녹화에는 절대 나오지 않습니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En liten forhåndsvisning ved siden av prompteren. Dra den dit du vil. Den er aldri med i skjermopptak."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een kleine voorvertoning naast de prompter. Sleep hem waar je wilt. Hij is nooit te zien in schermopnamen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mały podgląd obok promptera. Przeciągnij go w dowolne miejsce. Nigdy nie pojawia się w nagraniach ekranu."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma pequena pré-visualização ao lado do teleprompter. Arraste para onde quiser. Ela nunca aparece nas gravações de tela."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma pequena pré-visualização ao lado do teleponto. Arrasta-a para onde quiseres. Nunca aparece nas gravações do ecrã."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Маленькое окно рядом с суфлёром. Его можно перетащить куда угодно. В записи экрана оно не попадает."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En liten förhandsvisning bredvid promptern. Dra den vart du vill. Den syns aldrig i skärminspelningar."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prompter’ın yanında küçük bir önizleme. İstediğiniz yere sürükleyin. Ekran kayıtlarında asla görünmez."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Маленьке вікно поруч із суфлером. Його можна перетягнути куди завгодно. У записи екрана воно не потрапляє."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提词器旁边的小预览窗口。可以拖到任何位置。它不会出现在屏幕录制中。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提詞機旁邊的小預覽視窗。可以拖到任何位置。它不會出現在螢幕錄影中。"
+          }
+        }
+      }
+    },
     "About NotchPrompter" : {
       "comment" : "App menu item (see glossary “About Notes”).",
       "localizations" : {
@@ -1472,125 +1591,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "允許螢幕錄影"
-          }
-        }
-      }
-    },
-    "Also record the screen" : {
-      "comment" : "Settings toggle title.",
-      "localizations" : {
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Optag også skærmen"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Auch den Bildschirm aufnehmen"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Grabar también la pantalla"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tallenna myös näyttö"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enregistrer aussi l’écran"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Registra anche lo schermo"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "画面も収録"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "화면도 기록"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ta også opp skjermen"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Neem ook het scherm op"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nagrywaj też ekran"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gravar a tela também"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gravar também o ecrã"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Записывать также экран"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spela även in skärmen"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ekranı da kaydet"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Також записувати екран"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "同时录制屏幕"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "同時錄製螢幕"
           }
         }
       }
@@ -2424,6 +2424,244 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "相機"
+          }
+        }
+      }
+    },
+    "Camera and screen" : {
+      "comment" : "Recording mode: both, in two movies",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera og skærm"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera und Bildschirm"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cámara y pantalla"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera ja näyttö"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caméra et écran"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotocamera e schermo"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カメラと画面"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "카메라와 화면"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera og skjerm"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camera en scherm"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera i ekran"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Câmera e tela"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Câmara e ecrã"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Камера и экран"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera och skärm"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera ve ekran"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Камера й екран"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "摄像头和屏幕"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "相機和螢幕"
+          }
+        }
+      }
+    },
+    "Camera preview" : {
+      "comment" : "Accessibility label of the floating camera preview window",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kameraforhåndsvisning"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kameravorschau"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vista previa de la cámara"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kameran esikatselu"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aperçu de la caméra"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anteprima fotocamera"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カメラのプレビュー"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "카메라 미리보기"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forhåndsvisning av kamera"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cameravoorvertoning"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podgląd kamery"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pré-visualização da câmera"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pré-visualização da câmara"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Просмотр камеры"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kameraförhandsvisning"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera önizlemesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Попередній перегляд камери"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "摄像头预览"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "相機預覽"
           }
         }
       }
@@ -5631,6 +5869,125 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "邊讀邊錄下自己。錄影會儲存在「影片 › NotchPrompter」中。"
+          }
+        }
+      }
+    },
+    "Films you with the camera and microphone." : {
+      "comment" : "Settings: what the Camera recording mode does",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filmer dig med kameraet og mikrofonen."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filmt dich mit Kamera und Mikrofon."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Te graba con la cámara y el micrófono."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kuvaa sinut kameralla ja mikrofonilla."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous filme avec la caméra et le micro."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ti riprende con la fotocamera e il microfono."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カメラとマイクであなたを撮影します。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "카메라와 마이크로 사용자를 촬영합니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filmer deg med kameraet og mikrofonen."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filmt je met de camera en microfoon."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nagrywa cię kamerą i mikrofonem."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filma você com a câmera e o microfone."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filma-te com a câmara e o microfone."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Снимает вас на камеру с микрофоном."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filmar dig med kameran och mikrofonen."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sizi kamera ve mikrofonla çeker."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Знімає вас на камеру з мікрофоном."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用摄像头和麦克风录制你。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用相機和麥克風錄下你。"
           }
         }
       }
@@ -8958,6 +9315,125 @@
         }
       }
     },
+    "NotchPrompter can't use the camera." : {
+      "comment" : "Settings, when camera access is turned off",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter kan ikke bruge kameraet."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter kann die Kamera nicht verwenden."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter no puede usar la cámara."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter ei voi käyttää kameraa."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter ne peut pas utiliser la caméra."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter non può usare la fotocamera."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompterはカメラを使用できません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter가 카메라를 사용할 수 없습니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter kan ikke bruke kameraet."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter kan de camera niet gebruiken."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter nie może używać kamery."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O NotchPrompter não pode usar a câmera."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O NotchPrompter não pode usar a câmara."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter не может использовать камеру."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter kan inte använda kameran."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter kamerayı kullanamıyor."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter не може використовувати камеру."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter 无法使用摄像头。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter 無法使用相機。"
+          }
+        }
+      }
+    },
     "NotchPrompter Help" : {
       "comment" : "Help menu item (like “Notes Help”, see glossary).",
       "localizations" : {
@@ -12281,6 +12757,125 @@
         }
       }
     },
+    "Records the screen with your voice. The prompter is left out while it's hidden from recordings." : {
+      "comment" : "Settings: what the Screen recording mode does",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Optager skærmen med din stemme. Prompteren er ikke med, så længe den er skjult i optagelser."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nimmt den Bildschirm mit deiner Stimme auf. Der Prompter fehlt darin, solange er in Aufnahmen ausgeblendet ist."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Graba la pantalla con tu voz. El teleprompter no aparece mientras esté oculto en las grabaciones."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tallentaa näytön ja äänesi. Prompteri jätetään pois, kun se on piilotettu tallenteista."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistre l’écran avec votre voix. Le prompteur n’y apparaît pas s’il est masqué dans les enregistrements."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registra lo schermo con la tua voce. Il prompter non compare se è nascosto nelle registrazioni."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画面とあなたの声を収録します。収録で非表示に設定しているあいだは、プロンプターは映りません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "화면과 목소리를 녹화합니다. 녹화에서 가려지도록 설정한 동안에는 프롬프터가 포함되지 않습니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tar opp skjermen med stemmen din. Prompteren er ikke med så lenge den er skjult i opptak."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neemt het scherm op met je stem. De prompter is niet te zien zolang hij verborgen is voor opnamen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nagrywa ekran razem z twoim głosem. Prompter jest pomijany, gdy jest ukryty przed nagraniami."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grava a tela com a sua voz. O teleprompter fica de fora enquanto estiver oculto nas gravações."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grava o ecrã com a tua voz. O teleponto fica de fora enquanto estiver oculto nas gravações."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Записывает экран с вашим голосом. Суфлёр не виден, пока он скрыт от записей."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spelar in skärmen med din röst. Promptern syns inte så länge den är gömd för inspelningar."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ekranı sesinizle birlikte kaydeder. Prompter kayıtlardan gizliyken görünmez."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Записує екран із вашим голосом. Суфлера не видно, поки він схований від записів."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "录制屏幕和你的声音。如果提词器设为在录制内容中隐藏，录制中不会出现提词器。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "錄下螢幕和你的聲音。若提詞機設為在錄影中隱藏，錄影中就不會出現提詞機。"
+          }
+        }
+      }
+    },
     "Redo" : {
       "localizations" : {
         "da" : {
@@ -12636,120 +13231,240 @@
         }
       }
     },
-    "Saves a second movie of your screen for each take. The prompter is left out while it's hidden from recordings." : {
+    "Saves a movie from the camera and a second movie of the screen for each take. The prompter is left out while it's hidden from recordings." : {
+      "comment" : "Settings: what the Camera and screen recording mode does",
       "localizations" : {
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gemmer en ekstra film af skærmen for hver optagelse. Prompteren er ikke med, så længe den er skjult i optagelser."
+            "value" : "Gemmer en film fra kameraet og en ekstra film af skærmen for hver optagelse. Prompteren er ikke med, så længe den er skjult i optagelser."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sichert zu jeder Aufnahme ein zweites Video deines Bildschirms. Der Prompter fehlt darin, solange er in Aufnahmen ausgeblendet ist."
+            "value" : "Sichert zu jeder Aufnahme ein Video der Kamera und ein zweites Video des Bildschirms. Der Prompter fehlt darin, solange er in Aufnahmen ausgeblendet ist."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Guarda un segundo vídeo de tu pantalla por cada toma. El teleprompter no aparece en él mientras esté oculto en las grabaciones."
+            "value" : "Guarda un vídeo de la cámara y un segundo vídeo de la pantalla por cada toma. El teleprompter no aparece mientras esté oculto en las grabaciones."
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tallentaa jokaisesta otosta myös toisen elokuvan näytöstäsi. Prompteri jätetään siitä pois, kun se on piilotettu tallenteista."
+            "value" : "Tallentaa jokaisesta otosta elokuvan kamerasta ja toisen elokuvan näytöstä. Prompteri jätetään pois, kun se on piilotettu tallenteista."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Enregistre une seconde vidéo de votre écran pour chaque prise. Le prompteur n’y apparaît pas s’il est masqué dans les enregistrements."
+            "value" : "Enregistre une vidéo de la caméra et une seconde vidéo de l’écran pour chaque prise. Le prompteur n’y apparaît pas s’il est masqué dans les enregistrements."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Salva un secondo filmato dello schermo per ogni ripresa. Il prompter non compare se è nascosto nelle registrazioni."
+            "value" : "Salva un filmato dalla fotocamera e un secondo filmato dello schermo per ogni ripresa. Il prompter non compare se è nascosto nelle registrazioni."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "テイクごとに画面のムービーを別に保存します。収録で非表示に設定しているあいだは、プロンプターは映りません。"
+            "value" : "テイクごとにカメラのムービーと画面のムービーを保存します。収録で非表示に設定しているあいだは、プロンプターは映りません。"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "테이크마다 화면을 담은 동영상을 별도로 저장합니다. 녹화에서 가려지도록 설정한 동안에는 프롬프터가 포함되지 않습니다."
+            "value" : "테이크마다 카메라 동영상과 화면 동영상을 따로 저장합니다. 녹화에서 가려지도록 설정한 동안에는 프롬프터가 포함되지 않습니다."
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lagrer en ekstra film av skjermen for hvert opptak. Prompteren er ikke med så lenge den er skjult i opptak."
+            "value" : "Lagrer en film fra kameraet og en ekstra film av skjermen for hvert opptak. Prompteren er ikke med så lenge den er skjult i opptak."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bewaart bij elke opname een tweede film van je scherm. De prompter is daarin niet te zien zolang hij verborgen is voor opnamen."
+            "value" : "Bewaart bij elke opname een film van de camera en een tweede film van je scherm. De prompter is niet te zien zolang hij verborgen is voor opnamen."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dla każdego ujęcia zapisuje drugi film z nagraniem ekranu. Prompter jest na nim pomijany, gdy jest ukryty przed nagraniami."
+            "value" : "Dla każdego ujęcia zapisuje film z kamery i drugi film z ekranu. Prompter jest pomijany, gdy jest ukryty przed nagraniami."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Salva um segundo vídeo da tela para cada gravação. O teleprompter fica de fora enquanto estiver oculto nas gravações."
+            "value" : "Salva um vídeo da câmera e um segundo vídeo da tela para cada gravação. O teleprompter fica de fora enquanto estiver oculto nas gravações."
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Guarda um segundo vídeo do ecrã por cada gravação. O teleponto fica de fora enquanto estiver oculto nas gravações."
+            "value" : "Guarda um vídeo da câmara e um segundo vídeo do ecrã por cada gravação. O teleponto fica de fora enquanto estiver oculto nas gravações."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Для каждого дубля сохраняется второе видео с вашим экраном. Суфлёр не виден на нём, пока он скрыт от записей."
+            "value" : "Для каждого дубля сохраняются видео с камеры и второе видео с экраном. Суфлёр не виден, пока он скрыт от записей."
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sparar en extra film av skärmen för varje tagning. Promptern syns inte i den så länge den är gömd för inspelningar."
+            "value" : "Sparar en film från kameran och en extra film av skärmen för varje tagning. Promptern syns inte så länge den är gömd för inspelningar."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Her çekim için ekranınızın ikinci bir filmini kaydeder. Prompter kayıtlardan gizliyken bu filmde görünmez."
+            "value" : "Her çekim için kameradan bir film ve ekranın ikinci bir filmini kaydeder. Prompter kayıtlardan gizliyken görünmez."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Для кожного дубля зберігається друге відео з вашим екраном. Суфлера на ньому не видно, поки він схований від записів."
+            "value" : "Для кожного дубля зберігаються відео з камери й друге відео з екраном. Суфлера не видно, поки він схований від записів."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "每次录制时额外存储一段屏幕视频。如果提词器设为在录制内容中隐藏，屏幕视频中不会出现提词器。"
+            "value" : "每次录制时存储一段摄像头视频和一段屏幕视频。如果提词器设为在录制内容中隐藏，录制中不会出现提词器。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "每次錄影時另外儲存一段螢幕影片。若提詞機設為在錄影中隱藏，螢幕影片中就不會出現提詞機。"
+            "value" : "每次錄影時儲存一段相機影片和一段螢幕影片。若提詞機設為在錄影中隱藏，錄影中就不會出現提詞機。"
+          }
+        }
+      }
+    },
+    "Screen" : {
+      "comment" : "Recording mode: record the screen",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skærm"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bildschirm"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pantalla"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Näyttö"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Écran"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schermo"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画面"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "화면"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skjerm"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scherm"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ekran"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tela"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ecrã"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Экран"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skärm"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ekran"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Екран"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "屏幕"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "螢幕"
           }
         }
       }
@@ -14058,6 +14773,125 @@
         }
       }
     },
+    "Show Camera Preview" : {
+      "comment" : "Button in Settings that asks for camera access and shows a live preview",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vis kameraforhåndsvisning"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kameravorschau anzeigen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar vista previa de la cámara"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Näytä kameran esikatselu"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher l’aperçu de la caméra"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra anteprima fotocamera"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カメラのプレビューを表示"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "카메라 미리보기 보기"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vis forhåndsvisning av kamera"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toon cameravoorvertoning"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokaż podgląd kamery"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar pré-visualização da câmera"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar pré-visualização da câmara"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показать камеру"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visa kameraförhandsvisning"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera önizlemesini göster"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показати камеру"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "显示摄像头预览"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顯示相機預覽"
+          }
+        }
+      }
+    },
     "Show Prompter" : {
       "comment" : "Menu item: show the teleprompter panel.",
       "localizations" : {
@@ -14292,6 +15126,125 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "在 Finder 中顯示"
+          }
+        }
+      }
+    },
+    "Show the camera while recording" : {
+      "comment" : "Settings toggle title",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vis kameraet under optagelse"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera während der Aufnahme zeigen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar la cámara al grabar"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Näytä kamera tallennuksen aikana"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher la caméra pendant l’enregistrement"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra la fotocamera durante la registrazione"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "収録中にカメラを表示"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "녹화 중 카메라 보기"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vis kameraet under opptak"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toon de camera tijdens het opnemen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokazuj kamerę podczas nagrywania"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar a câmera durante a gravação"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar a câmara durante a gravação"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показывать камеру во время записи"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visa kameran under inspelning"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kayıt sırasında kamerayı göster"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показувати камеру під час запису"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "录制时显示摄像头"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "錄影時顯示相機"
           }
         }
       }
@@ -15600,6 +16553,125 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "正在啟動相機⋯"
+          }
+        }
+      }
+    },
+    "Starting screen recording…" : {
+      "comment" : "HUD while the screen capture starts",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starter skærmoptagelse…"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bildschirmaufnahme startet …"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iniciando grabación de pantalla…"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käynnistetään näytön tallennusta…"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Démarrage de l’enregistrement de l’écran…"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avvio registrazione schermo…"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画面収録を開始中…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "화면 녹화 시작 중…"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starter skjermopptak…"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schermopname start…"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uruchamianie nagrywania ekranu…"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iniciando gravação de tela…"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A iniciar a gravação do ecrã…"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Запуск записи экрана…"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Startar skärminspelning…"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ekran kaydı başlatılıyor…"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Запуск запису екрана…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在启动屏幕录制…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在啟動螢幕錄影⋯"
           }
         }
       }
@@ -18450,120 +19522,121 @@
         }
       }
     },
-    "Turn on NotchPrompter in System Settings → Privacy & Security → Screen & System Audio Recording, then reopen NotchPrompter. Or turn off “Also record the screen” in Settings." : {
+    "Turn on NotchPrompter in System Settings → Privacy & Security → Screen & System Audio Recording, then reopen NotchPrompter. Or choose to record only the camera in Settings → Recording." : {
+      "comment" : "",
       "localizations" : {
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Slå NotchPrompter til i Systemindstillinger → Anonymitet & sikkerhed → Optagelse af skærm og systemlyd, og åbn derefter NotchPrompter igen. Eller slå »Optag også skærmen« fra i Indstillinger."
+            "value" : "Slå NotchPrompter til i Systemindstillinger → Anonymitet & sikkerhed → Optagelse af skærm og systemlyd, og åbn derefter NotchPrompter igen. Eller vælg kun at optage kameraet i Indstillinger → Optagelse."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aktiviere NotchPrompter in Systemeinstellungen → Datenschutz & Sicherheit → Aufnahme von Bildschirm & Systemaudio und öffne NotchPrompter dann erneut. Oder deaktiviere „Auch den Bildschirm aufnehmen“ in den Einstellungen."
+            "value" : "Aktiviere NotchPrompter in Systemeinstellungen → Datenschutz & Sicherheit → Aufnahme von Bildschirm & Systemaudio und öffne NotchPrompter dann erneut. Oder wähle in den Einstellungen → Aufnahme, nur die Kamera aufzunehmen."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Activa NotchPrompter en Ajustes del Sistema → Privacidad y seguridad → Grabación de pantalla y del audio del sistema y vuelve a abrir NotchPrompter. O desactiva “Grabar también la pantalla” en Ajustes."
+            "value" : "Activa NotchPrompter en Ajustes del Sistema → Privacidad y seguridad → Grabación de pantalla y del audio del sistema y vuelve a abrir NotchPrompter. O elige grabar solo la cámara en Ajustes → Grabación."
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Laita NotchPrompter päälle kohdassa Järjestelmäasetukset → Tietosuoja ja suojaus → Näytön ja järjestelmän äänen tallennus ja avaa NotchPrompter sitten uudelleen. Tai poista käytöstä ”Tallenna myös näyttö” Asetuksissa."
+            "value" : "Laita NotchPrompter päälle kohdassa Järjestelmäasetukset → Tietosuoja ja suojaus → Näytön ja järjestelmän äänen tallennus ja avaa NotchPrompter sitten uudelleen. Tai valitse Asetukset → Tallennus -kohdasta, että vain kamera tallennetaan."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Activez NotchPrompter dans Réglages Système → Confidentialité et sécurité → Enregistrement de l’écran et des sons du système, puis rouvrez NotchPrompter. Ou désactivez « Enregistrer aussi l’écran » dans Réglages."
+            "value" : "Activez NotchPrompter dans Réglages Système → Confidentialité et sécurité → Enregistrement de l’écran et des sons du système, puis rouvrez NotchPrompter. Ou choisissez d’enregistrer uniquement la caméra dans Réglages → Enregistrement."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Attiva NotchPrompter in Impostazioni di Sistema → Privacy e sicurezza → Registrazione schermo e audio di sistema, quindi riapri NotchPrompter. Oppure disattiva “Registra anche lo schermo” in Impostazioni."
+            "value" : "Attiva NotchPrompter in Impostazioni di Sistema → Privacy e sicurezza → Registrazione schermo e audio di sistema, quindi riapri NotchPrompter. Oppure scegli di registrare solo la fotocamera in Impostazioni → Registrazione."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "「システム設定」→「プライバシーとセキュリティ」→「画面収録とシステムオーディオ録音」でNotchPrompterをオンにしてから、NotchPrompterを開き直してください。または、設定で「画面も収録」をオフにしてください。"
+            "value" : "「システム設定」→「プライバシーとセキュリティ」→「画面収録とシステムオーディオ録音」でNotchPrompterをオンにしてから、NotchPrompterを開き直してください。または、設定の「収録」でカメラだけを収録するように選んでください。"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "시스템 설정 → 개인정보 보호 및 보안 → 화면 및 시스템 오디오 녹음에서 NotchPrompter를 켠 다음 NotchPrompter를 다시 여세요. 또는 설정에서 ‘화면도 기록’을 끄세요."
+            "value" : "시스템 설정 → 개인정보 보호 및 보안 → 화면 및 시스템 오디오 녹음에서 NotchPrompter를 켠 다음 NotchPrompter를 다시 여세요. 또는 설정 → 녹화에서 카메라만 녹화하도록 선택하세요."
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Slå på NotchPrompter i Systeminnstillinger → Personvern og sikkerhet → Skjerm- og systemlydopptak, og åpne deretter NotchPrompter på nytt. Eller slå av «Ta også opp skjermen» i Innstillinger."
+            "value" : "Slå på NotchPrompter i Systeminnstillinger → Personvern og sikkerhet → Skjerm- og systemlydopptak, og åpne deretter NotchPrompter på nytt. Eller velg å bare ta opp kameraet i Innstillinger → Opptak."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zet NotchPrompter aan in Systeeminstellingen → Privacy en beveiliging → Scherm- en systeemaudio-opname en open NotchPrompter daarna opnieuw. Of zet ‘Neem ook het scherm op’ uit in Instellingen."
+            "value" : "Zet NotchPrompter aan in Systeeminstellingen → Privacy en beveiliging → Scherm- en systeemaudio-opname en open NotchPrompter daarna opnieuw. Of kies in Instellingen → Opname om alleen de camera op te nemen."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Włącz NotchPrompter w Ustawieniach systemowych → Prywatność i ochrona → Nagrywanie ekranu i dźwięku systemowego, a następnie otwórz NotchPrompter ponownie. Możesz też wyłączyć „Nagrywaj też ekran” w Ustawieniach."
+            "value" : "Włącz NotchPrompter w Ustawieniach systemowych → Prywatność i ochrona → Nagrywanie ekranu i dźwięku systemowego, a następnie otwórz NotchPrompter ponownie. Możesz też wybrać nagrywanie tylko kamery w Ustawieniach → Nagrywanie."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ative o NotchPrompter em Ajustes do Sistema → Privacidade e Segurança → Gravação do Áudio do Sistema e da Tela e abra o NotchPrompter novamente. Ou desative “Gravar a tela também” em Ajustes."
+            "value" : "Ative o NotchPrompter em Ajustes do Sistema → Privacidade e Segurança → Gravação do Áudio do Sistema e da Tela e abra o NotchPrompter novamente. Ou escolha gravar só a câmera em Ajustes → Gravação."
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ativa o NotchPrompter em Definições do Sistema → Privacidade e segurança → Gravação do ecrã e de áudio do sistema e volta a abrir o NotchPrompter. Ou desativa “Gravar também o ecrã” nas Definições."
+            "value" : "Ativa o NotchPrompter em Definições do Sistema → Privacidade e segurança → Gravação do ecrã e de áudio do sistema e volta a abrir o NotchPrompter. Ou escolhe gravar só a câmara em Definições → Gravação."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Включите NotchPrompter в разделе «Системные настройки» → «Конфиденциальность и безопасность» → «Запись экрана и системного звука», затем снова откройте NotchPrompter. Или выключите «Записывать также экран» в настройках."
+            "value" : "Включите NotchPrompter в разделе «Системные настройки» → «Конфиденциальность и безопасность» → «Запись экрана и системного звука», затем снова откройте NotchPrompter. Или выберите запись только с камеры в настройках → «Запись»."
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Slå på NotchPrompter i Systeminställningar → Integritet och säkerhet → Skärm- och systemljudsinspelning och öppna sedan NotchPrompter igen. Eller stäng av ”Spela även in skärmen” i Inställningar."
+            "value" : "Slå på NotchPrompter i Systeminställningar → Integritet och säkerhet → Skärm- och systemljudsinspelning och öppna sedan NotchPrompter igen. Eller välj att bara spela in kameran i Inställningar → Inspelning."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sistem Ayarları → Gizlilik ve Güvenlik → Ekran ve Sistem Sesi Kaydı bölümünde NotchPrompter’ı açın, ardından NotchPrompter’ı yeniden başlatın. Ya da Ayarlar’da “Ekranı da kaydet” seçeneğini kapatın."
+            "value" : "Sistem Ayarları → Gizlilik ve Güvenlik → Ekran ve Sistem Sesi Kaydı bölümünde NotchPrompter’ı açın, ardından NotchPrompter’ı yeniden başlatın. Ya da Ayarlar → Kayıt bölümünde yalnızca kamerayı kaydetmeyi seçin."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Увімкніть NotchPrompter у Системних параметрах → Приватність і безпека → Записування системного звуку й екрана, а потім знову відкрийте NotchPrompter. Або вимкніть «Також записувати екран» у параметрах."
+            "value" : "Увімкніть NotchPrompter у Системних параметрах → Приватність і безпека → Записування системного звуку й екрана, а потім знову відкрийте NotchPrompter. Або виберіть запис лише з камери в параметрах → «Запис»."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "请在“系统设置”→“隐私与安全性”→“录屏与系统录音”中打开 NotchPrompter，然后重新打开 NotchPrompter。或者在“设置”中关闭“同时录制屏幕”。"
+            "value" : "请在“系统设置”→“隐私与安全性”→“录屏与系统录音”中打开 NotchPrompter，然后重新打开 NotchPrompter。或者在“设置”→“录制”中选择只录制摄像头。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "請在「系統設定」→「隱私權與安全性」→「螢幕與系統錄音」中開啟 NotchPrompter，然後重新打開 NotchPrompter。或者在「設定」中關閉「同時錄製螢幕」。"
+            "value" : "請在「系統設定」→「隱私權與安全性」→「螢幕與系統錄音」中開啟 NotchPrompter，然後重新打開 NotchPrompter。或者在「設定」→「錄影」中選擇只錄製相機。"
           }
         }
       }

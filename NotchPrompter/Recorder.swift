@@ -8,7 +8,8 @@ final class Recorder: NSObject, AVCaptureFileOutputRecordingDelegate, AVCaptureA
     private(set) var isRecording = false
     private(set) var startedAt = Date()
 
-    private let session = AVCaptureSession()
+    /// Runs from `prepare` until the take ends; the camera preview shows it.
+    let session = AVCaptureSession()
     private let output = AVCaptureMovieFileOutput()
     /// The same microphone audio, for voice-follow while recording (set before `start`).
     var onAudio: ((CMSampleBuffer) -> Void)?
@@ -31,9 +32,12 @@ final class Recorder: NSObject, AVCaptureFileOutputRecordingDelegate, AVCaptureA
 
     static let cameraSettings = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Camera")!
 
-    /// Ask for camera and microphone access. `done` gets nil, or a message and where to fix it.
-    static func requestAccess(_ done: @escaping ((message: String, url: URL)?) -> Void) {
-        AVCaptureDevice.requestAccess(for: .video) { camera in
+    /// Ask for camera (if `camera`) and microphone access. `done` gets nil, or a message and where to fix it.
+    static func requestAccess(camera needsCamera: Bool = true, _ done: @escaping ((message: String, url: URL)?) -> Void) {
+        let askCamera: (@escaping (Bool) -> Void) -> Void = { next in
+            needsCamera ? AVCaptureDevice.requestAccess(for: .video, completionHandler: next) : next(true)
+        }
+        askCamera { camera in
             guard camera else {
                 return DispatchQueue.main.async {
                     done((String(localized: "NotchPrompter needs the camera to record you. Turn it on for NotchPrompter in System Settings → Privacy & Security → Camera."), cameraSettings))

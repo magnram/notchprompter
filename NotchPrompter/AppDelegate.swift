@@ -26,6 +26,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
             }
             return
         }
+        if MicSelfTest.requested {
+            prompter.showPanel()
+            MicSelfTest.run(prompter: prompter)
+            return
+        }
         #endif
         if settings.hasSeenWelcome {
             prompter.showPanel()

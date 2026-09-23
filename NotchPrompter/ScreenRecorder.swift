@@ -1,11 +1,15 @@
 import AppKit
 import ScreenCaptureKit
 
-/// Records the screen the prompter is on into a movie, next to the camera take.
-final class ScreenRecorder: NSObject, SCStreamDelegate, SCRecordingOutputDelegate {
+/// Records the screen the prompter is on into a movie, next to the camera take or on its own.
+final class ScreenRecorder: NSObject, SCStreamDelegate, SCRecordingOutputDelegate, SCStreamOutput {
     /// Called on the main thread when the screen movie is saved (or failed).
     var onFinished: (_ url: URL?, _ problem: String?) -> Void = { _, _ in }
     private(set) var isRecording = false
+    private(set) var startedAt = Date()
+    /// The microphone audio, for voice-follow, when the screen is recorded with the microphone.
+    var onAudio: ((CMSampleBuffer) -> Void)?
+    private let audioQueue = DispatchQueue(label: "com.magnusramm.NotchPrompter.screen.audio")
 
     private var stream: SCStream?
     private var recording: SCRecordingOutput?
@@ -20,8 +24,9 @@ final class ScreenRecorder: NSObject, SCStreamDelegate, SCRecordingOutputDelegat
         CGPreflightScreenCaptureAccess() || CGRequestScreenCaptureAccess()
     }
 
-    /// Start capturing `screen` without saving yet. `hiddenWindow` is left out of the movie.
-    func prepare(screen: NSScreen?, hiddenWindow: Int?, ready: @escaping (String?) -> Void) {
+    /// Start capturing `screen` without saving yet. `hiddenWindows` are left out of the movie.
+    /// With `microphone`, the movie gets the microphone's sound too (when there is no camera take).
+    func prepare(screen: NSScreen?, hiddenWindows: [Int], microphone: Bool, ready: @escaping (String?) -> Void) {
         let displayID = screen?.deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] as? CGDirectDisplayID
         let scale = screen?.backingScaleFactor ?? 2
         Task {
@@ -29,7 +34,7 @@ final class ScreenRecorder: NSObject, SCStreamDelegate, SCRecordingOutputDelegat
                 let content = try await SCShareableContent.excludingDesktopWindows(false, onScreenWindowsOnly: true)
                 guard let display = content.displays.first(where: { $0.displayID == displayID }) ?? content.displays.first
                 else { throw ScreenError.noDisplay }
-                let hidden = content.windows.filter { window in hiddenWindow.map { Int(window.windowID) == $0 } ?? false }
+                let hidden = content.windows.filter { hiddenWindows.contains(Int($0.windowID)) }
                 let filter = SCContentFilter(display: display, excludingWindows: hidden)
                 let config = SCStreamConfiguration()
                 config.width = Int(CGFloat(display.width) * scale)
@@ -37,7 +42,9 @@ final class ScreenRecorder: NSObject, SCStreamDelegate, SCRecordingOutputDelegat
                 config.minimumFrameInterval = CMTime(value: 1, timescale: 30)
                 config.showsCursor = true
                 config.queueDepth = 6
+                config.captureMicrophone = microphone
                 let stream = SCStream(filter: filter, configuration: config, delegate: self)
+                if microphone { try stream.addStreamOutput(self, type: .microphone, sampleHandlerQueue: audioQueue) }
                 try await stream.startCapture()
                 await MainActor.run { self.stream = stream; ready(nil) }
             } catch {
@@ -61,6 +68,7 @@ final class ScreenRecorder: NSObject, SCStreamDelegate, SCRecordingOutputDelegat
         self.recording = recording
         self.url = url
         isRecording = true
+        startedAt = Date()
         // Adding the output can take a moment; don't hold up the prompter while it does.
         DispatchQueue.global(qos: .userInitiated).async {
             do { try stream.addRecordingOutput(recording) }
@@ -87,6 +95,10 @@ final class ScreenRecorder: NSObject, SCStreamDelegate, SCRecordingOutputDelegat
             completion?()
             Task { try? await stream.stopCapture() }
         }
+    }
+
+    func stream(_ stream: SCStream, didOutputSampleBuffer sampleBuffer: CMSampleBuffer, of type: SCStreamOutputType) {
+        if type == .microphone { onAudio?(sampleBuffer) }
     }
 
     func recordingOutputDidFinishRecording(_ recordingOutput: SCRecordingOutput) {

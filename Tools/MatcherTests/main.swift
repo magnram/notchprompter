@@ -56,6 +56,32 @@ do {
     check(m.cursor == 4, "repeated partial results do not move twice (cursor \(m.cursor))")
 }
 do {
+    var m = matcher()
+    m.follow(["hi", "everyone"], task: 1)
+    // A laggy result brings several words at once, and the newest one is misheard.
+    m.follow(["hi", "everyone", "and", "thanks", "four", "joy"], task: 1)
+    check(m.cursor == 4, "a burst ending in misheard words still moves (cursor \(m.cursor))")
+    m.follow(["hi", "everyone", "and", "thanks", "for", "joining"], task: 1)
+    check(m.cursor == 6, "the corrected words move on (cursor \(m.cursor))")
+}
+do {
+    // Going off script with a few words that also come later must not jump there.
+    var m = matcher()
+    speak(&m, "hi everyone")
+    speak(&m, "hi everyone so we have been", task: 1)
+    check(m.cursor == 2, "a few loose words don't jump far ahead (cursor \(m.cursor))")
+}
+do {
+    // Going back to say a sentence again: the same words come later in the script.
+    var m = VoiceMatcher()
+    m.setText("Most people just ignore it. You don't need to spend more. The rest comes from offers most people just scroll past.")
+    speak(&m, "most people just ignore it you don't need")
+    speak(&m, "most people just ignore it you don't need most people just ignore it")
+    check(m.cursor == 8, "saying a sentence again doesn't jump to where it repeats (cursor \(m.cursor))")
+    speak(&m, "most people just ignore it you don't need most people just ignore it you don't need to spend more")
+    check(m.cursor == 11, "follows on after the sentence said again (cursor \(m.cursor))")
+}
+do {
     check(VoiceMatcher.similar("working", "workin"), "one letter off in a long word matches")
     check(!VoiceMatcher.similar("fox", "for"), "short different words do not match")
     check(VoiceMatcher.normalise("Joining.") == "joining", "normalise drops case and punctuation")
@@ -67,6 +93,18 @@ do {
     m.cursor = m.wordIndex(atCharacter: i)!
     speak(&m, "quick brown fox")
     check(m.words[m.cursor - 1].norm == "fox", "follows from a clicked word")
+}
+do {
+    // A click moves the cursor back, and the same recognition task goes on: the words it heard
+    // before the click must not count again.
+    var m = matcher()
+    speak(&m, "hi everyone and thanks for joining")
+    m.cursor = 0
+    m.resetHeard()
+    m.follow("hi everyone and thanks for joining".split(separator: " ").map(String.init), task: 1)
+    check(m.cursor == 0, "words heard before a click don't count again (cursor \(m.cursor))")
+    m.follow("hi everyone and thanks for joining hi everyone".split(separator: " ").map(String.init), task: 1)
+    check(m.cursor == 2, "follows the new words after a click (cursor \(m.cursor))")
 }
 
 do {

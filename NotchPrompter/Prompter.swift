@@ -204,7 +204,10 @@ final class Prompter: NSObject, NSPopoverDelegate {
     private let screenRecorder = ScreenRecorder()
     private var recordButton: ControlButton!
     private let recLabel = NSTextField(labelWithString: "")
-    var isRecording: Bool { recorder.isRecording }
+    private let cameraPreview = CameraPreviewPanel()
+    /// Filming: the camera movie, the screen movie, or both are being saved.
+    var isRecording: Bool { recorder.isRecording || screenRecorder.isRecording }
+    private var recordingStartedAt: Date { recorder.isRecording ? recorder.startedAt : screenRecorder.startedAt }
 
     // Voice-follow
     private let voice = VoiceListener()
@@ -304,7 +307,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
         voice.onStatus = { [unowned self] msg in showHUD(msg, for: 3) }
         voice.onStopped = { [unowned self] in listening = false }
         voice.onPermissionProblem = { [unowned self] message, url in
-            if recorder.isRecording { stopRecording() }
+            if isRecording { stopRecording() }
             showPermissionAlert(String(localized: "Allow access to follow your voice"),
                                 message + "\n\n" + String(localized: "You can still use Play to scroll at a steady speed."), url)
         }
@@ -324,23 +327,16 @@ final class Prompter: NSObject, NSPopoverDelegate {
             default: break
             }
         }
-        screenRecorder.onFinished = { [unowned self] _, problem in
-            if let problem { showHUD(problem, for: 5) }
-        }
-        recorder.onFinished = { [unowned self] url, problem in
-            updateBar()
-            layoutViews()
-            if let problem { showHUD(problem, for: 5); return }
-            guard let url else { return }
-            // The first time, show where takes go. After that, a short note is enough.
-            let key = "hasRevealedRecording"
-            if !UserDefaults.standard.bool(forKey: key) {
-                UserDefaults.standard.set(true, forKey: key)
-                NSWorkspace.shared.activateFileViewerSelecting([url])
+        // With the camera, its movie is the take; the screen movie only reports problems.
+        screenRecorder.onFinished = { [unowned self] url, problem in
+            if discardTake { url.map { try? FileManager.default.removeItem(at: $0) }; return }
+            if takeMode.usesCamera {
+                if let problem { showHUD(problem, for: 5) }
+            } else {
+                takeFinished(url, problem)
             }
-            showHUD(String(localized: "Saved in Movies › NotchPrompter",
-                           comment: "Use the Finder name of the Movies folder in this language"), for: 4)
         }
+        recorder.onFinished = { [unowned self] url, problem in takeFinished(url, problem) }
 
         recLabel.font = .monospacedDigitSystemFont(ofSize: 11, weight: .semibold)
         recLabel.textColor = .systemRed
@@ -353,6 +349,22 @@ final class Prompter: NSObject, NSPopoverDelegate {
 
         let timer = Timer(timeInterval: 1.0 / 120, repeats: true) { [weak self] _ in self?.tick() }
         RunLoop.main.add(timer, forMode: .common)
+    }
+
+    private func takeFinished(_ url: URL?, _ problem: String?) {
+        updateBar()
+        layoutViews()
+        if discardTake { url.map { try? FileManager.default.removeItem(at: $0) }; return }
+        if let problem { showHUD(problem, for: 5); return }
+        guard let url else { return }
+        // The first time, show where takes go. After that, a short note is enough.
+        let key = "hasRevealedRecording"
+        if !UserDefaults.standard.bool(forKey: key) {
+            UserDefaults.standard.set(true, forKey: key)
+            NSWorkspace.shared.activateFileViewerSelecting([url])
+        }
+        showHUD(String(localized: "Saved in Movies › NotchPrompter",
+                       comment: "Use the Finder name of the Movies folder in this language"), for: 4)
     }
 
     private func observe() {
@@ -395,7 +407,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
         cancelCountdown()
         playing = false
         if listening { voice.stop(); listening = false }
-        if recorder.isRecording { stopRecording() }
+        if isRecording || pendingRecording { stopRecording() }
     }
 
     func showPermissionAlert(_ title: String, _ message: String, _ url: URL) {
@@ -543,9 +555,9 @@ final class Prompter: NSObject, NSPopoverDelegate {
         micButton.contentTintColor = listening ? .white : NSColor(calibratedRed: 1, green: 0.38, blue: 0.36, alpha: 1)
         micButton.toolTip = listening ? String(localized: "Stop following my voice (V)") : Self.micTip
         micButton.setAccessibilityLabel(micButton.toolTip)
-        recordButton.setSymbol(recorder.isRecording ? "stop.circle.fill" : "record.circle")
-        recordButton.contentTintColor = recorder.isRecording ? .systemRed : ControlButton.normalTint
-        recordButton.toolTip = recorder.isRecording ? String(localized: "Stop recording (C)") : Self.recordTip
+        recordButton.setSymbol(isRecording ? "stop.circle.fill" : "record.circle")
+        recordButton.contentTintColor = isRecording ? .systemRed : ControlButton.normalTint
+        recordButton.toolTip = isRecording ? String(localized: "Stop recording (C)") : Self.recordTip
         recordButton.setAccessibilityLabel(recordButton.toolTip)
         // Speed only matters while scrolling at a steady speed.
         let showSpeed = playing || countingDown
@@ -755,7 +767,6 @@ final class Prompter: NSObject, NSPopoverDelegate {
         matcher.cursor = word
         if listening {
             matcher.resetHeard()
-            voice.restartTask()
             lastAdvance = CACurrentMediaTime()
             updateProgress()
             showHUD(String(localized: "From here", comment: "After clicking a word: voice-follow continues from here"))
@@ -813,36 +824,43 @@ final class Prompter: NSObject, NSPopoverDelegate {
     // MARK: Recording
 
     func toggleRecording() {
-        if recorder.isRecording || pendingRecording { stopRecording(); return }
+        if isRecording || pendingRecording { stopRecording(); return }
         guard !isEmpty else { onOpenEditor(); return }
-        Recorder.requestAccess { [weak self] problem in
-            guard let self else { return }
+        let mode = settings.recordingMode
+        // Pending from the first press: a second press while macOS asks for access cancels,
+        // instead of starting a second take.
+        pendingRecording = true
+        discardTake = false
+        Recorder.requestAccess(camera: mode.usesCamera) { [weak self] problem in
+            guard let self, pendingRecording else { return }
             if let problem {
+                pendingRecording = false
                 return showPermissionAlert(String(localized: "Allow access to record"), problem.message, problem.url)
             }
-            let withScreen = settings.recordScreen
-            if withScreen && !ScreenRecorder.requestAccess() {
+            if mode.usesScreen && !ScreenRecorder.requestAccess() {
+                pendingRecording = false
                 return showPermissionAlert(String(localized: "Allow screen recording"),
-                    String(localized: "Turn on NotchPrompter in System Settings → Privacy & Security → Screen & System Audio Recording, then reopen NotchPrompter. Or turn off “Also record the screen” in Settings."),
+                    String(localized: "Turn on NotchPrompter in System Settings → Privacy & Security → Screen & System Audio Recording, then reopen NotchPrompter. Or choose to record only the camera in Settings → Recording."),
                     ScreenRecorder.settingsURL)
             }
             cancelCountdown()
             playing = false
             showPanel()
-            pendingRecording = true
-            // Voice-follow hears the recorder's microphone, so only one part of the app reads it.
+            takeMode = mode
+            // Voice-follow hears the recording's microphone, so only one part of the app reads it:
+            // the camera recorder, or the screen capture when there is no camera.
             if listening { voice.stop(); listening = false }
-            recorder.onAudio = { [weak voice] in voice?.append($0) }
+            recorder.onAudio = mode.usesCamera ? { [weak voice] in voice?.append($0) } : nil
+            screenRecorder.onAudio = mode.usesCamera ? nil : { [weak voice] in voice?.append($0) }
             // Wake the camera first, so filming starts exactly when the countdown ends.
-            showHUD(String(localized: "Starting camera…"))
-            let hidden = settings.hideFromScreenSharing ? panel.windowNumber : nil
-            prepareAll(screen: withScreen, hidden: hidden) { [weak self] problem in
+            showHUD(mode.usesCamera ? String(localized: "Starting camera…") : String(localized: "Starting screen recording…"))
+            prepareAll(mode) { [weak self] problem in
                 guard let self else { return }
                 // Stopped while the camera was waking up: turn it off again.
-                guard pendingRecording else { recorder.stop(); screenRecorder.stop(); return }
+                guard pendingRecording else { recorder.stop(); screenRecorder.stop(); cameraPreview.hide(); return }
                 if let problem {
                     pendingRecording = false
-                    recorder.stop(); screenRecorder.stop()
+                    recorder.stop(); screenRecorder.stop(); cameraPreview.hide()
                     showHUD(problem, for: 5); updateBar(); return
                 }
                 // Speech recognition takes a moment to load, so start it now: it is ready at "go".
@@ -851,17 +869,20 @@ final class Prompter: NSObject, NSPopoverDelegate {
                 // The movies also need a moment before the first frames are saved. Start them a
                 // little before "go", so a take never misses the first words.
                 let startFiles = { [weak self] in
-                    guard let self, pendingRecording, !recorder.isRecording else { return }
+                    guard let self, pendingRecording, !isRecording else { return }
                     let name = Recorder.takeName()
-                    if withScreen {
-                        screenRecorder.record(name: String(localized: "\(name) Screen",
-                                                           comment: "File name of the screen movie that goes with a take"))
+                    if mode.usesScreen {
+                        screenRecorder.record(name: mode.usesCamera
+                            ? String(localized: "\(name) Screen", comment: "File name of the screen movie that goes with a take")
+                            : name)
                     }
-                    recorder.record(name: name) { [weak self] problem in
-                        guard let self else { return }
-                        if let problem { showHUD(problem, for: 5) }
-                        updateBar()
-                        layoutViews()
+                    if mode.usesCamera {
+                        recorder.record(name: name) { [weak self] problem in
+                            guard let self else { return }
+                            if let problem { showHUD(problem, for: 5) }
+                            updateBar()
+                            layoutViews()
+                        }
                     }
                 }
                 let go = { [weak self] in
@@ -885,24 +906,43 @@ final class Prompter: NSObject, NSPopoverDelegate {
     }
 
     private var pendingRecording = false
+    /// The take was stopped during the countdown: its movies were only just started, so delete them.
+    private var discardTake = false
+    /// What the current (or last) take records.
+    private var takeMode = RecordingMode.camera
 
-    /// Wake the camera and, if asked, the screen capture. `ready` gets the first problem, if any.
-    private func prepareAll(screen: Bool, hidden: Int?, ready: @escaping (String?) -> Void) {
+    /// Wake the camera and the screen capture that `mode` needs. `ready` gets the first problem, if any.
+    private func prepareAll(_ mode: RecordingMode, ready: @escaping (String?) -> Void) {
+        let screenPart = { [weak self] in
+            guard let self else { return }
+            guard mode.usesScreen else { return ready(nil) }
+            // Leave the prompter (when hidden from recordings) and the camera preview out of the screen movie.
+            var hidden = [cameraPreview.windowNumber]
+            if settings.hideFromScreenSharing { hidden.append(panel.windowNumber) }
+            screenRecorder.prepare(screen: panel.screen, hiddenWindows: hidden, microphone: !mode.usesCamera, ready: ready)
+        }
+        guard mode.usesCamera else { return screenPart() }
         recorder.prepare(cameraID: settings.cameraID) { [weak self] problem in
             guard let self else { return }
-            guard screen, problem == nil else { return ready(problem) }
-            screenRecorder.prepare(screen: panel.screen, hiddenWindow: hidden, ready: ready)
+            guard problem == nil else { return ready(problem) }
+            // Show the camera during the countdown, so you can check how you look before it films.
+            if settings.showCameraPreview, let screen = panel.screen {
+                cameraPreview.show(recorder.session, beside: panel.frame, on: screen)
+            }
+            screenPart()
         }
     }
 
     /// Stop the take; the movie file is finished a moment later.
     func stopRecording(completion: (() -> Void)? = nil) {
+        if pendingRecording { discardTake = true }
         pendingRecording = false
         cancelCountdown()
         recLabel.isHidden = true
         layoutViews()
         if listening { voice.stop(); listening = false }
         voice.useExternalAudio = false
+        cameraPreview.hide()
         // Wait for both movies before `completion` (used when quitting).
         var left = 2
         let done = { left -= 1; if left == 0 { completion?() } }
@@ -912,8 +952,8 @@ final class Prompter: NSObject, NSPopoverDelegate {
     }
 
     private func updateRecLabel() {
-        guard recorder.isRecording else { return }
-        let t = Int(Date().timeIntervalSince(recorder.startedAt))
+        guard isRecording else { return }
+        let t = Int(Date().timeIntervalSince(recordingStartedAt))
         let dot = t % 2 == 0 ? "●" : "○"
         let time = String(format: "%d:%02d", t / 60, t % 60)
         let text = String(localized: "\(dot) REC \(time)",
@@ -928,7 +968,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
         matcher.cursor = 0
         updateProgress()
         scrollTo(0)
-        if listening { matcher.resetHeard(); voice.restartTask(); lastAdvance = CACurrentMediaTime() }
+        if listening { matcher.resetHeard(); lastAdvance = CACurrentMediaTime() }
         showHUD(String(localized: "⟲ Top", comment: "Back at the top of the script"))
     }
 

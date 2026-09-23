@@ -17,6 +17,14 @@ struct SettingsView: View {
         return Locale.interface.localizedString(forIdentifier: id) ?? id
     }
 
+    private var modeDescription: String {
+        switch settings.recordingMode {
+        case .camera: String(localized: "Films you with the camera and microphone.")
+        case .screen: String(localized: "Records the screen with your voice. The prompter is left out while it's hidden from recordings.")
+        case .both: String(localized: "Saves a movie from the camera and a second movie of the screen for each take. The prompter is left out while it's hidden from recordings.")
+        }
+    }
+
     /// Whole numbers, without the tick marks a stepped slider draws.
     private func rounded(_ value: Binding<Double>) -> Binding<Double> {
         Binding(get: { value.wrappedValue }, set: { value.wrappedValue = $0.rounded() })
@@ -59,13 +67,24 @@ struct SettingsView: View {
             }
             if !compact {
                 Section("Recording") {
-                    Picker("Camera", selection: $settings.cameraID) {
-                        Text("Default").tag("")
-                        ForEach(Recorder.cameras, id: \.uniqueID) { Text($0.localizedName).tag($0.uniqueID) }
+                    Picker(selection: $settings.recordingMode) {
+                        Text("Camera", comment: "Recording mode: film yourself").tag(RecordingMode.camera)
+                        Text("Screen", comment: "Recording mode: record the screen").tag(RecordingMode.screen)
+                        Text("Camera and screen", comment: "Recording mode: both, in two movies").tag(RecordingMode.both)
+                    } label: {
+                        Text("Record")
+                        Text(modeDescription)
                     }
-                    Toggle(isOn: $settings.recordScreen) {
-                        Text("Also record the screen")
-                        Text("Saves a second movie of your screen for each take. The prompter is left out while it's hidden from recordings.")
+                    if settings.recordingMode.usesCamera {
+                        Picker("Camera", selection: $settings.cameraID) {
+                            Text("Default").tag("")
+                            ForEach(Recorder.cameras, id: \.uniqueID) { Text($0.localizedName).tag($0.uniqueID) }
+                        }
+                        CameraPreviewSection(cameraID: settings.cameraID)
+                        Toggle(isOn: $settings.showCameraPreview) {
+                            Text("Show the camera while recording")
+                            Text("A small preview beside the prompter. Drag it anywhere. It is never in screen recordings.")
+                        }
                     }
                     LabeledContent {
                         Button("Show in Finder") {

@@ -31,9 +31,11 @@ final class AppSettings: ObservableObject {
     }
     /// Camera for recordings (`AVCaptureDevice.uniqueID`); empty means the default camera.
     @Published var cameraID: String { didSet { defaults.set(cameraID, forKey: "cameraID") } }
+    /// What a take records: the camera, the screen, or both, each into its own movie.
+    @Published var recordingMode: RecordingMode { didSet { defaults.set(recordingMode.rawValue, forKey: "recordingMode") } }
+    /// Show a small camera preview beside the prompter during a take.
+    @Published var showCameraPreview: Bool { didSet { defaults.set(showCameraPreview, forKey: "showCameraPreview") } }
     /// Only use speech recognition that runs on this Mac (never Apple's servers).
-    /// Record the screen too, into a second movie next to the camera take.
-    @Published var recordScreen: Bool { didSet { defaults.set(recordScreen, forKey: "recordScreen") } }
     @Published var onDeviceOnly: Bool { didSet { defaults.set(onDeviceOnly, forKey: "onDeviceOnly") } }
     @Published var hasSeenWelcome: Bool { didSet { defaults.set(hasSeenWelcome, forKey: "hasSeenWelcome") } }
 
@@ -53,10 +55,19 @@ final class AppSettings: ObservableObject {
         voiceLanguage = d.string(forKey: "voiceLanguage") ?? Self.automaticLanguage
         hideFromScreenSharing = flag("hideFromScreenSharing", true)
         cameraID = d.string(forKey: "cameraID") ?? ""
-        recordScreen = flag("recordScreen", false)
+        // Before 1.1 there was only "Also record the screen", next to the camera.
+        recordingMode = d.string(forKey: "recordingMode").flatMap(RecordingMode.init)
+            ?? (flag("recordScreen", false) ? .both : .camera)
+        showCameraPreview = flag("showCameraPreview", true)
         onDeviceOnly = flag("onDeviceOnly", true)
         hasSeenWelcome = flag("hasSeenWelcome", false)
     }
+}
+
+enum RecordingMode: String, CaseIterable {
+    case camera, screen, both
+    var usesCamera: Bool { self != .screen }
+    var usesScreen: Bool { self != .camera }
 }
 
 extension Comparable {
