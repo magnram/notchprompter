@@ -30,6 +30,37 @@ final class CameraPreviewNSView: NSView {
         }
     }
 
+    /// Called with true when the view is on screen, and false when its window closes, hides or
+    /// is covered. The Settings window is kept after closing, so it can't rely on being removed.
+    var onVisible: ((Bool) -> Void)? {
+        didSet { updateVisible() }
+    }
+    private var observers: [NSObjectProtocol] = []
+    private var visible = false
+
+    override func viewDidMoveToWindow() {
+        super.viewDidMoveToWindow()
+        observers.forEach(NotificationCenter.default.removeObserver)
+        observers = []
+        if let window {
+            for name in [NSWindow.didChangeOcclusionStateNotification, NSWindow.willCloseNotification] {
+                observers.append(NotificationCenter.default.addObserver(forName: name, object: window, queue: .main) { [weak self] note in
+                    self?.updateVisible(closing: note.name == NSWindow.willCloseNotification)
+                })
+            }
+        }
+        updateVisible()
+    }
+
+    private func updateVisible(closing: Bool = false) {
+        let now = !closing && window?.isVisible == true && window?.occlusionState.contains(.visible) == true
+        guard now != visible, let onVisible else { return }
+        visible = now
+        onVisible(now)
+    }
+
+    deinit { observers.forEach(NotificationCenter.default.removeObserver) }
+
     override func layout() {
         super.layout()
         CATransaction.begin()
@@ -96,10 +127,23 @@ struct CameraPreview: NSViewRepresentable {
         let session = AVCaptureSession()
         let queue = DispatchQueue(label: "com.magnusramm.NotchPrompter.settings-preview")
         var cameraID: String?
+        /// Only film while the preview can be seen.
+        var visible = false
 
         func use(_ id: String) {
             guard id != cameraID else { return }
             cameraID = id
+            guard visible else { return }
+            start()
+        }
+
+        func setVisible(_ on: Bool) {
+            visible = on
+            if on { start() } else { stop() }
+        }
+
+        private func start() {
+            guard let id = cameraID else { return }
             let camera = Recorder.cameras.first { $0.uniqueID == id } ?? AVCaptureDevice.default(for: .video)
             queue.async { [session] in
                 session.beginConfiguration()
@@ -121,6 +165,7 @@ struct CameraPreview: NSViewRepresentable {
         let view = CameraPreviewNSView(frame: .zero)
         view.session = context.coordinator.session
         context.coordinator.use(cameraID)
+        view.onVisible = { [weak coordinator = context.coordinator] in coordinator?.setVisible($0) }
         return view
     }
 
@@ -129,8 +174,9 @@ struct CameraPreview: NSViewRepresentable {
     }
 
     static func dismantleNSView(_ view: CameraPreviewNSView, coordinator: Coordinator) {
+        view.onVisible = nil
         view.session = nil
-        coordinator.stop()
+        coordinator.setVisible(false)
     }
 }
 
