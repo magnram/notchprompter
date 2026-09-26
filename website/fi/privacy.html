@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tietosuoja – NotchPrompter</title>
-  <meta name="description" content="NotchPrompter ei kerää mitään tietoja. Puhe tunnistetaan Macillasi, ja käsikirjoitukset ja tallenteet pysyvät Macillasi.">
+  <meta name="description" content="NotchPrompter ei kerää mitään tietoja. Puhe tunnistetaan Macillasi, tallenteet pysyvät Macillasi, ja käsikirjoitukset synkronoidaan vain oman iCloudisi kautta.">
   <meta property="og:title" content="NotchPrompter – Teleprompteri kameran alla">
   <meta property="og:description" content="Lue käsikirjoitusta ja pidä katsekontakti. Se seuraa ääntäsi.">
   <meta property="og:image" content="../media/fi/1-eye-contact.jpg">
@@ -51,23 +51,27 @@
 
   <main class="wrap doc">
 <h1>Tietosuojakäytäntö</h1>
-<p class="updated">Päivitetty viimeksi: 23.9.2026</p>
+<p class="updated">Päivitetty viimeksi: 26.9.2026</p>
 <p>NotchPrompter on tehty pitämään sanasi omana tietonasi. Lyhyesti: <strong>emme kerää mitään.</strong></p>
 
 <h2>Käsikirjoituksesi</h2>
-<p>Käsikirjoitukset tallennetaan vain Macillesi, apin omaan kansioon. Niitä ei koskaan lähetetä meille eikä kenellekään muulle. Kun tuot tai viet tiedoston, appi lukee tai kirjoittaa vain valitsemaasi tiedostoa.</p>
+<p>Käsikirjoitukset tallennetaan Macillesi, apin omaan kansioon. Jos käytät iCloudia, ne tallennetaan myös omalle iCloud-tilillesi, joten ne ovat samat Macillasi ja iPhonellasi. Niitä ei koskaan lähetetä meille. Kun tuot tai viet tiedoston, appi lukee tai kirjoittaa vain valitsemaasi tiedostoa.</p>
+<p>Jos valitset käsikirjoituskansion Macilla, jokainen käsikirjoitus tallennetaan myös sinne Markdown-tiedostona, jotta muutkin käyttämäsi sovellukset voivat lukea sen.</p>
+<p>Jos haluat lopettaa synkronoinnin, laita NotchPrompter pois päältä iCloudia käyttävien appien luettelossa. Macilla avaa Järjestelmäasetukset → [nimesi] → iCloud. iPhonella avaa Asetukset → [nimesi] → iCloud.</p>
 
 <h2>Mikrofoni ja puhe</h2>
 <p>Kun laitat puheohjauksen päälle, NotchPrompter kuuntelee mikrofonia ja muuttaa puheesi sanoiksi löytääkseen kohdan, jossa olet käsikirjoituksessa. Puheohjaus ei koskaan tallenna ääntä, ja sanoja käytetään vain lukemisen aikana.</p>
 <p>Puheentunnistuksen hoitaa Applen puheentunnistuskehys (Speech) Macillasi. Oletuksena NotchPrompter ei koskaan lähetä puhettasi minnekään. macOS tunnistaa puhetta Macilla vain, kun Sanelu on laitettu päälle kohdassa Järjestelmäasetukset → Näppäimistö. Jos Sanelu ei ole päällä tai Macisi ei pysty tunnistamaan jotakin kieltä itse, voit sen sijaan sallia Applen palvelimien käytön. Silloin puheesi lähetetään Applelle muutettavaksi tekstiksi <a href="https://www.apple.com/legal/privacy/">Applen tietosuojakäytännön</a> mukaisesti. Me emme koskaan saa sitä.</p>
 <h2>Kamera ja tallenteet</h2>
-<p>NotchPrompter käyttää kameraa vain, kun painat tallennusta. Se kuvaa sinua kameralla ja mikrofonilla ja tallentaa elokuvan NotchPrompter-kansioon Elokuvat-kansiossasi. Tallenteita ei koskaan ladata verkkoon, emmekä koskaan saa niitä. Voit poistaa ne Finderissa kuten minkä tahansa muun tiedoston.</p>
-<p>Voit milloin tahansa poistaa kameran, mikrofonin ja puheen käyttöoikeudet kohdassa Järjestelmäasetukset → Tietosuoja ja suojaus.</p>
+<p>NotchPrompter käyttää kameraa vain tallennuksen aikana tai kun katsot kameran esikatselua Asetuksissa. Kun painat tallennusta, se kuvaa kameran, näytön tai molemmat, sen mukaan mitä valitset Asetuksissa, mikrofonin kanssa. Elokuvat tallennetaan NotchPrompter-kansioon Elokuvat-kansiossasi.</p>
+<p>NotchPrompter tallentaa jokaisen oton yhteydessä myös tekstitykset (.srt) siitä, mitä sanoit, elokuvan viereen. Ne tehdään Macillasi, ei koskaan palvelimella. Voit poistaa tämän käytöstä kohdassa Asetukset → Tallennus. Tallenteita ja tekstityksiä ei koskaan ladata verkkoon, emmekä koskaan saa niitä. Voit poistaa ne Finderissa kuten minkä tahansa muun tiedoston.</p>
+<p>Voit milloin tahansa poistaa kameran, mikrofonin, näytön tallennuksen ja puheen käyttöoikeudet kohdassa Järjestelmäasetukset → Tietosuoja ja suojaus.</p>
 
 <h2>NotchPrompter iPhonelle</h2>
-      <p>iPhone-sovellus noudattaa samoja sääntöjä. Käsikirjoitukset tallennetaan vain iPhonellesi. Puhe tunnistetaan oletuksena iPhonellasi. Kielille, joita se ei pysty tunnistamaan itse, voit sallia Applen palvelimet sovelluksen asetuksissa, kuten Macilla.</p>
-      <p>iPhone-sovellus näyttää etukameran kuvan, kun prompteri on auki, jotta näet itsesi, ja kuvaa sinut, kun painat tallennusta. Otot tallennetaan Kuvat-kirjastoosi. Sovellus pyytää vain lupaa lisätä Kuviin, joten se ei näe muita kuviasi.</p>
-      <p>Kertaluonteinen avaus ostetaan App Storen kautta. Apple hoitaa maksun, emmekä koskaan näe nimeäsi tai maksutietojasi. Sovellus tarkistaa App Storesta vain, onko avaus ostettu.</p>
+      <p>iPhone-sovellus noudattaa samoja sääntöjä. Käsikirjoitukset tallennetaan iPhonellesi. Jos käytät iCloudia, ne synkronoidaan Macisi kanssa. Puhe tunnistetaan oletuksena iPhonellasi. Kielille, joita se ei pysty tunnistamaan itse, voit sallia Applen palvelimet sovelluksen asetuksissa, kuten Macilla.</p>
+      <p>iPhone-sovellus näyttää etukameran kuvan, kun prompteri on auki, jotta näet itsesi, ja kuvaa sinut, kun painat tallennusta. Otot pysyvät sovelluksessa, kunnes tallennat ne Kuviin tai poistat ne. Sovellus pyytää vain lupaa lisätä Kuviin, joten se ei näe muita kuviasi. Kun lisäät videon Kuvista, sovellus saa vain valitsemasi videot.</p>
+      <p>Tekstitysten lisäämiseksi sovellus muuttaa oton puheen sanoiksi iPhonellasi. Vain jos sallit Applen palvelimien käytön sovelluksen asetuksissa ja iPhonesi ei pysty tunnistamaan kieltä itse, ääni lähetetään Applelle tekstiksi muunnettavaksi Applen tietosuojakäytännön mukaisesti. Emme koskaan saa sitä.</p>
+      <p>Pro ostetaan App Storen kautta, joko tilauksena tai kertamaksulla. Apple hoitaa maksun, emmekä koskaan näe nimeäsi tai maksutietojasi. Sovellus tarkistaa App Storesta vain, onko sinulla Pro.</p>
 
       <h2>Analytiikka, mainokset ja tilit</h2>
 <p>Niitä ei ole. Apissa ei ole tiliä, analytiikkaa, mainoksia eikä seurantaa, eikä se muodosta yhteyttä yhteenkään palvelimeemme.</p>

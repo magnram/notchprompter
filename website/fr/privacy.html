@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Confidentialité – NotchPrompter</title>
-  <meta name="description" content="NotchPrompter ne collecte aucune donnée. La parole est reconnue sur votre Mac, et vos textes et enregistrements restent sur votre Mac.">
+  <meta name="description" content="NotchPrompter ne collecte aucune donnée. La parole est reconnue sur votre Mac, les enregistrements restent sur votre Mac, et vos textes se synchronisent uniquement via votre propre iCloud.">
   <meta property="og:title" content="NotchPrompter – Le prompteur sous votre caméra">
   <meta property="og:description" content="Lisez votre texte sans quitter la caméra des yeux. Il suit votre voix.">
   <meta property="og:image" content="../media/fr/1-eye-contact.jpg">
@@ -51,23 +51,27 @@
 
   <main class="wrap doc">
 <h1>Politique de confidentialité</h1>
-<p class="updated">Dernière mise à jour : 23 septembre 2026</p>
+<p class="updated">Dernière mise à jour : 26 septembre 2026</p>
 <p>NotchPrompter est conçu pour que vos mots restent les vôtres. En bref : <strong>nous ne collectons rien.</strong></p>
 
 <h2>Vos textes</h2>
-<p>Les textes sont enregistrés uniquement sur votre Mac, dans le dossier propre à l’app. Ils ne sont jamais envoyés, ni à nous ni à personne d’autre. Quand vous importez ou exportez un fichier, l’app lit ou écrit uniquement le fichier que vous choisissez.</p>
+<p>Les textes sont enregistrés sur votre Mac, dans le dossier propre à l’app. Si vous utilisez iCloud, ils sont aussi enregistrés dans votre propre compte iCloud, pour être les mêmes sur votre Mac et votre iPhone. Ils ne nous sont jamais envoyés. Quand vous importez ou exportez un fichier, l’app lit ou écrit uniquement le fichier que vous choisissez.</p>
+<p>Si vous choisissez un dossier de scripts sur le Mac, chaque script y est aussi enregistré sous forme de fichier Markdown, afin que les autres apps que vous utilisez puissent le lire.</p>
+<p>Pour arrêter la synchronisation, désactivez NotchPrompter dans la liste des apps qui utilisent iCloud. Sur Mac, allez dans Réglages Système → [votre nom] → iCloud. Sur iPhone, allez dans Réglages → [votre nom] → iCloud.</p>
 
 <h2>Micro et parole</h2>
 <p>Quand vous activez le suivi vocal, NotchPrompter écoute le micro et transforme votre parole en mots, pour retrouver où vous en êtes dans le texte. Le suivi vocal n’enregistre jamais l’audio, et les mots ne sont utilisés que pendant votre lecture.</p>
 <p>La reconnaissance vocale est assurée par le framework Speech d’Apple, sur votre Mac. Par défaut, NotchPrompter n’envoie jamais votre parole nulle part. macOS ne reconnaît la parole sur le Mac que si la Dictée est activée dans Réglages Système → Clavier. Si la Dictée est désactivée, ou si votre Mac ne peut pas reconnaître une langue par lui-même, vous pouvez choisir d’autoriser plutôt les serveurs d’Apple. Votre parole est alors envoyée à Apple pour être transcrite, selon la <a href="https://www.apple.com/legal/privacy/">politique de confidentialité d’Apple</a>. Nous ne la recevons jamais.</p>
 <h2>Caméra et enregistrements</h2>
-<p>NotchPrompter utilise la caméra uniquement quand vous appuyez sur enregistrer. Il vous filme avec la caméra et le micro et enregistre la vidéo dans le dossier NotchPrompter de votre dossier Vidéos. Les enregistrements ne sont jamais mis en ligne, et nous ne les recevons jamais. Vous pouvez les supprimer dans le Finder comme n’importe quel autre fichier.</p>
-<p>Vous pouvez désactiver à tout moment l’accès à la caméra, au micro et à la reconnaissance vocale dans Réglages Système → Confidentialité et sécurité.</p>
+<p>NotchPrompter utilise la caméra uniquement pendant que vous enregistrez, ou pendant que vous regardez l’aperçu de la caméra dans les Réglages. Quand vous appuyez sur enregistrer, il filme la caméra, l’écran ou les deux, selon ce que vous choisissez dans les Réglages, avec le micro. Les vidéos sont enregistrées dans le dossier NotchPrompter de votre dossier Vidéos.</p>
+<p>Avec chaque prise, NotchPrompter enregistre aussi des sous-titres (.srt) de ce que vous avez dit, à côté de la vidéo. Ils sont créés sur votre Mac, jamais sur un serveur. Vous pouvez désactiver cela dans Réglages → Enregistrement. Les enregistrements et les sous-titres ne sont jamais mis en ligne, et nous ne les recevons jamais. Vous pouvez les supprimer dans le Finder comme n’importe quel autre fichier.</p>
+<p>Vous pouvez désactiver à tout moment l’accès à la caméra, au micro, à l’enregistrement de l’écran et à la reconnaissance vocale dans Réglages Système → Confidentialité et sécurité.</p>
 
 <h2>NotchPrompter pour iPhone</h2>
-      <p>L’app iPhone suit les mêmes règles. Les scripts sont enregistrés uniquement sur votre iPhone. Par défaut, la parole est reconnue sur votre iPhone. Pour les langues qu’il ne sait pas reconnaître seul, vous pouvez autoriser les serveurs d’Apple dans les réglages de l’app, comme sur Mac.</p>
-      <p>L’app iPhone affiche la caméra avant quand le prompteur est ouvert, pour que vous puissiez vous voir, et vous filme quand vous touchez enregistrer. Les prises sont enregistrées dans votre photothèque. L’app demande seulement l’autorisation d’ajouter à Photos : elle ne peut donc pas voir vos autres photos.</p>
-      <p>Le déverrouillage unique s’achète via l’App Store. Apple gère le paiement, et nous ne voyons jamais votre nom ni vos informations de paiement. L’app vérifie seulement auprès de l’App Store si le déverrouillage a été acheté.</p>
+      <p>L’app iPhone suit les mêmes règles. Les scripts sont enregistrés sur votre iPhone. Si vous utilisez iCloud, ils se synchronisent avec votre Mac. Par défaut, la parole est reconnue sur votre iPhone. Pour les langues qu’il ne sait pas reconnaître seul, vous pouvez autoriser les serveurs d’Apple dans les réglages de l’app, comme sur Mac.</p>
+      <p>L’app iPhone affiche la caméra avant quand le prompteur est ouvert, pour que vous puissiez vous voir, et vous filme quand vous touchez enregistrer. Les prises restent dans l’app jusqu’à ce que vous les enregistriez dans Photos ou que vous les supprimiez. L’app demande seulement l’autorisation d’ajouter à Photos : elle ne peut donc pas voir vos autres photos. Quand vous ajoutez une vidéo depuis Photos, l’app ne reçoit que les vidéos que vous choisissez.</p>
+      <p>Pour ajouter des sous-titres, l’app transforme en mots la parole d’une prise, sur votre iPhone. Ce n’est que si vous autorisez les serveurs d’Apple dans les réglages de l’app, et que votre iPhone ne peut pas reconnaître la langue par lui-même, que le son est envoyé à Apple pour être transcrit, selon la politique de confidentialité d’Apple. Nous ne le recevons jamais.</p>
+      <p>Pro s’achète via l’App Store, en abonnement ou en un seul paiement. Apple gère le paiement, et nous ne voyons jamais votre nom ni vos informations de paiement. L’app vérifie seulement auprès de l’App Store si vous avez Pro.</p>
 
       <h2>Statistiques, publicités et comptes</h2>
 <p>Il n’y en a pas. L’app n’a aucun compte, aucune statistique d’utilisation, aucune publicité et aucun pistage, et elle ne se connecte à aucun de nos serveurs.</p>
