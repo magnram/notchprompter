@@ -1,6 +1,9 @@
-Agora em 20 idiomas: a app, o guião de treino e esta página da App Store.
-
-• Grave a câmara, o ecrã ou ambos em simultâneo.
-• Uma pequena pré-visualização da câmara mostra o seu aspeto enquanto grava.
-• O acompanhamento por voz mantém melhor o lugar e já não salta para a frente quando repete uma frase.
-• O microfone e a câmara só estão ligados enquanto os usa.
+• Os seus guiões sincronizam agora através do iCloud com a nova app do NotchPrompter para iPhone.
+• Pasta de guiões: cada guião passa a ser um ficheiro Markdown na pasta que escolher, para os escrever em qualquer editor ou assistente de IA.
+• Transcrições: cada gravação recebe um ficheiro de legendas (.srt), criado no seu Mac.
+• Atalhos que funcionam em qualquer app: ⌃⌥P mostra ou oculta o teleponto, ⌃⌥V pausa, ⌃⌥R grava.
+• Escolha o ecrã do teleponto. Agora acompanha quando fecha a tampa ou liga um ecrã.
+• Luz de ecrã: encha o ecrã com uma luz suave no rosto durante a gravação, ou de preto contra reflexos.
+• Um novo menu junto ao botão de gravar: câmara, microfone com nível, modo de gravação e luz de ecrã.
+• Reproduza a última gravação de imediato ou mova-a para o Lixo para regravar depressa.
+• O acompanhamento por voz marca o fim do guião, e as Definições têm agora separadores.

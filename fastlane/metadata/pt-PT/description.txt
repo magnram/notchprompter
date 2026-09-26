@@ -26,8 +26,11 @@ PENSADO PARA
 • Apresentações, pitches e webinars
 • Quem quer soar natural e mostrar confiança diante da câmara
 
+TAMBÉM NO IPHONE
+Os seus guiões sincronizam através do iCloud com a app oficial do NotchPrompter para iPhone. Escreva à secretária e grave-se em qualquer lugar, com legendas, corte de pausas e editor de vídeo.
+
 GRATUITO E DE CÓDIGO ABERTO
 Sem anúncios, sem subscrição, sem conta. Código aberto com licença MIT, e o código-fonte está no GitHub: github.com/magnram/notchprompter
 
 FUNCIONA TOTALMENTE NO SEU MAC
-A fala é reconhecida no seu Mac, não na nuvem. Sem conta, sem rastreio, sem anúncios. Os seus guiões e gravações nunca saem do seu Mac. O seguimento por voz nunca guarda áudio.
+A fala é reconhecida no seu Mac, não na nuvem. Sem conta, sem rastreio, sem anúncios. As gravações ficam no Mac, e os guiões só sincronizam através do seu próprio iCloud. O seguimento por voz nunca guarda áudio.

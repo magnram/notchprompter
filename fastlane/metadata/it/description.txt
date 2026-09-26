@@ -26,8 +26,11 @@ PENSATO PER
 • Presentazioni, pitch e webinar
 • Chiunque voglia sembrare naturale e sicuro di sé davanti alla telecamera
 
+ANCHE SU IPHONE
+I tuoi testi si sincronizzano tramite iCloud con l’app ufficiale NotchPrompter per iPhone. Scrivi alla scrivania e riprenditi ovunque, con sottotitoli, taglio delle pause e montaggio video.
+
 GRATIS E OPEN SOURCE
 Niente pubblicità, niente abbonamento, niente account. Open source con licenza MIT, il codice sorgente è su GitHub: github.com/magnram/notchprompter
 
 FUNZIONA INTERAMENTE SUL TUO MAC
-Il riconoscimento vocale avviene sul tuo Mac, non nel cloud. Niente account, niente tracciamento, niente pubblicità. I tuoi testi e le tue registrazioni non lasciano mai il Mac. La funzione che segue la voce non salva mai l’audio.
+Il riconoscimento vocale avviene sul tuo Mac, non nel cloud. Niente account, niente tracciamento, niente pubblicità. Le registrazioni restano sul Mac, e i testi si sincronizzano solo tramite il tuo iCloud. La funzione che segue la voce non salva mai l’audio.

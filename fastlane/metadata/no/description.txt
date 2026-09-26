@@ -26,8 +26,11 @@ LAGET FOR
 • Presentasjoner, pitcher og webinarer
 • Alle som vil høres naturlige ut og virke trygge foran kameraet
 
+OGSÅ PÅ IPHONE
+Manusene dine synkroniseres med den offisielle NotchPrompter-appen for iPhone gjennom iCloud. Skriv ved pulten, og film deg selv hvor som helst, med teksting, kutt av pauser og videoredigering.
+
 GRATIS OG ÅPEN KILDEKODE
 Ingen reklame, ikke noe abonnement, ingen konto. Åpen kildekode med MIT-lisens, og koden ligger på GitHub: github.com/magnram/notchprompter
 
 KJØRER HELT PÅ MACEN DIN
-Tale gjenkjennes på Macen din, ikke i skyen. Ingen konto, ingen sporing, ingen reklame. Manusene og opptakene dine forlater aldri Macen. Stemmefølging lagrer aldri lyd.
+Tale gjenkjennes på Macen din, ikke i skyen. Ingen konto, ingen sporing, ingen reklame. Opptakene blir på Macen, og manusene synkroniseres bare gjennom din egen iCloud. Stemmefølging lagrer aldri lyd.

@@ -26,8 +26,11 @@ MADE FOR
 • Presentations, pitches and webinars
 • Anyone who wants to sound natural and look confident on camera
 
+ALSO ON YOUR IPHONE
+Your scripts sync with the official NotchPrompter app for iPhone through your iCloud. Write at your desk, then film yourself anywhere, with captions, cut pauses and a video editor.
+
 FREE AND OPEN SOURCE
 No ads, no subscription, no account. The source code is on GitHub: github.com/magnram/notchprompter
 
 RUNS COMPLETELY ON YOUR MAC
-Speech is recognised on your Mac, not in the cloud. No account, no tracking, no ads. Your scripts and recordings never leave your Mac. Voice-follow never saves audio.
+Speech is recognised on your Mac, not in the cloud. No account, no tracking, no ads. Your recordings stay on your Mac, and scripts sync only through your own iCloud. Voice-follow never saves audio.

@@ -1,6 +1,9 @@
-Nå på 20 språk: appen, øvingsmanuset og denne siden i App Store.
-
-• Ta opp kameraet, skjermen eller begge deler samtidig.
-• En liten forhåndsvisning av kameraet viser hvordan du ser ut mens du tar opp.
-• Stemmestyringen holder bedre følge og hopper ikke lenger fremover når du sier en setning på nytt.
-• Mikrofonen og kameraet er bare på mens du bruker dem.
+• Manusene dine synkroniseres nå gjennom iCloud med den nye NotchPrompter-appen for iPhone.
+• Manusmappe: hvert manus blir en Markdown-fil i en mappe du velger, så du kan skrive dem i hvilken som helst editor eller med en AI-assistent.
+• Transkripsjon: hvert opptak får en undertekstfil (.srt), laget på Macen din.
+• Snarveier som virker i alle apper: ⌃⌥P viser eller skjuler prompteren, ⌃⌥V pauser, ⌃⌥R tar opp.
+• Velg hvilken skjerm prompteren står på. Den flytter seg nå når du lukker lokket eller kobler til en skjerm.
+• Skjermlys: fyll skjermen med mykt lys på ansiktet mens du tar opp, eller med svart mot gjenskinn.
+• En ny meny ved opptaksknappen: kamera, mikrofon med lydnivå, opptaksmodus og skjermlys.
+• Spill av siste opptak med en gang, eller flytt det til papirkurven for et raskt nytt forsøk.
+• Stemmestyringen viser når manuset er slutt, og Innstillinger har fått faner.

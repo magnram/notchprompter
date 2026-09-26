@@ -1,6 +1,9 @@
-Teraz w 20 językach: aplikacja, tekst do ćwiczeń i ta strona w App Store.
-
-• Nagrywaj kamerę, ekran albo oba naraz.
-• Mały podgląd z kamery pokazuje, jak wyglądasz podczas nagrywania.
-• Podążanie za głosem lepiej trzyma miejsce i nie przeskakuje już do przodu, gdy powtarzasz zdanie.
-• Mikrofon i kamera są włączone tylko wtedy, gdy ich używasz.
+• Twoje teksty synchronizują się teraz przez iCloud z nową aplikacją NotchPrompter na iPhone'a.
+• Folder skryptów: każdy skrypt to plik Markdown w wybranym folderze, więc możesz pisać je w dowolnym edytorze lub z asystentem AI.
+• Transkrypcje: każde ujęcie dostaje plik napisów (.srt), tworzony na Twoim Macu.
+• Skróty działające w każdej aplikacji: ⌃⌥P pokazuje lub ukrywa prompter, ⌃⌥V pauzuje, ⌃⌥R nagrywa.
+• Wybierz ekran promptera. Teraz przenosi się, gdy zamkniesz pokrywę lub podłączysz monitor.
+• Światło ekranu: wypełnij ekran miękkim światłem na twarz podczas nagrania albo czernią przeciw odblaskom.
+• Nowe menu przy przycisku nagrywania: kamera, mikrofon z poziomem, tryb nagrywania i światło ekranu.
+• Odtwórz ostatnie ujęcie od razu albo przenieś je do kosza, by szybko nagrać je ponownie.
+• Śledzenie głosu pokazuje koniec skryptu, a Ustawienia mają teraz karty.

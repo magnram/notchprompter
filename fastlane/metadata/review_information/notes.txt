@@ -13,3 +13,9 @@ The prompter window is hidden from screen sharing and screenshots on purpose (a 
 To test recording, press the record button (the circle) in the prompter, or Prompter → Record Video (⌥⌘R). Allow the camera and microphone. The prompter counts down, films you while it follows your voice, and saves the movie in ~/Movies/NotchPrompter when you press stop. Settings → Recording → "Record" chooses Camera, Screen, or Camera and screen. Screen recording uses ScreenCaptureKit, and macOS asks for screen recording access. While the camera films, a small camera preview is shown beside the prompter; it is left out of the screen movie. Text in (parentheses) or [brackets] is a stage direction: shown, but not read out.
 
 The microphone is used for speech recognition while the microphone button is on, and for the sound of a recording while recording. Speech recognition runs on the Mac by default (Settings → Privacy). Audio is stored only in recordings the user starts, in their own Movies folder.
+
+New in 1.2:
+- Scripts sync through the user's own iCloud (iCloud key-value storage) with NotchPrompter for iPhone, same Apple Account. No server of ours is involved.
+- Settings → Scripts → Scripts folder: the user picks a folder, and every script is kept there as a Markdown file, synced both ways. Access uses a security-scoped bookmark to the folder the user chose.
+- Settings → Recording → "Save a transcript with each take": after a take, speech in it is recognised on the Mac and saved as a subtitle file (.srt) next to the movie.
+- Global shortcuts, which can be turned off in Settings → General: ⌃⌥P shows or hides the prompter, ⌃⌥V pauses or resumes, ⌃⌥R starts or stops recording.

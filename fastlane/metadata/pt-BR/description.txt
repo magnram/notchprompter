@@ -26,8 +26,11 @@ FEITO PARA
 • Apresentações, pitches e webinars
 • Quem quer soar natural e passar confiança na câmera
 
+TAMBÉM NO IPHONE
+Seus roteiros sincronizam pelo iCloud com o app oficial do NotchPrompter para iPhone. Escreva na mesa e grave-se em qualquer lugar, com legendas, corte de pausas e editor de vídeo.
+
 GRATUITO E DE CÓDIGO ABERTO
 Sem anúncios, sem assinatura, sem conta. Código aberto sob a licença MIT, e o código-fonte está no GitHub: github.com/magnram/notchprompter
 
 FUNCIONA TOTALMENTE NO SEU MAC
-A fala é reconhecida no seu Mac, não na nuvem. Sem conta, sem rastreamento, sem anúncios. Seus roteiros e gravações nunca saem do seu Mac. O acompanhamento por voz nunca salva áudio.
+A fala é reconhecida no seu Mac, não na nuvem. Sem conta, sem rastreamento, sem anúncios. Suas gravações ficam no Mac, e os roteiros só sincronizam pelo seu próprio iCloud. O acompanhamento por voz nunca salva áudio.

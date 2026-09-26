@@ -62,9 +62,9 @@ and on any Mac with a camera on top of the screen.
 There is also **NotchPrompter for iPhone**. It puts your script right under the front camera,
 follows your voice and films you, and every take goes to your Photos.
 
-It is free to try: Scroll mode, the editor and the practice script are free, and you get 3 free takes
-with voice-follow and recording. After that, a one-time purchase unlocks everything
-(49 kr in Norway, or the same in your currency). No subscription.
+It is free to use: the prompter, voice-follow, recording, trimming and captions are free, with no
+watermark. NotchPrompter Pro adds 4K, music, voiceover, Cut Pauses and more editing tools, by the
+month, by the year or with one payment.
 
 The iPhone app is **not open source**. It uses the same voice engine as the Mac app,
 [NotchPrompterKit](NotchPrompterKit), which is in this repository under the MIT license.
@@ -95,7 +95,8 @@ and <kbd>⌥</kbd><kbd>⌘</kbd><kbd>R</kbd> records. Click a word in the prompt
 
 - Speech recognition runs on your Mac. It needs Dictation turned on in System Settings.
   You can allow Apple's servers in Settings → Privacy for languages the Mac can't do by itself.
-- Scripts and recordings stay on your Mac. There is no account, no analytics and no network code of our own.
+- Scripts stay on your Mac. If you use iCloud, they are also saved in your own iCloud account, so they sync with the iPhone app.
+  Recordings stay on your Mac. There is no account, no analytics and no network code of our own.
 - The prompter is hidden from screen sharing, screenshots and screen recordings. You can turn this off in Settings → Privacy.
 
 ## FAQ

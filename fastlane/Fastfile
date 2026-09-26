@@ -50,12 +50,20 @@ platform :mac do
   lane :build do
     # A failed export must not leave the last package behind for an upload to pick up.
     FileUtils.rm_f(PKG)
+    # Automatic signing reuses an old Mac App Store profile made before iCloud was turned on,
+    # so the export signs by hand with a profile fetched (or made) with the key.
+    connect
+    # Its own name, as the iPhone app's profile already has the default one.
+    get_provisioning_profile(app_identifier: "com.magnusramm.NotchPrompter", platform: "macos",
+                             provisioning_name: "com.magnusramm.NotchPrompter Mac AppStore",
+                             output_path: File.dirname(PKG))
     build_mac_app(
       project: "#{ROOT}/NotchPrompter.xcodeproj",
       scheme: "NotchPrompter",
       configuration: "Release",
       export_method: "app-store",
-      export_options: { signingStyle: "automatic", teamID: "A7C4MM99VP" },
+      export_options: { signingStyle: "manual", teamID: "A7C4MM99VP",
+                        provisioningProfiles: { "com.magnusramm.NotchPrompter" => lane_context[SharedValues::SIGH_NAME] } },
       # Newer fastlane passes xcargs to the export too; giving them twice fails.
       xcargs: key_args,
       output_directory: File.dirname(PKG),

@@ -26,8 +26,11 @@ DLA KOGO I DO CZEGO
 • Prezentacje, pitche i webinary
 • Każdy, kto chce brzmieć naturalnie i wyglądać pewnie przed kamerą
 
+TAKŻE NA IPHONIE
+Twoje teksty synchronizują się przez iCloud z oficjalną aplikacją NotchPrompter na iPhone'a. Pisz przy biurku i nagrywaj się wszędzie, z napisami, wycinaniem pauz i edytorem wideo.
+
 DARMOWY I OPEN SOURCE
 Bez reklam, bez subskrypcji, bez konta. Otwarte oprogramowanie na licencji MIT, a kod źródłowy jest na GitHubie: github.com/magnram/notchprompter
 
 DZIAŁA W CAŁOŚCI NA TWOIM MACU
-Mowa jest rozpoznawana na Twoim Macu, nie w chmurze. Bez konta, bez śledzenia, bez reklam. Twoje teksty i nagrania nigdy nie opuszczają Maca. Podążanie za głosem nigdy nie zapisuje dźwięku.
+Mowa jest rozpoznawana na Twoim Macu, nie w chmurze. Bez konta, bez śledzenia, bez reklam. Nagrania zostają na Macu, a teksty synchronizują się tylko przez Twój własny iCloud. Podążanie za głosem nigdy nie zapisuje dźwięku.

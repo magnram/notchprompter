@@ -26,8 +26,11 @@ GEMAAKT VOOR
 • Presentaties, pitches en webinars
 • Iedereen die natuurlijk wil klinken en zelfverzekerd voor de camera wil staan
 
+OOK OP JE IPHONE
+Je teksten synchroniseren via iCloud met de officiële NotchPrompter-app voor iPhone. Schrijf aan je bureau en film jezelf overal, met ondertiteling, pauzes knippen en een video-editor.
+
 GRATIS EN OPEN SOURCE
 Geen advertenties, geen abonnement, geen account. Open source onder de MIT-licentie, en de broncode staat op GitHub: github.com/magnram/notchprompter
 
 DRAAIT VOLLEDIG OP JE MAC
-Spraak wordt op je Mac herkend, niet in de cloud. Geen account, geen tracking, geen advertenties. Je teksten en opnames verlaten je Mac nooit. Het volgen van je stem slaat nooit audio op.
+Spraak wordt op je Mac herkend, niet in de cloud. Geen account, geen tracking, geen advertenties. Je opnames blijven op je Mac, en teksten synchroniseren alleen via je eigen iCloud. Het volgen van je stem slaat nooit audio op.

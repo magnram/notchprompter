@@ -26,8 +26,11 @@ CONÇU POUR
 • Les présentations, les pitchs et les webinaires
 • Tous ceux qui veulent paraître naturels et sûrs d’eux face à la caméra
 
+AUSSI SUR IPHONE
+Vos textes se synchronisent via iCloud avec l’app officielle NotchPrompter pour iPhone. Écrivez à votre bureau, puis filmez-vous partout, avec sous-titres, pauses coupées et montage vidéo.
+
 GRATUIT ET OPEN SOURCE
 Sans publicité, sans abonnement, sans compte. Open source sous licence MIT, le code source est sur GitHub : github.com/magnram/notchprompter
 
 FONCTIONNE ENTIÈREMENT SUR VOTRE MAC
-La reconnaissance vocale se fait sur votre Mac, pas dans le cloud. Pas de compte, pas de pistage, pas de publicité. Vos textes et vos enregistrements ne quittent jamais votre Mac. Le suivi de la voix n’enregistre jamais l’audio.
+La reconnaissance vocale se fait sur votre Mac, pas dans le cloud. Pas de compte, pas de pistage, pas de publicité. Vos enregistrements restent sur votre Mac, et vos textes ne se synchronisent que via votre propre iCloud. Le suivi de la voix n’enregistre jamais l’audio.

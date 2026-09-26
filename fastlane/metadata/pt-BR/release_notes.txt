@@ -1,6 +1,9 @@
-Agora em 20 idiomas: o app, o roteiro de treino e esta página da App Store.
-
-• Grave a câmera, a tela ou as duas ao mesmo tempo.
-• Uma pequena prévia da câmera mostra como você está enquanto grava.
-• O acompanhamento por voz mantém melhor o lugar e não pula mais para a frente quando você repete uma frase.
-• O microfone e a câmera só ficam ligados enquanto você os usa.
+• Seus roteiros agora sincronizam pelo iCloud com o novo app do NotchPrompter para iPhone.
+• Pasta de roteiros: cada roteiro vira um arquivo Markdown na pasta que você escolher, para escrever com qualquer editor ou assistente de IA.
+• Transcrições: cada tomada ganha um arquivo de legendas (.srt), criado no seu Mac.
+• Atalhos que funcionam em qualquer app: ⌃⌥P mostra ou oculta o teleprompter, ⌃⌥V pausa, ⌃⌥R grava.
+• Escolha em qual tela o teleprompter fica. Agora ele acompanha quando você fecha a tampa ou conecta uma tela.
+• Luz de tela: encha a tela com uma luz suave no seu rosto durante a gravação, ou de preto contra reflexos.
+• Um novo menu ao lado do botão de gravar: câmera, microfone com nível, modo de gravação e luz de tela.
+• Reproduza a última gravação na hora ou mova-a para o Lixo para regravar rápido.
+• O acompanhamento por voz marca o fim do roteiro, e os Ajustes agora têm abas.

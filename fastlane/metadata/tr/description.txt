@@ -26,8 +26,11 @@ Prompter ekran paylaşımında, ekran görüntülerinde ve kayıtlarda gizlenir.
 • Sunumlar, pitch'ler ve web seminerleri
 • Kamera karşısında doğal konuşmak ve kendinden emin görünmek isteyen herkes
 
+IPHONE'DA DA
+Metinleriniz iCloud üzerinden iPhone için resmi NotchPrompter uygulamasıyla eşzamanlanır. Masanızda yazın, her yerde kendinizi çekin; altyazı, duraklama kesme ve video düzenleyiciyle.
+
 ÜCRETSİZ VE AÇIK KAYNAK
 Reklam yok, abonelik yok, hesap yok. MIT lisansıyla açık kaynak; kaynak kodu GitHub'da: github.com/magnram/notchprompter
 
 TAMAMEN MAC'İNİZDE ÇALIŞIR
-Konuşma bulutta değil, Mac'inizde tanınır. Hesap yok, izleme yok, reklam yok. Metinleriniz ve kayıtlarınız Mac'inizden hiç çıkmaz. Ses takibi sırasında hiçbir ses kaydı tutulmaz.
+Konuşma bulutta değil, Mac'inizde tanınır. Hesap yok, izleme yok, reklam yok. Kayıtlarınız Mac'inizde kalır, metinler yalnızca kendi iCloud'unuz üzerinden eşzamanlanır. Ses takibi sırasında hiçbir ses kaydı tutulmaz.

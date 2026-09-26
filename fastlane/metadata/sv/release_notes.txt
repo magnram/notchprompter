@@ -1,6 +1,9 @@
-Nu på 20 språk: appen, övningsmanuset och den här sidan i App Store.
-
-• Spela in kameran, skärmen eller båda samtidigt.
-• En liten kameraförhandsvisning visar hur du ser ut medan du spelar in.
-• Röststyrningen håller bättre koll på var du är och hoppar inte längre framåt när du säger en mening igen.
-• Mikrofonen och kameran är bara på medan du använder dem.
+• Dina manus synkas nu via iCloud med den nya NotchPrompter-appen för iPhone.
+• Manusmapp: varje manus blir en Markdown-fil i en mapp du väljer, så att du kan skriva dem i valfri editor eller med en AI-assistent.
+• Transkribering: varje tagning får en undertextfil (.srt), gjord på din Mac.
+• Kortkommandon som fungerar i alla appar: ⌃⌥P visar eller döljer prompten, ⌃⌥V pausar, ⌃⌥R spelar in.
+• Välj vilken skärm prompten visas på. Den flyttar sig nu när du stänger locket eller ansluter en skärm.
+• Skärmljus: fyll skärmen med mjukt ljus på ansiktet under en inspelning, eller med svart mot reflexer.
+• En ny meny vid inspelningsknappen: kamera, mikrofon med ljudnivå, inspelningsläge och skärmljus.
+• Spela upp den senaste tagningen direkt, eller flytta den till papperskorgen för en snabb omtagning.
+• Röststyrningen visar när manuset tar slut, och Inställningar har fått flikar.

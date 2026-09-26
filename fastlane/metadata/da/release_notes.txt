@@ -1,6 +1,9 @@
-Nu på 20 sprog: appen, øvemanuskriptet og denne side i App Store.
-
-• Optag kameraet, skærmen eller begge dele på én gang.
-• Et lille kameravindue viser, hvordan du ser ud, mens du optager.
-• Stemmestyringen holder bedre fast i, hvor du er, og springer ikke længere frem, når du siger en sætning igen.
-• Mikrofonen og kameraet er kun tændt, mens du bruger dem.
+• Dine manuskripter synkroniseres nu gennem iCloud med den nye NotchPrompter-app til iPhone.
+• Manusmappe: hvert manus bliver en Markdown-fil i en mappe, du vælger, så du kan skrive dem i enhver editor eller med en AI-assistent.
+• Transskription: hver optagelse får en undertekstfil (.srt), lavet på din Mac.
+• Genveje, der virker i alle apps: ⌃⌥P viser eller skjuler prompteren, ⌃⌥V sætter på pause, ⌃⌥R optager.
+• Vælg, hvilken skærm prompteren står på. Den flytter sig nu, når du lukker låget eller tilslutter en skærm.
+• Skærmlys: fyld skærmen med blødt lys på dit ansigt under en optagelse, eller med sort mod genskin.
+• En ny menu ved optageknappen: kamera, mikrofon med lydniveau, optagetilstand og skærmlys.
+• Afspil den seneste optagelse med det samme, eller flyt den til papirkurven for et hurtigt nyt forsøg.
+• Stemmestyringen viser, når manuskriptet slutter, og Indstillinger har fået faner.

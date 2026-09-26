@@ -1,6 +1,9 @@
-Ora in 20 lingue: l’app, il testo di prova e questa pagina dell’App Store.
-
-• Registra la fotocamera, lo schermo o entrambi insieme.
-• Una piccola anteprima della fotocamera ti mostra come appari mentre registri.
-• Il testo che segue la voce tiene meglio il punto e non salta più avanti quando ripeti una frase.
-• Microfono e fotocamera sono accesi solo mentre li usi.
+• I tuoi testi ora si sincronizzano tramite iCloud con la nuova app NotchPrompter per iPhone.
+• Cartella dei copioni: ogni copione diventa un file Markdown nella cartella che scegli, così puoi scriverli con qualsiasi editor o assistente IA.
+• Trascrizioni: ogni ripresa ha un file di sottotitoli (.srt), creato sul tuo Mac.
+• Scorciatoie in ogni app: ⌃⌥P mostra o nasconde il gobbo, ⌃⌥V mette in pausa, ⌃⌥R registra.
+• Scegli lo schermo del gobbo. Ora si sposta quando chiudi il Mac o colleghi un monitor.
+• Luce schermo: riempi lo schermo con una luce morbida sul viso durante una ripresa, o di nero contro i riflessi.
+• Un nuovo menu accanto al pulsante di registrazione: videocamera, microfono con il suo livello, modalità e luce dello schermo.
+• Riproduci subito l’ultima ripresa, o spostala nel Cestino per rifarla in fretta.
+• Il controllo vocale segna la fine del copione, e le Impostazioni ora hanno delle schede.

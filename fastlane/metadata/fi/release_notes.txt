@@ -1,6 +1,9 @@
-Nyt 20 kielellä: sovellus, harjoituskäsikirjoitus ja tämä App Store -sivu.
-
-• Tallenna kamera, näyttö tai molemmat yhtä aikaa.
-• Pieni kameran esikatselu näyttää, miltä näytät tallentaessasi.
-• Äänellä seuraaminen pysyy paremmin kohdassa eikä enää hyppää eteenpäin, kun sanot lauseen uudelleen.
-• Mikrofoni ja kamera ovat päällä vain, kun käytät niitä.
+• Käsikirjoituksesi synkronoituvat nyt iCloudin kautta uuden iPhonen NotchPrompter-apin kanssa.
+• Käsikirjoituskansio: jokainen käsikirjoitus on Markdown-tiedosto valitsemassasi kansiossa, joten voit kirjoittaa niitä millä tahansa editorilla tai tekoälyavustajalla.
+• Litterointi: jokainen otto saa tekstitystiedoston (.srt), joka tehdään Macillasi.
+• Pikanäppäimet toimivat kaikissa apeissa: ⌃⌥P näyttää tai piilottaa kehottimen, ⌃⌥V keskeyttää, ⌃⌥R tallentaa.
+• Valitse, millä näytöllä kehotin näkyy. Se siirtyy nyt, kun suljet kannen tai liität näytön.
+• Näyttövalo: täytä näyttö pehmeällä valolla kasvoillesi kuvauksen aikana, tai mustalla heijastuksia vastaan.
+• Uusi valikko tallennuspainikkeen vieressä: kamera, mikrofoni ja sen taso, tallennustila ja näyttövalo.
+• Toista viimeisin otos heti, tai siirrä se roskakoriin nopeaa uusintaa varten.
+• Ääniseuranta näyttää käsikirjoituksen lopun, ja asetuksissa on nyt välilehdet.

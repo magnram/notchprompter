@@ -1,6 +1,9 @@
-Ahora en 20 idiomas: la app, el guion de práctica y esta página del App Store.
-
-• Graba la cámara, la pantalla o ambas al mismo tiempo.
-• Una pequeña vista previa de la cámara te muestra cómo te ves mientras grabas.
-• El seguimiento por voz no pierde tu lugar y ya no se adelanta cuando repites una frase.
-• El micrófono y la cámara solo están encendidos mientras los usas.
+• Tus guiones ahora se sincronizan por iCloud con la nueva app de NotchPrompter para iPhone.
+• Carpeta de guiones: cada guion es un archivo Markdown en la carpeta que elijas, para escribirlos con cualquier editor o asistente de IA.
+• Transcripciones: cada toma tiene un archivo de subtítulos (.srt), creado en tu Mac.
+• Atajos que funcionan en cualquier app: ⌃⌥P muestra u oculta el teleprompter, ⌃⌥V pausa, ⌃⌥R graba.
+• Elige en qué pantalla aparece el teleprompter. Ahora se mueve al cerrar la tapa o conectar una pantalla.
+• Luz de pantalla: llena la pantalla con una luz suave en tu cara al grabar, o de negro contra los reflejos.
+• Un nuevo menú junto al botón de grabar: cámara, micrófono con su nivel, modo de grabación y luz de pantalla.
+• Reproduce la última toma de inmediato o muévela a la papelera para repetirla rápido.
+• El seguimiento por voz marca el final del guion, y Configuración ahora tiene pestañas.

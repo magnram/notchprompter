@@ -1,6 +1,9 @@
-Désormais en 20 langues : l’app, le texte d’entraînement et cette page de l’App Store.
-
-• Enregistrez votre caméra, votre écran, ou les deux à la fois.
-• Un petit aperçu de la caméra vous montre de quoi vous avez l’air pendant l’enregistrement.
-• Le suivi à la voix garde mieux votre place et ne saute plus en avant quand vous répétez une phrase.
-• Le micro et la caméra ne sont allumés que lorsque vous les utilisez.
+• Vos textes se synchronisent désormais via iCloud avec la nouvelle app NotchPrompter pour iPhone.
+• Dossier de scripts : chaque script devient un fichier Markdown dans le dossier de votre choix, pour les écrire avec n’importe quel éditeur ou assistant IA.
+• Transcriptions : chaque prise reçoit un fichier de sous-titres (.srt), créé sur votre Mac.
+• Des raccourcis dans toutes les apps : ⌃⌥P affiche ou masque le prompteur, ⌃⌥V met en pause, ⌃⌥R enregistre.
+• Choisissez l’écran du prompteur. Il suit désormais quand vous fermez le capot ou branchez un écran.
+• Lumière d’écran : remplissez l’écran d’une lumière douce sur votre visage pendant une prise, ou de noir contre les reflets.
+• Un nouveau menu près du bouton d’enregistrement : caméra, micro et son niveau, mode d’enregistrement et lumière d’écran.
+• Lisez la dernière prise tout de suite, ou mettez-la à la corbeille pour la refaire vite.
+• Le suivi vocal indique la fin du script, et les Réglages ont maintenant des onglets.

@@ -26,8 +26,11 @@ GEMACHT FÜR
 • Präsentationen, Pitches und Webinare
 • Alle, die vor der Kamera natürlich klingen und souverän wirken wollen
 
+AUCH AUF DEM IPHONE
+Deine Skripte synchronisieren sich über iCloud mit der offiziellen NotchPrompter-App für das iPhone. Schreib am Schreibtisch und filme dich überall, mit Untertiteln, Pausen schneiden und Videoeditor.
+
 KOSTENLOS UND OPEN SOURCE
 Keine Werbung, kein Abo, kein Account. Open Source unter der MIT-Lizenz, der Quellcode liegt auf GitHub: github.com/magnram/notchprompter
 
 LÄUFT KOMPLETT AUF DEINEM MAC
-Die Spracherkennung läuft auf deinem Mac, nicht in der Cloud. Kein Account, kein Tracking, keine Werbung. Deine Skripte und Aufnahmen verlassen deinen Mac nie. Das Mitlesen per Stimme speichert nie Audio.
+Die Spracherkennung läuft auf deinem Mac, nicht in der Cloud. Kein Account, kein Tracking, keine Werbung. Deine Aufnahmen bleiben auf deinem Mac, und Skripte synchronisieren sich nur über dein eigenes iCloud. Das Mitlesen per Stimme speichert nie Audio.

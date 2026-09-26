@@ -1,6 +1,9 @@
-Now in 20 languages: the app, the practice script and this App Store page.
-
-• Record your camera, your screen, or both at once.
-• A small camera preview shows how you look while you record.
-• Voice-follow keeps its place better and no longer jumps ahead when you say a sentence again.
-• The microphone and camera are only on while you use them.
+• Your scripts now sync through iCloud with the new NotchPrompter app for iPhone.
+• Scripts folder: keep every script as a Markdown file in a folder you choose, so any editor or AI assistant can write them.
+• Transcripts: every take gets a subtitle file (.srt), made on your Mac.
+• Shortcuts that work in any app: ⌃⌥P shows or hides the prompter, ⌃⌥V pauses it, ⌃⌥R records.
+• Choose which screen the prompter is on. It now follows when you close the lid or plug in a display.
+• Screen light: fill the screen with a soft light on your face during a take, or with black against glare.
+• A new menu beside the record button: camera, microphone with its level, recording mode and screen light.
+• Play the last take right away, or move it to the Trash for a quick retake.
+• Voice-follow marks the end of the script, and Settings now has tabs.

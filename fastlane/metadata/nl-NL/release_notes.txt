@@ -1,6 +1,9 @@
-Nu in 20 talen: de app, de oefentekst en deze App Store-pagina.
-
-• Neem je camera, je scherm of allebei tegelijk op.
-• Een klein cameravoorbeeld laat zien hoe je eruitziet terwijl je opneemt.
-• Het volgen op stem houdt je plek beter vast en springt niet meer vooruit als je een zin opnieuw zegt.
-• De microfoon en camera staan alleen aan terwijl je ze gebruikt.
+• Je teksten synchroniseren nu via iCloud met de nieuwe NotchPrompter-app voor iPhone.
+• Scriptmap: elk script wordt een Markdown-bestand in een map naar keuze, zodat je ze met elke editor of AI-assistent kunt schrijven.
+• Transcripties: elke opname krijgt een ondertitelbestand (.srt), gemaakt op je Mac.
+• Sneltoetsen in elke app: ⌃⌥P toont of verbergt de prompter, ⌃⌥V pauzeert, ⌃⌥R neemt op.
+• Kies op welk scherm de prompter staat. Hij verhuist nu mee als je de klep sluit of een scherm aansluit.
+• Schermlicht: vul het scherm tijdens een opname met zacht licht op je gezicht, of met zwart tegen weerspiegeling.
+• Een nieuw menu naast de opnameknop: camera, microfoon met niveau, opnamemodus en schermlicht.
+• Speel de laatste opname meteen af, of verplaats hem naar de prullenmand voor een snelle nieuwe poging.
+• Stemvolgen toont het einde van het script, en Instellingen heeft nu tabbladen.

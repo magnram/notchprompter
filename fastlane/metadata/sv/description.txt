@@ -26,8 +26,11 @@ GJORD FÖR
 • Presentationer, pitchar och webbinarier
 • Alla som vill låta naturliga och se självsäkra ut i kameran
 
+ÄVEN PÅ IPHONE
+Dina manus synkas via iCloud med den officiella NotchPrompter-appen för iPhone. Skriv vid skrivbordet och filma dig själv var som helst, med undertexter, bortklippta pauser och videoredigering.
+
 GRATIS OCH ÖPPEN KÄLLKOD
 Ingen reklam, ingen prenumeration, inget konto. Öppen källkod under MIT-licensen, och källkoden finns på GitHub: github.com/magnram/notchprompter
 
 KÖRS HELT PÅ DIN MAC
-Tal känns igen på din Mac, inte i molnet. Inget konto, ingen spårning, ingen reklam. Dina manus och inspelningar lämnar aldrig din Mac. Röstföljningen sparar aldrig ljud.
+Tal känns igen på din Mac, inte i molnet. Inget konto, ingen spårning, ingen reklam. Dina inspelningar stannar på din Mac, och manus synkas bara via ditt eget iCloud. Röstföljningen sparar aldrig ljud.

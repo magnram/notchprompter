@@ -1,6 +1,9 @@
-Artık 20 dilde: uygulama, alıştırma metni ve bu App Store sayfası.
-
-• Kameranızı, ekranınızı ya da ikisini birden kaydedin.
-• Küçük bir kamera önizlemesi, kayıt sırasında nasıl göründüğünüzü gösterir.
-• Sesle takip yerini daha iyi koruyor ve bir cümleyi tekrar söylediğinizde artık ileri atlamıyor.
-• Mikrofon ve kamera yalnızca siz kullanırken açık.
+• Metinleriniz artık iCloud üzerinden iPhone için yeni NotchPrompter uygulamasıyla eşzamanlanıyor.
+• Senaryo klasörü: her senaryo, seçtiğiniz klasörde bir Markdown dosyası olur; böylece herhangi bir düzenleyiciyle veya yapay zekâ asistanıyla yazabilirsiniz.
+• Döküm: her çekim, Mac’inizde oluşturulan bir altyazı dosyası (.srt) alır.
+• Her uygulamada çalışan kısayollar: ⌃⌥P prompter’ı gösterir veya gizler, ⌃⌥V duraklatır, ⌃⌥R kaydeder.
+• Prompter’ın hangi ekranda olacağını seçin. Artık kapağı kapattığınızda veya ekran bağladığınızda yer değiştirir.
+• Ekran ışığı: çekim sırasında ekranı yüzünüze yumuşak bir ışıkla ya da yansımalara karşı siyahla doldurun.
+• Kayıt düğmesinin yanında yeni bir menü: kamera, seviyesiyle mikrofon, kayıt modu ve ekran ışığı.
+• Son çekimi hemen oynatın ya da hızlıca yeniden çekmek için Çöp Sepeti'ne taşıyın.
+• Ses takibi senaryonun sonunu gösterir; Ayarlar artık sekmeli.

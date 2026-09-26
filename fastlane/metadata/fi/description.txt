@@ -26,8 +26,11 @@ SOPII
 • Esityksiin, pitchauksiin ja webinaareihin
 • Kaikille, jotka haluavat kuulostaa luontevilta ja näyttää varmoilta kameran edessä
 
+MYÖS IPHONESSA
+Käsikirjoituksesi synkronoituvat iCloudin kautta virallisen iPhonen NotchPrompter-apin kanssa. Kirjoita pöydän ääressä ja kuvaa itsesi missä vain, tekstityksellä, taukojen poistolla ja videoeditorilla.
+
 ILMAINEN JA AVOINTA LÄHDEKOODIA
 Ei mainoksia, ei tilausta, ei tiliä. Avointa lähdekoodia MIT-lisenssillä, ja koodi on GitHubissa: github.com/magnram/notchprompter
 
 TOIMII KOKONAAN MACILLASI
-Puhe tunnistetaan Macillasi, ei pilvessä. Ei tiliä, ei seurantaa, ei mainoksia. Käsikirjoituksesi ja tallenteesi eivät koskaan lähde Macilta. Puheen seuraaminen ei koskaan tallenna ääntä.
+Puhe tunnistetaan Macillasi, ei pilvessä. Ei tiliä, ei seurantaa, ei mainoksia. Tallenteesi pysyvät Macilla, ja käsikirjoitukset synkronoituvat vain oman iCloudisi kautta. Puheen seuraaminen ei koskaan tallenna ääntä.
