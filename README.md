@@ -28,23 +28,48 @@ Press the microphone and talk: the text follows you, so the next words are alway
 
 ## Features
 
+**Reading**
+
 - 🎙️ **Follows your voice.** The text moves as you read. Words you have said fade out.
 - 🌍 **Any language.** It sees which language your script is in and listens for it.
 - ⏭️ **Keeps up when you go off script.** Skip a sentence and it finds your place. Say "uh", or a sentence again, and it stays put. Pause, and it waits.
 - ▶️ **Or press play.** Smooth scrolling with a 3-2-1 countdown and speed controls.
-- ✍️ **Built-in script editor.** Import Word, Markdown, RTF, HTML or text. Notes in (parentheses) or [brackets] are shown, but not read out.
+- 🖥️ **On the screen with the camera.** It picks the screen with the notch, or you choose another screen in Settings.
+
+**Your scripts**
+
+- ✍️ **Built-in editor.** Import Word, Markdown, RTF, HTML or text. Notes in (parentheses) or [brackets] are shown, but not read out.
+- 📁 **Scripts as files.** Keep your scripts as Markdown files in a folder. Edit them in any app, or let an AI assistant write them. [How it works](#scripts-as-files).
+- ☁️ **Sync through your own iCloud.** Your scripts are the same on your Macs and in the iPhone app.
+
+**Recording**
+
 - 🎬 **Record yourself.** Film your camera, your screen, or both, while the script follows your voice. A small preview shows how you look. Takes go to Movies › NotchPrompter.
+- 💬 **Subtitles with each take.** An .srt file next to the movie, made on your Mac after the take.
+- 💡 **Screen light.** During a take, the rest of the screen can turn a soft, warm white to light your face, or black to stop glare in glasses.
+- ⌨️ **Shortcuts in any app.** Show the prompter, pause and record while a video call or Keynote is in front.
+
+**Privacy**
+
 - 🙈 **Invisible to your audience.** Hidden from screen sharing, screenshots and recordings.
 - 🔒 **Runs on your Mac.** Speech is recognised on the Mac. No account, no tracking. The microphone and camera are only on while you use them.
 
 <table>
   <tr>
-    <td width="50%"><img src="website/media/3-editor.webp" alt="The script editor"></td>
-    <td width="50%"><img src="website/media/4-play.webp" alt="Play mode with a countdown"></td>
+    <td width="50%"><img src="website/media/2-voice.webp" alt="The prompter under the notch, following a spoken script"></td>
+    <td width="50%"><img src="website/media/4-play.webp" alt="Play mode with speed buttons and the settings popover"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>It follows your voice</sub></td>
+    <td align="center"><sub>Or scroll at a steady pace</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="website/media/3-editor.webp" alt="The script editor below the prompter"></td>
+    <td width="50%"><img src="website/media/5-private.webp" alt="Settings with the option to hide the prompter from screen sharing"></td>
   </tr>
   <tr>
     <td align="center"><sub>Write or import your script</sub></td>
-    <td align="center"><sub>Or scroll at a steady pace</sub></td>
+    <td align="center"><sub>Hidden from screen sharing</sub></td>
   </tr>
 </table>
 
@@ -56,6 +81,25 @@ Press the microphone and talk: the text follows you, so the next words are alway
 
 NotchPrompter needs macOS 15 Sequoia or later. It works best on a MacBook with a notch,
 and on any Mac with a camera on top of the screen.
+
+## Scripts as files
+
+In Settings, turn on **Keep scripts as files in a folder** and pick a folder. Each script becomes one
+Markdown file: the file name is the title, and the file is the text.
+
+```
+Scripts/
+├── Product launch.md
+├── Weekly team update.md
+└── YouTube intro.md
+```
+
+It works both ways. Edit, add, rename or delete a file, and the script in NotchPrompter changes right away.
+Change a script in NotchPrompter, and the file changes. So any text editor can open your scripts, and an
+AI assistant such as Claude Code or Codex can write or tighten a script for you.
+
+Turn on **Save a transcript with each take** to get subtitles (.srt) next to every movie. Use them for
+captions, or give the transcript to an AI assistant to check the take or find where to cut.
 
 ## On iPhone
 
@@ -82,21 +126,33 @@ When the prompter has focus (click it first):
 | <kbd>R</kbd> | Back to the top |
 | <kbd>E</kbd> | Open the script editor |
 | <kbd>↑</kbd> <kbd>↓</kbd> | Faster, slower |
-| <kbd>⌘</kbd> <kbd>+</kbd> / <kbd>⌘</kbd> <kbd>−</kbd> | Bigger, smaller text |
+| <kbd>+</kbd> <kbd>−</kbd> | Bigger, smaller text |
 | <kbd>←</kbd> <kbd>→</kbd> | Narrower, wider prompter |
 | <kbd>⇧</kbd> <kbd>↑</kbd> <kbd>↓</kbd> | Shorter, taller prompter |
 | <kbd>H</kbd> | Pause when the mouse is over the prompter, on or off |
+| <kbd>⌘</kbd> <kbd>⌫</kbd> | Move the last take to the Trash |
+| <kbd>⌘</kbd> <kbd>,</kbd> | Settings |
 | <kbd>Esc</kbd> | Stop |
 
-In the Prompter menu: <kbd>⇧</kbd><kbd>⌘</kbd><kbd>P</kbd> shows the prompter, <kbd>⇧</kbd><kbd>⌘</kbd><kbd>V</kbd> follows your voice
-and <kbd>⌥</kbd><kbd>⌘</kbd><kbd>R</kbd> records. Click a word in the prompter to continue from there.
+In any app, also while a video call or Keynote is in front:
+
+| Key | Action |
+|---|---|
+| <kbd>⌃</kbd> <kbd>⌥</kbd> <kbd>P</kbd> | Show or hide the prompter |
+| <kbd>⌃</kbd> <kbd>⌥</kbd> <kbd>V</kbd> | Pause or resume |
+| <kbd>⌃</kbd> <kbd>⌥</kbd> <kbd>R</kbd> | Start or stop recording |
+
+You can turn these off in Settings → Keyboard Shortcuts. The Prompter menu has its own shortcuts too:
+<kbd>⇧</kbd><kbd>⌘</kbd><kbd>P</kbd> shows the prompter, <kbd>⇧</kbd><kbd>⌘</kbd><kbd>V</kbd> follows your voice,
+<kbd>⌥</kbd><kbd>⌘</kbd><kbd>R</kbd> records and <kbd>⇧</kbd><kbd>⌘</kbd><kbd>R</kbd> goes back to the top.
+Click a word in the prompter to continue from there.
 
 ## Privacy
 
 - Speech recognition runs on your Mac. It needs Dictation turned on in System Settings.
   You can allow Apple's servers in Settings → Privacy for languages the Mac can't do by itself.
 - Scripts stay on your Mac. If you use iCloud, they are also saved in your own iCloud account, so they sync with the iPhone app.
-  Recordings stay on your Mac. There is no account, no analytics and no network code of our own.
+  Recordings, and the subtitles made from them, stay on your Mac. There is no account, no analytics and no network code of our own.
 - The prompter is hidden from screen sharing, screenshots and screen recordings. You can turn this off in Settings → Privacy.
 
 ## FAQ
