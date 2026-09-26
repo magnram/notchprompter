@@ -14,6 +14,17 @@ enum ScreenshotRenderer {
         return URL(fileURLWithPath: args[i + 1], isDirectory: true)
     }
 
+    private static func argument(_ name: String) -> String? {
+        let args = ProcessInfo.processInfo.arguments
+        guard let i = args.firstIndex(of: name), i + 1 < args.count else { return nil }
+        return args[i + 1]
+    }
+
+    /// `-demoCamera <image>`: the picture in the camera preview, so the camera stays off.
+    static let cameraStill = argument("-demoCamera").flatMap(NSImage.init(contentsOfFile:))
+    /// `-demoPhone <image>`: the iPhone app's editor, captured in the simulator, for the sync shot.
+    static let phoneShot = argument("-demoPhone").flatMap(NSImage.init(contentsOfFile:))
+
     // MARK: Capturing windows
 
     /// Ask the window server for a window's pixels, so materials and lists look like they do on screen.
@@ -46,7 +57,8 @@ enum ScreenshotRenderer {
 
     static func window<V: View>(_ title: String, _ view: V, size: NSSize, titled: Bool = true,
                                 dark: Bool = false) -> NSWindow {
-        let w = NSWindow(contentViewController: NSHostingController(rootView: view))
+        // Controls as in the front window (blue switches), though the window is never really key.
+        let w = NSWindow(contentViewController: NSHostingController(rootView: view.environment(\.controlActiveState, .key)))
         w.title = title
         w.styleMask = titled ? [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView] : [.borderless]
         w.toolbarStyle = .unified
@@ -117,11 +129,22 @@ enum ScreenshotRenderer {
                                   size: NSSize(width: 860, height: 520))
         let editor = shoot(editorWindow, wait: 1)
         write(editor, "window-editor", to: folder)
-        let settingsShot = shoot(window(String(localized: "Settings", comment: "Title of the Settings window"), SettingsView(settings: settings), size: NSSize(width: 460, height: 440)))
+        let settingsWindow = window(String(localized: "Settings", comment: "Title of the Settings window"), SettingsView(settings: settings), size: NSSize(width: 460, height: 440))
+        if let fitting = settingsWindow.contentViewController?.view.fittingSize { settingsWindow.setContentSize(fitting) }
+        let settingsShot = shoot(settingsWindow)
         write(settingsShot, "window-settings", to: folder)
         let popover = shoot(window("", SettingsView(settings: settings, compact: true), size: NSSize(width: 340, height: 300),
                                    titled: false, dark: true))
         write(popover, "window-popover", to: folder)
+        // The menu beside the record button, set up for filming yourself in the screen's light.
+        settings.recordingMode = .camera
+        settings.screenLight = .light
+        settings.saveTranscripts = true
+        let recordWindow = window("", RecordShotForm(settings: settings), size: NSSize(width: 380, height: 420),
+                                  titled: false, dark: true)
+        if let fitting = recordWindow.contentViewController?.view.fittingSize { recordWindow.setContentSize(fitting) }
+        let record = shoot(recordWindow)
+        write(record, "window-record", to: folder)
 
         prompter.debugStage(.reading(word: content.readingWord))
         let reading = shoot(prompter.panel, wait: 1)
@@ -141,8 +164,9 @@ enum ScreenshotRenderer {
         write(big, "prompter-big", to: folder)
         prompter.hidePanel()
 
-        // App Store screenshots.
-        let shots = content.shots
+        // App Store screenshots. The texts are in `shots` in the order they were added:
+        // eye contact, voice, editor, play, private, sync, record.
+        let shots = content.shots, phoneShot = Self.phoneShot
         renderStoreShot(StoreShot(headline: shots[0].headline,
                                   detail: shots[0].detail,
                                   prompter: reading, wallpaper: 0) { CallWindow() },
@@ -151,24 +175,46 @@ enum ScreenshotRenderer {
                                   detail: shots[1].detail,
                                   prompter: big, wallpaper: 1) { EmptyView() },
                         "appstore-2-voice", to: folder)
+        renderStoreShot(StoreShot(headline: shots[5].headline,
+                                  detail: shots[5].detail,
+                                  prompter: idle, wallpaper: 5) {
+                            HStack(alignment: .bottom, spacing: -70) {
+                                Image(nsImage: editor).resizable().scaledToFit().frame(height: 340).shadowed()
+                                if let phoneShot { PhoneFrame(screen: phoneShot).frame(height: 400).offset(y: 20).shadowed() }
+                            }
+                        },
+                        "appstore-3-sync", to: folder)
         renderStoreShot(StoreShot(headline: shots[2].headline,
                                   detail: shots[2].detail,
                                   prompter: idle, wallpaper: 2) {
                             Image(nsImage: editor).resizable().scaledToFit().frame(height: 480).shadowed()
                         },
-                        "appstore-3-editor", to: folder)
+                        "appstore-4-editor", to: folder)
+        renderStoreShot(StoreShot(headline: shots[6].headline,
+                                  detail: shots[6].detail,
+                                  prompter: reading, wallpaper: 0, light: true) {
+                            Image(nsImage: record).resizable().scaledToFit().frame(maxHeight: 470)
+                                .clipShape(RoundedRectangle(cornerRadius: 12)).shadow(color: .black.opacity(0.25), radius: 30, y: 14)
+                        },
+                        "appstore-5-record", to: folder)
         renderStoreShot(StoreShot(headline: shots[3].headline,
                                   detail: shots[3].detail,
                                   prompter: playing, wallpaper: 3) {
                             Image(nsImage: popover).clipShape(RoundedRectangle(cornerRadius: 12)).shadowed()
                         },
-                        "appstore-4-play", to: folder)
+                        "appstore-6-play", to: folder)
         renderStoreShot(StoreShot(headline: shots[4].headline,
                                   detail: shots[4].detail,
                                   prompter: reading, wallpaper: 4) {
-                            Image(nsImage: settingsShot).resizable().scaledToFit().frame(height: 440).shadowed()
+                            // The lower half of the window, with the shortcuts and privacy, at a readable size.
+                            Image(nsImage: settingsShot)
+                                .frame(width: settingsShot.size.width, height: 460, alignment: .bottom)
+                                .clipped()
+                                .mask(LinearGradient(stops: [.init(color: .clear, location: 0), .init(color: .black, location: 0.12)],
+                                                     startPoint: .top, endPoint: .bottom))
+                                .shadowed()
                         },
-                        "appstore-5-private", to: folder)
+                        "appstore-7-private", to: folder)
         NSApp.terminate(nil)
     }
 }
@@ -183,6 +229,8 @@ private struct StoreShot<Content: View>: View {
     let detail: String
     let prompter: NSImage
     let wallpaper: Int
+    /// The whole screen as a soft light, as while filming with the screen light on.
+    var light = false
     @ViewBuilder var content: () -> Content
 
     private static var palettes: [[Color]] { [
@@ -191,18 +239,23 @@ private struct StoreShot<Content: View>: View {
         [Color(red: 0.55, green: 0.80, blue: 0.98), Color(red: 0.40, green: 0.48, blue: 0.95), Color(red: 0.70, green: 0.45, blue: 0.95)],
         [Color(red: 0.10, green: 0.45, blue: 0.45), Color(red: 0.15, green: 0.30, blue: 0.55), Color(red: 0.05, green: 0.10, blue: 0.25)],
         [Color(red: 0.15, green: 0.15, blue: 0.18), Color(red: 0.30, green: 0.22, blue: 0.40), Color(red: 0.95, green: 0.45, blue: 0.35)],
+        [Color(red: 0.12, green: 0.20, blue: 0.40), Color(red: 0.20, green: 0.55, blue: 0.75), Color(red: 0.45, green: 0.85, blue: 0.75)],
     ] }
+    /// Warm white, like the app's soft light.
+    private static var lightColors: [Color] { [Color(red: 1, green: 0.97, blue: 0.92), Color(red: 1, green: 0.93, blue: 0.84)] }
+
+    private var ink: Color { light ? Color(white: 0.12) : .white }
 
     var body: some View {
         ZStack(alignment: .top) {
-            LinearGradient(colors: Self.palettes[wallpaper % Self.palettes.count],
+            LinearGradient(colors: light ? Self.lightColors : Self.palettes[wallpaper % Self.palettes.count],
                            startPoint: .topLeading, endPoint: .bottomTrailing)
             // Soft light blobs so the wallpaper feels like macOS.
             Circle().fill(.white.opacity(0.12)).frame(width: 900).blur(radius: 120).offset(x: -420, y: 420)
             Circle().fill(.white.opacity(0.10)).frame(width: 700).blur(radius: 110).offset(x: 520, y: 80)
 
             VStack(spacing: 0) {
-                MenuBar()
+                MenuBar(ink: ink)
                 Spacer()
             }
 
@@ -217,7 +270,7 @@ private struct StoreShot<Content: View>: View {
                 // Long headlines (German, Finnish, Russian ...) may take two lines, and shrink if needed.
                 Text(headline)
                     .font(.system(size: 56, weight: .bold))
-                    .foregroundStyle(.white)
+                    .foregroundStyle(ink)
                     .multilineTextAlignment(.center)
                     .lineLimit(2)
                     .minimumScaleFactor(0.75)
@@ -225,14 +278,15 @@ private struct StoreShot<Content: View>: View {
                     .fixedSize(horizontal: false, vertical: true)
                 Text(detail)
                     .font(.system(size: 24, weight: .medium))
-                    .foregroundStyle(.white.opacity(0.85))
+                    .foregroundStyle(ink.opacity(0.85))
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: 900)
+                    .fixedSize(horizontal: false, vertical: true)
                 Spacer().frame(height: 30)
                 content()
                 Spacer(minLength: 0)
             }
-            .shadow(color: .black.opacity(0.2), radius: 8)
+            .shadow(color: .black.opacity(light ? 0 : 0.2), radius: 8)
         }
         .frame(width: 1440, height: 900)
         .clipped()
@@ -240,9 +294,11 @@ private struct StoreShot<Content: View>: View {
 }
 
 private struct MenuBar: View {
+    var ink: Color = .white
+
     var body: some View {
         ZStack {
-            Rectangle().fill(.black.opacity(0.18))
+            Rectangle().fill(.black.opacity(ink == .white ? 0.18 : 0.04))
             HStack(spacing: 20) {
                 Image(systemName: "apple.logo").font(.system(size: 15, weight: .semibold))
                 Text(verbatim: "NotchPrompter").fontWeight(.bold)
@@ -257,10 +313,58 @@ private struct MenuBar: View {
                 Text(verbatim: ScreenshotRenderer.content.clock)
             }
             .font(.system(size: 14, weight: .medium))
-            .foregroundStyle(.white)
+            .foregroundStyle(ink)
             .padding(.horizontal, 18)
         }
         .frame(height: 34)
+    }
+}
+
+/// The main rows of the menu beside the record button, for the record screenshot. The whole menu
+/// is too tall to read at App Store size; these are the same controls with the app's own texts.
+private struct RecordShotForm: View {
+    @ObservedObject var settings: AppSettings
+
+    var body: some View {
+        Form {
+            Section {
+                Picker(selection: $settings.recordingMode) {
+                    Text("Camera", comment: "Recording mode: film yourself").tag(RecordingMode.camera)
+                    Text("Screen", comment: "Recording mode: record the screen").tag(RecordingMode.screen)
+                    Text("Camera and screen", comment: "Recording mode: both, in two movies").tag(RecordingMode.both)
+                } label: { Text("Record") }
+                CameraPreviewSection(cameraID: "")
+            }
+            Section {
+                Picker(selection: $settings.screenLight) {
+                    Text("As it is", comment: "Screen light option: leave the screen as it is").tag(ScreenLight.off)
+                    Text("Soft light", comment: "Screen light option: fill the screen with warm white").tag(ScreenLight.light)
+                    Text("Black", comment: "Screen light option: fill the screen with black").tag(ScreenLight.dark)
+                } label: { Text("Screen while recording") }
+                Toggle("Save a transcript with each take", isOn: $settings.saveTranscripts)
+            }
+        }
+        .formStyle(.grouped)
+        .frame(width: 380)
+        .fixedSize(horizontal: false, vertical: true)
+    }
+}
+
+/// An iPhone around a simulator capture, for the sync screenshot.
+private struct PhoneFrame: View {
+    let screen: NSImage
+
+    var body: some View {
+        GeometryReader { g in
+            let bezel = g.size.height * 0.018
+            Image(nsImage: screen).resizable()
+                .clipShape(RoundedRectangle(cornerRadius: g.size.height * 0.07, style: .continuous))
+                .padding(bezel)
+                .background(Color(white: 0.08), in: RoundedRectangle(cornerRadius: g.size.height * 0.07 + bezel, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: g.size.height * 0.07 + bezel, style: .continuous)
+                    .strokeBorder(Color(white: 0.35), lineWidth: 1.5))
+        }
+        .aspectRatio(screen.size.width / screen.size.height, contentMode: .fit)
     }
 }
 

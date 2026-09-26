@@ -13,7 +13,7 @@ struct ScreenshotContent {
     let weeklyText: String
     let youtubeTitle: String
     let youtubeText: String
-    /// eye contact, voice, editor, play, private
+    /// eye contact, voice, editor, play, private, sync, record
     let shots: [Shot]
     let clock: String
 
@@ -45,7 +45,9 @@ struct ScreenshotContent {
                      ("It follows your voice", "Talk at your own pace. Pause, and it waits for you."),
                      ("Write your scripts right here", "A simple editor. Import Word, Markdown or text files."),
                      ("Or press play", "Steady scrolling. Hover to pause. Tortoise and hare for speed."),
-                     ("Invisible to your audience", "Hidden from screen sharing and recordings. Nothing leaves your Mac but speech for Apple’s recogniser.")),
+                     ("Invisible to your audience", "Hidden from screen sharing and recordings. Nothing leaves your Mac but speech for Apple’s recogniser."),
+                     ("Write on your Mac.\nFilm on your iPhone.", "Your scripts sync through your own iCloud."),
+                     ("Film yourself in good light", "Record the camera, the screen or both. Your screen becomes a soft light, and every take gets subtitles.")),
             clock: "Tue 9:41"),
 
         "nb": ScreenshotContent(
@@ -67,7 +69,9 @@ struct ScreenshotContent {
                      ("Følger stemmen din", "Snakk i ditt eget tempo. Ta en pause, så venter den på deg."),
                      ("Skriv manusene dine rett her", "En enkel redigering. Importer Word-, Markdown- eller tekstfiler."),
                      ("Eller trykk på Spill av", "Jevn rulling. Hold pekeren over for å pause. Skilpadden og haren styrer farten."),
-                     ("Usynlig for publikum", "Skjult ved skjermdeling og i opptak. Ingenting forlater Macen utenom tale til Apples talegjenkjenning.")),
+                     ("Usynlig for publikum", "Skjult ved skjermdeling og i opptak. Ingenting forlater Macen utenom tale til Apples talegjenkjenning."),
+                     ("Skriv på Mac.\nFilm på iPhone.", "Manusene synkes gjennom din egen iCloud."),
+                     ("Film deg selv i godt lys", "Ta opp kameraet, skjermen eller begge. Skjermen blir et mykt lys, og hvert opptak får undertekster.")),
             clock: "tir. 09:41"),
 
         "de": ScreenshotContent(
@@ -89,7 +93,9 @@ struct ScreenshotContent {
                      ("Folgt deiner Stimme", "Sprich in deinem Tempo. Mach eine Pause, und es wartet auf dich."),
                      ("Schreib deine Skripte direkt hier", "Ein einfacher Editor. Importiere Word-, Markdown- oder Textdateien."),
                      ("Oder drück auf Play", "Gleichmäßiges Scrollen. Zeig darauf, um zu pausieren. Schildkröte und Hase für das Tempo."),
-                     ("Unsichtbar für dein Publikum", "Verborgen bei Bildschirmfreigabe und Aufnahmen. Nichts verlässt deinen Mac außer Sprache für Apples Spracherkennung.")),
+                     ("Unsichtbar für dein Publikum", "Verborgen bei Bildschirmfreigabe und Aufnahmen. Nichts verlässt deinen Mac außer Sprache für Apples Spracherkennung."),
+                     ("Auf dem Mac schreiben.\nAuf dem iPhone filmen.", "Deine Skripte synchronisieren über dein eigenes iCloud."),
+                     ("Film dich in gutem Licht", "Nimm die Kamera, den Bildschirm oder beides auf. Der Bildschirm wird zum weichen Licht, und jede Aufnahme bekommt Untertitel.")),
             clock: "Di. 09:41"),
 
         "fr": ScreenshotContent(
@@ -111,7 +117,9 @@ struct ScreenshotContent {
                      ("Suit votre voix", "Parlez à votre rythme. Faites une pause, il vous attend."),
                      ("Écrivez vos textes ici même", "Un éditeur simple. Importez des fichiers Word, Markdown ou texte."),
                      ("Ou appuyez sur lecture", "Défilement régulier. Survolez pour mettre en pause. La tortue et le lièvre règlent la vitesse."),
-                     ("Invisible pour votre public", "Masqué lors du partage d’écran et des enregistrements. Rien ne quitte votre Mac, sauf la parole pour la reconnaissance d’Apple.")),
+                     ("Invisible pour votre public", "Masqué lors du partage d’écran et des enregistrements. Rien ne quitte votre Mac, sauf la parole pour la reconnaissance d’Apple."),
+                     ("Écrivez sur Mac.\nFilmez sur iPhone.", "Vos scripts se synchronisent via votre propre iCloud."),
+                     ("Filmez-vous sous une belle lumière", "Enregistrez la caméra, l’écran ou les deux. L’écran devient une lumière douce, et chaque prise a ses sous-titres.")),
             clock: "mar. 09:41"),
 
         "es": ScreenshotContent(
@@ -133,7 +141,9 @@ struct ScreenshotContent {
                      ("Sigue tu voz", "Habla a tu ritmo. Haz una pausa y te espera."),
                      ("Escribe tus guiones aquí mismo", "Un editor sencillo. Importa archivos de Word, Markdown o texto."),
                      ("O pulsa reproducir", "Desplazamiento constante. Pasa el puntero por encima para pausar. La tortuga y la liebre ajustan la velocidad."),
-                     ("Invisible para tu público", "Oculto al compartir pantalla y en grabaciones. Nada sale de tu Mac, salvo la voz para el reconocimiento de Apple.")),
+                     ("Invisible para tu público", "Oculto al compartir pantalla y en grabaciones. Nada sale de tu Mac, salvo la voz para el reconocimiento de Apple."),
+                     ("Escribe en el Mac.\nGraba con el iPhone.", "Tus guiones se sincronizan con tu propio iCloud."),
+                     ("Grábate con buena luz", "Graba la cámara, la pantalla o ambas. La pantalla se vuelve una luz suave y cada toma lleva subtítulos.")),
             clock: "mar 9:41"),
 
         "it": ScreenshotContent(
@@ -155,7 +165,9 @@ struct ScreenshotContent {
                      ("Segue la tua voce", "Parla al tuo ritmo. Fai una pausa, e ti aspetta."),
                      ("Scrivi i tuoi copioni proprio qui", "Un editor semplice. Importa file Word, Markdown o di testo."),
                      ("Oppure premi play", "Scorrimento costante. Passa sopra con il puntatore per mettere in pausa. Tartaruga e lepre per la velocità."),
-                     ("Invisibile al tuo pubblico", "Nascosto nella condivisione schermo e nelle registrazioni. Nulla lascia il tuo Mac, tranne il parlato per il riconoscimento di Apple.")),
+                     ("Invisibile al tuo pubblico", "Nascosto nella condivisione schermo e nelle registrazioni. Nulla lascia il tuo Mac, tranne il parlato per il riconoscimento di Apple."),
+                     ("Scrivi sul Mac.\nGira con l’iPhone.", "I copioni si sincronizzano con il tuo iCloud."),
+                     ("Riprenditi con una bella luce", "Registra la fotocamera, lo schermo o entrambi. Lo schermo diventa una luce morbida e ogni ripresa ha i sottotitoli.")),
             clock: "mar 09:41"),
 
         "pt-BR": ScreenshotContent(
@@ -177,7 +189,9 @@ struct ScreenshotContent {
                      ("Acompanha a sua voz", "Fale no seu ritmo. Faça uma pausa, e ele espera por você."),
                      ("Escreva seus roteiros aqui mesmo", "Um editor simples. Importe arquivos do Word, Markdown ou texto."),
                      ("Ou clique em reproduzir", "Rolagem constante. Passe o cursor por cima para pausar. A tartaruga e a lebre ajustam a velocidade."),
-                     ("Invisível para o seu público", "Oculto no compartilhamento de tela e em gravações. Nada sai do seu Mac, exceto a fala para o reconhecimento da Apple.")),
+                     ("Invisível para o seu público", "Oculto no compartilhamento de tela e em gravações. Nada sai do seu Mac, exceto a fala para o reconhecimento da Apple."),
+                     ("Escreva no Mac.\nGrave no iPhone.", "Seus roteiros sincronizam pelo seu próprio iCloud."),
+                     ("Grave-se com boa luz", "Grave a câmera, a tela ou as duas. A tela vira uma luz suave, e cada tomada ganha legendas.")),
             clock: "ter. 09:41"),
 
         "pt-PT": ScreenshotContent(
@@ -199,7 +213,9 @@ struct ScreenshotContent {
                      ("Acompanha a sua voz", "Fale ao seu ritmo. Faça uma pausa e ele espera por si."),
                      ("Escreva os seus guiões aqui mesmo", "Um editor simples. Importe ficheiros Word, Markdown ou de texto."),
                      ("Ou carregue em reproduzir", "Deslocamento constante. Passe o cursor por cima para pausar. A tartaruga e a lebre definem a velocidade."),
-                     ("Invisível para o seu público", "Oculto na partilha de ecrã e nas gravações. Nada sai do seu Mac, exceto a fala para o reconhecimento da Apple.")),
+                     ("Invisível para o seu público", "Oculto na partilha de ecrã e nas gravações. Nada sai do seu Mac, exceto a fala para o reconhecimento da Apple."),
+                     ("Escreva no Mac.\nGrave no iPhone.", "Os seus guiões sincronizam pelo seu próprio iCloud."),
+                     ("Grave-se com boa luz", "Grave a câmara, o ecrã ou ambos. O ecrã torna-se uma luz suave, e cada take tem legendas.")),
             clock: "ter. 09:41"),
 
         "nl": ScreenshotContent(
@@ -221,7 +237,9 @@ struct ScreenshotContent {
                      ("Volgt je stem", "Praat in je eigen tempo. Pauzeer, en hij wacht op je."),
                      ("Schrijf je scripts hier", "Een eenvoudige editor. Importeer Word-, Markdown- of tekstbestanden."),
                      ("Of druk op afspelen", "Gelijkmatig scrollen. Beweeg de aanwijzer erover om te pauzeren. Schildpad en haas voor de snelheid."),
-                     ("Onzichtbaar voor je publiek", "Verborgen bij schermdeling en opnames. Niets verlaat je Mac, behalve spraak voor de spraakherkenning van Apple.")),
+                     ("Onzichtbaar voor je publiek", "Verborgen bij schermdeling en opnames. Niets verlaat je Mac, behalve spraak voor de spraakherkenning van Apple."),
+                     ("Schrijf op je Mac.\nFilm met je iPhone.", "Je scripts synchroniseren via je eigen iCloud."),
+                     ("Film jezelf in mooi licht", "Neem de camera, het scherm of allebei op. Je scherm wordt een zacht licht, en elke opname krijgt ondertitels.")),
             clock: "di 09:41"),
 
         "sv": ScreenshotContent(
@@ -243,7 +261,9 @@ struct ScreenshotContent {
                      ("Följer din röst", "Prata i din egen takt. Pausa, så väntar den på dig."),
                      ("Skriv dina manus direkt här", "En enkel redigerare. Importera Word-, Markdown- eller textfiler."),
                      ("Eller tryck på spela upp", "Jämn rullning. Håll pekaren över för att pausa. Sköldpaddan och haren styr hastigheten."),
-                     ("Osynlig för din publik", "Dold vid skärmdelning och i inspelningar. Inget lämnar din Mac utom tal till Apples taligenkänning.")),
+                     ("Osynlig för din publik", "Dold vid skärmdelning och i inspelningar. Inget lämnar din Mac utom tal till Apples taligenkänning."),
+                     ("Skriv på Mac.\nFilma på iPhone.", "Dina manus synkas via din egen iCloud."),
+                     ("Filma dig själv i fint ljus", "Spela in kameran, skärmen eller båda. Skärmen blir ett mjukt ljus, och varje tagning får undertexter.")),
             clock: "tis 09:41"),
 
         "da": ScreenshotContent(
@@ -265,7 +285,9 @@ struct ScreenshotContent {
                      ("Følger din stemme", "Tal i dit eget tempo. Hold en pause, så venter den på dig."),
                      ("Skriv dine manuskripter lige her", "En enkel redigering. Importér Word-, Markdown- eller tekstfiler."),
                      ("Eller tryk på afspil", "Jævn rulning. Hold markøren over for at sætte på pause. Skildpadden og haren styrer hastigheden."),
-                     ("Usynlig for dit publikum", "Skjult ved skærmdeling og i optagelser. Intet forlader din Mac undtagen tale til Apples talegenkendelse.")),
+                     ("Usynlig for dit publikum", "Skjult ved skærmdeling og i optagelser. Intet forlader din Mac undtagen tale til Apples talegenkendelse."),
+                     ("Skriv på Mac.\nFilm på iPhone.", "Dine manuskripter synkroniseres via din egen iCloud."),
+                     ("Film dig selv i godt lys", "Optag kameraet, skærmen eller begge. Skærmen bliver et blødt lys, og hver optagelse får undertekster.")),
             clock: "tirs. 09.41"),
 
         "fi": ScreenshotContent(
@@ -287,7 +309,9 @@ struct ScreenshotContent {
                      ("Seuraa ääntäsi", "Puhu omaan tahtiisi. Pidä tauko, niin se odottaa sinua."),
                      ("Kirjoita käsikirjoituksesi suoraan tässä", "Yksinkertainen editori. Tuo Word-, Markdown- tai tekstitiedostoja."),
                      ("Tai paina toistoa", "Tasainen vieritys. Pysäytä viemällä osoitin päälle. Kilpikonna ja jänis säätävät nopeutta."),
-                     ("Näkymätön yleisöllesi", "Piilossa näytön jakamisessa ja tallenteissa. Macistasi ei lähde mitään paitsi puhe Applen puheentunnistukseen.")),
+                     ("Näkymätön yleisöllesi", "Piilossa näytön jakamisessa ja tallenteissa. Macistasi ei lähde mitään paitsi puhe Applen puheentunnistukseen."),
+                     ("Kirjoita Macilla.\nKuvaa iPhonella.", "Käsikirjoitukset synkronoituvat omassa iCloudissasi."),
+                     ("Kuvaa itsesi hyvässä valossa", "Tallenna kamera, näyttö tai molemmat. Näytöstä tulee pehmeä valo, ja jokainen otto saa tekstitykset.")),
             clock: "ti 9.41"),
 
         "pl": ScreenshotContent(
@@ -309,7 +333,9 @@ struct ScreenshotContent {
                      ("Podąża za twoim głosem", "Mów we własnym tempie. Zrób pauzę, a on na ciebie poczeka."),
                      ("Pisz scenariusze właśnie tutaj", "Prosty edytor. Importuj pliki Word, Markdown lub tekstowe."),
                      ("Albo naciśnij Odtwórz", "Równe przewijanie. Najedź kursorem, by wstrzymać. Żółw i zając ustawiają tempo."),
-                     ("Niewidoczny dla widzów", "Ukryty podczas udostępniania ekranu i w nagraniach. Nic nie opuszcza twojego Maca poza mową dla rozpoznawania Apple.")),
+                     ("Niewidoczny dla widzów", "Ukryty podczas udostępniania ekranu i w nagraniach. Nic nie opuszcza twojego Maca poza mową dla rozpoznawania Apple."),
+                     ("Pisz na Macu.\nNagrywaj iPhone’em.", "Skrypty synchronizują się przez Twój iCloud."),
+                     ("Nagrywaj się w dobrym świetle", "Nagrywaj kamerę, ekran albo jedno i drugie. Ekran staje się miękkim światłem, a każde ujęcie dostaje napisy.")),
             clock: "wt. 09:41"),
 
         "ja": ScreenshotContent(
@@ -331,7 +357,9 @@ struct ScreenshotContent {
                      ("声についてくる", "自分のペースで話せます。止まれば、待ってくれます。"),
                      ("原稿はここで書ける", "シンプルなエディタ。Word、Markdown、テキストファイルを読み込めます。"),
                      ("再生ボタンでも", "一定の速さでスクロール。ポインタを重ねると一時停止。カメとウサギで速度を調整。"),
-                     ("見ている人には見えない", "画面共有や画面収録には映りません。Macの外に出るのは、Appleの音声認識に送る音声だけです。")),
+                     ("見ている人には見えない", "画面共有や画面収録には映りません。Macの外に出るのは、Appleの音声認識に送る音声だけです。"),
+                     ("Macで書いて、\niPhoneで撮る。", "台本はあなたのiCloudで同期されます。"),
+                     ("きれいな光で自分を撮る", "カメラ、画面、または両方を録画。画面がやわらかな照明になり、テイクごとに字幕も作られます。")),
             clock: "(火) 9:41"),
 
         "ko": ScreenshotContent(
@@ -353,7 +381,9 @@ struct ScreenshotContent {
                      ("목소리를 따라갑니다", "내 속도로 말하세요. 잠시 멈추면 기다려 줍니다."),
                      ("대본은 여기서 바로 쓰세요", "간단한 편집기. Word, Markdown, 텍스트 파일을 가져올 수 있습니다."),
                      ("재생 버튼도 있습니다", "일정한 속도로 스크롤. 포인터를 올리면 일시 정지. 거북이와 토끼로 속도 조절."),
-                     ("보는 사람에게는 보이지 않습니다", "화면 공유와 녹화에 나타나지 않습니다. Apple 음성 인식에 보내는 음성 외에는 Mac 밖으로 나가지 않습니다.")),
+                     ("보는 사람에게는 보이지 않습니다", "화면 공유와 녹화에 나타나지 않습니다. Apple 음성 인식에 보내는 음성 외에는 Mac 밖으로 나가지 않습니다."),
+                     ("Mac에서 쓰고,\niPhone으로 촬영하세요.", "대본은 나의 iCloud로 동기화됩니다."),
+                     ("좋은 빛으로 나를 촬영하세요", "카메라, 화면 또는 둘 다 녹화하세요. 화면이 부드러운 조명이 되고, 테이크마다 자막이 생깁니다.")),
             clock: "(화) 오전 9:41"),
 
         "zh-Hans": ScreenshotContent(
@@ -375,7 +405,9 @@ struct ScreenshotContent {
                      ("跟随你的声音", "按你自己的节奏说。停下来，它就等你。"),
                      ("讲稿就在这里写", "简洁的编辑器。可导入 Word、Markdown 或文本文件。"),
                      ("或者按下播放", "匀速滚动。指针悬停即可暂停。用乌龟和兔子调整速度。"),
-                     ("观众看不见", "在屏幕共享和录屏中隐藏。除了发送给 Apple 语音识别的语音，任何内容都不会离开你的 Mac。")),
+                     ("观众看不见", "在屏幕共享和录屏中隐藏。除了发送给 Apple 语音识别的语音，任何内容都不会离开你的 Mac。"),
+                     ("在 Mac 上写，\n用 iPhone 拍。", "脚本通过你自己的 iCloud 同步。"),
+                     ("在好光线下拍自己", "录制摄像头、屏幕或两者。屏幕化作柔光，每条录像都附带字幕。")),
             clock: "周二 09:41"),
 
         "zh-Hant": ScreenshotContent(
@@ -397,7 +429,9 @@ struct ScreenshotContent {
                      ("跟著你的聲音走", "照你自己的節奏說。停下來，它就等你。"),
                      ("講稿就在這裡寫", "簡潔的編輯器。可以匯入 Word、Markdown 或文字檔案。"),
                      ("或者按下播放", "等速捲動。將指標停在上方即可暫停。用烏龜和兔子調整速度。"),
-                     ("觀眾看不到", "在螢幕共享和螢幕錄影中隱藏。除了傳送給 Apple 語音辨識的語音，任何內容都不會離開你的 Mac。")),
+                     ("觀眾看不到", "在螢幕共享和螢幕錄影中隱藏。除了傳送給 Apple 語音辨識的語音，任何內容都不會離開你的 Mac。"),
+                     ("在 Mac 上寫，\n用 iPhone 拍。", "腳本透過你自己的 iCloud 同步。"),
+                     ("在好光線下拍自己", "錄製相機、螢幕或兩者。螢幕化為柔光，每段錄影都附有字幕。")),
             clock: "週二 上午9:41"),
 
         "ru": ScreenshotContent(
@@ -419,7 +453,9 @@ struct ScreenshotContent {
                      ("Следует за вашим голосом", "Говорите в своём темпе. Сделайте паузу, и он подождёт."),
                      ("Пишите сценарии прямо здесь", "Простой редактор. Импорт файлов Word, Markdown и обычного текста."),
                      ("Или включите воспроизведение", "Плавная прокрутка. Наведите указатель, чтобы остановить. Черепаха и заяц задают скорость."),
-                     ("Невидим для зрителей", "Скрыт при демонстрации экрана и в записях. С вашего Mac уходит только речь для распознавания Apple.")),
+                     ("Невидим для зрителей", "Скрыт при демонстрации экрана и в записях. С вашего Mac уходит только речь для распознавания Apple."),
+                     ("Пишите на Mac.\nСнимайте на iPhone.", "Сценарии синхронизируются через ваш iCloud."),
+                     ("Снимайте себя при хорошем свете", "Записывайте камеру, экран или всё сразу. Экран становится мягким светом, а у каждого дубля есть субтитры.")),
             clock: "Вт 09:41"),
 
         "uk": ScreenshotContent(
@@ -441,7 +477,9 @@ struct ScreenshotContent {
                      ("Стежить за вашим голосом", "Говоріть у своєму темпі. Зробіть паузу, і він зачекає."),
                      ("Пишіть сценарії просто тут", "Простий редактор. Імпорт файлів Word, Markdown і звичайного тексту."),
                      ("Або ввімкніть відтворення", "Рівне прокручування. Наведіть курсор, щоб призупинити. Черепаха й заєць задають швидкість."),
-                     ("Невидимий для глядачів", "Прихований під час показу екрана та в записах. З вашого Mac іде лише мовлення для розпізнавання Apple.")),
+                     ("Невидимий для глядачів", "Прихований під час показу екрана та в записах. З вашого Mac іде лише мовлення для розпізнавання Apple."),
+                     ("Пишіть на Mac.\nЗнімайте на iPhone.", "Сценарії синхронізуються через ваш iCloud."),
+                     ("Знімайте себе при гарному світлі", "Записуйте камеру, екран або все разом. Екран стає м’яким світлом, а кожен дубль має субтитри.")),
             clock: "Вт 09:41"),
 
         "tr": ScreenshotContent(
@@ -463,7 +501,9 @@ struct ScreenshotContent {
                      ("Sesinizi takip eder", "Kendi hızınızda konuşun. Durduğunuzda sizi bekler."),
                      ("Metinlerinizi burada yazın", "Basit bir düzenleyici. Word, Markdown veya metin dosyalarını içe aktarın."),
                      ("Ya da oynatın", "Sabit kaydırma. Duraklatmak için imleci üzerine getirin. Hız için kaplumbağa ve tavşan."),
-                     ("İzleyicileriniz göremez", "Ekran paylaşımında ve kayıtlarda gizlidir. Apple’ın konuşma tanıma hizmetine giden konuşma dışında hiçbir şey Mac’inizden çıkmaz.")),
+                     ("İzleyicileriniz göremez", "Ekran paylaşımında ve kayıtlarda gizlidir. Apple’ın konuşma tanıma hizmetine giden konuşma dışında hiçbir şey Mac’inizden çıkmaz."),
+                     ("Mac’te yazın.\niPhone’da çekin.", "Senaryolarınız kendi iCloud’unuzla eşzamanlanır."),
+                     ("Kendinizi güzel ışıkta çekin", "Kamerayı, ekranı ya da ikisini kaydedin. Ekran yumuşak bir ışığa dönüşür, her çekime altyazı eklenir.")),
             clock: "Sal 09:41"),
     ]
 
