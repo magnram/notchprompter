@@ -33,3 +33,5 @@ fastlane/builds/
 fastlane/report.xml
 fastlane/README.md
 *.p8
+.build/
+__pycache__/

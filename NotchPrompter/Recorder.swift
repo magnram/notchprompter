@@ -34,6 +34,16 @@ final class Recorder: NSObject, AVCaptureFileOutputRecordingDelegate, AVCaptureA
                                          mediaType: .video, position: .unspecified).devices
     }
 
+    static var microphones: [AVCaptureDevice] {
+        AVCaptureDevice.DiscoverySession(deviceTypes: [.microphone, .external],
+                                         mediaType: .audio, position: .unspecified).devices
+    }
+
+    /// The chosen microphone, or the system's input when it is `""` or unplugged.
+    static func microphone(_ id: String) -> AVCaptureDevice? {
+        microphones.first { $0.uniqueID == id } ?? AVCaptureDevice.default(for: .audio)
+    }
+
     static let cameraSettings = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Camera")!
 
     /// Ask for camera (if `camera`) and microphone access. `done` gets nil, or a message and where to fix it.
@@ -60,11 +70,11 @@ final class Recorder: NSObject, AVCaptureFileOutputRecordingDelegate, AVCaptureA
 
     /// Turn on the camera and microphone without saving anything yet, so a take can start
     /// instantly (the camera needs a second or so to wake up). `ready` gets nil or a problem.
-    func prepare(cameraID: String, ready: @escaping (String?) -> Void) {
+    func prepare(cameraID: String, microphoneID: String, ready: @escaping (String?) -> Void) {
         guard !isRecording else { return ready(nil) }
         let camera = Self.cameras.first { $0.uniqueID == cameraID } ?? AVCaptureDevice.default(for: .video)
         guard let camera else { return ready(String(localized: "No camera found.")) }
-        guard let mic = AVCaptureDevice.default(for: .audio) else { return ready(String(localized: "No microphone found.")) }
+        guard let mic = Self.microphone(microphoneID) else { return ready(String(localized: "No microphone found.")) }
 
         queue.async { [self] in
             do {

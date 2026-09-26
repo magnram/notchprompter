@@ -884,6 +884,125 @@
         }
       }
     },
+    "All Settings…" : {
+      "comment" : "Button at the bottom of a popover: opens the Settings window",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle indstillinger…"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle Einstellungen …"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todos los ajustes…"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaikki asetukset…"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tous les réglages…"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tutte le impostazioni…"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべての設定…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "모든 설정…"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle innstillinger …"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle instellingen…"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wszystkie ustawienia…"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todos os Ajustes…"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todas as definições…"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Все настройки…"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alla inställningar …"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tüm Ayarlar…"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Усі налаштування…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "所有设置…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "所有設定…"
+          }
+        }
+      }
+    },
     "Allow Microphone and Speech Recognition" : {
       "comment" : "Large button in onboarding that asks for permissions (title case in English; use your language’s button capitalization).",
       "localizations" : {
@@ -1472,6 +1591,125 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "播放時會顯示，也可以使用方向鍵。"
+          }
+        }
+      }
+    },
+    "As it is" : {
+      "comment" : "Screen light option: leave the screen as it is",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Som den er"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unverändert"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como está"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ennallaan"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inchangé"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Com’è"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "そのまま"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "그대로"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Som den er"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zoals het is"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bez zmian"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como está"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como está"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Как есть"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Som den är"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Olduğu gibi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Як є"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保持原样"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保持原樣"
           }
         }
       }
@@ -2071,6 +2309,125 @@
         }
       }
     },
+    "Black" : {
+      "comment" : "Screen light option: fill the screen with black",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sort"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schwarz"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Negro"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Musta"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noir"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nero"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黒"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "검정"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Svart"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zwart"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czarny"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preto"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preto"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чёрный"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Svart"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siyah"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чорний"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黑色"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黑色"
+          }
+        }
+      }
+    },
     "Camera" : {
       "comment" : "Settings picker label.",
       "localizations" : {
@@ -2186,6 +2543,125 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "相機"
+          }
+        }
+      }
+    },
+    "Camera and recording options" : {
+      "comment" : "Tooltip of the small arrow beside the record button",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera- og optagelsesindstillinger"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera- und Aufnahmeoptionen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opciones de cámara y grabación"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera- ja tallennusasetukset"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Options de caméra et d’enregistrement"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opzioni di fotocamera e registrazione"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カメラと録画のオプション"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "카메라 및 녹화 옵션"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera- og opptaksvalg"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camera- en opnameopties"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opcje kamery i nagrywania"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opções de câmera e gravação"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opções de câmara e gravação"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Параметры камеры и записи"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera- och inspelningsalternativ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera ve kayıt seçenekleri"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Параметри камери й запису"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "摄像头和录制选项"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "相機與錄製選項"
           }
         }
       }
@@ -2666,6 +3142,363 @@
         }
       }
     },
+    "Change…" : {
+      "comment" : "Button: pick another folder for the scripts",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skift…"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ändern …"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambiar…"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaihda…"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifier…"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambia…"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "変更…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "변경…"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Endre …"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wijzig…"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmień…"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alterar…"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alterar…"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изменить…"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ändra …"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Değiştir…"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Змінити…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更改…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更改⋯"
+          }
+        }
+      }
+    },
+    "Choose an empty folder, or one with only scripts in it. Every Markdown and text file in it becomes a script." : {
+      "comment" : "Message in the folder panel",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vælg en tom mappe eller en med kun manuskripter. Hver Markdown- og tekstfil i den bliver et manuskript."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wähle einen leeren Ordner oder einen, der nur Skripte enthält. Jede Markdown- und Textdatei darin wird ein Skript."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige una carpeta vacía o una que solo tenga guiones. Cada archivo Markdown y de texto se convierte en un guion."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valitse tyhjä kansio tai kansio, jossa on vain käsikirjoituksia. Jokaisesta Markdown- ja tekstitiedostosta tulee käsikirjoitus."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez un dossier vide, ou qui ne contient que des scripts. Chaque fichier Markdown ou texte devient un script."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scegli una cartella vuota o che contenga solo copioni. Ogni file Markdown e di testo diventa un copione."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "空のフォルダか、原稿だけが入ったフォルダを選んでください。中のMarkdownファイルとテキストファイルはすべて原稿になります。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "빈 폴더나 대본만 있는 폴더를 선택하세요. 폴더 안의 모든 Markdown 및 텍스트 파일이 대본이 됩니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Velg en tom mappe, eller en med bare manus i. Hver Markdown- og tekstfil i den blir et manus."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kies een lege map, of een met alleen scripts. Elk Markdown- en tekstbestand erin wordt een script."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz pusty folder lub taki, w którym są tylko scenariusze. Każdy plik Markdown i tekstowy stanie się scenariuszem."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolha uma pasta vazia ou que tenha só roteiros. Cada arquivo Markdown e de texto vira um roteiro."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolha uma pasta vazia ou que tenha apenas guiões. Cada ficheiro Markdown e de texto torna-se um guião."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выберите пустую папку или папку только со сценариями. Каждый файл Markdown и текстовый файл в ней станет сценарием."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Välj en tom mapp eller en med bara manus. Varje Markdown- och textfil i den blir ett manus."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Boş bir klasör ya da yalnızca metin içeren bir klasör seçin. İçindeki her Markdown ve metin dosyası bir metin olur."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виберіть порожню папку або папку лише зі сценаріями. Кожен файл Markdown і текстовий файл у ній стане сценарієм."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选择一个空文件夹，或只含讲稿的文件夹。其中每个 Markdown 和文本文件都会成为一份讲稿。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選擇一個空的檔案夾，或只有講稿的檔案夾。其中每個 Markdown 和文字檔都會成為一份講稿。"
+          }
+        }
+      }
+    },
+    "Choose…" : {
+      "comment" : "Button: pick a folder for the scripts",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vælg…"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auswählen …"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elegir…"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valitse…"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisir…"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scegli…"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選択…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "선택…"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Velg …"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kies…"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz…"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolher…"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolher…"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выбрать…"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Välj …"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seç…"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вибрати…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选取…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選擇⋯"
+          }
+        }
+      }
+    },
     "Close Window" : {
       "localizations" : {
         "da" : {
@@ -3017,6 +3850,125 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "拷貝"
+          }
+        }
+      }
+    },
+    "Couldn't move the take to the Trash: %@" : {
+      "comment" : "The placeholder is the system's error message",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Optagelsen kunne ikke flyttes til papirkurven: %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aufnahme konnte nicht in den Papierkorb gelegt werden: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se pudo trasladar la toma a la papelera: %@"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ottoa ei voitu siirtää roskakoriin: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de placer la prise dans la corbeille : %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossibile spostare la ripresa nel Cestino: %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "テイクをゴミ箱に入れられませんでした: %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "촬영을 휴지통으로 이동할 수 없습니다: %@"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kunne ikke flytte opptaket til papirkurven: %@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kan opname niet naar prullenmand verplaatsen: %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie można przenieść ujęcia do kosza: %@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível mover a gravação para o Lixo: %@"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível mover a gravação para o Lixo: %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не удалось переместить дубль в Корзину: %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kunde inte flytta tagningen till papperskorgen: %@"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çekim Çöp Sepeti’ne taşınamadı: %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не вдалося перемістити дубль у Смітник: %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法将录制移到废纸篓：%@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法將錄製丟到垃圾桶：%@"
           }
         }
       }
@@ -4204,6 +5156,125 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "複製"
+          }
+        }
+      }
+    },
+    "Each script is a Markdown file you can edit in any app, or let an AI assistant such as Claude or Codex write. Changes show up right away." : {
+      "comment" : "Settings row subtitle",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hvert manuskript er en Markdown-fil, som du kan redigere i enhver app eller lade en AI-assistent som Claude eller Codex skrive. Ændringer vises med det samme."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jedes Skript ist eine Markdown-Datei, die du in jeder App bearbeiten oder von einem KI-Assistenten wie Claude oder Codex schreiben lassen kannst. Änderungen erscheinen sofort."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cada guion es un archivo Markdown que puedes editar en cualquier app o dejar que lo escriba un asistente de IA como Claude o Codex. Los cambios aparecen al instante."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jokainen käsikirjoitus on Markdown-tiedosto, jota voit muokata missä tahansa apissa tai antaa tekoälyavustajan, kuten Clauden tai Codexin, kirjoittaa. Muutokset näkyvät heti."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chaque script est un fichier Markdown que vous pouvez modifier dans n’importe quelle app, ou faire écrire par un assistant IA comme Claude ou Codex. Les modifications apparaissent aussitôt."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ogni copione è un file Markdown che puoi modificare in qualsiasi app o far scrivere a un assistente IA come Claude o Codex. Le modifiche compaiono subito."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "各原稿はMarkdownファイルです。どのアプリでも編集でき、ClaudeやCodexなどのAIアシスタントに書かせることもできます。変更はすぐに反映されます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "각 대본은 Markdown 파일이라 어떤 앱에서든 편집하거나 Claude, Codex 같은 AI 어시스턴트에게 작성을 맡길 수 있습니다. 변경 사항은 바로 반영됩니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hvert manus er en Markdown-fil som du kan redigere i hvilken som helst app, eller la en AI-assistent som Claude eller Codex skrive. Endringer vises med en gang."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elk script is een Markdown-bestand dat je in elke app kunt bewerken, of door een AI-assistent zoals Claude of Codex kunt laten schrijven. Wijzigingen verschijnen meteen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Każdy scenariusz to plik Markdown, który możesz edytować w dowolnej aplikacji lub powierzyć asystentowi AI, takiemu jak Claude czy Codex. Zmiany widać od razu."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cada roteiro é um arquivo Markdown que você pode editar em qualquer app ou deixar um assistente de IA como Claude ou Codex escrever. As mudanças aparecem na hora."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cada guião é um ficheiro Markdown que pode editar em qualquer app ou deixar um assistente de IA como o Claude ou o Codex escrever. As alterações aparecem de imediato."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Каждый сценарий — это файл Markdown, который можно править в любом приложении или поручить ИИ-ассистенту, например Claude или Codex. Изменения видны сразу."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varje manus är en Markdown-fil som du kan redigera i vilken app som helst, eller låta en AI-assistent som Claude eller Codex skriva. Ändringar syns direkt."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Her metin, herhangi bir uygulamada düzenleyebileceğiniz ya da Claude veya Codex gibi bir yapay zekâ asistanına yazdırabileceğiniz bir Markdown dosyasıdır. Değişiklikler hemen görünür."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кожен сценарій — це файл Markdown, який можна редагувати в будь-якій програмі або доручити ШІ-асистенту, як-от Claude чи Codex. Зміни видно одразу."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "每份讲稿都是一个 Markdown 文件，可用任何 App 编辑，也可以让 Claude 或 Codex 等 AI 助手来写。更改会立即显示。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "每份講稿都是一個 Markdown 檔案，可用任何 App 編輯，也可以讓 Claude 或 Codex 等 AI 助理來寫。變更會立即顯示。"
           }
         }
       }
@@ -5398,6 +6469,125 @@
         }
       }
     },
+    "Fills the rest of the screen during a take. Soft light lights up your face. Black stops glare in glasses and keeps the room dark. Turn the screen brightness up for more light." : {
+      "comment" : "Settings picker subtitle",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fylder resten af skærmen under en optagelse. Blødt lys oplyser dit ansigt. Sort stopper genskin i briller og holder rummet mørkt. Skru op for skærmens lysstyrke for mere lys."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Füllt den restlichen Bildschirm während einer Aufnahme. Weiches Licht beleuchtet dein Gesicht. Schwarz verhindert Spiegelungen in Brillen und hält den Raum dunkel. Erhöhe die Bildschirmhelligkeit für mehr Licht."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Llena el resto de la pantalla durante una toma. La luz suave ilumina tu cara. El negro evita reflejos en las gafas y mantiene la habitación oscura. Sube el brillo de la pantalla para tener más luz."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Täyttää muun näytön oton ajaksi. Pehmeä valo valaisee kasvosi. Musta estää heijastukset laseissa ja pitää huoneen pimeänä. Lisää näytön kirkkautta, niin saat enemmän valoa."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remplit le reste de l’écran pendant une prise. La lumière douce éclaire votre visage. Le noir évite les reflets dans les lunettes et garde la pièce sombre. Augmentez la luminosité de l’écran pour plus de lumière."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riempie il resto dello schermo durante una ripresa. La luce morbida illumina il viso. Il nero evita i riflessi negli occhiali e tiene la stanza al buio. Aumenta la luminosità dello schermo per avere più luce."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "撮影中、画面の残りの部分を塗りつぶします。やわらかい光は顔を明るく照らします。黒はメガネへの映り込みを防ぎ、部屋を暗く保ちます。明るさが足りないときは画面の輝度を上げてください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "촬영하는 동안 화면의 나머지 부분을 채웁니다. 부드러운 조명은 얼굴을 밝혀 줍니다. 검정은 안경 반사를 막고 방을 어둡게 유지합니다. 더 밝게 하려면 화면 밝기를 높이세요."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fyller resten av skjermen under et opptak. Mykt lys lyser opp ansiktet ditt. Svart hindrer gjenskinn i briller og holder rommet mørkt. Skru opp skjermens lysstyrke for mer lys."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vult de rest van het scherm tijdens een opname. Zacht licht verlicht je gezicht. Zwart voorkomt weerspiegeling in brillen en houdt de ruimte donker. Zet de schermhelderheid hoger voor meer licht."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wypełnia resztę ekranu podczas nagrania. Miękkie światło oświetla twarz. Czarny zapobiega odblaskom w okularach i utrzymuje ciemność w pokoju. Zwiększ jasność ekranu, aby uzyskać więcej światła."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preenche o resto da tela durante uma gravação. A luz suave ilumina seu rosto. O preto evita reflexos nos óculos e mantém o ambiente escuro. Aumente o brilho da tela para ter mais luz."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preenche o resto do ecrã durante uma gravação. A luz suave ilumina o seu rosto. O preto evita reflexos nos óculos e mantém a sala escura. Aumente o brilho do ecrã para ter mais luz."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заполняет остальную часть экрана во время дубля. Мягкий свет освещает лицо. Чёрный убирает блики в очках и оставляет комнату тёмной. Увеличьте яркость экрана, чтобы света было больше."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fyller resten av skärmen under en tagning. Mjukt ljus lyser upp ditt ansikte. Svart stoppar reflexer i glasögon och håller rummet mörkt. Höj skärmens ljusstyrka för mer ljus."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çekim sırasında ekranın geri kalanını doldurur. Yumuşak ışık yüzünüzü aydınlatır. Siyah, gözlüklerdeki yansımayı önler ve odayı karanlık tutar. Daha fazla ışık için ekran parlaklığını artırın."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заповнює решту екрана під час дубля. М’яке світло освітлює обличчя. Чорний прибирає відблиски в окулярах і залишає кімнату темною. Збільште яскравість екрана, щоб світла було більше."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "录制时填满屏幕的其余部分。柔光可以照亮你的脸。黑色可避免眼镜反光，并让房间保持昏暗。需要更多光线时，请调高屏幕亮度。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "錄製時填滿螢幕的其餘部分。柔光可以照亮你的臉。黑色可避免眼鏡反光，並讓房間保持昏暗。需要更多光線時，請調高螢幕亮度。"
+          }
+        }
+      }
+    },
     "Film yourself while you read. Takes go to Movies › NotchPrompter." : {
       "comment" : "Onboarding. Use the Finder folder name from the glossary. Keep “›”.",
       "localizations" : {
@@ -6230,6 +7420,125 @@
         }
       }
     },
+    "General" : {
+      "comment" : "Settings tab",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generelt"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allgemein"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "General"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yleiset"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Général"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generali"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一般"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "일반"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generelt"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algemeen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ogólne"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geral"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geral"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Основные"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allmänt"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genel"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Загальні"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通用"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一般"
+          }
+        }
+      }
+    },
     "Help" : {
       "comment" : "Menu bar menu",
       "localizations" : {
@@ -6705,8 +8014,8 @@
         }
       }
     },
-    "Hide the prompter (⇧⌘P)" : {
-      "comment" : "Tooltip; keep the shortcut exactly.",
+    "Hide the prompter (%@)" : {
+      "comment" : "Tooltip; the placeholder is a keyboard shortcut, e.g. ⌃⌥P",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -7536,6 +8845,125 @@
         }
       }
     },
+    "Input level" : {
+      "comment" : "Settings row: live level bar of the microphone",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inputniveau"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eingangspegel"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nivel de entrada"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tulotaso"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niveau d’entrée"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Livello di ingresso"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "入力レベル"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "입력 레벨"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inngangsnivå"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invoerniveau"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poziom wejścia"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nível de entrada"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nível de entrada"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Уровень входа"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingångsnivå"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giriş seviyesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рівень входу"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "输入电平"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "輸入音量"
+          }
+        }
+      }
+    },
     "It follows your voice" : {
       "comment" : "Onboarding page title.",
       "localizations" : {
@@ -7655,6 +9083,363 @@
         }
       }
     },
+    "Keep scripts as files in a folder" : {
+      "comment" : "Settings row title",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gem manuskripter som filer i en mappe"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skripte als Dateien in einem Ordner behalten"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar los guiones como archivos en una carpeta"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Säilytä käsikirjoitukset tiedostoina kansiossa"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Garder les scripts comme fichiers dans un dossier"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tieni i copioni come file in una cartella"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "原稿をフォルダ内のファイルとして保存"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "대본을 폴더에 파일로 보관"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ha manus som filer i en mappe"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scripts als bestanden in een map bewaren"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przechowuj scenariusze jako pliki w folderze"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manter roteiros como arquivos numa pasta"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manter guiões como ficheiros numa pasta"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Хранить сценарии как файлы в папке"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spara manus som filer i en mapp"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metinleri bir klasörde dosya olarak tut"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зберігати сценарії як файли в папці"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "将讲稿保存为文件夹中的文件"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "將講稿存成檔案夾中的檔案"
+          }
+        }
+      }
+    },
+    "Keyboard Shortcuts" : {
+      "comment" : "Settings section",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tastaturgenveje"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tastaturkurzbefehle"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atajos de teclado"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pikanäppäimet"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raccourcis clavier"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abbreviazioni da tastiera"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キーボードショートカット"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "키보드 단축키"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tastatursnarveier"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toetscombinaties"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skróty klawiszowe"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atalhos de teclado"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atalhos de teclado"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сочетания клавиш"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kortkommandon"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klavye kısayolları"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Клавіатурні скорочення"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "键盘快捷键"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鍵盤快速鍵"
+          }
+        }
+      }
+    },
+    "Last take" : {
+      "comment" : "Section title in the recording popover: the most recent recording",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seneste optagelse"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Letzte Aufnahme"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Última toma"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Viimeisin otto"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dernière prise"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ultima ripresa"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最後のテイク"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "마지막 촬영"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siste opptak"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laatste opname"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ostatnie ujęcie"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Última gravação"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Última gravação"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Последний дубль"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Senaste tagning"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Son çekim"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Останній дубль"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上一条录制"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上一段錄製"
+          }
+        }
+      }
+    },
     "Lost? Click the word you're on" : {
       "comment" : "Short hint shown in the prompter when voice-follow seems lost.",
       "localizations" : {
@@ -7770,6 +9555,125 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "跟丟了？按一下你讀到的字詞"
+          }
+        }
+      }
+    },
+    "Microphone" : {
+      "comment" : "Settings picker: which microphone takes and voice-follow use",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mikrofon"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mikrofon"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Micrófono"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mikrofoni"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Micro"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Microfono"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マイク"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "마이크"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mikrofon"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Microfoon"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mikrofon"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Microfone"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Microfone"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Микрофон"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mikrofon"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mikrofon"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мікрофон"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "麦克风"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "麥克風"
           }
         }
       }
@@ -8011,6 +9915,363 @@
         }
       }
     },
+    "Move Last Take to Trash" : {
+      "comment" : "Menu item: move the most recent recording to the Trash",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flyt seneste optagelse til papirkurv"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Letzte Aufnahme in den Papierkorb legen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trasladar última toma a la papelera"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siirrä viimeisin otto roskakoriin"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placer la dernière prise dans la corbeille"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sposta ultima ripresa nel Cestino"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最後のテイクをゴミ箱に入れる"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "마지막 촬영을 휴지통으로 이동"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flytt siste opptak til papirkurven"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verplaats laatste opname naar prullenmand"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przenieś ostatnie ujęcie do kosza"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mover última gravação para o Lixo"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mover última gravação para o Lixo"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Переместить последний дубль в Корзину"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flytta senaste tagning till papperskorgen"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Son Çekimi Çöp Sepeti’ne Taşı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Перемістити останній дубль у Смітник"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "将上一条录制移到废纸篓"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "將上一段錄製丟到垃圾桶"
+          }
+        }
+      }
+    },
+    "Move to Trash" : {
+      "comment" : "Button: move the last recording to the Trash. Use the Finder's wording",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flyt til papirkurv"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In den Papierkorb legen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trasladar a la papelera"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siirrä roskakoriin"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placer dans la corbeille"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sposta nel Cestino"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ゴミ箱に入れる"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "휴지통으로 이동"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flytt til papirkurven"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verplaats naar prullenmand"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przenieś do kosza"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mover para o Lixo"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mover para o Lixo"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Переместить в Корзину"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flytta till papperskorgen"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çöp Sepeti’ne Taşı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Перемістити в Смітник"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "移到废纸篓"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "丟到垃圾桶"
+          }
+        }
+      }
+    },
+    "Moved the take to the Trash" : {
+      "comment" : "Status message after the last recording was moved to the Trash",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Optagelsen er flyttet til papirkurven"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aufnahme in den Papierkorb gelegt"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toma trasladada a la papelera"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otto siirretty roskakoriin"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prise placée dans la corbeille"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ripresa spostata nel Cestino"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "テイクをゴミ箱に入れました"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "촬영을 휴지통으로 이동했습니다"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opptaket er flyttet til papirkurven"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opname naar prullenmand verplaatst"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ujęcie przeniesiono do kosza"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gravação movida para o Lixo"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gravação movida para o Lixo"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дубль перемещён в Корзину"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tagningen har flyttats till papperskorgen"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çekim Çöp Sepeti’ne taşındı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дубль переміщено в Смітник"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已将录制移到废纸篓"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已將錄製丟到垃圾桶"
+          }
+        }
+      }
+    },
     "New Script" : {
       "comment" : "Menu item / button.",
       "localizations" : {
@@ -8245,6 +10506,125 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "新增講稿（⌘N）"
+          }
+        }
+      }
+    },
+    "No script called “%@”" : {
+      "comment" : "Status message when a notchprompter:// link names a script that doesn't exist",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intet manuskript med navnet “%@”"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kein Skript namens „%@“"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay ningún guion llamado «%@»"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käsikirjoitusta ”%@” ei löydy"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun script nommé « %@ »"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessun copione chiamato “%@”"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「%@」という原稿はありません"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“%@” 대본이 없습니다"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen manus som heter «%@»"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen script met de naam ‘%@’"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak scenariusza o nazwie „%@”"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhum roteiro chamado “%@”"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhum guião chamado “%@”"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нет сценария «%@»"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inget manus som heter ”%@”"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“%@” adlı metin yok"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Немає сценарію «%@»"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "没有名为“%@”的讲稿"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沒有名為「%@」的講稿"
           }
         }
       }
@@ -8721,6 +11101,125 @@
         }
       }
     },
+    "Not connected" : {
+      "comment" : "A screen chosen for the prompter that isn't connected now",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ikke tilsluttet"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nicht verbunden"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No conectada"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ei yhdistetty"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non connecté"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non collegato"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未接続"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "연결되지 않음"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ikke tilkoblet"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niet aangesloten"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie podłączono"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não conectada"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não ligado"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не подключён"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inte ansluten"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bağlı değil"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не під’єднано"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未连接"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未連接"
+          }
+        }
+      }
+    },
     "Not Now" : {
       "comment" : "Alert button (standard macOS wording).",
       "localizations" : {
@@ -9074,6 +11573,125 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "NotchPrompter 無法使用相機。"
+          }
+        }
+      }
+    },
+    "NotchPrompter can't use the microphone." : {
+      "comment" : "Settings, when microphone access is turned off",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter kan ikke bruge mikrofonen."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter kann das Mikrofon nicht verwenden."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter no puede usar el micrófono."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter ei voi käyttää mikrofonia."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter ne peut pas utiliser le micro."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter non può usare il microfono."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompterはマイクを使用できません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter가 마이크를 사용할 수 없습니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter kan ikke bruke mikrofonen."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter kan de microfoon niet gebruiken."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter nie może używać mikrofonu."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O NotchPrompter não pode usar o microfone."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O NotchPrompter não pode usar o microfone."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter не может использовать микрофон."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter kan inte använda mikrofonen."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter mikrofonu kullanamıyor."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter не може використовувати мікрофон."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter 无法使用麦克风。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotchPrompter 無法使用麥克風。"
           }
         }
       }
@@ -10264,6 +12882,125 @@
         }
       }
     },
+    "Pause or resume" : {
+      "comment" : "Global shortcut: stop following the voice or scrolling, keeping the place, or carry on",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sæt på pause eller fortsæt"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pausieren oder fortsetzen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pausar o reanudar"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tauko tai jatka"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mettre en pause ou reprendre"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metti in pausa o riprendi"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一時停止／再開"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "일시 정지/재개"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pause eller fortsett"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pauzeren of hervatten"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wstrzymaj lub wznów"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pausar ou retomar"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pausar ou retomar"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пауза или продолжить"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pausa eller fortsätt"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duraklat veya sürdür"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пауза або продовжити"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "暂停或继续"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "暫停或繼續"
+          }
+        }
+      }
+    },
     "Pause while the mouse is over the text" : {
       "localizations" : {
         "da" : {
@@ -10497,6 +13234,125 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "播放"
+          }
+        }
+      }
+    },
+    "Play Last Take" : {
+      "comment" : "Menu item: open the most recent recording",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afspil seneste optagelse"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Letzte Aufnahme abspielen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reproducir última toma"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toista viimeisin otto"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lire la dernière prise"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riproduci ultima ripresa"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最後のテイクを再生"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "마지막 촬영 재생"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spill av siste opptak"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speel laatste opname af"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odtwórz ostatnie ujęcie"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reproduzir última gravação"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reproduzir última gravação"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Воспроизвести последний дубль"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spela upp senaste tagning"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Son Çekimi Oynat"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Відтворити останній дубль"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "播放上一条录制"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "播放上一段錄製"
           }
         }
       }
@@ -12284,6 +15140,125 @@
         }
       }
     },
+    "Save a transcript with each take" : {
+      "comment" : "Settings toggle title",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gem en transskription med hver optagelse"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mit jeder Aufnahme ein Transkript sichern"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar una transcripción con cada toma"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tallenna tekstitys jokaisen oton kanssa"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrer une transcription avec chaque prise"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salva una trascrizione con ogni ripresa"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "テイクごとに文字起こしを保存"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "촬영마다 받아쓰기 저장"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lagre en transkripsjon med hvert opptak"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bij elke opname een transcriptie bewaren"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapisuj transkrypcję z każdym ujęciem"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvar uma transcrição com cada gravação"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar uma transcrição com cada gravação"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сохранять расшифровку каждого дубля"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spara en transkription med varje tagning"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Her çekimle bir döküm kaydet"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зберігати розшифровку кожного дубля"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "每次录制时保存文字稿"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "每次錄製時儲存逐字稿"
+          }
+        }
+      }
+    },
     "Saved automatically" : {
       "localizations" : {
         "da" : {
@@ -12402,121 +15377,121 @@
         }
       }
     },
-    "Saved in Movies › NotchPrompter" : {
-      "comment" : "Use the Finder name of the Movies folder in this language Short status message after a recording is saved. Use the Finder folder name from the glossary. Keep “›”.",
+    "Saved in Movies › NotchPrompter. ⌘⌫ moves it to the Trash." : {
+      "comment" : "Use the Finder name of the Movies folder in this language Short status message after a recording is saved. Use the Finder folder name from the glossary. Keep “›”. Then: ⌘⌫ (the shortcut) moves the saved take to the Trash.",
       "localizations" : {
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gemt i Film › NotchPrompter"
+            "value" : "Gemt i Film › NotchPrompter. ⌘⌫ flytter den til papirkurven."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gesichert in Filme › NotchPrompter"
+            "value" : "Gesichert in Filme › NotchPrompter. ⌘⌫ legt sie in den Papierkorb."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Guardado en Vídeos › NotchPrompter"
+            "value" : "Guardado en Vídeos › NotchPrompter. ⌘⌫ la traslada a la papelera."
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tallennettu: Elokuvat › NotchPrompter"
+            "value" : "Tallennettu: Elokuvat › NotchPrompter. ⌘⌫ siirtää sen roskakoriin."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Enregistré dans Vidéos › NotchPrompter"
+            "value" : "Enregistré dans Vidéos › NotchPrompter. ⌘⌫ la place dans la corbeille."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Salvato in Filmati › NotchPrompter"
+            "value" : "Salvato in Filmati › NotchPrompter. ⌘⌫ la sposta nel Cestino."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "「ムービー › NotchPrompter」に保存しました"
+            "value" : "「ムービー › NotchPrompter」に保存しました。⌘⌫でゴミ箱に入れます。"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "동영상 › NotchPrompter에 저장됨"
+            "value" : "동영상 › NotchPrompter에 저장됨. ⌘⌫를 누르면 휴지통으로 이동합니다."
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lagret i Filmer › NotchPrompter"
+            "value" : "Lagret i Filmer › NotchPrompter. ⌘⌫ flytter det til papirkurven."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bewaard in Films › NotchPrompter"
+            "value" : "Bewaard in Films › NotchPrompter. ⌘⌫ verplaatst hem naar de prullenmand."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zapisano w Filmy › NotchPrompter"
+            "value" : "Zapisano w Filmy › NotchPrompter. ⌘⌫ przenosi je do kosza."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Salvo em Filmes › NotchPrompter"
+            "value" : "Salvo em Filmes › NotchPrompter. ⌘⌫ move para o Lixo."
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Guardado em Filmes › NotchPrompter"
+            "value" : "Guardado em Filmes › NotchPrompter. ⌘⌫ move para o Lixo."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Сохранено в Фильмы › NotchPrompter"
+            "value" : "Сохранено в Фильмы › NotchPrompter. ⌘⌫ — переместить в Корзину."
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sparad i Filmer › NotchPrompter"
+            "value" : "Sparad i Filmer › NotchPrompter. ⌘⌫ flyttar den till papperskorgen."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kaydedildi: Filmler › NotchPrompter"
+            "value" : "Kaydedildi: Filmler › NotchPrompter. ⌘⌫ Çöp Sepeti’ne taşır."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Збережено у Відео › NotchPrompter"
+            "value" : "Збережено у Відео › NotchPrompter. ⌘⌫ — перемістити в Смітник."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "已存储到“影片 › NotchPrompter”"
+            "value" : "已存储到“影片 › NotchPrompter”。按 ⌘⌫ 移到废纸篓。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "已儲存到「影片 › NotchPrompter」"
+            "value" : "已儲存到「影片 › NotchPrompter」。按 ⌘⌫ 丟到垃圾桶。"
           }
         }
       }
@@ -12874,6 +15849,125 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "螢幕錄影已停止：%@"
+          }
+        }
+      }
+    },
+    "Screen while recording" : {
+      "comment" : "Settings picker title: what the rest of the screen shows during a camera take",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skærm under optagelse"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bildschirm während der Aufnahme"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pantalla al grabar"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Näyttö tallennuksen aikana"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Écran pendant l’enregistrement"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schermo durante la registrazione"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "録画中の画面"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "녹화 중 화면"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skjerm under opptak"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scherm tijdens opname"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ekran podczas nagrywania"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tela durante a gravação"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ecrã durante a gravação"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Экран во время записи"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skärm under inspelning"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kayıt sırasında ekran"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Екран під час запису"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "录制时的屏幕"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "錄製時的螢幕"
           }
         }
       }
@@ -14182,6 +17276,244 @@
         }
       }
     },
+    "Show on" : {
+      "comment" : "Settings: the screen the prompter hangs from",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vis på"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anzeigen auf"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar en"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Näytä näytöllä"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher sur"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra su"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "表示する画面"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "표시할 화면"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vis på"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tonen op"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokaż na"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar em"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar em"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показывать на"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visa på"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gösterilecek ekran"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показувати на"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "显示在"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顯示於"
+          }
+        }
+      }
+    },
+    "Show or hide the prompter" : {
+      "comment" : "Global shortcut",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vis eller skjul prompteren"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prompter ein- oder ausblenden"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar u ocultar el teleprompter"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Näytä tai piilota prompteri"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher ou masquer le prompteur"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra o nascondi il prompter"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プロンプターを表示／非表示"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "프롬프터 보기/가리기"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vis eller skjul prompteren"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toon of verberg de prompter"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokaż lub ukryj prompter"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar ou ocultar o teleprompter"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar ou ocultar o teleponto"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показать или скрыть суфлёр"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visa eller göm promptern"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prompter’ı göster veya gizle"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показати або сховати суфлер"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "显示或隐藏提词器"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顯示或隱藏提詞機"
+          }
+        }
+      }
+    },
     "Show Prompter" : {
       "comment" : "Menu item: show the teleprompter panel.",
       "localizations" : {
@@ -15252,6 +18584,125 @@
         }
       }
     },
+    "Soft light" : {
+      "comment" : "Screen light option: fill the screen with warm white",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blødt lys"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weiches Licht"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luz suave"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pehmeä valo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lumière douce"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luce morbida"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "やわらかい光"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "부드러운 조명"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mykt lys"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zacht licht"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miękkie światło"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luz suave"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luz suave"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мягкий свет"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mjukt ljus"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yumuşak ışık"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "М’яке світло"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "柔光"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "柔光"
+          }
+        }
+      }
+    },
     "Speech is recognised on your Mac and never saved." : {
       "comment" : "Onboarding, privacy note.",
       "localizations" : {
@@ -15490,6 +18941,125 @@
         }
       }
     },
+    "Start or stop recording" : {
+      "comment" : "Global shortcut",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start eller stop optagelse"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aufnahme starten oder stoppen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iniciar o detener la grabación"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aloita tai lopeta tallennus"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Démarrer ou arrêter l’enregistrement"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avvia o interrompi la registrazione"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "録画を開始／停止"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "녹화 시작/중지"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start eller stopp opptak"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opname starten of stoppen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozpocznij lub zatrzymaj nagrywanie"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iniciar ou parar a gravação"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iniciar ou parar a gravação"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Начать или остановить запись"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starta eller stoppa inspelning"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaydı başlat veya durdur"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Почати або зупинити запис"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开始或停止录制"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開始或停止錄製"
+          }
+        }
+      }
+    },
     "Starting camera…" : {
       "comment" : "Short status message.",
       "localizations" : {
@@ -15724,6 +19294,125 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "正在啟動螢幕錄影⋯"
+          }
+        }
+      }
+    },
+    "Stop" : {
+      "comment" : "Button: stop syncing the scripts with a folder",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beenden"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detener"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lopeta"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arrêter"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Interrompi"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "停止"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "중지"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stopp"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zatrzymaj"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parar"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parar"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Остановить"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stoppa"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Durdur"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зупинити"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "停止"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "停止"
           }
         }
       }
@@ -16204,6 +19893,125 @@
         }
       }
     },
+    "Subtitles (.srt) next to the movie, made on this Mac after the take. Use them for captions, or let an AI assistant check and cut the take." : {
+      "comment" : "Settings toggle subtitle",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Undertekster (.srt) ved siden af filmen, lavet på denne Mac efter optagelsen. Brug dem til tekstning, eller lad en AI-assistent tjekke og klippe optagelsen."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Untertitel (.srt) neben dem Film, nach der Aufnahme auf diesem Mac erstellt. Nutze sie für Untertitel oder lass einen KI-Assistenten die Aufnahme prüfen und schneiden."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Subtítulos (.srt) junto a la película, creados en este Mac después de la toma. Úsalos para subtitular o deja que un asistente de IA revise y corte la toma."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tekstitys (.srt) elokuvan viereen, tehty tällä Macilla oton jälkeen. Käytä sitä tekstityksiin tai anna tekoälyavustajan tarkistaa ja leikata otto."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Des sous-titres (.srt) à côté de la vidéo, créés sur ce Mac après la prise. Utilisez-les pour le sous-titrage, ou laissez un assistant IA vérifier et monter la prise."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sottotitoli (.srt) accanto al filmato, creati su questo Mac dopo la ripresa. Usali per i sottotitoli o lascia che un assistente IA controlli e tagli la ripresa."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "テイクの後、このMacで作成した字幕（.srt）をムービーの隣に保存します。キャプションに使ったり、AIアシスタントにテイクの確認や編集を任せたりできます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "촬영 후 이 Mac에서 만든 자막(.srt)을 동영상 옆에 저장합니다. 캡션에 쓰거나 AI 어시스턴트에게 촬영본 확인과 편집을 맡길 수 있습니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Undertekster (.srt) ved siden av filmen, laget på denne Macen etter opptaket. Bruk dem til teksting, eller la en AI-assistent sjekke og klippe opptaket."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ondertitels (.srt) naast de film, na de opname op deze Mac gemaakt. Gebruik ze voor ondertiteling, of laat een AI-assistent de opname controleren en knippen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Napisy (.srt) obok filmu, tworzone na tym Macu po nagraniu. Użyj ich jako napisów lub pozwól asystentowi AI sprawdzić i przyciąć ujęcie."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Legendas (.srt) ao lado do filme, feitas neste Mac depois da gravação. Use-as em legendagem ou deixe um assistente de IA revisar e cortar a gravação."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Legendas (.srt) junto ao filme, feitas neste Mac depois da gravação. Use-as para legendar ou deixe um assistente de IA rever e cortar a gravação."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Субтитры (.srt) рядом с видео, создаются на этом Mac после дубля. Используйте их для подписей или поручите ИИ-ассистенту проверить и смонтировать дубль."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Undertexter (.srt) bredvid filmen, skapade på den här Macen efter tagningen. Använd dem för textning, eller låt en AI-assistent kontrollera och klippa tagningen."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çekimden sonra bu Mac’te oluşturulan altyazılar (.srt) videonun yanına kaydedilir. Altyazı için kullanın ya da bir yapay zekâ asistanına çekimi kontrol ettirip kestirin."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Субтитри (.srt) поруч із відео, створюються на цьому Mac після дубля. Використовуйте їх для підписів або доручіть ШІ-асистенту перевірити й змонтувати дубль."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "录制后在这台 Mac 上生成字幕（.srt），存放在影片旁边。可用于添加字幕，或让 AI 助手检查和剪辑这次录制。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "錄製後在這部 Mac 上產生字幕（.srt），存放在影片旁邊。可用於加上字幕，或讓 AI 助理檢查和剪輯這次錄製。"
+          }
+        }
+      }
+    },
     "Takes are saved in Movies › NotchPrompter" : {
       "comment" : "Use the Finder name of the Movies folder in this language Settings row label; “Movies” is the Finder name of the Movies folder (use the localized Finder name from the glossary). Keep “›”.",
       "localizations" : {
@@ -16438,6 +20246,125 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "提詞機"
+          }
+        }
+      }
+    },
+    "Test Microphone" : {
+      "comment" : "Button: allow the microphone so its level can be shown",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test mikrofon"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mikrofon testen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Probar micrófono"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Testaa mikrofoni"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tester le micro"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prova microfono"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マイクをテスト"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "마이크 테스트"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test mikrofon"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Microfoon testen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Testuj mikrofon"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Testar microfone"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Testar microfone"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверить микрофон"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Testa mikrofon"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mikrofonu test et"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Перевірити мікрофон"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "测试麦克风"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "測試麥克風"
           }
         }
       }
@@ -17982,6 +21909,125 @@
         }
       }
     },
+    "They work while a video call, Keynote or the app you record is in front." : {
+      "comment" : "Settings toggle subtitle",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De virker, mens et videoopkald, Keynote eller den app, du optager, er forrest."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sie funktionieren, während ein Videoanruf, Keynote oder die App, die du aufnimmst, im Vordergrund ist."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Funcionan mientras una videollamada, Keynote o la app que grabas está en primer plano."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ne toimivat, kun videopuhelu, Keynote tai tallentamasi appi on edessä."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ils fonctionnent quand un appel vidéo, Keynote ou l’app que vous enregistrez est au premier plan."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Funzionano mentre in primo piano c’è una videochiamata, Keynote o l’app che stai registrando."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ビデオ通話、Keynote、録画中のアプリが前面にあっても使えます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "영상 통화, Keynote 또는 녹화 중인 앱이 앞에 있을 때도 작동합니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De virker mens en videosamtale, Keynote eller appen du tar opp, er foran."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ze werken terwijl een videogesprek, Keynote of de app die je opneemt op de voorgrond staat."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Działają, gdy na pierwszym planie jest rozmowa wideo, Keynote lub nagrywana aplikacja."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Funcionam enquanto uma chamada de vídeo, o Keynote ou o app que você grava está em primeiro plano."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Funcionam enquanto uma videochamada, o Keynote ou a app que está a gravar está em primeiro plano."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Работают, когда на переднем плане видеозвонок, Keynote или приложение, которое вы записываете."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De fungerar när ett videosamtal, Keynote eller appen du spelar in ligger överst."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Önde bir görüntülü görüşme, Keynote ya da kaydettiğiniz uygulama varken de çalışır."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Працюють, коли на передньому плані відеодзвінок, Keynote або програма, яку ви записуєте."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在视频通话、Keynote 或你正在录制的 App 位于前台时也能使用。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在視訊通話、Keynote 或你正在錄製的 App 位於前景時也能使用。"
+          }
+        }
+      }
+    },
     "This script is empty.\nClick the pencil below to write it." : {
       "localizations" : {
         "da" : {
@@ -18219,7 +22265,7 @@
         }
       }
     },
-    "To bring it back, click the NotchPrompter icon in the menu bar, click the app in the Dock, or press ⇧⌘P." : {
+    "To bring it back, click the NotchPrompter icon in the menu bar, click the app in the Dock, or press %@." : {
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -18335,7 +22381,8 @@
             "value" : "若要重新顯示，請按一下選單列中的 NotchPrompter 圖像、按一下 Dock 中的 App，或按下 ⇧⌘P。"
           }
         }
-      }
+      },
+      "comment" : "The placeholder is a keyboard shortcut, e.g. ⌃⌥P"
     },
     "Try It Now" : {
       "comment" : "Onboarding: last button, closes onboarding and starts the prompter with the practice script.",
@@ -19045,6 +23092,363 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "使用 Apple 伺服器"
+          }
+        }
+      }
+    },
+    "Use Folder" : {
+      "comment" : "Button in the folder panel: sync the scripts with this folder",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brug mappe"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ordner verwenden"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usar carpeta"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käytä kansiota"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utiliser le dossier"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa cartella"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このフォルダを使用"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "폴더 사용"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bruk mappe"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gebruik map"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Użyj folderu"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usar pasta"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usar pasta"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Использовать папку"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Använd mapp"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klasörü Kullan"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Використати папку"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用文件夹"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用檔案夾"
+          }
+        }
+      }
+    },
+    "Use these shortcuts in any app" : {
+      "comment" : "Settings toggle title",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brug disse genveje i alle apps"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Kurzbefehle in jeder App verwenden"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usar estos atajos en cualquier app"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käytä näitä pikanäppäimiä kaikissa apeissa"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utiliser ces raccourcis dans toutes les apps"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa queste abbreviazioni in qualsiasi app"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "どのアプリからでもこれらのショートカットを使う"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "모든 앱에서 이 단축키 사용"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bruk disse snarveiene i alle apper"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gebruik deze toetscombinaties in elke app"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Używaj tych skrótów w każdej aplikacji"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usar estes atalhos em qualquer app"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usar estes atalhos em qualquer app"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Использовать эти сочетания в любом приложении"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Använd kortkommandona i alla appar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu kısayolları her uygulamada kullan"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Використовувати ці скорочення в будь-якій програмі"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在任何 App 中使用这些快捷键"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在任何 App 中使用這些快速鍵"
+          }
+        }
+      }
+    },
+    "Used by another app" : {
+      "comment" : "A global shortcut another app already uses",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bruges af en anden app"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Von einer anderen App belegt"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otra app lo usa"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toinen appi käyttää tätä"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilisé par une autre app"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usata da un’altra app"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "別のアプリが使用中"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "다른 앱에서 사용 중"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brukes av en annen app"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In gebruik door een andere app"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Używany przez inną aplikację"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usado por outro app"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usado por outra app"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Занято другим приложением"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Används av en annan app"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Başka bir uygulama kullanıyor"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Використовується іншою програмою"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已被其他 App 使用"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已被其他 App 使用"
           }
         }
       }

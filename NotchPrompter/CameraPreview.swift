@@ -1,35 +1,10 @@
 import AVFoundation
 import AppKit
 import SwiftUI
+import NotchPrompterKit
 
-/// Shows a capture session's camera, mirrored like a mirror (and like FaceTime), so moving
-/// left moves left on screen.
-final class CameraPreviewNSView: NSView {
-    let preview = AVCaptureVideoPreviewLayer()
-
-    override init(frame: NSRect) {
-        super.init(frame: frame)
-        wantsLayer = true
-        layer?.backgroundColor = NSColor.black.cgColor
-        layer?.cornerRadius = 10
-        layer?.masksToBounds = true
-        preview.videoGravity = .resizeAspectFill
-        layer?.addSublayer(preview)
-    }
-
-    required init?(coder: NSCoder) { fatalError() }
-
-    var session: AVCaptureSession? {
-        get { preview.session }
-        set {
-            preview.session = newValue
-            if let connection = preview.connection, connection.isVideoMirroringSupported {
-                connection.automaticallyAdjustsVideoMirroring = false
-                connection.isVideoMirrored = true
-            }
-        }
-    }
-
+/// A view that says when it can be seen, so a preview only uses the camera or microphone then.
+class VisibilityTrackingView: NSView {
     /// Called with true when the view is on screen, and false when its window closes, hides or
     /// is covered. The Settings window is kept after closing, so it can't rely on being removed.
     var onVisible: ((Bool) -> Void)? {
@@ -60,6 +35,35 @@ final class CameraPreviewNSView: NSView {
     }
 
     deinit { observers.forEach(NotificationCenter.default.removeObserver) }
+}
+
+/// Shows a capture session's camera, mirrored like a mirror (and like FaceTime), so moving
+/// left moves left on screen.
+final class CameraPreviewNSView: VisibilityTrackingView {
+    let preview = AVCaptureVideoPreviewLayer()
+
+    override init(frame: NSRect) {
+        super.init(frame: frame)
+        wantsLayer = true
+        layer?.backgroundColor = NSColor.black.cgColor
+        layer?.cornerRadius = 10
+        layer?.masksToBounds = true
+        preview.videoGravity = .resizeAspectFill
+        layer?.addSublayer(preview)
+    }
+
+    required init?(coder: NSCoder) { fatalError() }
+
+    var session: AVCaptureSession? {
+        get { preview.session }
+        set {
+            preview.session = newValue
+            if let connection = preview.connection, connection.isVideoMirroringSupported {
+                connection.automaticallyAdjustsVideoMirroring = false
+                connection.isVideoMirrored = true
+            }
+        }
+    }
 
     override func layout() {
         super.layout()
@@ -180,12 +184,67 @@ struct CameraPreview: NSViewRepresentable {
     }
 }
 
+/// The microphone's level, or a button to allow the microphone first.
+struct MicrophoneLevelSection: View {
+    let microphoneID: String
+    @State private var status = AVCaptureDevice.authorizationStatus(for: .audio)
+
+    var body: some View {
+        #if DEBUG
+        // Screenshots: a still bar, so the microphone stays off.
+        if ScreenshotRenderer.outputFolder != nil {
+            LabeledContent("Input level") { LevelBarStill(level: 0.62).frame(height: 6) }
+        } else { live }
+        #else
+        live
+        #endif
+    }
+
+    @ViewBuilder private var live: some View {
+        switch status {
+        case .authorized:
+            LabeledContent("Input level") {
+                MicrophoneLevel(microphoneID: microphoneID).frame(height: 6)
+            }
+        case .notDetermined:
+            LabeledContent("Input level") {
+                Button("Test Microphone") {
+                    AVCaptureDevice.requestAccess(for: .audio) { _ in
+                        DispatchQueue.main.async { status = AVCaptureDevice.authorizationStatus(for: .audio) }
+                    }
+                }
+            }
+        default:
+            LabeledContent("NotchPrompter can't use the microphone.") {
+                Button("Open System Settings") { NSWorkspace.shared.open(VoiceListener.microphoneSettings) }
+            }
+        }
+    }
+}
+
 /// The Settings preview, or a button to allow the camera first.
 struct CameraPreviewSection: View {
     let cameraID: String
     @State private var status = AVCaptureDevice.authorizationStatus(for: .video)
 
     var body: some View {
+        Group {
+            #if DEBUG
+            // Screenshots: a picture from a file, so the camera stays off.
+            if ScreenshotRenderer.outputFolder != nil {
+                if let still = ScreenshotRenderer.cameraStill {
+                    Image(nsImage: still).resizable().scaledToFill().clipShape(RoundedRectangle(cornerRadius: 10))
+                }
+            } else { live }
+            #else
+            live
+            #endif
+        }
+        .aspectRatio(16 / 9, contentMode: .fit)
+        .background(.black.opacity(0.06), in: RoundedRectangle(cornerRadius: 10))
+    }
+
+    @ViewBuilder private var live: some View {
         Group {
             switch status {
             case .authorized:
@@ -206,7 +265,111 @@ struct CameraPreviewSection: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
-        .aspectRatio(16 / 9, contentMode: .fit)
-        .background(.black.opacity(0.06), in: RoundedRectangle(cornerRadius: 10))
+    }
+}
+
+#if DEBUG
+/// The level bar as a picture, for screenshots.
+private struct LevelBarStill: View {
+    let level: CGFloat
+    var body: some View {
+        GeometryReader { g in
+            Capsule().fill(.quaternary)
+                .overlay(alignment: .leading) { Capsule().fill(.green).frame(width: g.size.width * level) }
+        }
+    }
+}
+#endif
+
+/// A live level bar for the chosen microphone, so you can see it hears you before a take.
+struct MicrophoneLevel: NSViewRepresentable {
+    let microphoneID: String
+
+    final class Coordinator: NSObject {
+        let session = AVCaptureSession()
+        private let output = AVCaptureAudioDataOutput()
+        let queue = DispatchQueue(label: "com.magnusramm.NotchPrompter.settings-mic")
+        var microphoneID: String?
+        var visible = false
+        weak var view: LevelBarView?
+        private var timer: Timer?
+
+        func use(_ id: String) {
+            guard id != microphoneID else { return }
+            microphoneID = id
+            if visible { start() }
+        }
+
+        func setVisible(_ on: Bool) {
+            visible = on
+            if on { start() } else { stop() }
+        }
+
+        private func start() {
+            guard let id = microphoneID else { return }
+            let mic = Recorder.microphone(id)
+            queue.async { [session, output] in
+                session.beginConfiguration()
+                session.inputs.forEach(session.removeInput)
+                if let mic, let input = try? AVCaptureDeviceInput(device: mic), session.canAddInput(input) {
+                    session.addInput(input)
+                }
+                // The level is only measured while audio flows to an output.
+                if session.outputs.isEmpty, session.canAddOutput(output) { session.addOutput(output) }
+                session.commitConfiguration()
+                if !session.isRunning { session.startRunning() }
+            }
+            timer?.invalidate()
+            timer = Timer.scheduledTimer(withTimeInterval: 1.0 / 20, repeats: true) { [weak self] _ in
+                guard let self else { return }
+                let channels = output.connection(with: .audio)?.audioChannels ?? []
+                let db = channels.map(\.averagePowerLevel).max() ?? -160
+                // -50 dB (quiet room) to -10 dB (loud speech) fills the bar.
+                view?.level = CGFloat(((db + 50) / 40).clamped(to: 0...1))
+            }
+        }
+
+        func stop() {
+            timer?.invalidate()
+            timer = nil
+            view?.level = 0
+            queue.async { [session] in session.stopRunning() }
+        }
+    }
+
+    func makeCoordinator() -> Coordinator { Coordinator() }
+
+    func makeNSView(context: Context) -> LevelBarView {
+        let view = LevelBarView()
+        context.coordinator.view = view
+        context.coordinator.use(microphoneID)
+        view.onVisible = { [weak coordinator = context.coordinator] in coordinator?.setVisible($0) }
+        return view
+    }
+
+    func updateNSView(_ view: LevelBarView, context: Context) {
+        context.coordinator.use(microphoneID)
+    }
+
+    static func dismantleNSView(_ view: LevelBarView, coordinator: Coordinator) {
+        view.onVisible = nil
+        coordinator.setVisible(false)
+    }
+}
+
+final class LevelBarView: VisibilityTrackingView {
+    /// 0…1.
+    var level: CGFloat = 0 { didSet { needsDisplay = true } }
+
+    override var intrinsicContentSize: NSSize { NSSize(width: NSView.noIntrinsicMetric, height: 6) }
+
+    override func draw(_ dirtyRect: NSRect) {
+        let track = NSBezierPath(roundedRect: bounds, xRadius: bounds.height / 2, yRadius: bounds.height / 2)
+        NSColor.quaternaryLabelColor.setFill()
+        track.fill()
+        guard level > 0 else { return }
+        let fill = NSRect(x: 0, y: 0, width: max(bounds.height, bounds.width * level), height: bounds.height)
+        NSColor.systemGreen.setFill()
+        NSBezierPath(roundedRect: fill, xRadius: bounds.height / 2, yRadius: bounds.height / 2).fill()
     }
 }

@@ -25,8 +25,8 @@ final class ScreenRecorder: NSObject, SCStreamDelegate, SCRecordingOutputDelegat
     }
 
     /// Start capturing `screen` without saving yet. `hiddenWindows` are left out of the movie.
-    /// With `microphone`, the movie gets the microphone's sound too (when there is no camera take).
-    func prepare(screen: NSScreen?, hiddenWindows: [Int], microphone: Bool, ready: @escaping (String?) -> Void) {
+    /// With `microphone` (an `AVCaptureDevice.uniqueID`), the movie gets its sound too (when there is no camera take).
+    func prepare(screen: NSScreen?, hiddenWindows: [Int], microphone: String?, ready: @escaping (String?) -> Void) {
         let displayID = screen?.deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] as? CGDirectDisplayID
         let scale = screen?.backingScaleFactor ?? 2
         Task {
@@ -42,9 +42,10 @@ final class ScreenRecorder: NSObject, SCStreamDelegate, SCRecordingOutputDelegat
                 config.minimumFrameInterval = CMTime(value: 1, timescale: 30)
                 config.showsCursor = true
                 config.queueDepth = 6
-                config.captureMicrophone = microphone
+                config.captureMicrophone = microphone != nil
+                config.microphoneCaptureDeviceID = microphone
                 let stream = SCStream(filter: filter, configuration: config, delegate: self)
-                if microphone { try stream.addStreamOutput(self, type: .microphone, sampleHandlerQueue: audioQueue) }
+                if microphone != nil { try stream.addStreamOutput(self, type: .microphone, sampleHandlerQueue: audioQueue) }
                 try await stream.startCapture()
                 await MainActor.run { self.stream = stream; ready(nil) }
             } catch {

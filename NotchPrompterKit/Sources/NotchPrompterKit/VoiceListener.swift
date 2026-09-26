@@ -38,6 +38,11 @@ public final class VoiceListener {
     /// Take audio from `append(_:)` (the recorder's microphone) instead of opening the microphone
     /// again. Two readers of one microphone make macOS reconfigure it, which breaks recognition.
     public var useExternalAudio = false
+    #if os(macOS)
+    /// The Core Audio UID of the microphone to listen to (on the Mac, `AVCaptureDevice.uniqueID`).
+    /// Nil or unknown means the system's input. Takes effect at the next `start`.
+    public var inputDeviceUID: String?
+    #endif
 
     private let lock = NSLock()
     private var request: SFSpeechAudioBufferRecognitionRequest?  // guarded by lock (read on the audio thread)
@@ -146,6 +151,34 @@ public final class VoiceListener {
         announce()
     }
 
+    #if os(macOS)
+    /// Point the engine at `inputDeviceUID`, or back at the system's input.
+    private func useInputDevice(_ input: AVAudioInputNode) {
+        guard let unit = input.audioUnit else { return }
+        var device = AudioDeviceID(kAudioObjectUnknown)
+        if let uid = inputDeviceUID, !uid.isEmpty {
+            var cfUID = uid as CFString
+            var address = AudioObjectPropertyAddress(mSelector: kAudioHardwarePropertyTranslateUIDToDevice,
+                                                     mScope: kAudioObjectPropertyScopeGlobal,
+                                                     mElement: kAudioObjectPropertyElementMain)
+            var size = UInt32(MemoryLayout<AudioDeviceID>.size)
+            AudioObjectGetPropertyData(AudioObjectID(kAudioObjectSystemObject), &address,
+                                       UInt32(MemoryLayout<CFString>.size), &cfUID, &size, &device)
+        }
+        if device == kAudioObjectUnknown {
+            var address = AudioObjectPropertyAddress(mSelector: kAudioHardwarePropertyDefaultInputDevice,
+                                                     mScope: kAudioObjectPropertyScopeGlobal,
+                                                     mElement: kAudioObjectPropertyElementMain)
+            var size = UInt32(MemoryLayout<AudioDeviceID>.size)
+            AudioObjectGetPropertyData(AudioObjectID(kAudioObjectSystemObject), &address, 0, nil, &size, &device)
+        }
+        guard device != kAudioObjectUnknown else { return }
+        let status = AudioUnitSetProperty(unit, kAudioOutputUnitProperty_CurrentDevice, kAudioUnitScope_Global, 0,
+                                          &device, UInt32(MemoryLayout<AudioDeviceID>.size))
+        if status != noErr { log.error("couldn't choose the microphone: \(status)") }
+    }
+    #endif
+
     /// Feed the microphone to the recogniser. False (after telling the user) when it can't start.
     private func startMicrophone() -> Bool {
         #if os(iOS)
@@ -159,6 +192,9 @@ public final class VoiceListener {
         }
         #endif
         let input = engine.inputNode
+        #if os(macOS)
+        useInputDevice(input)
+        #endif
         let format = input.outputFormat(forBus: 0)
         guard format.channelCount > 0 else { fail(Messages.noMicrophone); return false }
         input.removeTap(onBus: 0)

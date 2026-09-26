@@ -10,6 +10,7 @@ let package = Package(
     products: [.library(name: "NotchPrompterKit", targets: ["NotchPrompterKit"])],
     targets: [
         .target(name: "NotchPrompterKit", resources: [.process("Localizable.xcstrings")]),
+        .testTarget(name: "NotchPrompterKitTests", dependencies: ["NotchPrompterKit"]),
     ],
     swiftLanguageModes: [.v5]
 )

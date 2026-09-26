@@ -15,8 +15,18 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
         buildMainMenu()
         prompter = Prompter(settings: settings, library: library)
         prompter.onOpenEditor = { [unowned self] in showEditor() }
+        prompter.onOpenSettings = { [unowned self] in showSettings() }
+        _ = ScriptFolder.shared   // start syncing the scripts folder, if one is chosen
+        GlobalShortcuts.shared.onAction = { [unowned self] action in
+            switch action {
+            case .showPrompter: prompter.togglePanel()
+            case .pauseResume: prompter.pauseOrResume()
+            case .record: prompter.toggleRecording()
+            }
+        }
+        GlobalShortcuts.shared.start(settings)
         buildStatusItem()
-        for url in pendingURLs { prompter.importAndShow(url) }
+        if !pendingURLs.isEmpty { application(NSApp, open: pendingURLs) }
         pendingURLs = []
 
         #if DEBUG
@@ -25,6 +35,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
             Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { _ in
                 MainActor.assumeIsolated { ScreenshotRenderer.run(prompter: self.prompter, folder: folder) }
             }
+            return
+        }
+        if let movie = TakeTranscriber.selfTestMovie {
+            TakeTranscriber.runSelfTest(movie)
             return
         }
         if MicSelfTest.requested {
@@ -63,8 +77,27 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
 
     func application(_ application: NSApplication, open urls: [URL]) {
         guard let prompter else { pendingURLs += urls; return }
-        for url in urls { prompter.importAndShow(url) }
+        for url in urls {
+            if url.scheme == "notchprompter" { openLink(url) } else { prompter.importAndShow(url) }
+        }
         if settings.hasSeenWelcome { prompter.showPanel() }
+    }
+
+    /// `notchprompter://show?script=Title`: put that script in the prompter. For assistants
+    /// that write scripts in the scripts folder.
+    private func openLink(_ url: URL) {
+        let query = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems ?? []
+        guard url.host() == "show" else { return }
+        prompter.showPanel()
+        guard let name = query.first(where: { $0.name == "script" })?.value else { return }
+        // The file may have been written a moment ago, before its change came in.
+        ScriptFolder.shared.syncNow()
+        if let script = ScriptFolder.shared.script(named: name) {
+            library.activeID = script.id
+            prompter.showHUD(script.displayTitle)
+        } else {
+            prompter.showHUD(String(localized: "No script called “\(name)”"), for: 4)
+        }
     }
 
     // MARK: Windows
@@ -105,6 +138,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
         if settingsWindow == nil {
             let window = makeWindow(String(localized: "Settings", comment: "Title of the Settings window"),
                                     SettingsView(settings: settings), style: [.titled, .closable])
+            // Each tab has its own height.
+            (window.contentViewController as? NSHostingController<SettingsView>)?.sizingOptions = .preferredContentSize
             window.center()
             settingsWindow = window
         }
@@ -137,6 +172,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
     @objc private func togglePlay() { prompter.togglePlay() }
     @objc private func toggleRecording() { prompter.toggleRecording() }
     @objc private func restart() { prompter.restart() }
+    @objc private func playLastTake() { prompter.playLastTake() }
+    @objc private func trashLastTake() { prompter.trashLastTake() }
     @objc private func biggerText() { prompter.changeFontSize(2) }
     @objc private func smallerText() { prompter.changeFontSize(-2) }
     @objc private func faster() { prompter.changeSpeed(5) }
@@ -170,6 +207,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
             item.title = prompter.isRecording ? String(localized: "Stop Recording") : String(localized: "Record Video…")
         case #selector(togglePlay):
             item.title = prompter.playing ? String(localized: "Pause") : String(localized: "Play")
+        case #selector(playLastTake), #selector(trashLastTake):
+            return !prompter.isRecording && !prompter.lastTake.movies.isEmpty
         default: break
         }
         return true
@@ -270,6 +309,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
         prompterMenu.addItem(item("Play", #selector(togglePlay), "\r"))
         prompterMenu.addItem(item("Record Video…", #selector(toggleRecording), "r", [.command, .option]))
         prompterMenu.addItem(item("Back to Top", #selector(restart), "r", [.command, .shift]))
+        prompterMenu.addItem(item("Play Last Take", #selector(playLastTake)))
+        prompterMenu.addItem(item("Move Last Take to Trash", #selector(trashLastTake)))
         prompterMenu.addItem(.separator())
         prompterMenu.addItem(item("Bigger Text", #selector(biggerText), "+"))
         prompterMenu.addItem(item("Smaller Text", #selector(smallerText), "-"))

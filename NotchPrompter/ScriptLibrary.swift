@@ -2,7 +2,16 @@ import Foundation
 import NotchPrompterKit
 
 extension ScriptLibrary {
-    static let shared = ScriptLibrary { Script(title: welcomeTitle, text: welcomeText) }
+    /// The practice script stays on this Mac: the iPhone has its own, in its own words.
+    static let shared: ScriptLibrary = {
+        #if DEBUG
+        let syncs = ScreenshotRenderer.outputFolder == nil   // screenshot runs replace all scripts
+        #else
+        let syncs = true
+        #endif
+        return ScriptLibrary(welcome: { Script(title: welcomeTitle, text: welcomeText) },
+                             keepsLocal: { $0.text == welcomeText }, syncs: syncs)
+    }()
 
     static let welcomeTitle = String(localized: "Welcome", comment: "Title of the built-in practice script")
 

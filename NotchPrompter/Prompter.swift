@@ -132,6 +132,11 @@ final class ControlButton: NSButton {
             .withSymbolConfiguration(.init(pointSize: pointSize, weight: .semibold))
     }
     @objc private func fire() { onClick() }
+    /// Optional: what a right-click (or Control-click) does.
+    var onRightClick: (() -> Void)?
+    override func rightMouseDown(with event: NSEvent) {
+        if let onRightClick { onRightClick() } else { super.rightMouseDown(with: event) }
+    }
     override func acceptsFirstMouse(for event: NSEvent?) -> Bool { true }
 }
 
@@ -173,6 +178,8 @@ final class Prompter: NSObject, NSPopoverDelegate {
     let library: ScriptLibrary
     /// Called when the user wants to edit scripts (pencil button, empty script).
     var onOpenEditor: () -> Void = {}
+    /// Opens the Settings window ("All Settings…" in the popovers).
+    var onOpenSettings: () -> Void = {}
 
     let panel: PrompterPanel
     let root = RootView()
@@ -181,8 +188,8 @@ final class Prompter: NSObject, NSPopoverDelegate {
     private let hud = NSTextField(labelWithString: "")
     private let countdownLabel = NSTextField(labelWithString: "")
     private let fade = CAGradientLayer()
-    private let screen: NSScreen
-    private let notchHeight: CGFloat
+    private var screen: NSScreen
+    private var notchHeight: CGFloat
     private var subscriptions = Set<AnyCancellable>()
 
     private var offset: CGFloat = 0
@@ -204,8 +211,14 @@ final class Prompter: NSObject, NSPopoverDelegate {
     private let recorder = Recorder()
     private let screenRecorder = ScreenRecorder()
     private var recordButton: ControlButton!
+    /// The chevron beside the record button: camera, recording mode and screen light.
+    private var recordOptionsButton: ControlButton!
+    private let recordPopover = NSPopover()
     private let recLabel = NSTextField(labelWithString: "")
     private let cameraPreview = CameraPreviewPanel()
+    private let screenLight = ScreenLightPanel()
+    /// The movies of the last take, so a bad one can be played or thrown away right after.
+    let lastTake = LastTake()
     /// Filming: the camera movie, the screen movie, or both are being saved.
     var isRecording: Bool { recorder.isRecording || screenRecorder.isRecording }
     private var recordingStartedAt: Date { recorder.isRecording ? recorder.startedAt : screenRecorder.startedAt }
@@ -236,7 +249,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
     init(settings: AppSettings = .shared, library: ScriptLibrary = .shared) {
         self.settings = settings
         self.library = library
-        screen = NSScreen.screens.first { $0.safeAreaInsets.top > 0 } ?? NSScreen.main ?? NSScreen.screens[0]
+        screen = NSScreen.forPrompter(settings.display) ?? NSScreen.screens[0]
         notchHeight = screen.safeAreaInsets.top
         panel = PrompterPanel(contentRect: .zero, styleMask: [.borderless, .nonactivatingPanel],
                               backing: .buffered, defer: false)
@@ -294,10 +307,22 @@ final class Prompter: NSObject, NSPopoverDelegate {
         meter.update(level: 0, time: 0)
         root.addSubview(meter)
 
-        popover.contentViewController = NSHostingController(rootView: SettingsView(settings: settings, compact: true))
-        popover.behavior = .transient
-        popover.appearance = NSAppearance(named: .darkAqua)
-        popover.delegate = self
+        let openAll = { [unowned self] in
+            popover.performClose(nil)
+            recordPopover.performClose(nil)
+            onOpenSettings()
+        }
+        popover.contentViewController = NSHostingController(rootView: SettingsView(settings: settings, compact: true, openAll: openAll))
+        recordPopover.contentViewController = NSHostingController(rootView: RecordingPopoverView(
+            settings: settings, lastTake: lastTake,
+            play: { [unowned self] in playLastTake() },
+            trash: { [unowned self] in trashLastTake() },
+            openAll: openAll))
+        for p in [popover, recordPopover] {
+            p.behavior = .transient
+            p.appearance = NSAppearance(named: .darkAqua)
+            p.delegate = self
+        }
 
         voice.onWords = { [unowned self] task, heard in
             if matcher.follow(heard, task: task) {
@@ -332,6 +357,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
         screenRecorder.onFinished = { [unowned self] url, problem in
             if discardTake { url.map { try? FileManager.default.removeItem(at: $0) }; return }
             if takeMode.usesCamera {
+                lastTake.screen = url
                 if let problem { showHUD(problem, for: 5) }
             } else {
                 takeFinished(url, problem)
@@ -358,14 +384,39 @@ final class Prompter: NSObject, NSPopoverDelegate {
         if discardTake { url.map { try? FileManager.default.removeItem(at: $0) }; return }
         if let problem { showHUD(problem, for: 5); return }
         guard let url else { return }
+        if takeMode.usesCamera { lastTake.camera = url } else { lastTake.screen = url }
+        if settings.saveTranscripts { TakeTranscriber.transcribe(url, locale: voiceLocale, hints: voice.hints) }
         // The first time, show where takes go. After that, a short note is enough.
         let key = "hasRevealedRecording"
         if !UserDefaults.standard.bool(forKey: key) {
             UserDefaults.standard.set(true, forKey: key)
             NSWorkspace.shared.activateFileViewerSelecting([url])
         }
-        showHUD(String(localized: "Saved in Movies › NotchPrompter",
+        showHUD(String(localized: "Saved in Movies › NotchPrompter. ⌘⌫ moves it to the Trash.",
                        comment: "Use the Finder name of the Movies folder in this language"), for: 4)
+    }
+
+    /// Open the last take's movie (the camera one, when there are two) in the movie player.
+    func playLastTake() {
+        guard !isRecording, let url = lastTake.movies.first else { return }
+        NSWorkspace.shared.open(url)
+    }
+
+    /// Move the last take's movies to the Trash, for a quick retake.
+    func trashLastTake() {
+        guard !isRecording, !pendingRecording else { return }
+        let movies = lastTake.movies
+        guard !movies.isEmpty else { return }
+        let files = movies + movies.map(TakeTranscriber.transcript(for:))
+            .filter { FileManager.default.fileExists(atPath: $0.path) }
+        do {
+            for url in files { try FileManager.default.trashItem(at: url, resultingItemURL: nil) }
+            lastTake.clear()
+            showHUD(String(localized: "Moved the take to the Trash"), for: 3)
+        } catch {
+            showHUD(String(localized: "Couldn't move the take to the Trash: \(error.localizedDescription)",
+                           comment: "The placeholder is the system's error message"), for: 5)
+        }
     }
 
     private func observe() {
@@ -379,9 +430,26 @@ final class Prompter: NSObject, NSPopoverDelegate {
         settings.$hideFromScreenSharing.sink { [weak self] hide in
             self?.panel.sharingType = hide ? .none : .readOnly
         }.store(in: &subscriptions)
+        settings.$screenLight.combineLatest(settings.$recordingMode).sink { [weak self] light, mode in
+            DispatchQueue.main.async { self?.previewScreenLight(light, mode) }
+        }.store(in: &subscriptions)
+        // During a take the voice hears the take's microphone, which is chosen when the take starts.
+        settings.$microphoneID.dropFirst().removeDuplicates().sink { [weak self] _ in
+            DispatchQueue.main.async { [weak self] in
+                guard let self, !isRecording, !pendingRecording else { return }
+                restartVoiceIfListening()
+            }
+        }.store(in: &subscriptions)
         settings.$voiceLanguage.dropFirst().removeDuplicates().sink { [weak self] _ in
             DispatchQueue.main.async { self?.restartVoiceIfListening() }
         }.store(in: &subscriptions)
+        // Follow screens as they come and go: a closed lid, a projector, a dock.
+        settings.$display.dropFirst().removeDuplicates().sink { [weak self] _ in
+            DispatchQueue.main.async { self?.updateScreen() }
+        }.store(in: &subscriptions)
+        NotificationCenter.default.publisher(for: NSApplication.didChangeScreenParametersNotification)
+            .sink { [weak self] _ in self?.updateScreen() }
+            .store(in: &subscriptions)
         library.$scripts.combineLatest(library.$activeID).sink { [weak self] scripts, id in
             let script = scripts.first { $0.id == id }
             DispatchQueue.main.async { self?.show(script) }
@@ -398,6 +466,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
     func hidePanel() {
         stopAll()
         popover.performClose(nil)
+        recordPopover.performClose(nil)
         panel.orderOut(nil)
     }
 
@@ -422,6 +491,14 @@ final class Prompter: NSObject, NSPopoverDelegate {
     }
 
     // MARK: Layout
+
+    private func updateScreen() {
+        guard let new = NSScreen.forPrompter(settings.display) else { return }
+        screen = new
+        notchHeight = new.safeAreaInsets.top
+        placeWindow()
+        layoutViews()
+    }
 
     private func placeWindow(width: Double? = nil, height: Double? = nil) {
         let w = CGFloat(width ?? settings.width), h = CGFloat(height ?? settings.height)
@@ -511,6 +588,10 @@ final class Prompter: NSObject, NSPopoverDelegate {
         recordButton = ControlButton("record.circle", Self.recordTip, size: 13) { [unowned self] in
             toggleRecording()
         }
+        recordOptionsButton = ControlButton("chevron.down", String(localized: "Camera and recording options"), size: 8, width: 12) {
+            [unowned self] in toggleRecordOptions()
+        }
+        recordButton.onRightClick = { [unowned self] in toggleRecordOptions() }
         playButton = ControlButton("play.fill", String(localized: "Scroll at a steady speed (Space)")) { [unowned self] in
             togglePlay()
         }
@@ -522,7 +603,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
         settingsButton = ControlButton("slider.horizontal.3", String(localized: "Text size, speed and voice (⌘,)")) {
             [unowned self] in toggleSettings()
         }
-        let hide = ControlButton("xmark", String(localized: "Hide the prompter (⇧⌘P)"), size: 10, width: 20) { [unowned self] in
+        let hide = ControlButton("xmark", String(localized: "Hide the prompter (\(Self.showShortcut))"), size: 10, width: 20) { [unowned self] in
             hidePanel()
             showHideTipOnce()
         }
@@ -537,9 +618,10 @@ final class Prompter: NSObject, NSPopoverDelegate {
         barBackground.layer?.shadowColor = NSColor.black.cgColor
         barBackground.layer?.shadowOpacity = 1
         barBackground.layer?.shadowRadius = 10
-        for v in [restartButton, micButton!, recordButton!, playButton!] + speedButtons + [edit, settingsButton!, hide] { bar.addArrangedSubview(v) }
+        for v in [restartButton, micButton!, recordButton!, recordOptionsButton!, playButton!] + speedButtons + [edit, settingsButton!, hide] { bar.addArrangedSubview(v) }
         bar.setCustomSpacing(10, after: speedButtons.last!)
         bar.setCustomSpacing(10, after: restartButton)
+        bar.setCustomSpacing(0, after: recordButton)
         bar.setCustomSpacing(8, after: settingsButton)
         barBackground.addSubview(bar)
         root.addSubview(barBackground)
@@ -560,6 +642,12 @@ final class Prompter: NSObject, NSPopoverDelegate {
         recordButton.contentTintColor = isRecording ? .systemRed : ControlButton.normalTint
         recordButton.toolTip = isRecording ? String(localized: "Stop recording (C)") : Self.recordTip
         recordButton.setAccessibilityLabel(recordButton.toolTip)
+        // Options are for before a take: the camera and mode can't change while filming.
+        let takeRunning = isRecording || pendingRecording
+        if recordOptionsButton.isHidden != takeRunning {
+            recordOptionsButton.isHidden = takeRunning
+            layoutViews()
+        }
         // Speed only matters while scrolling at a steady speed.
         let showSpeed = playing || countingDown
         if speedButtons.first?.isHidden == showSpeed {
@@ -567,7 +655,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
             layoutViews()
         }
         // Visible while idle, hovered or while settings are open; hidden while reading.
-        let visible = hovering || (!playing && !listening && !countingDown) || popover.isShown
+        let visible = hovering || (!playing && !listening && !countingDown) || popover.isShown || recordPopover.isShown
         NSAnimationContext.runAnimationGroup { ctx in
             ctx.duration = 0.2
             barBackground.animator().alphaValue = visible ? 1 : 0
@@ -578,6 +666,10 @@ final class Prompter: NSObject, NSPopoverDelegate {
 
     private var barVisible = true
     private static let micTip = String(localized: "Follow my voice (V)")
+    /// Brings the prompter back: from any app, or only from this one when those shortcuts are off.
+    private static var showShortcut: String {
+        AppSettings.shared.globalShortcuts ? GlobalShortcuts.Action.showPrompter.keys : "⇧⌘P"
+    }
     private static let recordTip = String(localized: "Record video of yourself (C)")
 
     /// Fade the text out above the bar while it shows, so the bar never covers a line you need.
@@ -595,19 +687,45 @@ final class Prompter: NSObject, NSPopoverDelegate {
         UserDefaults.standard.set(true, forKey: key)
         let alert = NSAlert()
         alert.messageText = String(localized: "The prompter is hidden")
-        alert.informativeText = String(localized: "To bring it back, click the NotchPrompter icon in the menu bar, click the app in the Dock, or press ⇧⌘P.")
+        alert.informativeText = String(localized: "To bring it back, click the NotchPrompter icon in the menu bar, click the app in the Dock, or press \(Self.showShortcut).",
+                                       comment: "The placeholder is a keyboard shortcut, e.g. ⌃⌥P")
         NSApp.activate()
         alert.runModal()
     }
 
-    func toggleSettings() {
-        if popover.isShown { popover.performClose(nil); return }
+    func toggleSettings() { toggle(popover, under: settingsButton) }
+
+    func toggleRecordOptions() {
+        guard !isRecording, !pendingRecording else { return }
+        toggle(recordPopover, under: recordButton)
+    }
+
+    private func toggle(_ shown: NSPopover, under button: NSView) {
+        if shown.isShown { shown.performClose(nil); return }
+        for p in [popover, recordPopover] where p !== shown { p.close() }
         NSApp.activate()   // so a click elsewhere closes the popover
-        popover.show(relativeTo: settingsButton.bounds, of: settingsButton, preferredEdge: .minY)
+        shown.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
         updateBar()
     }
 
-    func popoverDidClose(_ notification: Notification) { updateBar() }
+    func popoverDidShow(_ notification: Notification) { previewScreenLight() }
+
+    func popoverDidClose(_ notification: Notification) {
+        previewScreenLight()
+        updateBar()
+    }
+
+    /// While the recording options are open, show the screen light, so the camera preview shows
+    /// how a take will look. `light` and `mode` are the new values while a setting changes.
+    private func previewScreenLight(_ light: ScreenLight? = nil, _ mode: RecordingMode? = nil) {
+        guard !isRecording, !pendingRecording else { return }
+        let light = light ?? settings.screenLight, mode = mode ?? settings.recordingMode
+        if recordPopover.isShown, mode == .camera, let screen = panel.screen {
+            screenLight.show(light, on: screen)
+        } else {
+            screenLight.hide()
+        }
+    }
 
     // MARK: Text
 
@@ -686,8 +804,11 @@ final class Prompter: NSObject, NSPopoverDelegate {
             shownLevel = raw > shownLevel ? shownLevel + (raw - shownLevel) * min(1, dt * 30) : max(raw, shownLevel - dt * 2)
             meter.update(level: shownLevel, time: now)
             if shownLevel < 0.3 { quietSince = now }
+            let atEnd = !isEmpty && matcher.cursor >= matcher.words.count
+            if atEnd && !endShown { showHUD(String(localized: "■ The end"), for: 3) }
+            endShown = atEnd
             // Talking for a while without the text moving: explain how to get back on track.
-            if !lostHintShown, now - lastAdvance > 6, now - quietSince > 2.5 {
+            if !lostHintShown, !atEnd, now - lastAdvance > 6, now - quietSince > 2.5 {
                 lostHintShown = true
                 showHUD(String(localized: "Lost? Click the word you're on"), for: 4)
             }
@@ -703,6 +824,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
         if offset >= maxY { playing = false; showHUD(String(localized: "■ The end")) }
     }
     private var quietSince = CACurrentMediaTime()
+    private var endShown = false
     #if DEBUG
     var debugLevel: CGFloat?
     #endif
@@ -743,12 +865,14 @@ final class Prompter: NSObject, NSPopoverDelegate {
         guard !isEmpty else { onOpenEditor(); return }
         cancelCountdown()
         playing = false
+        resumePlays = false
         showPanel()
         listening = true
         matcher.resetHeard()
         lastAdvance = CACurrentMediaTime()
         lostHintShown = false
         voice.onDeviceOnly = settings.onDeviceOnly
+        voice.inputDeviceUID = settings.microphoneID
         voice.start(locale: voiceLocale)
     }
 
@@ -757,6 +881,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
         voice.stop()
         matcher.resetHeard()
         voice.onDeviceOnly = settings.onDeviceOnly
+        voice.inputDeviceUID = settings.microphoneID
         voice.start(locale: voiceLocale)
     }
 
@@ -776,6 +901,24 @@ final class Prompter: NSObject, NSPopoverDelegate {
         }
     }
 
+    /// The shortcut that works from any app: stop following or scrolling and keep the place, or
+    /// carry on the way you were reading.
+    func pauseOrResume() {
+        if listening {
+            voice.stop()
+            listening = false
+            showHUD(String(localized: "❚❚ Paused"))
+        } else if playing || countingDown {
+            togglePlay()
+        } else if resumePlays {
+            togglePlay()
+        } else {
+            startVoice()
+        }
+    }
+    /// Play mode was the last way of reading, so resuming scrolls instead of listening.
+    private var resumePlays = false
+
     // MARK: Play mode
 
     func togglePlay() {
@@ -790,6 +933,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
 
     private func startPlaying() {
         playing = true
+        resumePlays = true
         if settings.pauseOnHover && hovering { showHUD(String(localized: "▶ Starts when the mouse leaves"), for: 2) }
         else { showHUD(String(localized: "▶ Speed \(Int(settings.speed))")) }
     }
@@ -832,14 +976,18 @@ final class Prompter: NSObject, NSPopoverDelegate {
         // instead of starting a second take.
         pendingRecording = true
         discardTake = false
+        // The screen light it may show stays on for the take, or goes when the take can't start.
+        recordPopover.close()
         Recorder.requestAccess(camera: mode.usesCamera) { [weak self] problem in
             guard let self, pendingRecording else { return }
             if let problem {
                 pendingRecording = false
+                screenLight.hide()
                 return showPermissionAlert(String(localized: "Allow access to record"), problem.message, problem.url)
             }
             if mode.usesScreen && !ScreenRecorder.requestAccess() {
                 pendingRecording = false
+                screenLight.hide()
                 return showPermissionAlert(String(localized: "Allow screen recording"),
                     String(localized: "Turn on NotchPrompter in System Settings → Privacy & Security → Screen & System Audio Recording, then reopen NotchPrompter. Or choose to record only the camera in Settings → Recording."),
                     ScreenRecorder.settingsURL)
@@ -858,10 +1006,10 @@ final class Prompter: NSObject, NSPopoverDelegate {
             prepareAll(mode) { [weak self] problem in
                 guard let self else { return }
                 // Stopped while the camera was waking up: turn it off again.
-                guard pendingRecording else { recorder.stop(); screenRecorder.stop(); cameraPreview.hide(); return }
+                guard pendingRecording else { recorder.stop(); screenRecorder.stop(); hideTakeWindows(); return }
                 if let problem {
                     pendingRecording = false
-                    recorder.stop(); screenRecorder.stop(); cameraPreview.hide()
+                    recorder.stop(); screenRecorder.stop(); hideTakeWindows()
                     showHUD(problem, for: 5); updateBar(); return
                 }
                 // Speech recognition takes a moment to load, so start it now: it is ready at "go".
@@ -871,6 +1019,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
                 // little before "go", so a take never misses the first words.
                 let startFiles = { [weak self] in
                     guard let self, pendingRecording, !isRecording else { return }
+                    lastTake.clear()
                     let name = Recorder.takeName()
                     if mode.usesScreen {
                         screenRecorder.record(name: mode.usesCamera
@@ -920,18 +1069,28 @@ final class Prompter: NSObject, NSPopoverDelegate {
             // Leave the prompter (when hidden from recordings) and the camera preview out of the screen movie.
             var hidden = [cameraPreview.windowNumber]
             if settings.hideFromScreenSharing { hidden.append(panel.windowNumber) }
-            screenRecorder.prepare(screen: panel.screen, hiddenWindows: hidden, microphone: !mode.usesCamera, ready: ready)
+            let mic = mode.usesCamera ? nil : Recorder.microphone(settings.microphoneID)?.uniqueID
+            screenRecorder.prepare(screen: panel.screen, hiddenWindows: hidden, microphone: mic, ready: ready)
         }
         guard mode.usesCamera else { return screenPart() }
-        recorder.prepare(cameraID: settings.cameraID) { [weak self] problem in
+        recorder.prepare(cameraID: settings.cameraID, microphoneID: settings.microphoneID) { [weak self] problem in
             guard let self else { return }
             guard problem == nil else { return ready(problem) }
             // Show the camera during the countdown, so you can check how you look before it films.
             if settings.showCameraPreview, let screen = panel.screen {
                 cameraPreview.show(recorder.session, beside: panel.frame, on: screen)
             }
+            // The light would cover what a screen movie films, so it is only for camera takes.
+            if mode == .camera, let screen = panel.screen {
+                screenLight.show(settings.screenLight, on: screen)
+            }
             screenPart()
         }
+    }
+
+    private func hideTakeWindows() {
+        cameraPreview.hide()
+        screenLight.hide()
     }
 
     /// Stop the take; the movie file is finished a moment later.
@@ -943,7 +1102,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
         layoutViews()
         if listening { voice.stop(); listening = false }
         voice.useExternalAudio = false
-        cameraPreview.hide()
+        hideTakeWindows()
         // Wait for both movies before `completion` (used when quitting).
         var left = 2
         let done = { left -= 1; if left == 0 { completion?() } }
@@ -1001,6 +1160,7 @@ final class Prompter: NSObject, NSPopoverDelegate {
         if cmd {
             switch ch {
             case ",": toggleSettings()
+            case _ where e.keyCode == 51: trashLastTake()   // ⌘⌫, like Move to Trash in the Finder
             case "=", "+": changeFontSize(2)
             case "-": changeFontSize(-2)
             default: return false   // let the main menu handle it
@@ -1011,7 +1171,12 @@ final class Prompter: NSObject, NSPopoverDelegate {
         switch e.keyCode {
         case 49: togglePlay()
         case 53:
-            if popover.isShown { popover.performClose(nil) } else { stopAll() }
+            if popover.isShown || recordPopover.isShown {
+                popover.performClose(nil)
+                recordPopover.performClose(nil)
+            } else {
+                stopAll()
+            }
         case 126 where shift: settings.height = (settings.height - 20).clamped(to: AppSettings.heightRange)
         case 125 where shift: settings.height = (settings.height + 20).clamped(to: AppSettings.heightRange)
         case 126: changeSpeed(5)
@@ -1053,6 +1218,19 @@ final class Prompter: NSObject, NSPopoverDelegate {
         hudHideWork = work
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: work)
     }
+}
+
+/// The camera and screen movies of the last take. Files moved away in the Finder are left out.
+final class LastTake: ObservableObject {
+    @Published var camera: URL?
+    @Published var screen: URL?
+
+    var movies: [URL] {
+        [camera, screen].compactMap { $0 }.filter { FileManager.default.fileExists(atPath: $0.path) }
+    }
+    var name: String? { movies.first?.deletingPathExtension().lastPathComponent }
+
+    func clear() { camera = nil; screen = nil }
 }
 
 #if DEBUG

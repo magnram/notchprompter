@@ -191,6 +191,9 @@ private struct ScriptEditor: View {
             title = script.title
             text = script.text
         }
+        // Changes from iCloud or the scripts folder, made while the script is open.
+        .onChange(of: script.title) { _, new in if new != title { title = new } }
+        .onChange(of: script.text) { _, new in if new != text { text = new } }
     }
 }
 
