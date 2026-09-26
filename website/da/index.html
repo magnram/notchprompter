@@ -9,9 +9,11 @@
   <meta property="og:description" content="Læs dit manuskript, og hold øjenkontakt. Den følger din stemme.">
   <meta property="og:image" content="../media/da/1-eye-contact.jpg">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0b0b10">
   <link rel="icon" href="../media/icon-256.png">
   <link rel="apple-touch-icon" href="../media/icon-256.png">
   <link rel="stylesheet" href="../style.css">
+  <script>document.documentElement.classList.add("js");</script>
   <!-- i18n:alternates -->
   <link rel="alternate" hreflang="da" href="https://magnram.github.io/notchprompter/da/">
   <link rel="alternate" hreflang="de" href="https://magnram.github.io/notchprompter/de/">
@@ -36,7 +38,7 @@
   <link rel="alternate" hreflang="x-default" href="https://magnram.github.io/notchprompter/">
   <!-- /i18n:alternates -->
 </head>
-<body>
+<body class="home">
   <header class="top">
     <div class="wrap">
       <a class="brand" href="./"><img src="../media/icon-256.png" alt="">NotchPrompter</a>
@@ -51,8 +53,10 @@
 
   <main>
     <div class="hero">
+      <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
       <div class="wrap">
         <div class="notch" aria-hidden="true">
+          <div class="cam"><b></b></div>
           <div class="meter"><i></i><i></i><i></i><i></i><i></i></div>
           <div class="reader">
             <div class="script" id="demo-script" data-pause="(pause)">
@@ -80,66 +84,100 @@
 
     <section id="video">
       <div class="wrap center">
-        <h2>Se den i aktion</h2>
-        <p class="sub">Læs, hold pause, spring frem. Prompteren følger med.</p>
-        <div class="video-frame">
-          <video src="../media/da/promo.mp4" poster="../media/da/promo-poster.webp" controls playsinline preload="none"></video>
+        <div class="head reveal">
+          <h2>Se den i aktion</h2>
+          <p class="sub">Læs, hold pause, spring frem. Prompteren følger med.</p>
+        </div>
+        <div class="laptop">
+          <div class="screen">
+            <div class="video-frame">
+              <video src="../media/da/promo.mp4" poster="../media/da/promo-poster.webp" controls playsinline preload="none"></video>
+            </div>
+          </div>
+          <div class="base" aria-hidden="true"></div>
         </div>
       </div>
     </section>
 
     <section id="features">
       <div class="wrap">
-        <h2>Alt, hvad du har brug for. Intet, der står i vejen.</h2>
-        <p class="sub">Et lille sort panel under kameraet, nogle få tydelige knapper, et enkelt redigeringsvindue til dine manuskripter og en optageknap.</p>
-        <div class="features">
-          <div class="feature">
-            <div class="icon">🎙️</div>
+        <div class="head reveal">
+          <h2>Alt, hvad du har brug for. Intet, der står i vejen.</h2>
+          <p class="sub">Et lille sort panel under kameraet, nogle få tydelige knapper, et enkelt redigeringsvindue til dine manuskripter og en optageknap.</p>
+        </div>
+        <div class="bento">
+          <div class="feature wide reveal">
+            <div class="art art-voice" aria-hidden="true">
+              <div class="mic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div>
+              <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
             <h3>Følger din stemme</h3>
             <p>Tryk på mikrofonen, og tal. De næste ord står altid lige under kameraet. Ord, du har sagt, toner ud.</p>
           </div>
-          <div class="feature">
-            <div class="icon">🌍</div>
+          <div class="feature reveal">
+            <div class="art art-lang" aria-hidden="true" data-words="Hello|Hei|Hallo|Hola|Bonjour|Ciao|こんにちは|안녕하세요|你好|Привіт|Merhaba|Olá|Cześć|Hej|Moi|Hoi|Здравствуйте|Salut">
+              <div class="hello">Hello</div>
+            </div>
             <h3>Alle sprog, automatisk</h3>
             <p>NotchPrompter kan se, hvilket sprog dit manuskript er skrevet på, og lytter efter det. Engelsk, norsk, tysk, spansk, japansk og snesevis af andre.</p>
           </div>
-          <div class="feature">
-            <div class="icon">⏭️</div>
+          <div class="feature reveal">
+            <div class="art art-skip" aria-hidden="true">
+              <div class="lines"><i></i><i class="skipped"></i><i></i></div>
+              <svg class="jump" viewBox="0 0 60 100" fill="none"><path d="M14 16 C 52 22, 52 78, 14 84" stroke="url(#np-g)" stroke-width="3" stroke-linecap="round"/><path d="M22 76 L13 84 L24 90" stroke="#9e40d9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
             <h3>Følger med, når du springer over</h3>
             <p>Spring en sætning over, skift et ord ud, sig »øh«. Den finder ud af, hvor du er, og springer frem sammen med dig. Hold pause, og den venter.</p>
           </div>
-          <div class="feature">
-            <div class="icon">▶️</div>
+          <div class="feature reveal">
+            <div class="art art-play" aria-hidden="true">
+              <svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="46"/><circle class="ring" cx="60" cy="60" r="46"/><g class="nums"><text x="60" y="60">3</text><text x="60" y="60">2</text><text x="60" y="60">1</text></g><path class="tri" d="M50 42 L78 60 L50 78 Z"/></svg>
+            </div>
             <h3>Eller tryk på afspil</h3>
             <p>Blød rulning med nedtælling 3-2-1. Hold markøren over for at sætte på pause, og brug skildpadden og haren til at indstille hastigheden.</p>
           </div>
-          <div class="feature">
-            <div class="icon">✏️</div>
+          <div class="feature reveal">
+            <div class="art art-editor" aria-hidden="true">
+              <div class="win">
+                <div class="side"><i class="on"></i><i></i><i></i><i></i></div>
+                <div class="doc"><i></i><i></i><i></i><i></i></div>
+              </div>
+            </div>
             <h3>Indbygget redigering</h3>
             <p>Saml alle dine manuskripter ét sted, eller som Markdown-filer i en mappe, som enhver editor eller AI-assistent kan bruge. Importér Word-, RTF- eller tekstfiler.</p>
           </div>
-          <div class="feature">
-            <div class="icon">🎥</div>
+          <div class="feature reveal">
+            <div class="art art-rec" aria-hidden="true">
+              <div class="viewfinder"><i></i><i></i><i></i><i></i><div class="rec"></div></div>
+            </div>
             <h3>Optag dig selv</h3>
             <p>Film dit kamera, din skærm eller begge dele, mens du læser. Hver optagelse gemmes i din Film-mappe, med undertekster lavet på din Mac.</p>
           </div>
-          <div class="feature">
-            <div class="icon">🙈</div>
+          <div class="feature reveal">
+            <div class="art art-hidden" aria-hidden="true">
+              <div class="mini you"><div class="bar"></div></div>
+              <svg class="arrow" viewBox="0 0 40 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h32M28 4l7 6-7 6"/></svg>
+              <div class="mini them"><div class="bar"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3l18 18M10.6 5.1A10.4 10.4 0 0 1 12 5c5 0 9 4.5 10 7-.4 1-1.2 2.3-2.4 3.5M6.6 6.6C4.4 8 2.8 10.2 2 12c1 2.5 5 7 10 7 1.9 0 3.6-.6 5-1.5M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg></div>
+            </div>
             <h3>Usynlig for dit publikum</h3>
             <p>Skjult ved skærmdeling, på skærmbilleder og i optagelser. Kun du kan se den.</p>
           </div>
-          <div class="feature">
-            <div class="icon">🔒</div>
+          <div class="feature wide-sm reveal">
+            <div class="art art-lock" aria-hidden="true">
+              <div class="orbit"><i></i><i></i><i></i></div>
+              <div class="lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+            </div>
             <h3>Kører helt lokalt på din Mac</h3>
             <p>Tale genkendes på din Mac, ikke i skyen. Ingen konto, ingen sporing. Dine optagelser bliver på din Mac, og dine manuskripter synkroniseres kun via din egen iCloud.</p>
           </div>
         </div>
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="np-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fc8c61"/><stop offset="1" stop-color="#9e40d9"/></linearGradient></defs></svg>
       </div>
     </section>
 
-    <section>
+    <section class="editor-sec">
       <div class="wrap split">
-        <div>
+        <div class="reveal">
           <h2>Dine manuskripter, ét klik væk</h2>
           <p class="sub">Klik på blyanten i prompteren for at åbne redigeringsvinduet. Vælg et manuskript, tryk på mikrofonen, og begynd at tale.</p>
           <ol class="steps">
@@ -148,38 +186,45 @@
             <li>Kig ind i kameraet, og tal.</li>
           </ol>
         </div>
-        <img src="../media/da/editor.webp" alt="Redigeringsvinduet i NotchPrompter med en liste over manuskripter og teksten til et manuskript til en produktlancering." loading="lazy">
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <h2 class="center">Lavet til kameraet</h2>
-        <p class="sub center" style="margin-inline:auto">Videoopkald, YouTube, kurser, webinarer og pitches.</p>
-        <div class="shots">
-          <img src="../media/da/2-voice.webp" alt="Prompteren under notchen, der følger et manuskript, som bliver læst op." loading="lazy">
-          <img src="../media/da/4-play.webp" alt="Afspilningstilstand med hastighedsknapper og indstillingsvinduet." loading="lazy">
-          <img src="../media/da/3-editor.webp" alt="Redigeringsvinduet under prompteren." loading="lazy">
-          <img src="../media/da/5-private.webp" alt="Indstillinger med muligheden for at skjule prompteren ved skærmdeling." loading="lazy">
+        <div class="tilt">
+          <img src="../media/da/editor.webp" alt="Redigeringsvinduet i NotchPrompter med en liste over manuskripter og teksten til et manuskript til en produktlancering." loading="lazy">
         </div>
       </div>
     </section>
 
+    <section class="shots-sec">
+      <div class="wrap">
+        <div class="head reveal center">
+          <h2>Lavet til kameraet</h2>
+          <p class="sub">Videoopkald, YouTube, kurser, webinarer og pitches.</p>
+        </div>
+      </div>
+      <div class="gallery" tabindex="0" aria-label="Lavet til kameraet">
+        <figure><img src="../media/da/2-voice.webp" alt="Prompteren under notchen, der følger et manuskript, som bliver læst op." loading="lazy" draggable="false"></figure>
+        <figure><img src="../media/da/4-play.webp" alt="Afspilningstilstand med hastighedsknapper og indstillingsvinduet." loading="lazy" draggable="false"></figure>
+        <figure><img src="../media/da/3-editor.webp" alt="Redigeringsvinduet under prompteren." loading="lazy" draggable="false"></figure>
+        <figure><img src="../media/da/5-private.webp" alt="Indstillinger med muligheden for at skjule prompteren ved skærmdeling." loading="lazy" draggable="false"></figure>
+      </div>
+      <div class="gallery-bar" aria-hidden="true"><i></i></div>
+    </section>
+
     <section id="iphone">
       <div class="wrap split">
-        <div>
+        <div class="reveal">
           <h2>Også på iPhone</h2>
           <p class="sub">NotchPrompter til iPhone viser dit manuskript lige under frontkameraet, følger din stemme og filmer dig. Klip dine optagelser til, tilføj undertekster, og gem dem i Fotos.</p>
           <p class="sub">Det er gratis, uden vandmærke og uden grænse for antallet af optagelser. Prompteren, at teksten følger din stemme, optagelse, klipning og undertekster koster ikke noget. Hvis du vil støtte arbejdet, kan du få Pro. Det giver 1080p og 4K, musik, speak og flere redigeringsværktøjer, pr. måned, pr. år eller med én betaling.</p>
           <p class="req">iPhone-appen er ikke open source. Den bruger den samme open source-stemmemotor som Mac-appen, og Pro er med til at holde Mac-appen gratis. Kommer snart i App Store, til iOS 18 eller nyere.</p>
         </div>
-        <img class="phone" src="../media/da/iphone.webp" alt="NotchPrompter på en iPhone: manuskriptet lige under frontkameraet, mens der optages." loading="lazy">
+        <div class="phone">
+          <img src="../media/da/iphone.webp" alt="NotchPrompter på en iPhone: manuskriptet lige under frontkameraet, mens der optages." loading="lazy">
+        </div>
       </div>
     </section>
 
     <section class="faq">
-      <div class="wrap" style="max-width:780px">
-        <h2>Spørgsmål</h2>
+      <div class="wrap narrow">
+        <h2 class="reveal">Spørgsmål</h2>
         <details>
           <summary>Er det virkelig gratis?</summary>
           <p>Ja. NotchPrompter til Mac er gratis og open source under MIT-licensen. Ingen reklamer, intet abonnement, ingen konto. <a href="https://github.com/magnram/notchprompter">Kildekoden ligger på GitHub</a>, hvor du kan rapportere fejl, foreslå funktioner eller hjælpe med at udvikle den.</p>
@@ -206,6 +251,20 @@
           <p>Klik på prompteren, og brug så: <kbd>Mellemrum</kbd> afspil/pause, <kbd>V</kbd> stemme, <kbd>C</kbd> optag, <kbd>R</kbd> tilbage til toppen, <kbd>↑</kbd> <kbd>↓</kbd> hastighed, <kbd>+</kbd> <kbd>−</kbd> tekststørrelse, <kbd>E</kbd> redigering, <kbd>Esc</kbd> stop.</p>
           <p>I alle apps: <kbd>⌃</kbd><kbd>⌥</kbd><kbd>P</kbd> vis eller skjul prompteren, <kbd>⌃</kbd><kbd>⌥</kbd><kbd>V</kbd> sæt på pause, eller fortsæt, <kbd>⌃</kbd><kbd>⌥</kbd><kbd>R</kbd> optag.</p>
         </details>
+      </div>
+    </section>
+
+    <section class="finale">
+      <div class="wrap center reveal">
+        <img class="app-icon" src="../media/icon-256.png" alt="" width="128" height="128">
+        <h2>Kig ind i kameraet, og tal.</h2>
+        <div class="cta">
+          <a class="store-badge" href="https://apps.apple.com/app/notchprompter/id6815206814" aria-label="Hent i Mac App Store">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.51 1.25-2.58-.03-.01-2.4-.92-2.42-3.65zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.75-.96 2.79 1.02.08 2.05-.52 2.68-1.27z"/></svg>
+            <span><small>Hent i</small><strong>Mac App Store</strong></span>
+          </a>
+          <a class="link-btn" href="https://github.com/magnram/notchprompter">Se på GitHub →</a>
+        </div>
       </div>
     </section>
   </main>
@@ -336,6 +395,114 @@
         setTimeout(step, end ? 650 : comma ? 380 : noSpaces && !/^[A-Za-z]/.test(said) ? 120 + said.length * 110 : 170 + said.length * 22);
       }
       setTimeout(step, 1200);
+    })();
+  </script>
+  <script>
+    // Page effects. Everything here is decoration: the page works and reads the same without it.
+    (() => {
+      const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const root = document.documentElement;
+      const header = document.querySelector("header.top");
+      const brand = header.querySelector(".brand");
+      const nav = header.querySelector("nav");
+      const notch = document.querySelector(".hero .notch");
+
+      // Menu bar: on a wide screen the prompter hangs from the top edge between the brand and the
+      // links, like the app under a MacBook notch. With too little room it hangs under the bar.
+      function fit() {
+        const mid = innerWidth / 2;
+        const room = Math.min(mid - brand.getBoundingClientRect().right, nav.getBoundingClientRect().left - mid) - 28;
+        const width = Math.min(720, room * 2);
+        root.classList.toggle("menubar", width >= 440);
+        root.style.setProperty("--notch-w", width + "px");
+      }
+      fit();
+      addEventListener("resize", fit);
+
+      const onScroll = () => header.classList.toggle("scrolled", scrollY > 8);
+      onScroll();
+      addEventListener("scroll", onScroll, { passive: true });
+
+      // Fade sections in as they come into view.
+      const io = new IntersectionObserver(entries => {
+        for (const e of entries) if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      }, { rootMargin: "0px 0px -8% 0px" });
+      document.querySelectorAll(".reveal, .faq details, .tilt, .phone").forEach(el => io.observe(el));
+      document.querySelectorAll(".bento .feature").forEach((el, i) => el.style.setProperty("--i", i % 3));
+
+      // A soft light that follows the pointer, in the hero and on the feature cards.
+      const hero = document.querySelector(".hero");
+      hero.addEventListener("pointermove", e => {
+        const r = hero.getBoundingClientRect();
+        hero.style.setProperty("--x", e.clientX - r.left + "px");
+        hero.style.setProperty("--y", e.clientY - r.top + "px");
+      });
+      for (const card of document.querySelectorAll(".bento .feature")) {
+        card.addEventListener("pointermove", e => {
+          const r = card.getBoundingClientRect();
+          card.style.setProperty("--x", e.clientX - r.left + "px");
+          card.style.setProperty("--y", e.clientY - r.top + "px");
+        });
+      }
+
+      // Video: a large play button over the poster. Its label is the section heading.
+      const frame = document.querySelector(".video-frame");
+      const video = frame.querySelector("video");
+      const play = document.createElement("button");
+      play.type = "button";
+      play.className = "play";
+      play.setAttribute("aria-label", document.querySelector("#video h2").textContent);
+      play.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>';
+      frame.append(play);
+      frame.classList.add("has-play");
+      play.addEventListener("click", () => { video.play().catch(() => {}); video.focus(); });
+      video.addEventListener("play", () => frame.classList.add("playing"));
+
+      // "Any language": greet the visitor in one language after another.
+      const lang = document.querySelector(".art-lang");
+      const hello = lang.querySelector(".hello");
+      const words = lang.dataset.words.split("|");
+      let w = 0;
+      if (!still) setInterval(() => {
+        if (!lang.classList.contains("in-view")) return;
+        hello.classList.add("out");
+        setTimeout(() => {
+          w = (w + 1) % words.length;
+          hello.textContent = words[w];
+          hello.classList.remove("out");
+        }, 350);
+      }, 1700);
+
+      // Run the card animations only while they are on screen.
+      const arts = new IntersectionObserver(entries => {
+        for (const e of entries) e.target.classList.toggle("in-view", e.isIntersecting);
+      });
+      document.querySelectorAll(".art").forEach(a => arts.observe(a));
+
+      // Screenshot gallery: drag with the mouse, and a bar that shows where you are.
+      const gallery = document.querySelector(".gallery");
+      const bar = document.querySelector(".gallery-bar i");
+      const progress = () => {
+        const max = gallery.scrollWidth - gallery.clientWidth;
+        const part = gallery.clientWidth / gallery.scrollWidth;
+        bar.style.width = part * 100 + "%";
+        bar.style.transform = `translateX(${max > 0 ? (gallery.scrollLeft / max) * (1 / part - 1) * 100 : 0}%)`;
+      };
+      progress();
+      gallery.addEventListener("scroll", progress, { passive: true });
+      addEventListener("resize", progress);
+      let drag = null;
+      gallery.addEventListener("pointerdown", e => {
+        if (e.pointerType !== "mouse" || e.button !== 0) return;
+        drag = { x: e.clientX, left: gallery.scrollLeft };
+        gallery.classList.add("dragging");
+      });
+      addEventListener("pointermove", e => { if (drag) gallery.scrollLeft = drag.left - (e.clientX - drag.x); });
+      addEventListener("pointerup", () => {
+        if (!drag) return;
+        drag = null;
+        gallery.classList.remove("dragging");
+      });
     })();
   </script>
   <!-- i18n:script -->

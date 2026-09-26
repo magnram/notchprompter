@@ -9,9 +9,11 @@
   <meta property="og:description" content="邊讀講稿，邊保持眼神接觸。它會跟著你的聲音走。">
   <meta property="og:image" content="../media/zh-Hant/1-eye-contact.jpg">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0b0b10">
   <link rel="icon" href="../media/icon-256.png">
   <link rel="apple-touch-icon" href="../media/icon-256.png">
   <link rel="stylesheet" href="../style.css">
+  <script>document.documentElement.classList.add("js");</script>
   <!-- i18n:alternates -->
   <link rel="alternate" hreflang="da" href="https://magnram.github.io/notchprompter/da/">
   <link rel="alternate" hreflang="de" href="https://magnram.github.io/notchprompter/de/">
@@ -36,7 +38,7 @@
   <link rel="alternate" hreflang="x-default" href="https://magnram.github.io/notchprompter/">
   <!-- /i18n:alternates -->
 </head>
-<body>
+<body class="home">
   <header class="top">
     <div class="wrap">
       <a class="brand" href="./"><img src="../media/icon-256.png" alt="">NotchPrompter</a>
@@ -51,8 +53,10 @@
 
   <main>
     <div class="hero">
+      <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
       <div class="wrap">
         <div class="notch" aria-hidden="true">
+          <div class="cam"><b></b></div>
           <div class="meter"><i></i><i></i><i></i><i></i><i></i></div>
           <div class="reader">
             <div class="script" id="demo-script" data-pause="(停頓)">
@@ -80,66 +84,100 @@
 
     <section id="video">
       <div class="wrap center">
-        <h2>實際看看</h2>
-        <p class="sub">朗讀、停頓、跳著讀，提詞機都跟得上你。</p>
-        <div class="video-frame">
-          <video src="../media/zh-Hant/promo.mp4" poster="../media/zh-Hant/promo-poster.webp" controls playsinline preload="none"></video>
+        <div class="head reveal">
+          <h2>實際看看</h2>
+          <p class="sub">朗讀、停頓、跳著讀，提詞機都跟得上你。</p>
+        </div>
+        <div class="laptop">
+          <div class="screen">
+            <div class="video-frame">
+              <video src="../media/zh-Hant/promo.mp4" poster="../media/zh-Hant/promo-poster.webp" controls playsinline preload="none"></video>
+            </div>
+          </div>
+          <div class="base" aria-hidden="true"></div>
         </div>
       </div>
     </section>
 
     <section id="features">
       <div class="wrap">
-        <h2>該有的都有，礙事的全沒有。</h2>
-        <p class="sub">相機下方的一塊黑色小面板、幾個清楚的按鈕、一個用來寫講稿的小編輯器，還有一個錄影按鈕。</p>
-        <div class="features">
-          <div class="feature">
-            <div class="icon">🎙️</div>
+        <div class="head reveal">
+          <h2>該有的都有，礙事的全沒有。</h2>
+          <p class="sub">相機下方的一塊黑色小面板、幾個清楚的按鈕、一個用來寫講稿的小編輯器，還有一個錄影按鈕。</p>
+        </div>
+        <div class="bento">
+          <div class="feature wide reveal">
+            <div class="art art-voice" aria-hidden="true">
+              <div class="mic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div>
+              <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
             <h3>跟著你的聲音走</h3>
             <p>按下麥克風，開口說話。接下來的字永遠在相機正下方，說過的字會逐漸淡出。</p>
           </div>
-          <div class="feature">
-            <div class="icon">🌍</div>
+          <div class="feature reveal">
+            <div class="art art-lang" aria-hidden="true" data-words="Hello|Hei|Hallo|Hola|Bonjour|Ciao|こんにちは|안녕하세요|你好|Привіт|Merhaba|Olá|Cześć|Hej|Moi|Hoi|Здравствуйте|Salut">
+              <div class="hello">Hello</div>
+            </div>
             <h3>任何語言，自動辨識</h3>
             <p>NotchPrompter 會辨識講稿使用的語言，並用這個語言來聆聽。支援英文、挪威文、德文、西班牙文、日文等數十種語言。</p>
           </div>
-          <div class="feature">
-            <div class="icon">⏭️</div>
+          <div class="feature reveal">
+            <div class="art art-skip" aria-hidden="true">
+              <div class="lines"><i></i><i class="skipped"></i><i></i></div>
+              <svg class="jump" viewBox="0 0 60 100" fill="none"><path d="M14 16 C 52 22, 52 78, 14 84" stroke="url(#np-g)" stroke-width="3" stroke-linecap="round"/><path d="M22 76 L13 84 L24 90" stroke="#9e40d9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
             <h3>跳著讀也跟得上</h3>
             <p>跳過一句、換個字、說聲「呃」都沒關係。它會找到你讀到哪裡，和你一起往前跳。你停下來，它就等著。</p>
           </div>
-          <div class="feature">
-            <div class="icon">▶️</div>
+          <div class="feature reveal">
+            <div class="art art-play" aria-hidden="true">
+              <svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="46"/><circle class="ring" cx="60" cy="60" r="46"/><g class="nums"><text x="60" y="60">3</text><text x="60" y="60">2</text><text x="60" y="60">1</text></g><path class="tri" d="M50 42 L78 60 L50 78 Z"/></svg>
+            </div>
             <h3>或者按下播放</h3>
             <p>3-2-1 倒數後平順捲動。將指標停在上方即可暫停，用烏龜和兔子按鈕調整速度。</p>
           </div>
-          <div class="feature">
-            <div class="icon">✏️</div>
+          <div class="feature reveal">
+            <div class="art art-editor" aria-hidden="true">
+              <div class="win">
+                <div class="side"><i class="on"></i><i></i><i></i><i></i></div>
+                <div class="doc"><i></i><i></i><i></i><i></i></div>
+              </div>
+            </div>
             <h3>內建編輯器</h3>
             <p>把所有講稿存放在一處，或以 Markdown 檔案的形式儲存在任何編輯器或 AI 助理都能使用的檔案夾中。可以匯入 Word、RTF 或文字檔案。</p>
           </div>
-          <div class="feature">
-            <div class="icon">🎥</div>
+          <div class="feature reveal">
+            <div class="art art-rec" aria-hidden="true">
+              <div class="viewfinder"><i></i><i></i><i></i><i></i><div class="rec"></div></div>
+            </div>
             <h3>錄下自己</h3>
             <p>朗讀時可以錄下相機、螢幕，或兩者一起。每一次都會儲存在「影片」檔案夾中，字幕也會在你的 Mac 上產生。</p>
           </div>
-          <div class="feature">
-            <div class="icon">🙈</div>
+          <div class="feature reveal">
+            <div class="art art-hidden" aria-hidden="true">
+              <div class="mini you"><div class="bar"></div></div>
+              <svg class="arrow" viewBox="0 0 40 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h32M28 4l7 6-7 6"/></svg>
+              <div class="mini them"><div class="bar"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3l18 18M10.6 5.1A10.4 10.4 0 0 1 12 5c5 0 9 4.5 10 7-.4 1-1.2 2.3-2.4 3.5M6.6 6.6C4.4 8 2.8 10.2 2 12c1 2.5 5 7 10 7 1.9 0 3.6-.6 5-1.5M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg></div>
+            </div>
             <h3>觀眾看不到</h3>
             <p>在螢幕共享、截圖和螢幕錄影中都會隱藏。只有你自己看得到。</p>
           </div>
-          <div class="feature">
-            <div class="icon">🔒</div>
+          <div class="feature wide-sm reveal">
+            <div class="art art-lock" aria-hidden="true">
+              <div class="orbit"><i></i><i></i><i></i></div>
+              <div class="lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+            </div>
             <h3>完全在 Mac 上執行</h3>
             <p>語音在你的 Mac 上辨識，而不是在雲端。不需要帳號，沒有追蹤。錄影留在你的 Mac 上，講稿只透過你自己的 iCloud 同步。</p>
           </div>
         </div>
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="np-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fc8c61"/><stop offset="1" stop-color="#9e40d9"/></linearGradient></defs></svg>
       </div>
     </section>
 
-    <section>
+    <section class="editor-sec">
       <div class="wrap split">
-        <div>
+        <div class="reveal">
           <h2>講稿，按一下就到</h2>
           <p class="sub">按一下提詞機中的鉛筆即可打開編輯器。選一份講稿，按下麥克風，開始說話。</p>
           <ol class="steps">
@@ -148,38 +186,45 @@
             <li>看著相機說話。</li>
           </ol>
         </div>
-        <img src="../media/zh-Hant/editor.webp" alt="NotchPrompter 講稿編輯器，顯示講稿列表和一份產品發表講稿的內容。" loading="lazy">
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <h2 class="center">為鏡頭而生</h2>
-        <p class="sub center" style="margin-inline:auto">視訊通話、YouTube、課程、線上研討會和提案簡報。</p>
-        <div class="shots">
-          <img src="../media/zh-Hant/2-voice.webp" alt="瀏海下方的提詞機，正跟著朗讀的講稿移動。" loading="lazy">
-          <img src="../media/zh-Hant/4-play.webp" alt="播放模式，顯示速度按鈕和設定彈出式視窗。" loading="lazy">
-          <img src="../media/zh-Hant/3-editor.webp" alt="提詞機下方的編輯器視窗。" loading="lazy">
-          <img src="../media/zh-Hant/5-private.webp" alt="設定，其中有在螢幕共享中隱藏提詞機的選項。" loading="lazy">
+        <div class="tilt">
+          <img src="../media/zh-Hant/editor.webp" alt="NotchPrompter 講稿編輯器，顯示講稿列表和一份產品發表講稿的內容。" loading="lazy">
         </div>
       </div>
     </section>
 
+    <section class="shots-sec">
+      <div class="wrap">
+        <div class="head reveal center">
+          <h2>為鏡頭而生</h2>
+          <p class="sub">視訊通話、YouTube、課程、線上研討會和提案簡報。</p>
+        </div>
+      </div>
+      <div class="gallery" tabindex="0" aria-label="為鏡頭而生">
+        <figure><img src="../media/zh-Hant/2-voice.webp" alt="瀏海下方的提詞機，正跟著朗讀的講稿移動。" loading="lazy" draggable="false"></figure>
+        <figure><img src="../media/zh-Hant/4-play.webp" alt="播放模式，顯示速度按鈕和設定彈出式視窗。" loading="lazy" draggable="false"></figure>
+        <figure><img src="../media/zh-Hant/3-editor.webp" alt="提詞機下方的編輯器視窗。" loading="lazy" draggable="false"></figure>
+        <figure><img src="../media/zh-Hant/5-private.webp" alt="設定，其中有在螢幕共享中隱藏提詞機的選項。" loading="lazy" draggable="false"></figure>
+      </div>
+      <div class="gallery-bar" aria-hidden="true"><i></i></div>
+    </section>
+
     <section id="iphone">
       <div class="wrap split">
-        <div>
+        <div class="reveal">
           <h2>iPhone 版也來了</h2>
           <p class="sub">iPhone 版 NotchPrompter 把講稿放在前置相機正下方，跟隨你的聲音，並拍下你自己。可以剪輯拍攝內容、加入字幕，然後儲存到「照片」中。</p>
           <p class="sub">免費使用，沒有浮水印，也不限制拍攝次數。提詞器、聲音跟隨、錄影、剪輯和字幕全部免費。如果你想支持這項工作，可以購買 Pro。Pro 增加 1080p 和 4K、音樂、旁白以及更多編輯工具，可按月、按年付費，或一次買斷。</p>
           <p class="req">iPhone App 並非開放原始碼。它使用與 Mac App 相同的開放原始碼語音引擎，Pro 的收入也有助於讓 Mac App 保持免費。即將在 App Store 推出，適用於 iOS 18 或以後版本。</p>
         </div>
-        <img class="phone" src="../media/zh-Hant/iphone.webp" alt="iPhone 上的 NotchPrompter：錄影時，講稿就在前置相機正下方。" loading="lazy">
+        <div class="phone">
+          <img src="../media/zh-Hant/iphone.webp" alt="iPhone 上的 NotchPrompter：錄影時，講稿就在前置相機正下方。" loading="lazy">
+        </div>
       </div>
     </section>
 
     <section class="faq">
-      <div class="wrap" style="max-width:780px">
-        <h2>常見問題</h2>
+      <div class="wrap narrow">
+        <h2 class="reveal">常見問題</h2>
         <details>
           <summary>真的免費嗎？</summary>
           <p>是的。Mac 版 NotchPrompter 免費且開放原始碼，採用 MIT 授權。沒有廣告，沒有訂閱，不需要帳號。<a href="https://github.com/magnram/notchprompter">原始碼放在 GitHub 上</a>，你可以在那裡回報錯誤、建議功能或參與開發。</p>
@@ -206,6 +251,20 @@
           <p>先按一下提詞機，然後：<kbd>空白鍵</kbd> 播放/暫停，<kbd>V</kbd> 語音，<kbd>C</kbd> 錄影，<kbd>R</kbd> 回到頂端，<kbd>↑</kbd> <kbd>↓</kbd> 速度，<kbd>+</kbd> <kbd>−</kbd> 文字大小，<kbd>E</kbd> 編輯器，<kbd>Esc</kbd> 停止。</p>
           <p>在任何 App 中：<kbd>⌃</kbd><kbd>⌥</kbd><kbd>P</kbd> 顯示或隱藏提詞機，<kbd>⌃</kbd><kbd>⌥</kbd><kbd>V</kbd> 暫停或繼續，<kbd>⌃</kbd><kbd>⌥</kbd><kbd>R</kbd> 錄影。</p>
         </details>
+      </div>
+    </section>
+
+    <section class="finale">
+      <div class="wrap center reveal">
+        <img class="app-icon" src="../media/icon-256.png" alt="" width="128" height="128">
+        <h2>看著相機說話。</h2>
+        <div class="cta">
+          <a class="store-badge" href="https://apps.apple.com/app/notchprompter/id6815206814" aria-label="在 Mac App Store 下載">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.51 1.25-2.58-.03-.01-2.4-.92-2.42-3.65zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.75-.96 2.79 1.02.08 2.05-.52 2.68-1.27z"/></svg>
+            <span><small>在 Mac App Store</small><strong>下載</strong></span>
+          </a>
+          <a class="link-btn" href="https://github.com/magnram/notchprompter">在 GitHub 上查看 →</a>
+        </div>
       </div>
     </section>
   </main>
@@ -336,6 +395,114 @@
         setTimeout(step, end ? 650 : comma ? 380 : noSpaces && !/^[A-Za-z]/.test(said) ? 120 + said.length * 110 : 170 + said.length * 22);
       }
       setTimeout(step, 1200);
+    })();
+  </script>
+  <script>
+    // Page effects. Everything here is decoration: the page works and reads the same without it.
+    (() => {
+      const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const root = document.documentElement;
+      const header = document.querySelector("header.top");
+      const brand = header.querySelector(".brand");
+      const nav = header.querySelector("nav");
+      const notch = document.querySelector(".hero .notch");
+
+      // Menu bar: on a wide screen the prompter hangs from the top edge between the brand and the
+      // links, like the app under a MacBook notch. With too little room it hangs under the bar.
+      function fit() {
+        const mid = innerWidth / 2;
+        const room = Math.min(mid - brand.getBoundingClientRect().right, nav.getBoundingClientRect().left - mid) - 28;
+        const width = Math.min(720, room * 2);
+        root.classList.toggle("menubar", width >= 440);
+        root.style.setProperty("--notch-w", width + "px");
+      }
+      fit();
+      addEventListener("resize", fit);
+
+      const onScroll = () => header.classList.toggle("scrolled", scrollY > 8);
+      onScroll();
+      addEventListener("scroll", onScroll, { passive: true });
+
+      // Fade sections in as they come into view.
+      const io = new IntersectionObserver(entries => {
+        for (const e of entries) if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      }, { rootMargin: "0px 0px -8% 0px" });
+      document.querySelectorAll(".reveal, .faq details, .tilt, .phone").forEach(el => io.observe(el));
+      document.querySelectorAll(".bento .feature").forEach((el, i) => el.style.setProperty("--i", i % 3));
+
+      // A soft light that follows the pointer, in the hero and on the feature cards.
+      const hero = document.querySelector(".hero");
+      hero.addEventListener("pointermove", e => {
+        const r = hero.getBoundingClientRect();
+        hero.style.setProperty("--x", e.clientX - r.left + "px");
+        hero.style.setProperty("--y", e.clientY - r.top + "px");
+      });
+      for (const card of document.querySelectorAll(".bento .feature")) {
+        card.addEventListener("pointermove", e => {
+          const r = card.getBoundingClientRect();
+          card.style.setProperty("--x", e.clientX - r.left + "px");
+          card.style.setProperty("--y", e.clientY - r.top + "px");
+        });
+      }
+
+      // Video: a large play button over the poster. Its label is the section heading.
+      const frame = document.querySelector(".video-frame");
+      const video = frame.querySelector("video");
+      const play = document.createElement("button");
+      play.type = "button";
+      play.className = "play";
+      play.setAttribute("aria-label", document.querySelector("#video h2").textContent);
+      play.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>';
+      frame.append(play);
+      frame.classList.add("has-play");
+      play.addEventListener("click", () => { video.play().catch(() => {}); video.focus(); });
+      video.addEventListener("play", () => frame.classList.add("playing"));
+
+      // "Any language": greet the visitor in one language after another.
+      const lang = document.querySelector(".art-lang");
+      const hello = lang.querySelector(".hello");
+      const words = lang.dataset.words.split("|");
+      let w = 0;
+      if (!still) setInterval(() => {
+        if (!lang.classList.contains("in-view")) return;
+        hello.classList.add("out");
+        setTimeout(() => {
+          w = (w + 1) % words.length;
+          hello.textContent = words[w];
+          hello.classList.remove("out");
+        }, 350);
+      }, 1700);
+
+      // Run the card animations only while they are on screen.
+      const arts = new IntersectionObserver(entries => {
+        for (const e of entries) e.target.classList.toggle("in-view", e.isIntersecting);
+      });
+      document.querySelectorAll(".art").forEach(a => arts.observe(a));
+
+      // Screenshot gallery: drag with the mouse, and a bar that shows where you are.
+      const gallery = document.querySelector(".gallery");
+      const bar = document.querySelector(".gallery-bar i");
+      const progress = () => {
+        const max = gallery.scrollWidth - gallery.clientWidth;
+        const part = gallery.clientWidth / gallery.scrollWidth;
+        bar.style.width = part * 100 + "%";
+        bar.style.transform = `translateX(${max > 0 ? (gallery.scrollLeft / max) * (1 / part - 1) * 100 : 0}%)`;
+      };
+      progress();
+      gallery.addEventListener("scroll", progress, { passive: true });
+      addEventListener("resize", progress);
+      let drag = null;
+      gallery.addEventListener("pointerdown", e => {
+        if (e.pointerType !== "mouse" || e.button !== 0) return;
+        drag = { x: e.clientX, left: gallery.scrollLeft };
+        gallery.classList.add("dragging");
+      });
+      addEventListener("pointermove", e => { if (drag) gallery.scrollLeft = drag.left - (e.clientX - drag.x); });
+      addEventListener("pointerup", () => {
+        if (!drag) return;
+        drag = null;
+        gallery.classList.remove("dragging");
+      });
     })();
   </script>
   <!-- i18n:script -->

@@ -9,9 +9,11 @@
   <meta property="og:description" content="Read your script and keep eye contact. It follows your voice.">
   <meta property="og:image" content="media/1-eye-contact.jpg">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0b0b10">
   <link rel="icon" href="media/icon-256.png">
   <link rel="apple-touch-icon" href="media/icon-256.png">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
   <!-- i18n:alternates -->
   <link rel="alternate" hreflang="da" href="https://magnram.github.io/notchprompter/da/">
   <link rel="alternate" hreflang="de" href="https://magnram.github.io/notchprompter/de/">
@@ -36,7 +38,7 @@
   <link rel="alternate" hreflang="x-default" href="https://magnram.github.io/notchprompter/">
   <!-- /i18n:alternates -->
 </head>
-<body>
+<body class="home">
   <header class="top">
     <div class="wrap">
       <a class="brand" href="./"><img src="media/icon-256.png" alt="">NotchPrompter</a>
@@ -51,8 +53,10 @@
 
   <main>
     <div class="hero">
+      <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
       <div class="wrap">
         <div class="notch" aria-hidden="true">
+          <div class="cam"><b></b></div>
           <div class="meter"><i></i><i></i><i></i><i></i><i></i></div>
           <div class="reader">
             <div class="script" id="demo-script">
@@ -80,66 +84,100 @@
 
     <section id="video">
       <div class="wrap center">
-        <h2>See it in action</h2>
-        <p class="sub">Read, pause, skip ahead. The prompter keeps up with you.</p>
-        <div class="video-frame">
-          <video src="media/promo.mp4" poster="media/promo-poster.webp" controls playsinline preload="none"></video>
+        <div class="head reveal">
+          <h2>See it in action</h2>
+          <p class="sub">Read, pause, skip ahead. The prompter keeps up with you.</p>
+        </div>
+        <div class="laptop">
+          <div class="screen">
+            <div class="video-frame">
+              <video src="media/promo.mp4" poster="media/promo-poster.webp" controls playsinline preload="none"></video>
+            </div>
+          </div>
+          <div class="base" aria-hidden="true"></div>
         </div>
       </div>
     </section>
 
     <section id="features">
       <div class="wrap">
-        <h2>Everything you need. Nothing in the way.</h2>
-        <p class="sub">A small black panel under your camera, a few clear buttons, a little editor for your scripts, and a record button.</p>
-        <div class="features">
-          <div class="feature">
-            <div class="icon">🎙️</div>
+        <div class="head reveal">
+          <h2>Everything you need. Nothing in the way.</h2>
+          <p class="sub">A small black panel under your camera, a few clear buttons, a little editor for your scripts, and a record button.</p>
+        </div>
+        <div class="bento">
+          <div class="feature wide reveal">
+            <div class="art art-voice" aria-hidden="true">
+              <div class="mic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div>
+              <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
             <h3>Follows your voice</h3>
             <p>Press the microphone and talk. The next words are always right under the camera. Words you've said fade out.</p>
           </div>
-          <div class="feature">
-            <div class="icon">🌍</div>
+          <div class="feature reveal">
+            <div class="art art-lang" aria-hidden="true" data-words="Hello|Hei|Hallo|Hola|Bonjour|Ciao|こんにちは|안녕하세요|你好|Привіт|Merhaba|Olá|Cześć|Hej|Moi|Hoi|Здравствуйте|Salut">
+              <div class="hello">Hello</div>
+            </div>
             <h3>Any language, automatically</h3>
             <p>NotchPrompter sees which language your script is in and listens for it. English, Norwegian, German, Spanish, Japanese and dozens more.</p>
           </div>
-          <div class="feature">
-            <div class="icon">⏭️</div>
+          <div class="feature reveal">
+            <div class="art art-skip" aria-hidden="true">
+              <div class="lines"><i></i><i class="skipped"></i><i></i></div>
+              <svg class="jump" viewBox="0 0 60 100" fill="none"><path d="M14 16 C 52 22, 52 78, 14 84" stroke="url(#np-g)" stroke-width="3" stroke-linecap="round"/><path d="M22 76 L13 84 L24 90" stroke="#9e40d9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
             <h3>Keeps up when you skip</h3>
             <p>Skip a sentence, change a word, say "uh". It finds where you are and jumps ahead with you. Pause, and it waits.</p>
           </div>
-          <div class="feature">
-            <div class="icon">▶️</div>
+          <div class="feature reveal">
+            <div class="art art-play" aria-hidden="true">
+              <svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="46"/><circle class="ring" cx="60" cy="60" r="46"/><g class="nums"><text x="60" y="60">3</text><text x="60" y="60">2</text><text x="60" y="60">1</text></g><path class="tri" d="M50 42 L78 60 L50 78 Z"/></svg>
+            </div>
             <h3>Or press play</h3>
             <p>Smooth scrolling with a 3-2-1 countdown. Hover to pause, and use the tortoise and the hare to set the speed.</p>
           </div>
-          <div class="feature">
-            <div class="icon">✏️</div>
+          <div class="feature reveal">
+            <div class="art art-editor" aria-hidden="true">
+              <div class="win">
+                <div class="side"><i class="on"></i><i></i><i></i><i></i></div>
+                <div class="doc"><i></i><i></i><i></i><i></i></div>
+              </div>
+            </div>
             <h3>Built-in editor</h3>
             <p>Keep all your scripts in one place, or as Markdown files in a folder that any editor or AI assistant can use. Import Word, RTF or text files.</p>
           </div>
-          <div class="feature">
-            <div class="icon">🎥</div>
+          <div class="feature reveal">
+            <div class="art art-rec" aria-hidden="true">
+              <div class="viewfinder"><i></i><i></i><i></i><i></i><div class="rec"></div></div>
+            </div>
             <h3>Record yourself</h3>
             <p>Film your camera, your screen or both while you read. Each take is saved in your Movies folder, with subtitles made on your Mac.</p>
           </div>
-          <div class="feature">
-            <div class="icon">🙈</div>
+          <div class="feature reveal">
+            <div class="art art-hidden" aria-hidden="true">
+              <div class="mini you"><div class="bar"></div></div>
+              <svg class="arrow" viewBox="0 0 40 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h32M28 4l7 6-7 6"/></svg>
+              <div class="mini them"><div class="bar"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3l18 18M10.6 5.1A10.4 10.4 0 0 1 12 5c5 0 9 4.5 10 7-.4 1-1.2 2.3-2.4 3.5M6.6 6.6C4.4 8 2.8 10.2 2 12c1 2.5 5 7 10 7 1.9 0 3.6-.6 5-1.5M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg></div>
+            </div>
             <h3>Invisible to your audience</h3>
             <p>Hidden from screen sharing, screenshots and recordings. Only you can see it.</p>
           </div>
-          <div class="feature">
-            <div class="icon">🔒</div>
+          <div class="feature wide-sm reveal">
+            <div class="art art-lock" aria-hidden="true">
+              <div class="orbit"><i></i><i></i><i></i></div>
+              <div class="lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+            </div>
             <h3>Runs completely on your Mac</h3>
             <p>Speech is recognised on your Mac, not in the cloud. No account, no tracking. Your recordings stay on your Mac, and your scripts only sync through your own iCloud.</p>
           </div>
         </div>
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="np-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fc8c61"/><stop offset="1" stop-color="#9e40d9"/></linearGradient></defs></svg>
       </div>
     </section>
 
-    <section>
+    <section class="editor-sec">
       <div class="wrap split">
-        <div>
+        <div class="reveal">
           <h2>Your scripts, one click away</h2>
           <p class="sub">Click the pencil in the prompter to open the editor. Pick a script, press the microphone, and start talking.</p>
           <ol class="steps">
@@ -148,38 +186,45 @@
             <li>Look at the camera and talk.</li>
           </ol>
         </div>
-        <img src="media/editor.webp" alt="The NotchPrompter script editor with a list of scripts and the text of a product launch script." loading="lazy">
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <h2 class="center">Made for the camera</h2>
-        <p class="sub center" style="margin-inline:auto">Video calls, YouTube, courses, webinars and pitches.</p>
-        <div class="shots">
-          <img src="media/2-voice.webp" alt="The prompter under the notch, following a spoken script." loading="lazy">
-          <img src="media/4-play.webp" alt="Play mode with speed buttons and the settings popover." loading="lazy">
-          <img src="media/3-editor.webp" alt="The editor window below the prompter." loading="lazy">
-          <img src="media/5-private.webp" alt="Settings with the option to hide the prompter from screen sharing." loading="lazy">
+        <div class="tilt">
+          <img src="media/editor.webp" alt="The NotchPrompter script editor with a list of scripts and the text of a product launch script." loading="lazy">
         </div>
       </div>
     </section>
 
+    <section class="shots-sec">
+      <div class="wrap">
+        <div class="head reveal center">
+          <h2>Made for the camera</h2>
+          <p class="sub">Video calls, YouTube, courses, webinars and pitches.</p>
+        </div>
+      </div>
+      <div class="gallery" tabindex="0" aria-label="Made for the camera">
+        <figure><img src="media/2-voice.webp" alt="The prompter under the notch, following a spoken script." loading="lazy" draggable="false"></figure>
+        <figure><img src="media/4-play.webp" alt="Play mode with speed buttons and the settings popover." loading="lazy" draggable="false"></figure>
+        <figure><img src="media/3-editor.webp" alt="The editor window below the prompter." loading="lazy" draggable="false"></figure>
+        <figure><img src="media/5-private.webp" alt="Settings with the option to hide the prompter from screen sharing." loading="lazy" draggable="false"></figure>
+      </div>
+      <div class="gallery-bar" aria-hidden="true"><i></i></div>
+    </section>
+
     <section id="iphone">
       <div class="wrap split">
-        <div>
+        <div class="reveal">
           <h2>Also on iPhone</h2>
           <p class="sub">NotchPrompter for iPhone puts your script right under the front camera, follows your voice and films you. Trim your takes, add captions and save them to Photos.</p>
           <p class="sub">It is free, with no watermark and no limit on takes. The prompter, voice-follow, recording, trimming and captions cost nothing. If you want to support the work, you can get Pro. It adds 1080p and 4K, music, voiceover and more editing tools, by the month, by the year or with one payment.</p>
           <p class="req">The iPhone app is not open source. It uses the same open-source voice engine as the Mac app, and Pro helps keep the Mac app free. Coming soon to the App Store, for iOS 18 or later.</p>
         </div>
-        <img class="phone" src="media/iphone.webp" alt="NotchPrompter on an iPhone: the script right under the front camera while it records." loading="lazy">
+        <div class="phone">
+          <img src="media/iphone.webp" alt="NotchPrompter on an iPhone: the script right under the front camera while it records." loading="lazy">
+        </div>
       </div>
     </section>
 
     <section class="faq">
-      <div class="wrap" style="max-width:780px">
-        <h2>Questions</h2>
+      <div class="wrap narrow">
+        <h2 class="reveal">Questions</h2>
         <details>
           <summary>Is it really free?</summary>
           <p>Yes. NotchPrompter for Mac is free and open source under the MIT license. No ads, no subscription, no account. The <a href="https://github.com/magnram/notchprompter">source code is on GitHub</a>, where you can report bugs, suggest features or help build it.</p>
@@ -206,6 +251,20 @@
           <p>Click the prompter, then: <kbd>Space</kbd> play/pause, <kbd>V</kbd> voice, <kbd>C</kbd> record, <kbd>R</kbd> back to top, <kbd>↑</kbd> <kbd>↓</kbd> speed, <kbd>+</kbd> <kbd>−</kbd> text size, <kbd>E</kbd> editor, <kbd>Esc</kbd> stop.</p>
           <p>In any app: <kbd>⌃</kbd><kbd>⌥</kbd><kbd>P</kbd> show or hide the prompter, <kbd>⌃</kbd><kbd>⌥</kbd><kbd>V</kbd> pause or go on, <kbd>⌃</kbd><kbd>⌥</kbd><kbd>R</kbd> record.</p>
         </details>
+      </div>
+    </section>
+
+    <section class="finale">
+      <div class="wrap center reveal">
+        <img class="app-icon" src="media/icon-256.png" alt="" width="128" height="128">
+        <h2>Look at the camera and talk.</h2>
+        <div class="cta">
+          <a class="store-badge" href="https://apps.apple.com/app/notchprompter/id6815206814" aria-label="Download on the Mac App Store">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.51 1.25-2.58-.03-.01-2.4-.92-2.42-3.65zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.75-.96 2.79 1.02.08 2.05-.52 2.68-1.27z"/></svg>
+            <span><small>Download on the</small><strong>Mac App Store</strong></span>
+          </a>
+          <a class="link-btn" href="https://github.com/magnram/notchprompter">View on GitHub →</a>
+        </div>
       </div>
     </section>
   </main>
@@ -336,6 +395,114 @@
         setTimeout(step, end ? 650 : comma ? 380 : noSpaces && !/^[A-Za-z]/.test(said) ? 120 + said.length * 110 : 170 + said.length * 22);
       }
       setTimeout(step, 1200);
+    })();
+  </script>
+  <script>
+    // Page effects. Everything here is decoration: the page works and reads the same without it.
+    (() => {
+      const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const root = document.documentElement;
+      const header = document.querySelector("header.top");
+      const brand = header.querySelector(".brand");
+      const nav = header.querySelector("nav");
+      const notch = document.querySelector(".hero .notch");
+
+      // Menu bar: on a wide screen the prompter hangs from the top edge between the brand and the
+      // links, like the app under a MacBook notch. With too little room it hangs under the bar.
+      function fit() {
+        const mid = innerWidth / 2;
+        const room = Math.min(mid - brand.getBoundingClientRect().right, nav.getBoundingClientRect().left - mid) - 28;
+        const width = Math.min(720, room * 2);
+        root.classList.toggle("menubar", width >= 440);
+        root.style.setProperty("--notch-w", width + "px");
+      }
+      fit();
+      addEventListener("resize", fit);
+
+      const onScroll = () => header.classList.toggle("scrolled", scrollY > 8);
+      onScroll();
+      addEventListener("scroll", onScroll, { passive: true });
+
+      // Fade sections in as they come into view.
+      const io = new IntersectionObserver(entries => {
+        for (const e of entries) if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      }, { rootMargin: "0px 0px -8% 0px" });
+      document.querySelectorAll(".reveal, .faq details, .tilt, .phone").forEach(el => io.observe(el));
+      document.querySelectorAll(".bento .feature").forEach((el, i) => el.style.setProperty("--i", i % 3));
+
+      // A soft light that follows the pointer, in the hero and on the feature cards.
+      const hero = document.querySelector(".hero");
+      hero.addEventListener("pointermove", e => {
+        const r = hero.getBoundingClientRect();
+        hero.style.setProperty("--x", e.clientX - r.left + "px");
+        hero.style.setProperty("--y", e.clientY - r.top + "px");
+      });
+      for (const card of document.querySelectorAll(".bento .feature")) {
+        card.addEventListener("pointermove", e => {
+          const r = card.getBoundingClientRect();
+          card.style.setProperty("--x", e.clientX - r.left + "px");
+          card.style.setProperty("--y", e.clientY - r.top + "px");
+        });
+      }
+
+      // Video: a large play button over the poster. Its label is the section heading.
+      const frame = document.querySelector(".video-frame");
+      const video = frame.querySelector("video");
+      const play = document.createElement("button");
+      play.type = "button";
+      play.className = "play";
+      play.setAttribute("aria-label", document.querySelector("#video h2").textContent);
+      play.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>';
+      frame.append(play);
+      frame.classList.add("has-play");
+      play.addEventListener("click", () => { video.play().catch(() => {}); video.focus(); });
+      video.addEventListener("play", () => frame.classList.add("playing"));
+
+      // "Any language": greet the visitor in one language after another.
+      const lang = document.querySelector(".art-lang");
+      const hello = lang.querySelector(".hello");
+      const words = lang.dataset.words.split("|");
+      let w = 0;
+      if (!still) setInterval(() => {
+        if (!lang.classList.contains("in-view")) return;
+        hello.classList.add("out");
+        setTimeout(() => {
+          w = (w + 1) % words.length;
+          hello.textContent = words[w];
+          hello.classList.remove("out");
+        }, 350);
+      }, 1700);
+
+      // Run the card animations only while they are on screen.
+      const arts = new IntersectionObserver(entries => {
+        for (const e of entries) e.target.classList.toggle("in-view", e.isIntersecting);
+      });
+      document.querySelectorAll(".art").forEach(a => arts.observe(a));
+
+      // Screenshot gallery: drag with the mouse, and a bar that shows where you are.
+      const gallery = document.querySelector(".gallery");
+      const bar = document.querySelector(".gallery-bar i");
+      const progress = () => {
+        const max = gallery.scrollWidth - gallery.clientWidth;
+        const part = gallery.clientWidth / gallery.scrollWidth;
+        bar.style.width = part * 100 + "%";
+        bar.style.transform = `translateX(${max > 0 ? (gallery.scrollLeft / max) * (1 / part - 1) * 100 : 0}%)`;
+      };
+      progress();
+      gallery.addEventListener("scroll", progress, { passive: true });
+      addEventListener("resize", progress);
+      let drag = null;
+      gallery.addEventListener("pointerdown", e => {
+        if (e.pointerType !== "mouse" || e.button !== 0) return;
+        drag = { x: e.clientX, left: gallery.scrollLeft };
+        gallery.classList.add("dragging");
+      });
+      addEventListener("pointermove", e => { if (drag) gallery.scrollLeft = drag.left - (e.clientX - drag.x); });
+      addEventListener("pointerup", () => {
+        if (!drag) return;
+        drag = null;
+        gallery.classList.remove("dragging");
+      });
     })();
   </script>
   <!-- i18n:script -->
