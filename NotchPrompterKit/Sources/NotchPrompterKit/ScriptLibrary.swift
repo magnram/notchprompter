@@ -162,8 +162,10 @@ public final class ScriptLibrary: ObservableObject {
                                                UTType(filenameExtension: "md") ?? .plainText]
     #endif
 
-    /// Read a document as plain text and add it to the library.
-    public func importFile(at url: URL) throws -> Script {
+    /// Read a document as plain text and add it to the library. With `replacingSameTitle`, the
+    /// newest script named like the file gets the new text instead and moves to the top, so opening
+    /// an edited file again doesn't add a copy.
+    public func importFile(at url: URL, replacingSameTitle: Bool = false) throws -> Script {
         let access = url.startAccessingSecurityScopedResource()
         defer { if access { url.stopAccessingSecurityScopedResource() } }
         let ext = url.pathExtension.lowercased()
@@ -173,7 +175,24 @@ public final class ScriptLibrary: ObservableObject {
         } else {
             text = try NSAttributedString(url: url, options: [:], documentAttributes: nil).string
         }
-        return add(title: url.deletingPathExtension().lastPathComponent, text: text)
+        return importText(title: url.deletingPathExtension().lastPathComponent, text: text,
+                          replacingSameTitle: replacingSameTitle)
+    }
+
+    /// Add a script, or with `replacingSameTitle` give the newest script with that title the new
+    /// text and move it to the top. It keeps its id, so other devices see an update, not a copy.
+    public func importText(title: String, text: String, replacingSameTitle: Bool = false) -> Script {
+        if replacingSameTitle, let i = scripts.firstIndex(where: { $0.title == title }) {
+            var script = scripts.remove(at: i)
+            if script.text != text {
+                script.text = text
+                script.modified = Date()
+            }
+            scripts.insert(script, at: 0)
+            scheduleSave()
+            return script
+        }
+        return add(title: title, text: text)
     }
 
     public func export(_ id: UUID, to url: URL) throws {
