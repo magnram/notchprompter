@@ -148,6 +148,10 @@ Open `NotchPrompter.xcodeproj` in Xcode 16 or later and run, or from the termina
 
 To sign with your own team, change `DEVELOPMENT_TEAM` in the project settings.
 
+No Apple developer account? `build.sh` notices when the Mac has no signing certificate and builds
+the app for this Mac only (`./build.sh --local` does the same on purpose). Everything works except
+iCloud sync, which needs the project's team.
+
 ## Translations
 
 The app, the website and the App Store page are in 20 languages: English, Norwegian, German, French, Spanish,
