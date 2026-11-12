@@ -7,7 +7,12 @@ set -e
 cd "$(dirname "$0")"
 
 local_build=false
-if [[ "$1" == "--local" ]] || security find-identity -v -p codesigning | grep -q '^ *0 valid identities'; then
+case "$*" in
+  ("") ;;
+  (--local) local_build=true ;;
+  (*) echo "Usage: ./build.sh [--local]" >&2; exit 2 ;;
+esac
+if security find-identity -v -p codesigning | grep -q '^ *0 valid identities'; then
   local_build=true
 fi
 
@@ -23,9 +28,14 @@ if $local_build; then
     CODE_SIGN_IDENTITY="-" CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM="" PROVISIONING_PROFILE_SPECIFIER="" \
     CODE_SIGN_ENTITLEMENTS="$PWD/build/local.entitlements"
 else
+  # The output also goes to a log, so a signing error can point at --local.
+  mkdir -p build
+  setopt pipefail
   if ! xcodebuild -project NotchPrompter.xcodeproj -scheme NotchPrompter -configuration Debug \
-    -derivedDataPath build/DerivedData -allowProvisioningUpdates build -quiet; then
-    echo "Build failed. Not on the project's Apple team? Run: ./build.sh --local" >&2
+    -derivedDataPath build/DerivedData -allowProvisioningUpdates build -quiet 2>&1 | tee build/xcodebuild.log; then
+    if grep -qE "No Accounts|No profiles for|No signing certificate|requires a development team|provisioning profile" build/xcodebuild.log; then
+      echo "Not on the project's Apple team? Run: ./build.sh --local" >&2
+    fi
     exit 1
   fi
 fi
