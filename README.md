@@ -206,7 +206,9 @@ To sign with your own team, change `DEVELOPMENT_TEAM` in the project settings.
 
 No Apple developer account? `build.sh` notices when the Mac has no signing certificate and builds
 the app for this Mac only (`./build.sh --local` does the same on purpose). Everything works except
-iCloud sync, which needs the project's team.
+iCloud sync, which needs the project's team. macOS can ask again for camera, microphone and screen
+recording access after each such build. If screen recording stops working, remove NotchPrompter from
+System Settings → Privacy & Security → Screen & System Audio Recording and add it again.
 
 ## Translations
 
