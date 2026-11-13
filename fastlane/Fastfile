@@ -1,4 +1,5 @@
-# Releasing NotchPrompter to the Mac App Store.
+# Releasing NotchPrompter to the Mac App Store, and as a notarized DMG
+# for Macs that block the App Store (the `dmg` lane).
 #
 # Nothing here holds a secret. Every lane signs in with an App Store Connect
 # API key read from the environment (ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_PATH),
@@ -173,6 +174,59 @@ platform :mac do
     UI.user_error!("Build #{options[:build_number]} is not available yet") unless build
     version.select_build(build_id: build.id)
     UI.success("Selected build #{version.version_string} (#{build.version}) without submitting it for review")
+  end
+end
+
+# A notarized DMG for Macs without the App Store, for GitHub Releases.
+platform :mac do
+  desc "Build a Developer ID app, notarize it and put it in fastlane/builds/NotchPrompter-<version>.dmg"
+  lane :dmg do
+    # Only the Account Holder can make this certificate, and an API key cannot,
+    # so it is made once in Xcode and lives in the keychain.
+    identities = sh("security find-identity -v -p codesigning", log: false)
+    identity = identities[/"(Developer ID Application: [^"]+\(A7C4MM99VP\))"/, 1]
+    UI.user_error!("No Developer ID Application certificate in the keychain. Make one in Xcode: " \
+                   "Settings → Accounts → Manage Certificates → + → Developer ID Application.") unless identity
+
+    out = "#{File.dirname(PKG)}/developer-id"
+    FileUtils.rm_rf(out)
+    connect
+    # iCloud sync needs a profile, so Developer ID gets its own like the App Store build.
+    get_provisioning_profile(app_identifier: "com.magnusramm.NotchPrompter", platform: "macos",
+                             developer_id: true,
+                             provisioning_name: "com.magnusramm.NotchPrompter Developer ID",
+                             output_path: out)
+    build_mac_app(
+      project: "#{ROOT}/NotchPrompter.xcodeproj",
+      scheme: "NotchPrompter",
+      configuration: "Release",
+      export_method: "developer-id",
+      export_options: { signingStyle: "manual", teamID: "A7C4MM99VP",
+                        provisioningProfiles: { "com.magnusramm.NotchPrompter" => lane_context[SharedValues::SIGH_NAME] } },
+      xcargs: key_args,
+      output_directory: out,
+      output_name: "NotchPrompter"
+    )
+    app = Dir["#{out}/*.app"].first
+    UI.user_error!("The export made no app in #{out}") unless app
+
+    version = sh("/usr/libexec/PlistBuddy", "-c", "Print :CFBundleShortVersionString",
+                 "#{app}/Contents/Info.plist", log: false).strip
+    dmg = "#{File.dirname(PKG)}/NotchPrompter-#{version}.dmg"
+    FileUtils.rm_f(dmg)
+    # The window shows the app next to a link to Applications, to drag it across.
+    stage = "#{out}/dmg"
+    sh("ditto", app, "#{stage}/NotchPrompter.app")
+    File.symlink("/Applications", "#{stage}/Applications")
+    sh("hdiutil", "create", "-volname", "NotchPrompter", "-srcfolder", stage, "-format", "UDZO", "-ov", dmg)
+    sh("codesign", "--sign", identity, "--timestamp", dmg)
+
+    # Notarizing the DMG covers the app inside it. The ticket is stapled to the DMG,
+    # so it opens without a network check.
+    notarize(package: dmg, api_key: lane_context[SharedValues::APP_STORE_CONNECT_API_KEY], print_log: true)
+    sh("spctl", "--assess", "--type", "open", "--context", "context:primary-signature", "--verbose", dmg)
+    UI.success("Notarized #{dmg}")
+    UI.message("Publish it with: gh release create v#{version} '#{dmg}' --title 'NotchPrompter #{version}'")
   end
 end
 

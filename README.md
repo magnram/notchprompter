@@ -76,6 +76,9 @@ Press the microphone and talk: the text follows you, so the next words are alway
 ## Get started
 
 1. Get NotchPrompter from the [Mac App Store](https://apps.apple.com/app/notchprompter/id6815206814), or [build it yourself](#build-from-source).
+   Is the App Store blocked on your Mac? Download the DMG from [GitHub Releases](https://github.com/magnram/notchprompter/releases/latest)
+   instead. It is the same app, signed and notarized by Apple. It does not update itself, so check the
+   releases page for new versions. Use only one of the two copies.
 2. Open it and allow the microphone and speech recognition. The welcome guide shows you how.
 3. Click **Try It Now** and read the practice script out loud.
 
@@ -239,7 +242,11 @@ fastlane mac status                   # show the versions and builds; changes no
 fastlane mac release version:1.1      # build, upload the package, text and screenshots
 fastlane mac metadata version:1.1     # only the text and screenshots
 fastlane mac submit_review            # submit for review, with manual release
+fastlane mac dmg                      # notarized DMG for GitHub Releases, in fastlane/builds/
 ```
+
+The `dmg` lane needs a Developer ID Application certificate in the keychain. Only the Account Holder
+can make it: Xcode → Settings → Accounts → Manage Certificates → + → Developer ID Application.
 
 The version is required, so text for a new version never lands in one that is already in review.
 
